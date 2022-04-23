@@ -13,21 +13,22 @@ permalink: "/projects/broom"
     <div class="mt-4 flex items-center justify-between text-base font-medium text-gray-900 space-x-8">
       <h3>Broom</h3>
 
-      <!--<div class="flex items-center space-x-4">-->
+      <div class="flex items-center space-x-4">
         <!--<a href="#" class="w-48">-->
           <!--<img src="/assets/projects/chrome-get-the-addon.png" />-->
         <!--</a>-->
-        <!--<a href="#" class="w-48">-->
-          <!--<img src="/assets/projects/amo-get-the-addon.png" />-->
-        <!--</a>-->
-      <!--</div>-->
+
+        <a href="https://addons.mozilla.org/en-US/firefox/addon/broom/" class="w-48">
+          <img src="/assets/projects/amo-get-the-addon.png" />
+        </a>
+      </div>
     </div>
 
     <span class="tag">Browser Extension</span>
   </div>
 </div>
 
-**TL;DR** Broom is a <!--paid ($15 USD)--> browser extension for Firefox and Chrome that lets
+**TL;DR** Broom is a paid ($15 USD) browser extension for Firefox <!--and Chrome--> that lets
 you scrape data from a web page up into a CSV or JSON file.
 
 Broom was born out of the desire to quickly assemble data from sites that do not
@@ -41,16 +42,21 @@ When finally done, it'll provide the choice of a CSV, JSON and a "Columnar
 JSON" format download.
 
 <!--## Screenshots-->
-<!--![](/assets/projects/broom/)-->
-<!--![](/assets/projects/broom/)-->
-<!--![](/assets/projects/broom/)-->
+![](/assets/projects/broom/toolbar.png)
+![](/assets/projects/broom/toolbar-granularity.png)
+![](/assets/projects/broom/toolbar-error.png)
+![](/assets/projects/broom/saving.png)
+![](/assets/projects/broom/settings-1.png)
+![](/assets/projects/broom/settings-2.png)
+![](/assets/projects/broom/settings-3.png)
 
 ## Technology
 - Svelte, Typescript, Tailwind CSS all bundled together with Rollup.js
 
 ## Neat Details
 - Broom has my best library approach to RPC inside of web extensions yet, I'm
-  pretty proud of it
+  pretty proud of it as it's typesafe, looks like a native promise call and
+  supports a variety of uses from fire-and-forget to notify-everything
 - Broom uses Svelte integration with Web Components to inject it's UI into a
   webpage in a isolated fashion, a nice upgrade from the iframe setup
   I've used in previous extensions

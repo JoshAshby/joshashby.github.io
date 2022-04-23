@@ -32,7 +32,7 @@ permalink: "/projects/"
       <span class="tag">Browser Extension</span>
 
       <p class="mt-2">
-        Broom is a <!--paid--> browser extension for Firefox and Chrome that lets you scrape data from a web page up into a CSV or JSON file.
+        Broom is a paid browser extension for Firefox and Chrome that lets you scrape data from a web page up into a CSV or JSON file.
       </p>
     </div>
   </div>
@@ -56,7 +56,35 @@ permalink: "/projects/"
 
       <p class="mt-2">
         Raton is a minimal RSS feed reader designed to let you read the
-        feeds and get out of your way, packaged as a browser extension.
+        feeds and get out of your way, packaged as a browser extension. Raton
+        is currently in a private beta state and not quite ready for public
+        release.
+      </p>
+    </div>
+  </div>
+
+  <div class="relative group">
+    <!--<div class="overflow-hidden bg-gray-100">-->
+      <!--<img src="/assets/projects/duckware/cover.png" alt="Duckware cover image" class="object-center object-cover">-->
+    <!--</div>-->
+
+    <div class="mt-4 flex items-center justify-between text-base font-medium text-gray-900 space-x-8">
+      <h3>
+        <a href="/projects/duckware">
+          <span aria-hidden="true" class="absolute inset-0"></span>
+          🦆 ware
+        </a>
+      </h3>
+    </div>
+
+    <div class="prose prose-sm">
+      <span class="tag">Browser Extension</span>
+
+      <p class="mt-2">
+        Duckware is a QA and developers dream. It records events happening on
+        a webpage, ranging from clicks to websocket data and network requests
+        and allows packaging it up with timestamped screen recordings to send
+        over to developers to help hunt bugs.
       </p>
     </div>
   </div>
