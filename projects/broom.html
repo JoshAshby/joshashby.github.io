@@ -20,7 +20,7 @@
 <meta property="og:url" content="https://joshisa.ninja/projects/broom" />
 <meta property="og:site_name" content="Ashby’s Hideout" />
 <script type="application/ld+json">
-{"description":"Sometimes I convert coffee into code. Rubber ducks are awesome.","headline":"Project - Broom","url":"https://joshisa.ninja/projects/broom","@type":"WebPage","@context":"https://schema.org"}</script>
+{"headline":"Project - Broom","description":"Sometimes I convert coffee into code. Rubber ducks are awesome.","url":"https://joshisa.ninja/projects/broom","@type":"WebPage","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -66,22 +66,27 @@
     <div class="mt-4 flex items-center justify-between text-base font-medium text-gray-900 space-x-8">
       <h3>Broom</h3>
 
-      <!--<div class="flex items-center space-x-4">-->
+      <div class="flex items-center space-x-4">
         <!--<a href="#" class="w-48">-->
           <!--<img src="/assets/projects/chrome-get-the-addon.png" />-->
         <!--</a>-->
-        <!--<a href="#" class="w-48">-->
-          <!--<img src="/assets/projects/amo-get-the-addon.png" />-->
-        <!--</a>-->
-      <!--</div>-->
+
+        <a href="https://addons.mozilla.org/en-US/firefox/addon/broom/" class="w-48">
+          <img src="/assets/projects/amo-get-the-addon.png" />
+        </a>
+      </div>
     </div>
 
     <span class="tag">Browser Extension</span>
   </div>
 </div>
 
-<p><strong>TL;DR</strong> Broom is a <!--paid ($15 USD)--> browser extension for Firefox and Chrome that lets
+<p><strong>TL;DR</strong> Broom is a paid ($15 USD) browser extension for Firefox <!--and Chrome--> that lets
 you scrape data from a web page up into a CSV or JSON file.</p>
+
+<p>Looking to buy a license key for Broom?
+<script src="https://gumroad.com/js/gumroad.js"></script>
+<a class="gumroad-button" href="https://slothby.gumroad.com/l/broom">Buy on</a></p>
 
 <p>Broom was born out of the desire to quickly assemble data from sites that do not
 expose an API into a spreadsheet, without wanting to spend time setting up a
@@ -94,9 +99,13 @@ When finally done, it’ll provide the choice of a CSV, JSON and a “Columnar
 JSON” format download.</p>
 
 <!--## Screenshots-->
-<!--![](/assets/projects/broom/)-->
-<!--![](/assets/projects/broom/)-->
-<!--![](/assets/projects/broom/)-->
+<p><img src="/assets/projects/broom/toolbar.png" alt="" />
+<img src="/assets/projects/broom/toolbar-granularity.png" alt="" />
+<img src="/assets/projects/broom/toolbar-error.png" alt="" />
+<img src="/assets/projects/broom/saving.png" alt="" />
+<img src="/assets/projects/broom/settings-1.png" alt="" />
+<img src="/assets/projects/broom/settings-2.png" alt="" />
+<img src="/assets/projects/broom/settings-3.png" alt="" /></p>
 
 <h2 id="technology">Technology</h2>
 <ul>
@@ -106,7 +115,8 @@ JSON” format download.</p>
 <h2 id="neat-details">Neat Details</h2>
 <ul>
   <li>Broom has my best library approach to RPC inside of web extensions yet, I’m
-pretty proud of it</li>
+pretty proud of it as it’s typesafe, looks like a native promise call and
+supports a variety of uses from fire-and-forget to notify-everything</li>
   <li>Broom uses Svelte integration with Web Components to inject it’s UI into a
 webpage in a isolated fashion, a nice upgrade from the iframe setup
 I’ve used in previous extensions</li>

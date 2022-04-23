@@ -5,22 +5,22 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Project - PDNRF - Ashby's Hideout</title>
+  <title>Project - Duckware - Ashby's Hideout</title>
   <meta name="description" content="">
 
   <link type="application/atom+xml" rel="alternate" href="https://joshisa.ninja/feed.xml" title="Ashby's Hideout" />
   <!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Project - PDNRF | Ashby’s Hideout</title>
+<title>Project - Duckware | Ashby’s Hideout</title>
 <meta name="generator" content="Jekyll v4.2.1" />
-<meta property="og:title" content="Project - PDNRF" />
+<meta property="og:title" content="Project - Duckware" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Sometimes I convert coffee into code. Rubber ducks are awesome." />
 <meta property="og:description" content="Sometimes I convert coffee into code. Rubber ducks are awesome." />
-<link rel="canonical" href="https://joshisa.ninja/projects/pdnrf" />
-<meta property="og:url" content="https://joshisa.ninja/projects/pdnrf" />
+<link rel="canonical" href="https://joshisa.ninja/projects/duckware" />
+<meta property="og:url" content="https://joshisa.ninja/projects/duckware" />
 <meta property="og:site_name" content="Ashby’s Hideout" />
 <script type="application/ld+json">
-{"headline":"Project - PDNRF","description":"Sometimes I convert coffee into code. Rubber ducks are awesome.","url":"https://joshisa.ninja/projects/pdnrf","@type":"WebPage","@context":"https://schema.org"}</script>
+{"headline":"Project - Duckware","description":"Sometimes I convert coffee into code. Rubber ducks are awesome.","url":"https://joshisa.ninja/projects/duckware","@type":"WebPage","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -58,53 +58,49 @@
     <div class="prose">
       <div class="not-prose mb-2">
   <div class="relative group">
-    <div class="overflow-hidden bg-gray-100">
-      <img src="/assets/projects/pdnrf/cover.png" alt="Please do not rob fish cover image" class="object-center object-cover" />
-      <span class="font-mono text-xs text-gray-500 px-2">Icon: <a href="https://thenounproject.com/icon/fish-554779/">Fish by elmars from NounProject.com</a></span>
-    </div>
+    <!--<div class="overflow-hidden bg-gray-100">-->
+      <!--<img src="/assets/projects/raton/cover.png" alt="Raton cover image" class="object-center object-cover">-->
+      <!--<small class="font-mono text-xs text-gray-500 px-2">Icon: <a href="https://thenounproject.com/icon/mountains-542371/">Mountains by TS Graphics from NounProject.com</a></small>-->
+    <!--</div>-->
 
     <div class="mt-4 flex items-center justify-between text-base font-medium text-gray-900 space-x-8">
-      <h3>PDNRF</h3>
+      <h3>🦆 Ware</h3>
 
-      <div class="flex items-center divide-solid divide-x-2 divide-gray-300">
-        <a href="https://pleasedonot.rob.fish/" class="px-2">
-          WWW
-        </a>
-        <a href="https://bones.isin.space/user/JoshAshby/repository/PleaseDoNotRobFish/" class="px-2">
-          Code
-        </a>
-      </div>
+      <!--<div class="flex items-center space-x-4">-->
+        <!--<a href="#" class="w-48">-->
+          <!--<img src="/assets/projects/chrome-get-the-addon.png" />-->
+        <!--</a>-->
+        <!--<a href="#" class="w-48">-->
+          <!--<img src="/assets/projects/amo-get-the-addon.png" />-->
+        <!--</a>-->
+      <!--</div>-->
     </div>
 
-    <span class="tag">Web App</span>
+    <span class="tag">Browser Extension</span>
   </div>
 </div>
 
-<p><strong>TL;DR</strong> PDNRF, aka Please Do <strong>NOT</strong> Rob Fish, is a small photo sharing and
-organizing site for myself; Born out of the need to use the joke domain
-<code class="language-plaintext highlighter-rouge">rob.fish</code> for <em>anything</em>.</p>
+<p><strong>TL;DR</strong> Duckware records events and screen captures to help developers
+identify and recreate bugs faster.</p>
 
-<p>PDNRF handles optimizing photos, converting videos to gifs (and gifs to videos)
-to ease sharing across a variety of mediums and provides some basic tag and
-date range searching, along with exposing a description for shared photos. I
-tried to design it in a way to help me facilitate sharing screenshots without
-needing scp hacks and letting me do so from mobile devices as well.</p>
+<p>Duckware is an evolving new project for me, so this page should be considered
+“Under Construction” as new features get built out and the extension gets more
+polish.</p>
 
 <h2 id="screenshots">Screenshots</h2>
-<p><img src="/assets/projects/pdnrf/feed.png" alt="" />
-<img src="/assets/projects/pdnrf/filters.png" alt="" />
-<!--![](/assets/projects/pdnrf/)--></p>
+<p><img src="/assets/projects/duckware/log.png" alt="" />
+<img src="/assets/projects/duckware/log-recording.png" alt="" />
+Starting a screen capture enables additional controls in the log UI</p>
 
 <h2 id="technology">Technology</h2>
 <ul>
-  <li>Ruby, Roda, Sqlite, with some Stimulus.js and Tailwind CSS bundled together with Vite.js</li>
-  <li>VIPS and Ffmpeg handle the images and videos/gifs</li>
+  <li>Svelte, Typescript, Daisy UI/Tailwind CSS all bundled together with Vite.js</li>
 </ul>
 
 <h2 id="neat-details">Neat Details</h2>
 <ul>
-  <li>Video transcoding has issues at the moment because PDNRF eats the docker
-containers memory. It’s not ideal.</li>
+  <li>Like Broom did before it, Duckware pushed the boundaries for my RPC framework
+and was even responsible for some bugfixes and better support in Broom!</li>
 </ul>
 
     </div>
@@ -112,7 +108,7 @@ containers memory. It’s not ideal.</li>
     <footer class="border-t-2 border-blue-700 my-4 pt-4 text-sm w-full">
       <p class="prose-xs">
         Found an error or have an improvement?
-        <a href="https://github.com/JoshAshby/joshashby.github.io/tree/source/projects/pdnrf.md">Suggest a correction!</a> | <span class="text-gray-300 text-xs">© Joshua Ashby</span>
+        <a href="https://github.com/JoshAshby/joshashby.github.io/tree/source/projects/duckware.md">Suggest a correction!</a> | <span class="text-gray-300 text-xs">© Joshua Ashby</span>
       </p>
     </footer>
   </main>
