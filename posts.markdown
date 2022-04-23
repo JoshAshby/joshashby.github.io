@@ -2,7 +2,7 @@
 title: Posts
 permalink: "/posts/"
 ---
-<!-- Thanks Rob -->
+<!-- Thanks a ton Rob, I owe you 42 bajillion dollars -->
 {% capture post_years %}
   {% for post in site.posts %}
   {{ post.date | date: '%Y' }}
