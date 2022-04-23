@@ -31,6 +31,10 @@ permalink: "/projects/broom"
 **TL;DR** Broom is a paid ($15 USD) browser extension for Firefox <!--and Chrome--> that lets
 you scrape data from a web page up into a CSV or JSON file.
 
+Looking to buy a license key for Broom?
+<script src="https://gumroad.com/js/gumroad.js"></script>
+<a class="gumroad-button" href="https://slothby.gumroad.com/l/broom">Buy on</a>
+
 Broom was born out of the desire to quickly assemble data from sites that do not
 expose an API into a spreadsheet, without wanting to spend time setting up a
 full scraper for short one time tasks.
