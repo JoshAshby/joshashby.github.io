@@ -112,9 +112,15 @@ body {
 }
 
 #main-sidebar {
-  @apply w-full flex flex-col sticky top-0;
+  @apply w-full flex flex-col sticky top-0 z-30;
 
   grid-area: sidebar;
+}
+
+@media print {
+  #main-sidebar {
+    display: none !important;
+  }
 }
 
 @screen lg {
@@ -149,4 +155,3 @@ main {
     @apply flex-row justify-between items-baseline mx-0;
   }
 }
-
