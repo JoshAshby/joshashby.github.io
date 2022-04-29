@@ -14,9 +14,9 @@ permalink: "/projects/broom"
       <h3>Broom</h3>
 
       <div class="flex items-center space-x-4">
-        <!--<a href="#" class="w-48">-->
-          <!--<img src="/assets/projects/chrome-get-the-addon.png" />-->
-        <!--</a>-->
+        <a href="https://chrome.google.com/webstore/detail/depenoidancfjabbninhgimioodfgpdm" class="w-48">
+          <img src="/assets/projects/chrome-get-the-addon.png" />
+        </a>
 
         <a href="https://addons.mozilla.org/firefox/addon/broom/" class="w-48">
           <img src="/assets/projects/amo-get-the-addon.png" />
@@ -28,7 +28,7 @@ permalink: "/projects/broom"
   </div>
 </div>
 
-**TL;DR** Broom is a paid ($15 USD) browser extension for Firefox <!--and Chrome--> that lets
+**TL;DR** Broom is a paid ($15 USD) browser extension for Firefox and Chrome that lets
 you scrape data from a web page up into a CSV or JSON file.
 
 Looking to buy a license key for Broom?
