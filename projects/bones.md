@@ -5,12 +5,9 @@ permalink: "/projects/bones"
 
 <div class="not-prose mb-2">
   <div class="relative group">
-    <div class="overflow-hidden bg-gray-100">
-      <img src="/assets/projects/bones/cover.png" alt="Bones cover image" class="object-center object-cover">
-      <span class="font-mono text-xs text-gray-500 px-2">Icon: <a href="https://thenounproject.com/icon/dinosaur-skull-347287/">Dinosaur Skull by Erik Kuroow from NounProject.com</a></span>
-    </div>
+    {% include figure.html src="/assets/projects/bones/cover.png" alt="Bones cover image" caption='Icon: <a href="https://thenounproject.com/icon/dinosaur-skull-347287/">Dinosaur Skull by Erik Kuroow from NounProject.com</a>' %}
 
-    <div class="mt-4 flex items-center justify-between text-base font-medium text-gray-900 space-x-8">
+    <div class="mt-4 flex items-center justify-between text-base font-medium space-x-8">
       <h3>Bones</h3>
 
       <div class="flex items-center divide-solid divide-x-2 divide-gray-300">

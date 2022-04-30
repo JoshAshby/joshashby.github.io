@@ -5,11 +5,9 @@ permalink: "/projects/transientBug"
 
 <div class="not-prose mb-2">
   <div class="relative group">
-    <div class="overflow-hidden bg-gray-100">
-      <img src="/assets/projects/transientBug/cover.png" alt="transientBug cover image" class="object-center object-cover">
-    </div>
+    {% include figure.html src="/assets/projects/transientBug/cover.png" alt="transientBug cover image" %}
 
-    <div class="mt-4 flex items-center justify-between text-base font-medium text-gray-900 space-x-8">
+    <div class="mt-4 flex items-center justify-between text-base font-medium space-x-8">
       <h3>transientBug</h3>
 
       <!--<div class="flex items-center space-x-4">-->

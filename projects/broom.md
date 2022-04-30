@@ -5,21 +5,21 @@ permalink: "/projects/broom"
 
 <div class="not-prose mb-2">
   <div class="relative group">
-    <div class="overflow-hidden bg-gray-100">
-      <img src="/assets/projects/broom/cover.png" alt="Broom cover image" class="object-center object-cover">
-      <span class="font-mono text-xs text-gray-500 px-2">Icon: <a href="https://thenounproject.com/icon/broom-302960/">Broom by Francesco Cesqo Stefanini from NounProject.com</a></span>
-    </div>
+    {% include figure.html src="/assets/projects/broom/cover.png" alt="Broom cover image" caption='Icon: <a href="https://thenounproject.com/icon/broom-302960/">Broom by Francesco Cesqo Stefanini from NounProject.com</a>' %}
 
-    <div class="mt-4 flex items-center justify-between text-base font-medium text-gray-900 space-x-8">
-      <h3>Broom</h3>
+    <div class="mt-4 flex items-center justify-between text-base font-medium space-x-8">
+      <a href="https://slothby.club/broom">
+        <h3>Broom</h3>
+      </a>
 
       <div class="flex items-center space-x-4">
-        <a href="https://chrome.google.com/webstore/detail/depenoidancfjabbninhgimioodfgpdm" class="w-48">
-          <img src="/assets/projects/chrome-get-the-addon.png" />
-        </a>
 
         <a href="https://addons.mozilla.org/firefox/addon/broom/" class="w-48">
           <img src="/assets/projects/amo-get-the-addon.png" />
+        </a>
+
+        <a href="https://chrome.google.com/webstore/detail/depenoidancfjabbninhgimioodfgpdm" class="w-48">
+          <img src="/assets/projects/chrome-get-the-addon.png" />
         </a>
       </div>
     </div>
@@ -32,8 +32,7 @@ permalink: "/projects/broom"
 you scrape data from a web page up into a CSV or JSON file.
 
 Looking to buy a license key for Broom?
-<script src="https://gumroad.com/js/gumroad.js"></script>
-<a class="gumroad-button" href="https://slothby.gumroad.com/l/broom">Buy on</a>
+Check out it's <a href="https://slothby.club/broom">product page for more info.</a>
 
 Broom was born out of the desire to quickly assemble data from sites that do not
 expose an API into a spreadsheet, without wanting to spend time setting up a
@@ -45,17 +44,15 @@ pagination links and then lets you scrape the number of pages that you desire.
 When finally done, it'll provide the choice of a CSV, JSON and a "Columnar
 JSON" format download.
 
-<!--## Screenshots-->
+## Screenshots
 ![](/assets/projects/broom/toolbar.png)
 ![](/assets/projects/broom/toolbar-granularity.png)
 ![](/assets/projects/broom/toolbar-error.png)
 ![](/assets/projects/broom/saving.png)
 ![](/assets/projects/broom/settings-1.png)
-![](/assets/projects/broom/settings-2.png)
-![](/assets/projects/broom/settings-3.png)
 
 ## Technology
-- Svelte, Typescript, Tailwind CSS all bundled together with Rollup.js
+- Svelte, Typescript, Tailwind CSS all bundled together with Vite.js
 
 ## Neat Details
 - Broom has my best library approach to RPC inside of web extensions yet, I'm
@@ -64,3 +61,6 @@ JSON" format download.
 - Broom uses Svelte integration with Web Components to inject it's UI into a
   webpage in a isolated fashion, a nice upgrade from the iframe setup
   I've used in previous extensions
+- Thanks to Chrome's MV3 transition, Broom had a slightly bumpy ride getting
+  upgraded to the weird quirks worked out while maintaining compatability with
+  Firefox

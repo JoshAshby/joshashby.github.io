@@ -3,13 +3,13 @@ title: Projects
 permalink: "/projects/"
 ---
 
-<p>
-  I've got plenty of side projects that range from small experiments, helpful
-  little tools to learning aids for new languages or frameworks. Once in a
-  while they grow into something of their own that I want to share or at the
-  least showcase. This list, while certainly not exhaustive, is a small showcase
-  of those projects that I'm most proud of or get a lot of value out of daily.
-</p>
+# Projects!!! Stuff!! Things!
+
+I've got plenty of side projects that range from small experiments, helpful
+little tools to learning aids for new languages or frameworks. Once in a
+while they grow into something of their own that I want to share or at the
+least showcase. This list, while certainly not exhaustive, is a small showcase
+of those projects that I'm most proud of or get a lot of value out of daily.
 
 <hr />
 
@@ -28,7 +28,7 @@ permalink: "/projects/"
       </h3>
     </div>
 
-    <div class="prose prose-sm">
+    <div class="prose prose-sm dark:prose-invert">
       <span class="tag">Browser Extension</span>
 
       <p class="mt-2">
@@ -51,7 +51,7 @@ permalink: "/projects/"
       </h3>
     </div>
 
-    <div class="prose prose-sm">
+    <div class="prose prose-sm dark:prose-invert">
       <span class="tag">Browser Extension</span>
 
       <p class="mt-2">
@@ -77,7 +77,7 @@ permalink: "/projects/"
       </h3>
     </div>
 
-    <div class="prose prose-sm">
+    <div class="prose prose-sm dark:prose-invert">
       <span class="tag">Browser Extension</span>
 
       <p class="mt-2">
@@ -103,9 +103,11 @@ permalink: "/projects/"
       </h3>
     </div>
 
-    <div class="prose prose-sm">
-      <span class="tag">Web App</span>
-      <span class="tag">Browser Extension</span>
+    <div class="prose prose-sm dark:prose-invert">
+      <div class="space-y-2">
+        <span class="tag">Web App</span>
+        <span class="tag">Browser Extension</span>
+      </div>
 
       <p class="mt-2">
         transientBug is a bookmark manager designed to help solve the problem of aging and dead links.
@@ -127,7 +129,7 @@ permalink: "/projects/"
       </h3>
     </div>
 
-    <div class="prose prose-sm">
+    <div class="prose prose-sm dark:prose-invert">
       <span class="tag">Web App</span>
 
       <p class="mt-2">
@@ -150,7 +152,7 @@ permalink: "/projects/"
       </h3>
     </div>
 
-    <div class="prose prose-sm">
+    <div class="prose prose-sm dark:prose-invert">
       <span class="tag">Web App</span>
 
       <p class="mt-2">

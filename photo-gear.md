@@ -3,6 +3,8 @@ title: Photography Gear
 permalink: "/photo-gear/"
 ---
 
+# Gear Gear Gear
+
 Cameras:
  - Canon 6D mark II
  - Canon 70D

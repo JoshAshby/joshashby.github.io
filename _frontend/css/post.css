@@ -1,7 +1,7 @@
 .post {
   /* Naked code tags */
   & code.highlighter-rouge {
-    @apply bg-gray-900 text-white leading-normal font-mono rounded-sm p-0.5;
+    @apply bg-slate-900 dark:bg-slate-800 text-white leading-normal font-mono rounded-sm p-0.5 px-1 before:content-none after:content-none;
   }
 
   /* ``` and ```lang tags */
@@ -9,9 +9,9 @@
     @apply my-4;
 
     & pre.highlight {
-      @apply bg-gray-900 text-white leading-normal font-mono p-4 overflow-scroll;
+      @apply bg-slate-900 dark:bg-slate-800 text-white leading-normal font-mono p-4 overflow-scroll;
 
-      @apply border-0 border-t-8 border-blue-800;
+      @apply border-0 border-t-8 border-sky-900;
     }
   }
 
@@ -20,7 +20,7 @@
     @apply my-4;
 
     & > pre {
-      @apply bg-gray-900 border-0 border-t-8 border-blue-800 overflow-scroll p-4;
+      @apply bg-slate-900 dark:bg-slate-800 border-0 border-t-8 border-sky-900 overflow-scroll p-4;
     }
   }
 
@@ -30,12 +30,12 @@
       @apply w-full -m-4 text-base;
 
       & pre {
-        @apply bg-gray-900 m-0;
+        @apply bg-slate-900 dark:bg-slate-800 m-0;
       }
     }
 
     & .gutter {
-      @apply border-0 border-r border-blue-800 p-0;
+      @apply border-0 border-r border-sky-900 p-0;
 
       & > pre {
         @apply leading-normal font-mono text-gray-500;

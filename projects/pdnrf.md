@@ -5,12 +5,9 @@ permalink: "/projects/pdnrf"
 
 <div class="not-prose mb-2">
   <div class="relative group">
-    <div class="overflow-hidden bg-gray-100">
-      <img src="/assets/projects/pdnrf/cover.png" alt="Please do not rob fish cover image" class="object-center object-cover">
-      <span class="font-mono text-xs text-gray-500 px-2">Icon: <a href="https://thenounproject.com/icon/fish-554779/">Fish by elmars from NounProject.com</a></span>
-    </div>
+    {% include figure.html src="/assets/projects/pdnrf/cover.png" alt="Please do not rob fish cover image" caption='Icon: <a href="https://thenounproject.com/icon/fish-554779/">Fish by elmars from NounProject.com</a>' %}
 
-    <div class="mt-4 flex items-center justify-between text-base font-medium text-gray-900 space-x-8">
+    <div class="mt-4 flex items-center justify-between text-base font-medium space-x-8">
       <h3>PDNRF</h3>
 
       <div class="flex items-center divide-solid divide-x-2 divide-gray-300">
@@ -40,7 +37,6 @@ needing scp hacks and letting me do so from mobile devices as well.
 ## Screenshots
 ![](/assets/projects/pdnrf/feed.png)
 ![](/assets/projects/pdnrf/filters.png)
-<!--![](/assets/projects/pdnrf/)-->
 
 ## Technology
 - Ruby, Roda, Sqlite, with some Stimulus.js and Tailwind CSS bundled together with Vite.js
@@ -48,4 +44,4 @@ needing scp hacks and letting me do so from mobile devices as well.
 
 ## Neat Details
 - Video transcoding has issues at the moment because PDNRF eats the docker
-containers memory. It's not ideal.
+  containers memory. It's not ideal.

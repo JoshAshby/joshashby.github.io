@@ -5,12 +5,9 @@ permalink: "/projects/raton"
 
 <div class="not-prose mb-2">
   <div class="relative group">
-    <div class="overflow-hidden bg-gray-100">
-      <img src="/assets/projects/raton/cover.png" alt="Raton cover image" class="object-center object-cover">
-      <small class="font-mono text-xs text-gray-500 px-2">Icon: <a href="https://thenounproject.com/icon/mountains-542371/">Mountains by TS Graphics from NounProject.com</a></small>
-    </div>
+    {% include figure.html src="/assets/projects/raton/cover.png" alt="Raton cover image" caption='Icon: <a href="https://thenounproject.com/icon/mountains-542371/">Mountains by TS Graphics from NounProject.com</a>' %}
 
-    <div class="mt-4 flex items-center justify-between text-base font-medium text-gray-900 space-x-8">
+    <div class="mt-4 flex items-center justify-between text-base font-medium space-x-8">
       <h3>Raton</h3>
 
       <!--<div class="flex items-center space-x-4">-->

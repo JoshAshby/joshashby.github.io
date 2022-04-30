@@ -91,7 +91,7 @@ ul.nav-list {
 }
 
 body {
-  @apply grid;
+  @apply grid dark:bg-slate-900;
 
   grid:
     "sidebar" auto
@@ -143,11 +143,11 @@ main {
 #page-header {
   /*grid-area: content;*/
 
-  @apply flex flex-col border-b-2 border-gray-200 mb-4 py-2;
+  @apply flex flex-col border-b-2 border-gray-200 mb-4 py-2 prose dark:prose-invert;
 
-  & h1 {
-    @apply text-gray-900 text-4xl m-0;
-  }
+  /*& h1 {*/
+    /*@apply text-gray-900 text-4xl m-0;*/
+  /*}*/
 }
 
 @screen lg {
