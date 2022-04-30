@@ -32,7 +32,7 @@ permalink: "/projects/"
       <span class="tag">Browser Extension</span>
 
       <p class="mt-2">
-        Broom is a paid browser extension for Firefox and Chrome that lets you scrape data from a web page up into a CSV or JSON file.
+        Broom is a browser extension for Firefox and Chrome that lets you scrape data from a web page up into a CSV or JSON file.
       </p>
     </div>
   </div>
