@@ -27,7 +27,7 @@
 <!-- End Jekyll SEO tag -->
 
 
-  <link rel="stylesheet" href="/vite/assets/ashby.1903f9a2.css" media="screen"/>
+  <link rel="stylesheet" href="/vite/assets/ashby.bf8f0885.css" media="screen"/>
 </head>
 
 <body>
@@ -57,25 +57,32 @@
     </nav>
   </section>
 
-  <main class="mt-0 lg:mt-5">
-    <div class="prose">
+  <main class="mt-10 lg:mt-5">
+    <div class="prose dark:prose-invert">
       <div class="not-prose mb-2">
   <div class="relative group">
-    <div class="overflow-hidden bg-gray-100">
-      <img src="/assets/projects/broom/cover.png" alt="Broom cover image" class="object-center object-cover" />
-      <span class="font-mono text-xs text-gray-500 px-2">Icon: <a href="https://thenounproject.com/icon/broom-302960/">Broom by Francesco Cesqo Stefanini from NounProject.com</a></span>
-    </div>
+    <figure class="not-prose bg-gray-100 dark:bg-gray-700">
+  <img src="/assets/projects/broom/cover.png" srcset="" alt="Broom cover image" />
 
-    <div class="mt-4 flex items-center justify-between text-base font-medium text-gray-900 space-x-8">
-      <h3>Broom</h3>
+  
+    <figcaption class="font-mono text-xs text-gray-500 dark:text-gray-200 p-2">Icon: <a href="https://thenounproject.com/icon/broom-302960/">Broom by Francesco Cesqo Stefanini from NounProject.com</a></figcaption>
+  
+</figure>
+
+
+    <div class="mt-4 flex items-center justify-between text-base font-medium space-x-8">
+      <a href="https://slothby.club/broom">
+        <h3>Broom</h3>
+      </a>
 
       <div class="flex items-center space-x-4">
-        <a href="https://chrome.google.com/webstore/detail/depenoidancfjabbninhgimioodfgpdm" class="w-48">
-          <img src="/assets/projects/chrome-get-the-addon.png" />
-        </a>
 
         <a href="https://addons.mozilla.org/firefox/addon/broom/" class="w-48">
           <img src="/assets/projects/amo-get-the-addon.png" />
+        </a>
+
+        <a href="https://chrome.google.com/webstore/detail/depenoidancfjabbninhgimioodfgpdm" class="w-48">
+          <img src="/assets/projects/chrome-get-the-addon.png" />
         </a>
       </div>
     </div>
@@ -88,8 +95,7 @@
 you scrape data from a web page up into a CSV or JSON file.</p>
 
 <p>Looking to buy a license key for Broom?
-<script src="https://gumroad.com/js/gumroad.js"></script>
-<a class="gumroad-button" href="https://slothby.gumroad.com/l/broom">Buy on</a></p>
+Check out it’s <a href="https://slothby.club/broom">product page for more info.</a></p>
 
 <p>Broom was born out of the desire to quickly assemble data from sites that do not
 expose an API into a spreadsheet, without wanting to spend time setting up a
@@ -101,18 +107,16 @@ pagination links and then lets you scrape the number of pages that you desire.
 When finally done, it’ll provide the choice of a CSV, JSON and a “Columnar
 JSON” format download.</p>
 
-<!--## Screenshots-->
+<h2 id="screenshots">Screenshots</h2>
 <p><img src="/assets/projects/broom/toolbar.png" alt="" />
 <img src="/assets/projects/broom/toolbar-granularity.png" alt="" />
 <img src="/assets/projects/broom/toolbar-error.png" alt="" />
 <img src="/assets/projects/broom/saving.png" alt="" />
-<img src="/assets/projects/broom/settings-1.png" alt="" />
-<img src="/assets/projects/broom/settings-2.png" alt="" />
-<img src="/assets/projects/broom/settings-3.png" alt="" /></p>
+<img src="/assets/projects/broom/settings-1.png" alt="" /></p>
 
 <h2 id="technology">Technology</h2>
 <ul>
-  <li>Svelte, Typescript, Tailwind CSS all bundled together with Rollup.js</li>
+  <li>Svelte, Typescript, Tailwind CSS all bundled together with Vite.js</li>
 </ul>
 
 <h2 id="neat-details">Neat Details</h2>
@@ -123,12 +127,15 @@ supports a variety of uses from fire-and-forget to notify-everything</li>
   <li>Broom uses Svelte integration with Web Components to inject it’s UI into a
 webpage in a isolated fashion, a nice upgrade from the iframe setup
 I’ve used in previous extensions</li>
+  <li>Thanks to Chrome’s MV3 transition, Broom had a slightly bumpy ride getting
+upgraded to the weird quirks worked out while maintaining compatability with
+Firefox</li>
 </ul>
 
     </div>
 
-    <footer class="border-t-2 border-blue-700 my-4 pt-4 text-sm w-full">
-      <p class="prose-xs">
+    <footer class="border-t-2 border-sky-900 my-4 pt-4 text-sm w-full">
+      <p class="prose text-xs dark:prose-invert">
         Found an error or have an improvement?
         <a href="https://github.com/JoshAshby/joshashby.github.io/tree/source/projects/broom.md">Suggest a correction!</a> | <span class="text-gray-300 text-xs">© Joshua Ashby</span>
       </p>
