@@ -2,8 +2,8 @@
 layout: default
 ---
 <header id="page-header">
-  <div class="flex flex-col space-y-4">
-    <h1>{{ page.title }}</h1>
+  <div class="flex flex-col flex-grow space-y-4">
+    <h1 class="mb-2">{{ page.title }}</h1>
 
     <div class="flex flex-row space-x-2 items-center">
       <div class="flex flex-col md:flex-row items-center space-x-1 text-sm leading-5 text-gray-500 dark:text-gray-400 sm:mr-6 font-sans">
@@ -11,7 +11,7 @@ layout: default
         <time class="whitespace-nowrap" datetime="{{ page.date | date: "%F" }}">{{ page.date | date: "%Y-%h-%d" }}</time>
       </div>
 
-      <div class="flex flex-row flex-wrap space-x-1 items-center">
+      <div class="flex flex-row flex-wrap space-x-1 items-center justify-end flex-grow">
         {% for tag in page.tags %}
           <a href="/tags#{{ tag | slugify }}" name="{{ tag }}"><span class="tag">{{ tag }}</span></a>
         {% endfor %}

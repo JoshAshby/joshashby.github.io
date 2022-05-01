@@ -5,6 +5,19 @@ date: '2019-10-07 22:40:57'
 tags:
 - home
 - test
+
+style: |
+  body {
+    background-color: orange;
+  }
+
+  .sidebar-nav, #nav-links {
+    background-color: red;
+  }
+
+  main {
+    background: grey;
+  }
 ---
 
 You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
@@ -60,6 +73,10 @@ Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most ou
 ![](/avatar.jpg)
 
 {% include figure.html src="/avatar.jpg" caption="Brittany" %}
+
+<div class="escape">
+  {% include figure.html src="/avatar.jpg" caption="Brittany" %}
+</div>
 
 ## Code
 
@@ -136,31 +153,31 @@ end
 
 ## Annotations
 
-{% aside annotations %} 
-Such as this one!
-{% endaside %}
-	
-{% aside annotations | red %} 
-Such as this one!
-{% endaside %}
-	
-{% aside annotations | orange %} 
+{% aside annotations %}
 Such as this one!
 {% endaside %}
 
-{% aside annotations | yellow %} 
+{% aside annotations | red %}
 Such as this one!
 {% endaside %}
 
-{% aside annotations | blue %} 
+{% aside annotations | orange %}
 Such as this one!
 {% endaside %}
-	
-{% aside annotations | green %} 
+
+{% aside annotations | yellow %}
 Such as this one!
 {% endaside %}
-	
-{% aside annotations | purple %} 
+
+{% aside annotations | blue %}
+Such as this one!
+{% endaside %}
+
+{% aside annotations | green %}
+Such as this one!
+{% endaside %}
+
+{% aside annotations | purple %}
 Such as this one!
 {% endaside %}
 

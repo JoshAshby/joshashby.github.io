@@ -1,6 +1,7 @@
 a.annotation-trigger {
   @apply px-2 py-1 rounded-md text-black;
   text-decoration: none;
+  white-space: nowrap;
 }
 
 a.annotation-trigger:visited {
@@ -18,18 +19,18 @@ a.annotation-trigger.-active::after {
   content: " [-]";
 }
 
-a.annotation-trigger ~ span.annotation {
+a.annotation-trigger + span.annotation {
   @apply hidden;
 }
 
-a.annotation-trigger.-active ~ span.annotation {
+a.annotation-trigger.-active + span.annotation {
   @apply block my-2 px-5 py-3 rounded-md text-black;
 }
 
 a.annotation-trigger.-gray {
   @apply bg-gray-300;
 
-  & ~ span.annotation {
+  & + span.annotation {
     @apply bg-gray-200;
   }
 }
@@ -37,7 +38,7 @@ a.annotation-trigger.-gray {
 a.annotation-trigger.-red {
   @apply bg-red-400;
 
-  & ~ span.annotation {
+  & + span.annotation {
     @apply bg-red-300;
   }
 }
@@ -45,7 +46,7 @@ a.annotation-trigger.-red {
 a.annotation-trigger.-orange {
   @apply bg-orange-400;
 
-  & ~ span.annotation {
+  & + span.annotation {
     @apply bg-orange-300;
   }
 }
@@ -53,7 +54,7 @@ a.annotation-trigger.-orange {
 a.annotation-trigger.-yellow {
   @apply bg-yellow-400;
 
-  & ~ span.annotation {
+  & + span.annotation {
     @apply bg-yellow-300;
   }
 }
@@ -61,7 +62,7 @@ a.annotation-trigger.-yellow {
 a.annotation-trigger.-blue {
   @apply bg-blue-400;
 
-  & ~ span.annotation {
+  & + span.annotation {
     @apply bg-blue-300;
   }
 }
@@ -69,7 +70,7 @@ a.annotation-trigger.-blue {
 a.annotation-trigger.-green {
   @apply bg-green-400;
 
-  & ~ span.annotation {
+  & + span.annotation {
     @apply bg-green-300;
   }
 }
@@ -77,7 +78,7 @@ a.annotation-trigger.-green {
 a.annotation-trigger.-purple {
   @apply bg-purple-400;
 
-  & ~ span.annotation {
+  & + span.annotation {
     @apply bg-purple-300;
   }
 }

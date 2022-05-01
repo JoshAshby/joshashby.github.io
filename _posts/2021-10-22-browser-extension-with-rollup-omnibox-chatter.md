@@ -13,7 +13,7 @@ In the [previous post](/2021/10/16/web-extensions-with-rollup-getting-started.ht
 
 As a reminder of what we're building through this series: A simple browser extension that allows for the creation of "aliases" via the URL bar, e.g., if the browser extension registers `goto` as the keyword, the user could set up the alias `github/me` to go to their GitHub profile and type in `goto github/me` to the URL bar to make use of the alias; Similar to [Redirector](https://github.com/einaregilsson/Redirector).
 
-Along the way, we'll cover an introduction to browser extensions, talk about making them function under both Chrome and Firefox with minimal changes and how to use tools like Rollup.js to help bundle one. 
+Along the way, we'll cover an introduction to browser extensions, talk about making them function under both Chrome and Firefox with minimal changes and how to use tools like Rollup.js to help bundle one.
 
 {: .callout.blue}
 While I'm writing these posts using my own preferences on techniques and technologies (which include Rollup.js as well as [TypeScript](https://www.typescriptlang.org/), [Svelte](https://svelte.dev/)), there are a lot of alternative approaches, and it's the concepts that are the core take away. Nothing precludes you from using different technologies; if you'd like to follow along using Vanilla ES6+ and [esbuild](https://esbuild.github.io/), or any other number of setups, {% aside go right ahead! | purple %}
@@ -43,12 +43,12 @@ const production = !process.env.ROLLUP_WATCH
 And set up the plugin after the `commonjs` plugin:
 
 {% source javascript hl_lines="4" %}
-      resolve({ browser: true, preferBuiltins: false }),
-      commonjs(),
+resolve({ browser: true, preferBuiltins: false }),
+commonjs(),
 
-      typescript({ sourceMap: !production, inlineSources: !production }),
+typescript({ sourceMap: !production, inlineSources: !production }),
 
-      copy({
+copy({
 {% endsource %}
 
 We're configuring the source maps to generate in development builds and telling TypeScript to [inline the original TS source](https://www.typescriptlang.org/tsconfig/#inlineSources) into the source map. I find the inlining of the source helps the browsers to be able to display the source and line/column numbering {% aside without issue. %}Without needing to set up a source directory mapping, something I've never had function well. YMMV. {% endaside %}
@@ -155,7 +155,7 @@ import browser from "webextension-polyfill"
 console.log(`Hello, World! From TS! ${browser.runtime.id}`)
 ```
 
-	
+
 #### The Trouble with ~~Tribbles~~ Types
 
 If you're using TypeScript, you might notice this fun warning show up in the Rollup output, and you might have an error in your editor for the same issue:
@@ -214,7 +214,7 @@ This API {% aside is event-driven %}The browser extension APIs where an extensio
 - `onInputStarted` Called with no arguments when the user has typed in the full keyword followed by a space
 - `onInputChanged` Called with the current input and a callback that allows setting suggestions
 - `onInputEntered` Called when the user accepts one of the suggestions
-- `onInputCancelled` Called when the user escapes/closes the omnibox 
+- `onInputCancelled` Called when the user escapes/closes the omnibox
 
 We'll only use `onInputChanged` and `onInputEntered` for our extension, but to demonstrate the others and get a sense of how this API works, we'll add some basic logging. Add the following to the end of `src/background/index.ts`:
 
@@ -225,7 +225,7 @@ browser.omnibox.onInputStarted.addListener(() => {
 
 browser.omnibox.onInputChanged.addListener((input, suggest) => {
   console.log(`Input changed! ${input}`)
-  
+
   suggest([
     { content: "s1", description: "This is suggestion 1" },
     { content: "s2", description: "This is suggestion 2" },
@@ -260,7 +260,7 @@ The heart of what we'll be expanding upon in future posts of this series is this
 {% source typescript hl_lines="4 5 6 7 8 9" %}
 browser.omnibox.onInputChanged.addListener((text, suggest) => {
   console.log(`Input changed! ${text}`)
-  
+
   suggest([
     { content: "s1", description: "This is suggestion 1" },
     { content: "s2", description: "This is suggestion 2" },

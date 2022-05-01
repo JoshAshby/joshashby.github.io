@@ -11,7 +11,7 @@
     & pre.highlight {
       @apply bg-slate-900 dark:bg-slate-800 text-white leading-normal font-mono p-4 overflow-scroll;
 
-      @apply border-0 border-t-8 border-sky-900;
+      @apply border-0 border-t-8 border-sky-900 rounded-none md:px-8;
     }
   }
 
@@ -19,8 +19,20 @@
   figure.highlight {
     @apply my-4;
 
+    & > div.source-location {
+      @apply mx-2 md:mx-8 mt-0 mb-0;
+    }
+
     & > pre {
-      @apply bg-slate-900 dark:bg-slate-800 border-0 border-t-8 border-sky-900 overflow-scroll p-4;
+      @apply bg-slate-900 dark:bg-slate-800 border-0 border-t-8 border-sky-900 overflow-scroll p-4 md:px-8 rounded-none;
+    }
+
+    & > div.source-location + pre {
+      @apply my-0;
+    }
+
+    & > pre + figcaption {
+      @apply mt-0;
     }
   }
 
@@ -51,7 +63,7 @@
     }
 
     & figcaption {
-      @apply mt-0;
+      @apply mx-2 md:mx-8;
     }
   }
 

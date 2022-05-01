@@ -12,6 +12,10 @@
   {% seo %}
 
   {% vite_stylesheet_tag ashby %}
+
+  <style>
+  {{ page.style }}
+  </style>
 </head>
 
 <body>
@@ -44,13 +48,13 @@
     </nav>
   </section>
 
-  <main class="mt-10 lg:mt-5">
-    <div class="prose dark:prose-invert">
+  <main>
+    <div class="prose dark:prose-invert content max-w-screen-md mt-10 lg:mt-5">
       {{ content }}
     </div>
 
     <footer class="border-t-2 border-sky-900 my-4 pt-4 text-sm w-full">
-      <p class="prose text-xs dark:prose-invert">
+      <p class="prose text-xs dark:prose-invert mx-2 md:mx-8">
         Found an error or have an improvement?
         <a href="https://github.com/JoshAshby/joshashby.github.io/tree/source/{{ page.path }}">Suggest a correction!</a> | <span class="text-gray-300 text-xs">© Joshua Ashby</span>
       </p>

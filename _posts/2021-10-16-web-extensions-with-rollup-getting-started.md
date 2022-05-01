@@ -7,7 +7,7 @@ tags:
 ---
 
 {% include annotation_info.html %}
-	
+
 *Updated 2021-Oct-23 to cleanup some wording and adjust some formatting things*
 
 I've built a number of personal and work related browser extensions over the years and, consequentally, I've tried a number of different patterns for building extensions. For simpler extensions the modern and lightweight [Vanilla JS](http://vanilla-js.com/) can take you pretty far, but sometimes more advanced tooling (or at least more "comfortable" tooling) is either necessary, or at a minimum, desired. For me, it's the latter. I prefer to use [TypeScript](https://www.typescriptlang.org/), [Svelte](https://svelte.dev/) and [Tailwind CSS](https://tailwindcss.com/) as I feel more productive with them and they afford me the developer experience that fits me best at this point in time.
@@ -117,7 +117,7 @@ export default [
         },
         delimiters: ["", ""],
       }),
-        
+
       resolve({ browser: true, preferBuiltins: false }),
       commonjs(),
 
@@ -155,12 +155,12 @@ export default [
 In Rollup you can export either a single config object or an array of config objects. We'll jump straight to exporting an array of objects as we'll add another configuration for the pop-up page later which will include the Svelte plugin and have some different needs around what gets copied over.
 
 ```javascript
-    input: "src/background/index.js",
-    output: {
-      sourcemap: !production,
-      dir: "dist/background/",
-      format: "esm",
-    },
+input: "src/background/index.js",
+output: {
+  sourcemap: !production,
+  dir: "dist/background/",
+  format: "esm",
+},
 ```
 
 Here we're telling Rollup that we'll package `src/background/index.js` as an ES module (via `format: "esm"`), enabling or disabling sourcemaps according to if this is a production build, and place the output into `dist/background`. Rollup will take care of creating `dist/` and other directories if they doesn't exist which is why we didn't bother with creating it before.
@@ -168,22 +168,22 @@ Here we're telling Rollup that we'll package `src/background/index.js` as an ES 
 Finally let's take a look at the plugins we'll be using for `src/background/index.js`:
 
 {% source javascript hl_lines="2 4" %}
-      replace({
-        preventAssignment: true,
-        values: {
-          "process.env.NODE_ENV": JSON.stringify(nodeEnv),
-        },
-      }),
+replace({
+  preventAssignment: true,
+  values: {
+    "process.env.NODE_ENV": JSON.stringify(nodeEnv),
+  },
+}),
 {% endsource %}
 
-As stated above, we'll being using the replace plugin to replace any occurance of `process.env.NODE_ENV` with the value of `NODE_ENV`. This might seem weird to have to do manually if you're coming from Webpack or Parcel, but it's a minimal addition to our config that I don't mind having. We're also telling the plugin that if it detects an assignment to `process.env.NODE_ENV`, it shouldn't replace it with our hard coded string, via the `preventAssignment` option. 
+As stated above, we'll being using the replace plugin to replace any occurance of `process.env.NODE_ENV` with the value of `NODE_ENV`. This might seem weird to have to do manually if you're coming from Webpack or Parcel, but it's a minimal addition to our config that I don't mind having. We're also telling the plugin that if it detects an assignment to `process.env.NODE_ENV`, it shouldn't replace it with our hard coded string, via the `preventAssignment` option.
 
 {% source javascript hl_lines="2 3 5" %}
-      resolve({
-        browser: true,
-        preferBuiltins: false
-      }),
-      commonjs(),
+resolve({
+  browser: true,
+  preferBuiltins: false
+}),
+commonjs(),
 {% endsource %}
 
 We need to tell the resolve plugin to act a little differently since we're bundling for a browser, by using any browser configurations found in imported `package.json` and to not try and use Node built ins. We also add support for pulling in CommonJS modules even if we're bundling as an ESM which will greatly increase the number of npm packages we can make use of.
@@ -192,19 +192,19 @@ We need to tell the resolve plugin to act a little differently since we're bundl
 I've had issues with the node built ins and haven't been able to get polyfills to work or been able to remove the `preferBuiltins` flag. It's only effected a small number of packages, which I've been able to find alternatives for so I just leave this flag in place for now. If anyone has advice on how to get these to play nice together, shoot me a message, I'll give it a go and update this post!
 
 {% source javascript hl_lines="4 8 11" %}
-      copy({
-        targets: [
-          {
-            src: `src/manifest.json`,
-            dest: "dist/",
-          },
-          {
-            src: "src/background/index.html",
-            dest: "dist/background/",
-          },
-          { src: "src/assets/", dest: "dist/" },
-        ],
-      }),
+copy({
+  targets: [
+    {
+      src: `src/manifest.json`,
+      dest: "dist/",
+    },
+    {
+      src: "src/background/index.html",
+      dest: "dist/background/",
+    },
+    { src: "src/assets/", dest: "dist/" },
+  ],
+}),
 {% endsource %}
 
 And finally we copy over some files. We don't want `dist/` hanging out in our repository so we'll copy it over from `src/`, so that it stays closer to the files it references. Additionally, we'll copy over an HTML file for `src/background/index.js` to live in (more on this in just a second), and finally we'll copy over all assets while we're at it; I throw fonts, SVGs, logos and more into `src/assets/`.
@@ -238,7 +238,7 @@ The last part before we can fire up Rollup and give this a go, the magic [`src/m
 ```json
 {
   "manifest_version": 2,
-  
+
   "version": "1.0.0",
   "name": "Web Ext",
   "description": "",
@@ -256,10 +256,10 @@ If you took a look at the documentation for the `background` key in the manifest
 Lets add two scripts to our `package.json` to help us run Rollup in development and production modes a little easier:
 
 {% source json hl_lines="2 3" %}
-  "scripts": {
-    "start:rollup": "rollup -c -w",
-    "build:rollup": "rollup -c"
-  },
+"scripts": {
+  "start:rollup": "rollup -c -w",
+  "build:rollup": "rollup -c"
+},
 {% endsource %}
 
 The `-w` flag tells Rollup to watch the files and rerun the build if anything changes, which comes in handy with developing and iterating.
@@ -292,7 +292,7 @@ There should be a button labeled "Load Temporary Add-on..." but if it's not visi
 
 ![](/assets/2021-07-03-web-extensions-with-svelte-and-rollup/firefox-step-2.png)
 
-Click on the button and navigate to your built `dist/` directory and select the `manifest.json` file to load it your extension. 
+Click on the button and navigate to your built `dist/` directory and select the `manifest.json` file to load it your extension.
 
 ![](/assets/2021-07-03-web-extensions-with-svelte-and-rollup/firefox-step-3.png)
 
@@ -306,7 +306,7 @@ This'll open up a new tab with a developer console and you should see our "Hello
 ##### Chrome
 In Chrome, type in `about:extensions` into the URL bar and press enter. You might need to make sure that that "Developer mode" switch is turned on in order to see the button "Load unpacked"
 
-Click on "Load unpacked" and navigate to your extensions directory and select the `dist/` directory to load your extension. 
+Click on "Load unpacked" and navigate to your extensions directory and select the `dist/` directory to load your extension.
 
 ![](/assets/2021-07-03-web-extensions-with-svelte-and-rollup/chrome-step-1.png)
 
