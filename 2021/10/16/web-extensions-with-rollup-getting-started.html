@@ -14,8 +14,8 @@
 <meta name="generator" content="Jekyll v4.2.2" />
 <meta property="og:title" content="Browser Extensions with Rollup - Getting Started" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="This post contains inline annotations/footnotes to help add context, helpful tips or expand upon a tangent in the text. Expand them by clicking or tapping on them Annotations might have their own annotationsSuch as this one! inside of them too. Updated 2021-Oct-23 to cleanup some wording and adjust some formatting things" />
-<meta property="og:description" content="This post contains inline annotations/footnotes to help add context, helpful tips or expand upon a tangent in the text. Expand them by clicking or tapping on them Annotations might have their own annotationsSuch as this one! inside of them too. Updated 2021-Oct-23 to cleanup some wording and adjust some formatting things" />
+<meta name="description" content="This post contains inline annotations/footnotes to help add context, helpful tips or expand upon a tangent in the text. Expand them by clicking or tapping on them Annotations might have their own annotationsSuch as this one! inside of them too." />
+<meta property="og:description" content="This post contains inline annotations/footnotes to help add context, helpful tips or expand upon a tangent in the text. Expand them by clicking or tapping on them Annotations might have their own annotationsSuch as this one! inside of them too." />
 <link rel="canonical" href="https://joshisa.ninja/2021/10/16/web-extensions-with-rollup-getting-started.html" />
 <meta property="og:url" content="https://joshisa.ninja/2021/10/16/web-extensions-with-rollup-getting-started.html" />
 <meta property="og:site_name" content="Ashby’s Hideout" />
@@ -24,11 +24,15 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Browser Extensions with Rollup - Getting Started" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2021-10-16T00:00:00+00:00","datePublished":"2021-10-16T00:00:00+00:00","description":"This post contains inline annotations/footnotes to help add context, helpful tips or expand upon a tangent in the text. Expand them by clicking or tapping on them Annotations might have their own annotationsSuch as this one! inside of them too. Updated 2021-Oct-23 to cleanup some wording and adjust some formatting things","headline":"Browser Extensions with Rollup - Getting Started","mainEntityOfPage":{"@type":"WebPage","@id":"https://joshisa.ninja/2021/10/16/web-extensions-with-rollup-getting-started.html"},"url":"https://joshisa.ninja/2021/10/16/web-extensions-with-rollup-getting-started.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2021-10-16T00:00:00+00:00","datePublished":"2021-10-16T00:00:00+00:00","description":"This post contains inline annotations/footnotes to help add context, helpful tips or expand upon a tangent in the text. Expand them by clicking or tapping on them Annotations might have their own annotationsSuch as this one! inside of them too.","headline":"Browser Extensions with Rollup - Getting Started","mainEntityOfPage":{"@type":"WebPage","@id":"https://joshisa.ninja/2021/10/16/web-extensions-with-rollup-getting-started.html"},"url":"https://joshisa.ninja/2021/10/16/web-extensions-with-rollup-getting-started.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-  <link rel="stylesheet" href="/vite/assets/ashby.fb7b9645.css" media="screen"/>
+  <link rel="stylesheet" href="/vite/assets/ashby.1db9b6a8.css" media="screen"/>
+
+  <style>
+  
+  </style>
 </head>
 
 <body>
@@ -58,11 +62,11 @@
     </nav>
   </section>
 
-  <main class="mt-10 lg:mt-5">
-    <div class="prose dark:prose-invert">
+  <main>
+    <div class="prose dark:prose-invert content max-w-screen-md mt-10 lg:mt-5">
       <header id="page-header">
-  <div class="flex flex-col space-y-4">
-    <h1>Browser Extensions with Rollup - Getting Started</h1>
+  <div class="flex flex-col flex-grow space-y-4">
+    <h1 class="mb-2">Browser Extensions with Rollup - Getting Started</h1>
 
     <div class="flex flex-row space-x-2 items-center">
       <div class="flex flex-col md:flex-row items-center space-x-1 text-sm leading-5 text-gray-500 dark:text-gray-400 sm:mr-6 font-sans">
@@ -70,7 +74,7 @@
         <time class="whitespace-nowrap" datetime="2021-10-16">2021-Oct-16</time>
       </div>
 
-      <div class="flex flex-row flex-wrap space-x-1 items-center">
+      <div class="flex flex-row flex-wrap space-x-1 items-center justify-end flex-grow">
         
           <a href="/tags#browser-extension" name="browser-extension"><span class="tag">browser-extension</span></a>
         
@@ -193,7 +197,7 @@
         <span class="p">},</span>
         <span class="na">delimiters</span><span class="p">:</span> <span class="p">[</span><span class="dl">""</span><span class="p">,</span> <span class="dl">""</span><span class="p">],</span>
       <span class="p">}),</span>
-        
+
       <span class="nx">resolve</span><span class="p">({</span> <span class="na">browser</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="na">preferBuiltins</span><span class="p">:</span> <span class="kc">false</span> <span class="p">}),</span>
       <span class="nx">commonjs</span><span class="p">(),</span>
 
@@ -229,51 +233,51 @@
 
 <p>In Rollup you can export either a single config object or an array of config objects. We’ll jump straight to exporting an array of objects as we’ll add another configuration for the pop-up page later which will include the Svelte plugin and have some different needs around what gets copied over.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nx">input</span><span class="p">:</span> <span class="dl">"</span><span class="s2">src/background/index.js</span><span class="dl">"</span><span class="p">,</span>
-    <span class="nx">output</span><span class="p">:</span> <span class="p">{</span>
-      <span class="nl">sourcemap</span><span class="p">:</span> <span class="o">!</span><span class="nx">production</span><span class="p">,</span>
-      <span class="nx">dir</span><span class="p">:</span> <span class="dl">"</span><span class="s2">dist/background/</span><span class="dl">"</span><span class="p">,</span>
-      <span class="nx">format</span><span class="p">:</span> <span class="dl">"</span><span class="s2">esm</span><span class="dl">"</span><span class="p">,</span>
-    <span class="p">},</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">input</span><span class="p">:</span> <span class="dl">"</span><span class="s2">src/background/index.js</span><span class="dl">"</span><span class="p">,</span>
+<span class="nx">output</span><span class="p">:</span> <span class="p">{</span>
+  <span class="nl">sourcemap</span><span class="p">:</span> <span class="o">!</span><span class="nx">production</span><span class="p">,</span>
+  <span class="nx">dir</span><span class="p">:</span> <span class="dl">"</span><span class="s2">dist/background/</span><span class="dl">"</span><span class="p">,</span>
+  <span class="nx">format</span><span class="p">:</span> <span class="dl">"</span><span class="s2">esm</span><span class="dl">"</span><span class="p">,</span>
+<span class="p">},</span>
 </code></pre></div></div>
 
 <p>Here we’re telling Rollup that we’ll package <code class="language-plaintext highlighter-rouge">src/background/index.js</code> as an ES module (via <code class="language-plaintext highlighter-rouge">format: "esm"</code>), enabling or disabling sourcemaps according to if this is a production build, and place the output into <code class="language-plaintext highlighter-rouge">dist/background</code>. Rollup will take care of creating <code class="language-plaintext highlighter-rouge">dist/</code> and other directories if they doesn’t exist which is why we didn’t bother with creating it before.</p>
 
 <p>Finally let’s take a look at the plugins we’ll be using for <code class="language-plaintext highlighter-rouge">src/background/index.js</code>:</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><div class="emphasized">      <span class="nx">replace</span><span class="p">({</span>
-<span class="hll">        <span class="na">preventAssignment</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-</span>        <span class="na">values</span><span class="p">:</span> <span class="p">{</span>
-<span class="hll">          <span class="dl">"</span><span class="s2">process.env.NODE_ENV</span><span class="dl">"</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">nodeEnv</span><span class="p">),</span>
-</span>        <span class="p">},</span>
-      <span class="p">}),</span></div></code></pre></figure>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><div class="emphasized"><span class="nx">replace</span><span class="p">({</span>
+<span class="hll">  <span class="na">preventAssignment</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+</span>  <span class="na">values</span><span class="p">:</span> <span class="p">{</span>
+<span class="hll">    <span class="dl">"</span><span class="s2">process.env.NODE_ENV</span><span class="dl">"</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">nodeEnv</span><span class="p">),</span>
+</span>  <span class="p">},</span>
+<span class="p">}),</span></div></code></pre></figure>
 
 <p>As stated above, we’ll being using the replace plugin to replace any occurance of <code class="language-plaintext highlighter-rouge">process.env.NODE_ENV</code> with the value of <code class="language-plaintext highlighter-rouge">NODE_ENV</code>. This might seem weird to have to do manually if you’re coming from Webpack or Parcel, but it’s a minimal addition to our config that I don’t mind having. We’re also telling the plugin that if it detects an assignment to <code class="language-plaintext highlighter-rouge">process.env.NODE_ENV</code>, it shouldn’t replace it with our hard coded string, via the <code class="language-plaintext highlighter-rouge">preventAssignment</code> option.</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><div class="emphasized">      <span class="nx">resolve</span><span class="p">({</span>
-<span class="hll">        <span class="na">browser</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-</span><span class="hll">        <span class="na">preferBuiltins</span><span class="p">:</span> <span class="kc">false</span>
-</span>      <span class="p">}),</span>
-<span class="hll">      <span class="nx">commonjs</span><span class="p">(),</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><div class="emphasized"><span class="nx">resolve</span><span class="p">({</span>
+<span class="hll">  <span class="na">browser</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+</span><span class="hll">  <span class="na">preferBuiltins</span><span class="p">:</span> <span class="kc">false</span>
+</span><span class="p">}),</span>
+<span class="hll"><span class="nx">commonjs</span><span class="p">(),</span>
 </span></div></code></pre></figure>
 
 <p>We need to tell the resolve plugin to act a little differently since we’re bundling for a browser, by using any browser configurations found in imported <code class="language-plaintext highlighter-rouge">package.json</code> and to not try and use Node built ins. We also add support for pulling in CommonJS modules even if we’re bundling as an ESM which will greatly increase the number of npm packages we can make use of.</p>
 
 <p class="callout">I’ve had issues with the node built ins and haven’t been able to get polyfills to work or been able to remove the <code class="language-plaintext highlighter-rouge">preferBuiltins</code> flag. It’s only effected a small number of packages, which I’ve been able to find alternatives for so I just leave this flag in place for now. If anyone has advice on how to get these to play nice together, shoot me a message, I’ll give it a go and update this post!</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><div class="emphasized">      <span class="nx">copy</span><span class="p">({</span>
-        <span class="na">targets</span><span class="p">:</span> <span class="p">[</span>
-          <span class="p">{</span>
-<span class="hll">            <span class="na">src</span><span class="p">:</span> <span class="s2">`src/manifest.json`</span><span class="p">,</span>
-</span>            <span class="na">dest</span><span class="p">:</span> <span class="dl">"</span><span class="s2">dist/</span><span class="dl">"</span><span class="p">,</span>
-          <span class="p">},</span>
-          <span class="p">{</span>
-<span class="hll">            <span class="na">src</span><span class="p">:</span> <span class="dl">"</span><span class="s2">src/background/index.html</span><span class="dl">"</span><span class="p">,</span>
-</span>            <span class="na">dest</span><span class="p">:</span> <span class="dl">"</span><span class="s2">dist/background/</span><span class="dl">"</span><span class="p">,</span>
-          <span class="p">},</span>
-<span class="hll">          <span class="p">{</span> <span class="na">src</span><span class="p">:</span> <span class="dl">"</span><span class="s2">src/assets/</span><span class="dl">"</span><span class="p">,</span> <span class="na">dest</span><span class="p">:</span> <span class="dl">"</span><span class="s2">dist/</span><span class="dl">"</span> <span class="p">},</span>
-</span>        <span class="p">],</span>
-      <span class="p">}),</span></div></code></pre></figure>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><div class="emphasized"><span class="nx">copy</span><span class="p">({</span>
+  <span class="na">targets</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+<span class="hll">      <span class="na">src</span><span class="p">:</span> <span class="s2">`src/manifest.json`</span><span class="p">,</span>
+</span>      <span class="na">dest</span><span class="p">:</span> <span class="dl">"</span><span class="s2">dist/</span><span class="dl">"</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+<span class="hll">      <span class="na">src</span><span class="p">:</span> <span class="dl">"</span><span class="s2">src/background/index.html</span><span class="dl">"</span><span class="p">,</span>
+</span>      <span class="na">dest</span><span class="p">:</span> <span class="dl">"</span><span class="s2">dist/background/</span><span class="dl">"</span><span class="p">,</span>
+    <span class="p">},</span>
+<span class="hll">    <span class="p">{</span> <span class="na">src</span><span class="p">:</span> <span class="dl">"</span><span class="s2">src/assets/</span><span class="dl">"</span><span class="p">,</span> <span class="na">dest</span><span class="p">:</span> <span class="dl">"</span><span class="s2">dist/</span><span class="dl">"</span> <span class="p">},</span>
+</span>  <span class="p">],</span>
+<span class="p">}),</span></div></code></pre></figure>
 
 <p>And finally we copy over some files. We don’t want <code class="language-plaintext highlighter-rouge">dist/</code> hanging out in our repository so we’ll copy it over from <code class="language-plaintext highlighter-rouge">src/</code>, so that it stays closer to the files it references. Additionally, we’ll copy over an HTML file for <code class="language-plaintext highlighter-rouge">src/background/index.js</code> to live in (more on this in just a second), and finally we’ll copy over all assets while we’re at it; I throw fonts, SVGs, logos and more into <code class="language-plaintext highlighter-rouge">src/assets/</code>.</p>
 
@@ -303,7 +307,7 @@
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"manifest_version"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  
+
   </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Web Ext"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
@@ -319,10 +323,10 @@
 
 <p>Lets add two scripts to our <code class="language-plaintext highlighter-rouge">package.json</code> to help us run Rollup in development and production modes a little easier:</p>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><div class="emphasized"><span class="w">  </span><span class="nl">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="hll"><span class="w">    </span><span class="nl">"start:rollup"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rollup -c -w"</span><span class="p">,</span>
-</span><span class="hll"><span class="w">    </span><span class="nl">"build:rollup"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rollup -c"</span>
-</span><span class="w">  </span><span class="p">}</span><span class="err">,</span></div></code></pre></figure>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><div class="emphasized"><span class="nl">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="hll"><span class="w">  </span><span class="nl">"start:rollup"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rollup -c -w"</span><span class="p">,</span>
+</span><span class="hll"><span class="w">  </span><span class="nl">"build:rollup"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rollup -c"</span>
+</span><span class="p">}</span><span class="err">,</span></div></code></pre></figure>
 
 <p>The <code class="language-plaintext highlighter-rouge">-w</code> flag tells Rollup to watch the files and rerun the build if anything changes, which comes in handy with developing and iterating.</p>
 
@@ -386,7 +390,7 @@ created dist/background in 14ms
     </div>
 
     <footer class="border-t-2 border-sky-900 my-4 pt-4 text-sm w-full">
-      <p class="prose text-xs dark:prose-invert">
+      <p class="prose text-xs dark:prose-invert mx-2 md:mx-8">
         Found an error or have an improvement?
         <a href="https://github.com/JoshAshby/joshashby.github.io/tree/source/_posts/2021-10-16-web-extensions-with-rollup-getting-started.md">Suggest a correction!</a> | <span class="text-gray-300 text-xs">© Joshua Ashby</span>
       </p>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://joshisa.ninja/feed.xml" rel="self" type="application/atom+xml" /><link href="https://joshisa.ninja/" rel="alternate" type="text/html" /><updated>2022-05-01T03:17:36+00:00</updated><id>https://joshisa.ninja/feed.xml</id><title type="html">Ashby’s Hideout</title><subtitle>Sometimes I convert coffee into code. Rubber ducks are awesome.</subtitle><entry><title type="html">Browser Extensions with Rollup - Omnibox Chatter</title><link href="https://joshisa.ninja/2021/10/22/browser-extension-with-rollup-omnibox-chatter.html" rel="alternate" type="text/html" title="Browser Extensions with Rollup - Omnibox Chatter" /><published>2021-10-22T00:00:00+00:00</published><updated>2021-10-22T00:00:00+00:00</updated><id>https://joshisa.ninja/2021/10/22/browser-extension-with-rollup-omnibox-chatter</id><content type="html" xml:base="https://joshisa.ninja/2021/10/22/browser-extension-with-rollup-omnibox-chatter.html"><![CDATA[<div>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://joshisa.ninja/feed.xml" rel="self" type="application/atom+xml" /><link href="https://joshisa.ninja/" rel="alternate" type="text/html" /><updated>2022-05-01T04:04:05+00:00</updated><id>https://joshisa.ninja/feed.xml</id><title type="html">Ashby’s Hideout</title><subtitle>Sometimes I convert coffee into code. Rubber ducks are awesome.</subtitle><entry><title type="html">Browser Extensions with Rollup - Omnibox Chatter</title><link href="https://joshisa.ninja/2021/10/22/browser-extension-with-rollup-omnibox-chatter.html" rel="alternate" type="text/html" title="Browser Extensions with Rollup - Omnibox Chatter" /><published>2021-10-22T00:00:00+00:00</published><updated>2021-10-22T00:00:00+00:00</updated><id>https://joshisa.ninja/2021/10/22/browser-extension-with-rollup-omnibox-chatter</id><content type="html" xml:base="https://joshisa.ninja/2021/10/22/browser-extension-with-rollup-omnibox-chatter.html"><![CDATA[<div>
   <em>
   This post contains inline annotations/footnotes to help add context, helpful tips or expand upon a tangent in the text. Expand them by <a href="#annotation-1" class="annotation-trigger -gray">clicking or tapping on them</a>
 <span id="annotation-1" class="annotation">Annotations might have their own <a href="#annotation-2" class="annotation-trigger -red">annotations</a><span id="annotation-2" class="annotation">Such as this one!</span> inside of them too.</span>
@@ -34,12 +34,12 @@
 
 <p>And set up the plugin after the <code class="language-plaintext highlighter-rouge">commonjs</code> plugin:</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><div class="emphasized">      <span class="nx">resolve</span><span class="p">({</span> <span class="na">browser</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="na">preferBuiltins</span><span class="p">:</span> <span class="kc">false</span> <span class="p">}),</span>
-      <span class="nx">commonjs</span><span class="p">(),</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><div class="emphasized"><span class="nx">resolve</span><span class="p">({</span> <span class="na">browser</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="na">preferBuiltins</span><span class="p">:</span> <span class="kc">false</span> <span class="p">}),</span>
+<span class="nx">commonjs</span><span class="p">(),</span>
 
-<span class="hll">      <span class="nx">typescript</span><span class="p">({</span> <span class="na">sourceMap</span><span class="p">:</span> <span class="o">!</span><span class="nx">production</span><span class="p">,</span> <span class="na">inlineSources</span><span class="p">:</span> <span class="o">!</span><span class="nx">production</span> <span class="p">}),</span>
+<span class="hll"><span class="nx">typescript</span><span class="p">({</span> <span class="na">sourceMap</span><span class="p">:</span> <span class="o">!</span><span class="nx">production</span><span class="p">,</span> <span class="na">inlineSources</span><span class="p">:</span> <span class="o">!</span><span class="nx">production</span> <span class="p">}),</span>
 </span>
-      <span class="nx">copy</span><span class="p">({</span></div></code></pre></figure>
+<span class="nx">copy</span><span class="p">({</span></div></code></pre></figure>
 
 <p>We’re configuring the source maps to generate in development builds and telling TypeScript to <a href="https://www.typescriptlang.org/tsconfig/#inlineSources">inline the original TS source</a> into the source map. I find the inlining of the source helps the browsers to be able to display the source and line/column numbering <a href="#annotation-4" class="annotation-trigger -gray">without issue.</a>
 <span id="annotation-4" class="annotation">Without needing to set up a source directory mapping, something I’ve never had function well. YMMV.</span></p>
@@ -210,7 +210,7 @@ created dist/background in 1s
 
 <span class="nx">browser</span><span class="p">.</span><span class="nx">omnibox</span><span class="p">.</span><span class="nx">onInputChanged</span><span class="p">.</span><span class="nx">addListener</span><span class="p">((</span><span class="nx">input</span><span class="p">,</span> <span class="nx">suggest</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`Input changed! </span><span class="p">${</span><span class="nx">input</span><span class="p">}</span><span class="s2">`</span><span class="p">)</span>
-  
+
   <span class="nx">suggest</span><span class="p">([</span>
     <span class="p">{</span> <span class="na">content</span><span class="p">:</span> <span class="dl">"</span><span class="s2">s1</span><span class="dl">"</span><span class="p">,</span> <span class="na">description</span><span class="p">:</span> <span class="dl">"</span><span class="s2">This is suggestion 1</span><span class="dl">"</span> <span class="p">},</span>
     <span class="p">{</span> <span class="na">content</span><span class="p">:</span> <span class="dl">"</span><span class="s2">s2</span><span class="dl">"</span><span class="p">,</span> <span class="na">description</span><span class="p">:</span> <span class="dl">"</span><span class="s2">This is suggestion 2</span><span class="dl">"</span> <span class="p">},</span>
@@ -244,7 +244,7 @@ created dist/background in 1s
 
 <figure class="highlight"><pre><code class="language-typescript" data-lang="typescript"><div class="emphasized"><span class="nx">browser</span><span class="p">.</span><span class="nx">omnibox</span><span class="p">.</span><span class="nx">onInputChanged</span><span class="p">.</span><span class="nx">addListener</span><span class="p">((</span><span class="nx">text</span><span class="p">,</span> <span class="nx">suggest</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`Input changed! </span><span class="p">${</span><span class="nx">text</span><span class="p">}</span><span class="s2">`</span><span class="p">)</span>
-  
+
 <span class="hll">  <span class="nx">suggest</span><span class="p">([</span>
 </span><span class="hll">    <span class="p">{</span> <span class="na">content</span><span class="p">:</span> <span class="dl">"</span><span class="s2">s1</span><span class="dl">"</span><span class="p">,</span> <span class="na">description</span><span class="p">:</span> <span class="dl">"</span><span class="s2">This is suggestion 1</span><span class="dl">"</span> <span class="p">},</span>
 </span><span class="hll">    <span class="p">{</span> <span class="na">content</span><span class="p">:</span> <span class="dl">"</span><span class="s2">s2</span><span class="dl">"</span><span class="p">,</span> <span class="na">description</span><span class="p">:</span> <span class="dl">"</span><span class="s2">This is suggestion 2</span><span class="dl">"</span> <span class="p">},</span>
@@ -370,7 +370,7 @@ created dist/background in 1s
         <span class="p">},</span>
         <span class="na">delimiters</span><span class="p">:</span> <span class="p">[</span><span class="dl">""</span><span class="p">,</span> <span class="dl">""</span><span class="p">],</span>
       <span class="p">}),</span>
-        
+
       <span class="nx">resolve</span><span class="p">({</span> <span class="na">browser</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="na">preferBuiltins</span><span class="p">:</span> <span class="kc">false</span> <span class="p">}),</span>
       <span class="nx">commonjs</span><span class="p">(),</span>
 
@@ -406,51 +406,51 @@ created dist/background in 1s
 
 <p>In Rollup you can export either a single config object or an array of config objects. We’ll jump straight to exporting an array of objects as we’ll add another configuration for the pop-up page later which will include the Svelte plugin and have some different needs around what gets copied over.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nx">input</span><span class="p">:</span> <span class="dl">"</span><span class="s2">src/background/index.js</span><span class="dl">"</span><span class="p">,</span>
-    <span class="nx">output</span><span class="p">:</span> <span class="p">{</span>
-      <span class="nl">sourcemap</span><span class="p">:</span> <span class="o">!</span><span class="nx">production</span><span class="p">,</span>
-      <span class="nx">dir</span><span class="p">:</span> <span class="dl">"</span><span class="s2">dist/background/</span><span class="dl">"</span><span class="p">,</span>
-      <span class="nx">format</span><span class="p">:</span> <span class="dl">"</span><span class="s2">esm</span><span class="dl">"</span><span class="p">,</span>
-    <span class="p">},</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">input</span><span class="p">:</span> <span class="dl">"</span><span class="s2">src/background/index.js</span><span class="dl">"</span><span class="p">,</span>
+<span class="nx">output</span><span class="p">:</span> <span class="p">{</span>
+  <span class="nl">sourcemap</span><span class="p">:</span> <span class="o">!</span><span class="nx">production</span><span class="p">,</span>
+  <span class="nx">dir</span><span class="p">:</span> <span class="dl">"</span><span class="s2">dist/background/</span><span class="dl">"</span><span class="p">,</span>
+  <span class="nx">format</span><span class="p">:</span> <span class="dl">"</span><span class="s2">esm</span><span class="dl">"</span><span class="p">,</span>
+<span class="p">},</span>
 </code></pre></div></div>
 
 <p>Here we’re telling Rollup that we’ll package <code class="language-plaintext highlighter-rouge">src/background/index.js</code> as an ES module (via <code class="language-plaintext highlighter-rouge">format: "esm"</code>), enabling or disabling sourcemaps according to if this is a production build, and place the output into <code class="language-plaintext highlighter-rouge">dist/background</code>. Rollup will take care of creating <code class="language-plaintext highlighter-rouge">dist/</code> and other directories if they doesn’t exist which is why we didn’t bother with creating it before.</p>
 
 <p>Finally let’s take a look at the plugins we’ll be using for <code class="language-plaintext highlighter-rouge">src/background/index.js</code>:</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><div class="emphasized">      <span class="nx">replace</span><span class="p">({</span>
-<span class="hll">        <span class="na">preventAssignment</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-</span>        <span class="na">values</span><span class="p">:</span> <span class="p">{</span>
-<span class="hll">          <span class="dl">"</span><span class="s2">process.env.NODE_ENV</span><span class="dl">"</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">nodeEnv</span><span class="p">),</span>
-</span>        <span class="p">},</span>
-      <span class="p">}),</span></div></code></pre></figure>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><div class="emphasized"><span class="nx">replace</span><span class="p">({</span>
+<span class="hll">  <span class="na">preventAssignment</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+</span>  <span class="na">values</span><span class="p">:</span> <span class="p">{</span>
+<span class="hll">    <span class="dl">"</span><span class="s2">process.env.NODE_ENV</span><span class="dl">"</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">nodeEnv</span><span class="p">),</span>
+</span>  <span class="p">},</span>
+<span class="p">}),</span></div></code></pre></figure>
 
 <p>As stated above, we’ll being using the replace plugin to replace any occurance of <code class="language-plaintext highlighter-rouge">process.env.NODE_ENV</code> with the value of <code class="language-plaintext highlighter-rouge">NODE_ENV</code>. This might seem weird to have to do manually if you’re coming from Webpack or Parcel, but it’s a minimal addition to our config that I don’t mind having. We’re also telling the plugin that if it detects an assignment to <code class="language-plaintext highlighter-rouge">process.env.NODE_ENV</code>, it shouldn’t replace it with our hard coded string, via the <code class="language-plaintext highlighter-rouge">preventAssignment</code> option.</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><div class="emphasized">      <span class="nx">resolve</span><span class="p">({</span>
-<span class="hll">        <span class="na">browser</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-</span><span class="hll">        <span class="na">preferBuiltins</span><span class="p">:</span> <span class="kc">false</span>
-</span>      <span class="p">}),</span>
-<span class="hll">      <span class="nx">commonjs</span><span class="p">(),</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><div class="emphasized"><span class="nx">resolve</span><span class="p">({</span>
+<span class="hll">  <span class="na">browser</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+</span><span class="hll">  <span class="na">preferBuiltins</span><span class="p">:</span> <span class="kc">false</span>
+</span><span class="p">}),</span>
+<span class="hll"><span class="nx">commonjs</span><span class="p">(),</span>
 </span></div></code></pre></figure>
 
 <p>We need to tell the resolve plugin to act a little differently since we’re bundling for a browser, by using any browser configurations found in imported <code class="language-plaintext highlighter-rouge">package.json</code> and to not try and use Node built ins. We also add support for pulling in CommonJS modules even if we’re bundling as an ESM which will greatly increase the number of npm packages we can make use of.</p>
 
 <p class="callout">I’ve had issues with the node built ins and haven’t been able to get polyfills to work or been able to remove the <code class="language-plaintext highlighter-rouge">preferBuiltins</code> flag. It’s only effected a small number of packages, which I’ve been able to find alternatives for so I just leave this flag in place for now. If anyone has advice on how to get these to play nice together, shoot me a message, I’ll give it a go and update this post!</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><div class="emphasized">      <span class="nx">copy</span><span class="p">({</span>
-        <span class="na">targets</span><span class="p">:</span> <span class="p">[</span>
-          <span class="p">{</span>
-<span class="hll">            <span class="na">src</span><span class="p">:</span> <span class="s2">`src/manifest.json`</span><span class="p">,</span>
-</span>            <span class="na">dest</span><span class="p">:</span> <span class="dl">"</span><span class="s2">dist/</span><span class="dl">"</span><span class="p">,</span>
-          <span class="p">},</span>
-          <span class="p">{</span>
-<span class="hll">            <span class="na">src</span><span class="p">:</span> <span class="dl">"</span><span class="s2">src/background/index.html</span><span class="dl">"</span><span class="p">,</span>
-</span>            <span class="na">dest</span><span class="p">:</span> <span class="dl">"</span><span class="s2">dist/background/</span><span class="dl">"</span><span class="p">,</span>
-          <span class="p">},</span>
-<span class="hll">          <span class="p">{</span> <span class="na">src</span><span class="p">:</span> <span class="dl">"</span><span class="s2">src/assets/</span><span class="dl">"</span><span class="p">,</span> <span class="na">dest</span><span class="p">:</span> <span class="dl">"</span><span class="s2">dist/</span><span class="dl">"</span> <span class="p">},</span>
-</span>        <span class="p">],</span>
-      <span class="p">}),</span></div></code></pre></figure>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><div class="emphasized"><span class="nx">copy</span><span class="p">({</span>
+  <span class="na">targets</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+<span class="hll">      <span class="na">src</span><span class="p">:</span> <span class="s2">`src/manifest.json`</span><span class="p">,</span>
+</span>      <span class="na">dest</span><span class="p">:</span> <span class="dl">"</span><span class="s2">dist/</span><span class="dl">"</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+<span class="hll">      <span class="na">src</span><span class="p">:</span> <span class="dl">"</span><span class="s2">src/background/index.html</span><span class="dl">"</span><span class="p">,</span>
+</span>      <span class="na">dest</span><span class="p">:</span> <span class="dl">"</span><span class="s2">dist/background/</span><span class="dl">"</span><span class="p">,</span>
+    <span class="p">},</span>
+<span class="hll">    <span class="p">{</span> <span class="na">src</span><span class="p">:</span> <span class="dl">"</span><span class="s2">src/assets/</span><span class="dl">"</span><span class="p">,</span> <span class="na">dest</span><span class="p">:</span> <span class="dl">"</span><span class="s2">dist/</span><span class="dl">"</span> <span class="p">},</span>
+</span>  <span class="p">],</span>
+<span class="p">}),</span></div></code></pre></figure>
 
 <p>And finally we copy over some files. We don’t want <code class="language-plaintext highlighter-rouge">dist/</code> hanging out in our repository so we’ll copy it over from <code class="language-plaintext highlighter-rouge">src/</code>, so that it stays closer to the files it references. Additionally, we’ll copy over an HTML file for <code class="language-plaintext highlighter-rouge">src/background/index.js</code> to live in (more on this in just a second), and finally we’ll copy over all assets while we’re at it; I throw fonts, SVGs, logos and more into <code class="language-plaintext highlighter-rouge">src/assets/</code>.</p>
 
@@ -480,7 +480,7 @@ created dist/background in 1s
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"manifest_version"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  
+
   </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Web Ext"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
@@ -496,10 +496,10 @@ created dist/background in 1s
 
 <p>Lets add two scripts to our <code class="language-plaintext highlighter-rouge">package.json</code> to help us run Rollup in development and production modes a little easier:</p>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><div class="emphasized"><span class="w">  </span><span class="nl">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="hll"><span class="w">    </span><span class="nl">"start:rollup"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rollup -c -w"</span><span class="p">,</span>
-</span><span class="hll"><span class="w">    </span><span class="nl">"build:rollup"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rollup -c"</span>
-</span><span class="w">  </span><span class="p">}</span><span class="err">,</span></div></code></pre></figure>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><div class="emphasized"><span class="nl">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="hll"><span class="w">  </span><span class="nl">"start:rollup"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rollup -c -w"</span><span class="p">,</span>
+</span><span class="hll"><span class="w">  </span><span class="nl">"build:rollup"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rollup -c"</span>
+</span><span class="p">}</span><span class="err">,</span></div></code></pre></figure>
 
 <p>The <code class="language-plaintext highlighter-rouge">-w</code> flag tells Rollup to watch the files and rerun the build if anything changes, which comes in handy with developing and iterating.</p>
 
@@ -556,7 +556,7 @@ created dist/background in 14ms
 <p><img src="/assets/2021-07-03-web-extensions-with-svelte-and-rollup/chrome-step-3.png" alt="" /></p>
 
 <h2 id="thats-all-folks">That’s all, folks</h2>
-<p>Well, for this post at least. Stay tuned for more posts in which we’ll continue building off of this foundation and end up with a functional and, potentially, somewhat useful browser extension!</p>]]></content><author><name></name></author><category term="browser-extension" /><category term="rollupjs" /><summary type="html"><![CDATA[This post contains inline annotations/footnotes to help add context, helpful tips or expand upon a tangent in the text. Expand them by clicking or tapping on them Annotations might have their own annotationsSuch as this one! inside of them too. Updated 2021-Oct-23 to cleanup some wording and adjust some formatting things]]></summary></entry><entry><title type="html">Using Github Actions to build a Jekyll 4 site and host it on Github Pages</title><link href="https://joshisa.ninja/2020/10/14/using-github-actions-to-build-a-jekyll-4-site-and-host-it-on-github-pages.html" rel="alternate" type="text/html" title="Using Github Actions to build a Jekyll 4 site and host it on Github Pages" /><published>2020-10-14T00:00:00+00:00</published><updated>2020-10-14T00:00:00+00:00</updated><id>https://joshisa.ninja/2020/10/14/using-github-actions-to-build-a-jekyll-4-site-and-host-it-on-github-pages</id><content type="html" xml:base="https://joshisa.ninja/2020/10/14/using-github-actions-to-build-a-jekyll-4-site-and-host-it-on-github-pages.html"><![CDATA[<p>A while back I decided that I was going to move this site from an older <a href="https://www.getlektor.com/">Lektor</a> setup to <a href="https://jekyllrb.com/">Jekyll</a> while retaining my Github Pages hosting setup. The reasons behind the move are little more than personal preference, but I had hoped to at least rid myself of Travis CI after being unhappy with Idera’s acquisition of it.</p>
+<p>Well, for this post at least. Stay tuned for more posts in which we’ll continue building off of this foundation and end up with a functional and, potentially, somewhat useful browser extension!</p>]]></content><author><name></name></author><category term="browser-extension" /><category term="rollupjs" /><summary type="html"><![CDATA[This post contains inline annotations/footnotes to help add context, helpful tips or expand upon a tangent in the text. Expand them by clicking or tapping on them Annotations might have their own annotationsSuch as this one! inside of them too.]]></summary></entry><entry><title type="html">Using Github Actions to build a Jekyll 4 site and host it on Github Pages</title><link href="https://joshisa.ninja/2020/10/14/using-github-actions-to-build-a-jekyll-4-site-and-host-it-on-github-pages.html" rel="alternate" type="text/html" title="Using Github Actions to build a Jekyll 4 site and host it on Github Pages" /><published>2020-10-14T00:00:00+00:00</published><updated>2020-10-14T00:00:00+00:00</updated><id>https://joshisa.ninja/2020/10/14/using-github-actions-to-build-a-jekyll-4-site-and-host-it-on-github-pages</id><content type="html" xml:base="https://joshisa.ninja/2020/10/14/using-github-actions-to-build-a-jekyll-4-site-and-host-it-on-github-pages.html"><![CDATA[<p>A while back I decided that I was going to move this site from an older <a href="https://www.getlektor.com/">Lektor</a> setup to <a href="https://jekyllrb.com/">Jekyll</a> while retaining my Github Pages hosting setup. The reasons behind the move are little more than personal preference, but I had hoped to at least rid myself of Travis CI after being unhappy with Idera’s acquisition of it.</p>
 
 <p>I initially planned on taking advantage of the automatic building and hosting of a <a href="https://docs.github.com/en/free-pro-team@latest/github/working-with-github-pages/setting-up-a-github-pages-site-with-jekyll">Jekyll site on Github Pages</a>, however after seeing that I wouldn’t be able to have custom build steps such as using PostCSS for a custom theme and being locked into <a href="https://pages.github.com/versions/">Jekyll 3</a>, I had to find my own way for building and deploying the site. Thankfully that’s an easy task now as a result of Github Actions which let me both ditch Travis CI and not have to worry about getting another CI runner authorized to push to the repo.</p>
 
