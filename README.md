@@ -1,10 +1,12 @@
 This repo contains the Jekyll setup for my personal site.
 
 ## Getting Started
-- To dev: `bin/dev-server`
-  - http://localhost:4000
-  - http://http://localhost:4000/admin/
-- To build: `bundle exec jekyll build`
+```
+asdf install
+npm install
+bundle install
+foreman start -f Procfile.dev
+```
 
 The site is built on Github Actions and deployed to Github Page using a setup
 similar to that described [here, by David Stosik](https://davidstosik.github.io/2020/05/31/static-blog-jekyll-410-github-pages-actions.html).
