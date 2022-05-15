@@ -11,28 +11,6 @@ foreman start -f Procfile.dev
 The site is built on Github Actions and deployed to Github Page using a setup
 similar to that described [here, by David Stosik](https://davidstosik.github.io/2020/05/31/static-blog-jekyll-410-github-pages-actions.html).
 
-### Devops
-
-There is a Pulumi setup for managing the DNS records and any other
-infrastructure such as the CDN for the photography page in `devops/`.
-
-Ensure you have [Pulumi](https://www.pulumi.com/docs/get-started/install/) and
-the [DO plugin](https://github.com/pulumi/pulumi-digitalocean) installed:
-
-```shell
-brew install pulumi
-pulumi plugin install resource digitalocean v4.4.1
-```
-
-Then auth the stack and get to work:
-
-```shell
-pulumi stack select
-# select dev
-pulumi preview
-pulumi up
-```
-
 ### Styling
 Postcss and tailwindcss are available to provide styling.
 
