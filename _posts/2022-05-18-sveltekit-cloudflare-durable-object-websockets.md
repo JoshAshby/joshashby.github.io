@@ -3,15 +3,15 @@ layout: post
 
 title: SvelteKit & Cloudflare Durable Object Websockets
 description: |
-  Hacking my way throught tying together SvelteKit Endpoints and Websockets to
+  Hacking my way through tying together SvelteKit Endpoints and Websockets to
   Cloudflare Durable Objects.
 
 tags:
 - svelte
+- sveltekit
 - cloudflare
 - cloudflare-pages
 - cloudflare-durable-objects
-- sveltekit
 ---
 
 {% include annotation_info.html %}
