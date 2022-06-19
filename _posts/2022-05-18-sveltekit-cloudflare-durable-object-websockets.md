@@ -1,5 +1,11 @@
 ---
+layout: post
+
 title: SvelteKit & Cloudflare Durable Object Websockets
+description: |
+  Hacking my way throught tying together SvelteKit Endpoints and Websockets to
+  Cloudflare Durable Objects.
+
 tags:
 - svelte
 - cloudflare
@@ -7,6 +13,8 @@ tags:
 - cloudflare-durable-objects
 - sveltekit
 ---
+
+{% include annotation_info.html %}
 
 I'm always eyeing light-weight setups to build out little personal tools that let me have a combo of static or Svelte based frontends and little server side APIs for persistence and the likes. Historically this took the shape of Ruby/Roda/SQLite backends with a Vite.js/Svelte frontend setup, but recently I decided to give SvelteKit a go since it checks all the boxes and requires minimal setup. I still need somewhere to painlessly host these SvelteKit based projects as I don't feel like spinning up a VPS and my go to static host, GitHub Pages, doesn't allow me to run a small back-end server. Cloudflare's been making some big splashes in this area as of late, however, so I decided to give them a go and see what's what with thier Worker and Pages platforms.
 
@@ -31,9 +39,9 @@ export class Room {
   async fetch(request) {
     const pair = new WebSocketPair()
 		pair[1].accept()
-		
+
     this.sockets = [...this.sockets, pair[1]]
-		
+
     pair[1].onMessage(({ data }) => console.log(data))
 
     this.sockets.forEach(socket => {
