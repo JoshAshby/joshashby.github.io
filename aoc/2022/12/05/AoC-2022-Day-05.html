@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>AoC 2022 Day 05 - Ashby's Hideout</title>
+  <meta name="description" content="">
+
+  <link type="application/atom+xml" rel="alternate" href="https://joshisa.ninja/feed.xml" title="Ashby's Hideout" />
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>AoC 2022 Day 05 | Ashby’s Hideout</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="AoC 2022 Day 05" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="This post contains inline annotations/footnotes to help add context, helpful tips or expand upon a tangent in the text. Expand them by clicking or tapping on them Annotations might have their own annotationsSuch as this one! inside of them too." />
+<meta property="og:description" content="This post contains inline annotations/footnotes to help add context, helpful tips or expand upon a tangent in the text. Expand them by clicking or tapping on them Annotations might have their own annotationsSuch as this one! inside of them too." />
+<link rel="canonical" href="https://joshisa.ninja/aoc/2022/12/05/AoC-2022-Day-05.html" />
+<meta property="og:url" content="https://joshisa.ninja/aoc/2022/12/05/AoC-2022-Day-05.html" />
+<meta property="og:site_name" content="Ashby’s Hideout" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-12-05T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="AoC 2022 Day 05" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-12-05T00:00:00+00:00","datePublished":"2022-12-05T00:00:00+00:00","description":"This post contains inline annotations/footnotes to help add context, helpful tips or expand upon a tangent in the text. Expand them by clicking or tapping on them Annotations might have their own annotationsSuch as this one! inside of them too.","headline":"AoC 2022 Day 05","mainEntityOfPage":{"@type":"WebPage","@id":"https://joshisa.ninja/aoc/2022/12/05/AoC-2022-Day-05.html"},"url":"https://joshisa.ninja/aoc/2022/12/05/AoC-2022-Day-05.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <link rel="stylesheet" href="/vite/assets/ashby.002df90b.css" media="screen"/>
+
+  <style>
+  
+  </style>
+</head>
+
+<body>
+  <div id="master-chief">
+    <section id="main-sidebar">
+      <nav class="sidebar-nav">
+        <h2><a href="/">Ashby's Hideout</a></h2>
+
+        <div id="nav-links" class="expandable">
+          <ul class="nav-list">
+            <li class="nav-item"><a href="/posts/">Posts</a></li>
+            <li class="nav-item"><a href="/photos/">Photos</a></li>
+            <li class="nav-item"><a href="/projects/">Projects</a></li>
+            <li class="nav-item"><a href="/resume/">Resume</a></li>
+
+            
+          </ul>
+        </div>
+
+        <div class="hamburger-bun">
+          <button class="nav-item" data-behavior="toggle-hidden" data-target="#nav-links">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          </button>
+        </div>
+      </nav>
+    </section>
+
+    <main>
+      <article class="default-post">
+  <header id="page-header">
+  <div class="flex flex-col flex-grow space-y-4">
+    <h1 class="mb-2">AoC 2022 Day 05</h1>
+
+    <div class="flex flex-row space-x-2 items-center">
+      <div class="flex flex-col md:flex-row items-center space-x-1 text-sm leading-5 text-gray-500 dark:text-gray-400 sm:mr-6 font-sans">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+        <time class="whitespace-nowrap" datetime="2022-12-05">2022-Dec-05</time>
+      </div>
+
+      <div class="flex flex-row flex-wrap space-x-1 items-center justify-end flex-grow">
+        
+          <a href="/tags#swift" name="swift"><span class="tag">swift</span></a>
+
+        
+          <a href="/tags#aoc" name="aoc"><span class="tag">aoc</span></a>
+
+        
+          <a href="/tags#puzzles" name="puzzles"><span class="tag">puzzles</span></a>
+
+        
+      </div>
+    </div>
+  </div>
+</header>
+
+
+  <div>
+  <em>
+  This post contains inline annotations/footnotes to help add context, helpful tips or expand upon a tangent in the text. Expand them by <a href="#annotation-1" class="annotation-trigger -gray">clicking or tapping on them</a>
+<span id="annotation-1" class="annotation">Annotations might have their own <a href="#annotation-2" class="annotation-trigger -red">annotations</a><span id="annotation-2" class="annotation">Such as this one!</span> inside of them too.</span>
+
+  </em>
+</div>
+
+<p>Today’s problem turned out to be more of a parsing problem than a logic problem for me. Last year when doing AoC in OCaml, I wrote my own parser combinator library and I’m heavily considering doing the same in swift just to learn how to better, but even then a parser combinator wouldn’t have helped me nearly as much as I would have liked.</p>
+
+<h2 id="parsing">Parsing</h2>
+
+<p>Our input consists of three bits of information:</p>
+<ul>
+  <li>the crates and which stack they are in</li>
+  <li>the stacks number</li>
+  <li>the operations to move crates from one stack to another</li>
+</ul>
+
+<p>The first two are separated from the moves via a double line break and thankfully the moves are fairly easy to break away. The stacks, however, are going to take a bit more work:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    [D]
+[N] [C]
+[Z] [M] [P]
+ 1   2   3
+</code></pre></div></div>
+
+<p>One thing to note is that each stack’s columns are 4 characters wide (with the exception of the last which is 3) so we could reuse our <code class="language-plaintext highlighter-rouge">Array#chunked()</code> extension from day 04 to get our stacks broken apart.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>[</td>
+      <td>D</td>
+      <td>]</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Note that we’ll want to use the safer version that slices to the chunk size OR the string length if it’s smaller to account for the last stack being of length 3 and not 4. Per chunk we can extract the second element to figure out if it’s a stack or empty space, something like this:</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">rawStacks</span> <span class="o">=</span> <span class="n">lines</span><span class="o">.</span><span class="nf">split</span><span class="p">(</span><span class="nv">separator</span><span class="p">:</span> <span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span>
+
+<span class="k">let</span> <span class="nv">stackDefinitions</span> <span class="o">=</span> <span class="n">rawStacks</span><span class="o">.</span><span class="nf">dropLast</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="n">line</span> <span class="k">in</span>
+        <span class="kt">Array</span><span class="p">(</span><span class="n">line</span><span class="p">)</span><span class="o">.</span><span class="nf">chunked</span><span class="p">(</span><span class="nv">into</span><span class="p">:</span> <span class="mi">4</span><span class="p">)</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="nv">$0</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="o">.</span><span class="nf">reversed</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>There’s a lot going on here, first we don’t care about the last line as it’s just the stack numbers so we call <code class="language-plaintext highlighter-rouge">Array#dropLast()</code> which will give us a collection that, when iterated over, will not include the final line. It’s a cleaner way of doing:</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">rawStacks</span><span class="p">[</span><span class="mi">0</span><span class="o">..&lt;</span><span class="n">rawStacks</span><span class="o">.</span><span class="n">count</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>Next, for each line we convert it to an array of <code class="language-plaintext highlighter-rouge">String.Element</code>s aka <code class="language-plaintext highlighter-rouge">Character</code>s and use our chunking function to get each stack broken apart. Finally we map over the array of chunks to give us back an array where each index corresponds to a stack and each element with either be an empty space or a crate letter. Finally, we reverse it which will make the next step of transposing these rows into our initial stacks array a lot easier. After running over our lines, we end up with a 2-d array looking something like this:</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span>
+  <span class="p">[</span><span class="s">"Z"</span><span class="p">,</span> <span class="s">"M"</span><span class="p">,</span> <span class="s">"P"</span><span class="p">],</span>
+  <span class="p">[</span><span class="s">"N"</span><span class="p">,</span> <span class="s">"C"</span><span class="p">,</span> <span class="s">" "</span><span class="p">],</span>
+  <span class="p">[</span><span class="s">" "</span><span class="p">,</span> <span class="s">"D"</span><span class="p">,</span> <span class="s">" "</span><span class="p">]</span>
+<span class="p">]</span>
+</code></pre></div></div>
+
+<p>Lastly, before we move onto parsing the moves and solving part one, we need to transpose our stack data such that we end up with an array where each index is a column or stack, as opposed to the current situation that we have, where each index is a row. Our final array that we’ll use for the solutions will look like this:</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span>
+  <span class="p">[</span><span class="s">"Z"</span><span class="p">,</span> <span class="s">"N"</span><span class="p">],</span>
+  <span class="p">[</span><span class="s">"M"</span><span class="p">,</span> <span class="s">"C"</span><span class="p">,</span> <span class="s">"D"</span><span class="p">],</span>
+  <span class="p">[</span><span class="s">"P"</span><span class="p">]</span>
+<span class="p">]</span>
+</code></pre></div></div>
+
+<p>First, we’ll need to make the array representing our stacks that we’re going to transpose into. It’ll be easier if we pre-fill it with empty arrays so that we can just append to the correct stack when we come across a crate, so we can use the <code class="language-plaintext highlighter-rouge">Array(repeating:, count:)</code> initializer and we’ll use the length of our first row as a quick a dirty count for the number of stacks that we have:</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">numberOfStacks</span> <span class="o">=</span> <span class="n">stackDefinitions</span><span class="o">.</span><span class="n">first</span><span class="o">!.</span><span class="n">count</span>
+<span class="k">var</span> <span class="nv">stacks</span><span class="p">:</span> <span class="p">[[</span><span class="kt">Character</span><span class="p">]]</span> <span class="o">=</span> <span class="kt">Array</span><span class="p">(</span><span class="nv">repeating</span><span class="p">:</span> <span class="p">[],</span> <span class="nv">count</span><span class="p">:</span> <span class="n">numberOfStacks</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>If number of crates is <code class="language-plaintext highlighter-rouge">3</code> for example, this is equivalent to:</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="nv">stacks</span><span class="p">:</span> <span class="p">[[</span><span class="kt">Character</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[]</span> <span class="p">]</span>
+</code></pre></div></div>
+
+<p>But it avoids hardcoding the length in, which is helpful when we want this code to run against both the example input and our own input file. Another approach would be to simply map over the first row, returning an empty array:</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="nv">stacks</span><span class="p">:</span> <span class="p">[[</span><span class="kt">Character</span><span class="p">]]</span> <span class="o">=</span> <span class="n">stackDefinitions</span><span class="o">.</span><span class="n">first</span><span class="o">!.</span><span class="n">map</span> <span class="p">{</span> <span class="n">_</span> <span class="k">in</span> <span class="p">[]</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<p>However, I wanted to show off the use of the Array initializer, and I think it’s a littler clearer than the map.</p>
+
+<p>Finally we can transpose our data. For each row we’ll iterate over the elements and use the elements index to look up which stack array we need. We’ll also filter out spaces using swift’s <code class="language-plaintext highlighter-rouge">for ... where</code> syntax:</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">stackRow</span> <span class="k">in</span> <span class="n">stackDefinitions</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="n">crate</span><span class="p">)</span> <span class="k">in</span> <span class="n">stackRow</span><span class="o">.</span><span class="nf">enumerated</span><span class="p">()</span> <span class="k">where</span> <span class="n">crate</span> <span class="o">!=</span> <span class="s">" "</span> <span class="p">{</span>
+        <span class="n">stacks</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">crate</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Finally we’ve gotten our stack data parsed out and we’re onto the moves instructions before we solve this. Thankfully parsing the move is easier than the stack definitions.</p>
+
+<p>First we’ll define a little container to make our code a little easier to read:</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">struct</span> <span class="kt">Move</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">numberOfCrates</span><span class="p">:</span> <span class="kt">Int</span>
+
+    <span class="k">let</span> <span class="nv">fromStackIndex</span><span class="p">:</span> <span class="kt">Int</span>
+    <span class="k">let</span> <span class="nv">toStackIndex</span><span class="p">:</span> <span class="kt">Int</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Since the move instructions are all in the same fixed format, we can do a little trick rather than reach for something like regex (what I did when I initially solved this):</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">1</span><span class="o">&gt;</span> <span class="s">"move 3 from 5 to 2"</span><span class="o">.</span><span class="nf">split</span><span class="p">(</span><span class="nv">separator</span><span class="p">:</span> <span class="s">" "</span><span class="p">)</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="kt">String</span><span class="p">(</span><span class="nv">$0</span><span class="p">)</span> <span class="p">}</span>
+<span class="err">$</span><span class="kt">R0</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span> <span class="o">=</span> <span class="mi">6</span> <span class="n">values</span> <span class="p">{</span>
+  <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s">"move"</span>
+  <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s">"3"</span>
+  <span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="s">"from"</span>
+  <span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="s">"5"</span>
+  <span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="s">"to"</span>
+  <span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="s">"2"</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>For each line we can split on the spaces and take:</p>
+<ul>
+  <li>the second element as our number of crates</li>
+  <li>the fourth element as the stack to move the crates <em>from</em></li>
+  <li>the sixth element as the stack to move the creates <em>to</em></li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">parseMoveLine</span><span class="p">(</span><span class="n">_</span> <span class="nv">line</span><span class="p">:</span> <span class="kt">Substring</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Move</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">parts</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="nf">split</span><span class="p">(</span><span class="nv">separator</span><span class="p">:</span> <span class="s">" "</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="o">.</span><span class="nf">init</span><span class="p">(</span>
+        <span class="nv">numberOfCrates</span><span class="p">:</span> <span class="kt">Int</span><span class="p">(</span><span class="n">parts</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">!</span><span class="p">,</span>
+        <span class="nv">fromStackIndex</span><span class="p">:</span> <span class="kt">Int</span><span class="p">(</span><span class="n">parts</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span><span class="o">!</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="nv">toStackIndex</span><span class="p">:</span> <span class="kt">Int</span><span class="p">(</span><span class="n">parts</span><span class="p">[</span><span class="mi">5</span><span class="p">])</span><span class="o">!</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>The key part here is to subtract one from the stack numbers as the puzzle uses 1-indexing but our code operates in swift’s 0-indexing system.</p>
+
+<h2 id="part-one">Part One</h2>
+<blockquote>
+  <p>After the rearrangement procedure completes, what crate ends up on top of each stack?</p>
+</blockquote>
+
+<p>At this point we’ve got our stacks, modeled as an <code class="language-plaintext highlighter-rouge">[[Character]]</code> and our move instructions in an <code class="language-plaintext highlighter-rouge">[Move]</code>. For each move, we’ve got an amount of crates to transfer from one stack to another stack and this happens sequentially. For example, the line <code class="language-plaintext highlighter-rouge">move 3 from 1 to 3</code> requires us to <em>pop</em> a crate off of stack number 1 and <em>append</em> it to stack number 3, and we’ll do that three times.</p>
+
+<p>Using the example, we start with the following stacks:</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span>
+  <span class="p">[</span><span class="s">"Z"</span><span class="p">,</span> <span class="s">"N"</span><span class="p">],</span>
+  <span class="p">[</span><span class="s">"M"</span><span class="p">,</span> <span class="s">"C"</span><span class="p">,</span> <span class="s">"D"</span><span class="p">],</span>
+  <span class="p">[</span><span class="s">"P"</span><span class="p">]</span>
+<span class="p">]</span>
+</code></pre></div></div>
+
+<p>After the first instruction <code class="language-plaintext highlighter-rouge">move 1 from 2 to 1</code> We’ll have:</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span>
+  <span class="p">[</span><span class="s">"Z"</span><span class="p">,</span> <span class="s">"N"</span><span class="p">,</span> <span class="s">"D"</span><span class="p">],</span>
+  <span class="p">[</span><span class="s">"M"</span><span class="p">,</span> <span class="s">"C"</span><span class="p">],</span>
+  <span class="p">[</span><span class="s">"P"</span><span class="p">]</span>
+<span class="p">]</span>
+</code></pre></div></div>
+
+<p>The next instruction brings us to this process of popping and appending in a much more noticeable way, though: <code class="language-plaintext highlighter-rouge">move 3 from 1 to 3</code>. After the first pop, we end up with:</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span>
+  <span class="p">[</span><span class="s">"Z"</span><span class="p">,</span> <span class="s">"N"</span><span class="p">],</span>
+  <span class="p">[</span><span class="s">"M"</span><span class="p">,</span> <span class="s">"C"</span><span class="p">],</span>
+  <span class="p">[</span><span class="s">"P"</span><span class="p">,</span> <span class="s">"D"</span><span class="p">]</span>
+<span class="p">]</span>
+</code></pre></div></div>
+
+<p>Notice we didn’t move <strong>3</strong> all at once, this means that our crates that are getting moved around will be getting reversed in order each time multiples are moved per instruction, as see in the second and third crates getting moved by this instruction:</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span>
+  <span class="p">[],</span>
+  <span class="p">[</span><span class="s">"M"</span><span class="p">,</span> <span class="s">"C"</span><span class="p">],</span>
+  <span class="p">[</span><span class="s">"P"</span><span class="p">,</span> <span class="s">"D"</span><span class="p">,</span> <span class="s">"N"</span><span class="p">,</span> <span class="s">"Z"</span><span class="p">]</span>
+<span class="p">]</span>
+</code></pre></div></div>
+
+<p>We’ll do this process with the following:</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">move</span> <span class="k">in</span> <span class="n">moves</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="k">in</span> <span class="mi">0</span><span class="o">..&lt;</span><span class="n">numberOfCrates</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">movingCrate</span> <span class="o">=</span> <span class="n">stacks</span><span class="p">[</span><span class="n">move</span><span class="o">.</span><span class="n">fromStackIndex</span><span class="p">]</span><span class="o">.</span><span class="nf">popLast</span><span class="p">()</span><span class="o">!</span>
+        <span class="n">stacks</span><span class="p">[</span><span class="n">move</span><span class="o">.</span><span class="n">toStackIndex</span><span class="p">]</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">movingCrate</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Notice that our logic looks pretty much as we described it, the actual solution is fairly simple while the difficulty laid in the parsing for this problem!</p>
+
+<h2 id="part-two">Part Two</h2>
+<blockquote>
+  <p>After the rearrangement procedure completes, what crate ends up on top of each stack?</p>
+</blockquote>
+
+<p>Next up we’ve got a twist: we’re going to move all of the crates all at once. Now our second instruction in our example results in this:</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span>
+  <span class="p">[],</span>
+  <span class="p">[</span><span class="s">"M"</span><span class="p">,</span> <span class="s">"C"</span><span class="p">],</span>
+  <span class="p">[</span><span class="s">"P"</span><span class="p">,</span> <span class="s">"Z"</span><span class="p">,</span> <span class="s">"N"</span><span class="p">,</span> <span class="s">"D"</span><span class="p">]</span>
+<span class="p">]</span>
+</code></pre></div></div>
+
+<p>Notice how the group of three crates from stack one, <code class="language-plaintext highlighter-rouge">Z, N, D</code> remains in the same order as they’re moved rather than being reversed due to the pop/append process? Instead of popping a single crate off at a time, we’ll just slice off the top using <code class="language-plaintext highlighter-rouge">suffix(from:)</code> to get the crates and <code class="language-plaintext highlighter-rouge">removeLast(_: Int)</code> to remove them from the stack we are moving them from, and <code class="language-plaintext highlighter-rouge">append(contentsOf:)</code> to add them all at once, in the same order that we removed them in, to our stack we are moving to. Writing some pseudo-code would give us something like:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>let length = stacks[move.fromStackIndex].count
+let slicePoint = length - move.numberOfCrates
+
+let fromStack = stacks[move.fromStackIndex]
+
+stacks[move.toStackIndex] = stacks[move.toStackIndex] + fromStack[slicePoint..&lt;length]
+stacks[move.fromStackIndex] = fromStack[0..&lt;slicePoint]
+</code></pre></div></div>
+
+<p>We can make this a little more expressive using the <code class="language-plaintext highlighter-rouge">suffix(from:)</code>, <code class="language-plaintext highlighter-rouge">removeLast(_: Int)</code> and <code class="language-plaintext highlighter-rouge">append(contentsOf:)</code> functions:</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">move</span> <span class="k">in</span> <span class="n">input</span><span class="o">.</span><span class="n">moves</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">length</span> <span class="o">=</span> <span class="n">stacks</span><span class="p">[</span><span class="n">move</span><span class="o">.</span><span class="n">fromStackIndex</span><span class="p">]</span><span class="o">.</span><span class="n">count</span>
+    <span class="k">let</span> <span class="nv">slicePoint</span> <span class="o">=</span> <span class="n">length</span> <span class="o">-</span> <span class="n">move</span><span class="o">.</span><span class="n">numberOfCrates</span>
+
+    <span class="k">let</span> <span class="nv">movingCrates</span> <span class="o">=</span> <span class="n">stacks</span><span class="p">[</span><span class="n">move</span><span class="o">.</span><span class="n">fromStackIndex</span><span class="p">]</span><span class="o">.</span><span class="nf">suffix</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="n">slicePoint</span><span class="p">)</span>
+
+    <span class="n">stacks</span><span class="p">[</span><span class="n">move</span><span class="o">.</span><span class="n">fromStackIndex</span><span class="p">]</span><span class="o">.</span><span class="nf">removeLast</span><span class="p">(</span><span class="n">move</span><span class="o">.</span><span class="n">numberOfCrates</span><span class="p">)</span>
+    <span class="n">stacks</span><span class="p">[</span><span class="n">move</span><span class="o">.</span><span class="n">toStackIndex</span><span class="p">]</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="nv">contentsOf</span><span class="p">:</span> <span class="n">movingCrates</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Some languages have a “removeAndReturn” method which might reduce the lines here by one, but this isn’t the worst considering half of it is calculating an index to start the suffix from!</p>
+
+<hr />
+
+<p><a href="/aoc/2022/12/01/aoc-2022.html">2022 Day Index</a><br />
+Previously:  <a href="/aoc/2022/12/04/AoC-2022-Day-04.html">Day 4</a><br />
+Next: <a href="/aoc/2022/12/06/AoC-2022-Day-06.html">Day 6</a></p>
+
+</article>
+
+    </main>
+  </div>
+
+  <footer class="border-t-2 border-sky-900 my-4 pt-4 text-sm w-full flex justify-center">
+    <p class="prose text-xs dark:prose-invert mx-4">
+      Found an error or have an improvement?
+      <a href="https://github.com/JoshAshby/joshashby.github.io/tree/source/_posts/2022-12-05-AoC-2022-Day-05.md">Suggest a correction!</a> | <span class="text-gray-300 text-xs">© Joshua Ashby</span>
+    </p>
+  </footer>
+
+  
+  <script src="/vite/assets/application.2826b514.js" crossorigin="anonymous" type="module"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>AoC 2022 Day 02 - Ashby's Hideout</title>
+  <meta name="description" content="">
+
+  <link type="application/atom+xml" rel="alternate" href="https://joshisa.ninja/feed.xml" title="Ashby's Hideout" />
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>AoC 2022 Day 02 | Ashby’s Hideout</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="AoC 2022 Day 02" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="This post contains inline annotations/footnotes to help add context, helpful tips or expand upon a tangent in the text. Expand them by clicking or tapping on them Annotations might have their own annotationsSuch as this one! inside of them too." />
+<meta property="og:description" content="This post contains inline annotations/footnotes to help add context, helpful tips or expand upon a tangent in the text. Expand them by clicking or tapping on them Annotations might have their own annotationsSuch as this one! inside of them too." />
+<link rel="canonical" href="https://joshisa.ninja/aoc/2022/12/02/AoC-2022-Day-02.html" />
+<meta property="og:url" content="https://joshisa.ninja/aoc/2022/12/02/AoC-2022-Day-02.html" />
+<meta property="og:site_name" content="Ashby’s Hideout" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-12-02T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="AoC 2022 Day 02" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-12-02T00:00:00+00:00","datePublished":"2022-12-02T00:00:00+00:00","description":"This post contains inline annotations/footnotes to help add context, helpful tips or expand upon a tangent in the text. Expand them by clicking or tapping on them Annotations might have their own annotationsSuch as this one! inside of them too.","headline":"AoC 2022 Day 02","mainEntityOfPage":{"@type":"WebPage","@id":"https://joshisa.ninja/aoc/2022/12/02/AoC-2022-Day-02.html"},"url":"https://joshisa.ninja/aoc/2022/12/02/AoC-2022-Day-02.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <link rel="stylesheet" href="/vite/assets/ashby.002df90b.css" media="screen"/>
+
+  <style>
+  
+  </style>
+</head>
+
+<body>
+  <div id="master-chief">
+    <section id="main-sidebar">
+      <nav class="sidebar-nav">
+        <h2><a href="/">Ashby's Hideout</a></h2>
+
+        <div id="nav-links" class="expandable">
+          <ul class="nav-list">
+            <li class="nav-item"><a href="/posts/">Posts</a></li>
+            <li class="nav-item"><a href="/photos/">Photos</a></li>
+            <li class="nav-item"><a href="/projects/">Projects</a></li>
+            <li class="nav-item"><a href="/resume/">Resume</a></li>
+
+            
+          </ul>
+        </div>
+
+        <div class="hamburger-bun">
+          <button class="nav-item" data-behavior="toggle-hidden" data-target="#nav-links">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          </button>
+        </div>
+      </nav>
+    </section>
+
+    <main>
+      <article class="default-post">
+  <header id="page-header">
+  <div class="flex flex-col flex-grow space-y-4">
+    <h1 class="mb-2">AoC 2022 Day 02</h1>
+
+    <div class="flex flex-row space-x-2 items-center">
+      <div class="flex flex-col md:flex-row items-center space-x-1 text-sm leading-5 text-gray-500 dark:text-gray-400 sm:mr-6 font-sans">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+        <time class="whitespace-nowrap" datetime="2022-12-02">2022-Dec-02</time>
+      </div>
+
+      <div class="flex flex-row flex-wrap space-x-1 items-center justify-end flex-grow">
+        
+          <a href="/tags#swift" name="swift"><span class="tag">swift</span></a>
+
+        
+          <a href="/tags#aoc" name="aoc"><span class="tag">aoc</span></a>
+
+        
+          <a href="/tags#puzzles" name="puzzles"><span class="tag">puzzles</span></a>
+
+        
+      </div>
+    </div>
+  </div>
+</header>
+
+
+  <div>
+  <em>
+  This post contains inline annotations/footnotes to help add context, helpful tips or expand upon a tangent in the text. Expand them by <a href="#annotation-1" class="annotation-trigger -gray">clicking or tapping on them</a>
+<span id="annotation-1" class="annotation">Annotations might have their own <a href="#annotation-2" class="annotation-trigger -red">annotations</a><span id="annotation-2" class="annotation">Such as this one!</span> inside of them too.</span>
+
+  </em>
+</div>
+
+<p>As with yesterdays solution I ended up just taking a fairly naive approach here rather than decomposing the problem into the math problem that others have done.</p>
+<h2 id="part-one">Part One</h2>
+<blockquote>
+  <p>What would your total score be if everything goes exactly according to your strategy guide?</p>
+</blockquote>
+
+<p>Our input has a round’s strategy per line, where a strategy is the opponent’s move and our move, separated by a space.
+The opponent’s move is encoded as:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">A</code> Rock</li>
+  <li><code class="language-plaintext highlighter-rouge">B</code> Paper</li>
+  <li><code class="language-plaintext highlighter-rouge">C</code> Scissors</li>
+</ul>
+
+<p>And our move is encoded as:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">X</code> Rock</li>
+  <li><code class="language-plaintext highlighter-rouge">Y</code> Paper</li>
+  <li><code class="language-plaintext highlighter-rouge">Z</code> Scissors</li>
+</ul>
+
+<p>Additionally, we find out that each move has a score assigned to it:</p>
+<ul>
+  <li>Rock =&gt; 1</li>
+  <li>Paper =&gt; 2</li>
+  <li>Scissors =&gt; 3</li>
+</ul>
+
+<p>Finally, we have a set of rules about which move defeats which other move:</p>
+<ul>
+  <li>Rock defeats Scissors</li>
+  <li>Scissors defeats Paper</li>
+  <li>Paper defeats Scissors</li>
+</ul>
+
+<hr />
+
+<p>So we now know that our problem space is confined to these three moves and their respective rules, each move has a score assigned to it and that our input uses two different characters to represent the same move. We could take this information to make a few functions like the following:</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">score</span><span class="p">(</span><span class="n">_</span> <span class="nv">char</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+    <span class="k">switch</span> <span class="n">char</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="s">"A"</span><span class="p">,</span> <span class="s">"X"</span><span class="p">:</span> <span class="k">return</span> <span class="mi">1</span>
+        <span class="k">case</span> <span class="s">"B"</span><span class="p">,</span> <span class="s">"Y"</span><span class="p">:</span> <span class="k">return</span> <span class="mi">2</span>
+        <span class="k">case</span> <span class="s">"C"</span><span class="p">,</span> <span class="s">"Z"</span><span class="p">:</span> <span class="k">return</span> <span class="mi">3</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nf">defeats</span><span class="p">(</span><span class="n">_</span> <span class="nv">char</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span> <span class="p">{</span>
+    <span class="k">switch</span> <span class="n">char</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="s">"A"</span><span class="p">:</span> <span class="k">return</span> <span class="s">"Y"</span>
+        <span class="k">case</span> <span class="s">"B"</span><span class="p">:</span> <span class="k">return</span> <span class="s">"Z"</span>
+        <span class="k">case</span> <span class="s">"C"</span><span class="p">:</span> <span class="k">return</span> <span class="s">"X"</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>But this presents us with a few problems:</p>
+<ul>
+  <li>Our codes problem space isn’t confined to the three moves because strings can be a lot more than just those 6 characters. Additionally, the compiler won’t alert us if we make a typo so we’re not really taking advantage of the language as well as we could</li>
+  <li>Our code is intrinsically tied to the input format</li>
+  <li>It’s difficult to read and quickly comprehend, we’ll need comments everywhere denoting what <code class="language-plaintext highlighter-rouge">"A"</code> is</li>
+</ul>
+
+<p>A good way to work around these problems is to ensure that our code only operates within a confined problem space, letting the language do the work of validating that we stay within the bounds and setting up a boundary between the input and our problem space in the form of a function that’ll map the input. This narrows the place where we worry about the input format down to one space and free up our solution code to be both more expressive and decoupled. To do this we’ll make an enum backed by the scores as integer values:</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">enum</span> <span class="kt">Move</span><span class="p">:</span> <span class="kt">Int</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="n">rock</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">case</span> <span class="n">paper</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="k">case</span> <span class="n">scissors</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Using this enum, we can easily map both <code class="language-plaintext highlighter-rouge">A</code> and <code class="language-plaintext highlighter-rouge">X</code> to <code class="language-plaintext highlighter-rouge">Move.rock</code>, so we can make a quick mapping function that’ll take all 6 characters in our input and convert them to our nice enum. This establishes the boundary between the input and our problem space and is the only place we have to worry about the input format. In other words, the decoupling here lets us easy switch out characters and handle adapting to different input formats in the future, leading to more maintainable code.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">mapStringToMove</span><span class="p">(</span><span class="n">_</span> <span class="nv">part</span><span class="p">:</span> <span class="kt">Substring</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Move</span> <span class="p">{</span>
+    <span class="k">switch</span> <span class="n">part</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="s">"A"</span><span class="p">,</span> <span class="s">"X"</span><span class="p">:</span> <span class="k">return</span> <span class="o">.</span><span class="n">rock</span>
+        <span class="k">case</span> <span class="s">"B"</span><span class="p">,</span> <span class="s">"Y"</span><span class="p">:</span> <span class="k">return</span> <span class="o">.</span><span class="n">paper</span>
+        <span class="k">case</span> <span class="s">"C"</span><span class="p">,</span> <span class="s">"Z"</span><span class="p">:</span> <span class="k">return</span> <span class="o">.</span><span class="n">scissors</span>
+        <span class="k">default</span><span class="p">:</span> <span class="nf">fatalError</span><span class="p">(</span><span class="s">"Unrecognized input </span><span class="se">\(</span><span class="n">part</span><span class="se">)</span><span class="s">!"</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Now that we can map our input down to our problem space, we’ll make a little container that’ll represent a single round and make one last parsing related function that’ll convert a line from our input into a <code class="language-plaintext highlighter-rouge">RoundStrategy</code>. This container isn’t strictly necessary as you could use a tuple, but I find the expressiveness of the struct a lot more maintainable and lends itself to more “self-explaining code”:</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">struct</span> <span class="kt">RoundStrategy</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">theirMove</span><span class="p">:</span> <span class="kt">Move</span>
+    <span class="k">let</span> <span class="nv">myMove</span><span class="p">:</span> <span class="kt">Move</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nf">parseLine</span><span class="p">(</span><span class="n">_</span> <span class="nv">line</span><span class="p">:</span> <span class="kt">Substring</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">RoundStrategy</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">parts</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="nf">split</span><span class="p">(</span><span class="nv">separator</span><span class="p">:</span> <span class="s">" "</span><span class="p">,</span> <span class="nv">maxSplits</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="o">.</span><span class="nf">init</span><span class="p">(</span>
+        <span class="nv">theirMove</span><span class="p">:</span> <span class="nf">stringToMove</span><span class="p">(</span><span class="n">parts</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span>
+        <span class="nv">myMove</span><span class="p">:</span> <span class="nf">stringToMove</span><span class="p">(</span><span class="n">parts</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>We’ll add a few helper functions to the <code class="language-plaintext highlighter-rouge">RoundStrategy</code> container in a little bit but for now this will be enough. Now we should be able to map our entire input file into an array of <code class="language-plaintext highlighter-rouge">RoundStrategy</code>s which lets us focus on building out our scoring functionality.</p>
+
+<p>We know that for a single round, if the opponents move is the same as mine, then the round is a draw and the scoring is simply the score for our move plus <code class="language-plaintext highlighter-rouge">3</code>. Let’s add a <code class="language-plaintext highlighter-rouge">score</code> function to our <code class="language-plaintext highlighter-rouge">RoundStrategy</code> struct and encode this first rule:</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">struct</span> <span class="kt">RoundStrategy</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">theirMove</span><span class="p">:</span> <span class="kt">Move</span>
+    <span class="k">let</span> <span class="nv">myMove</span><span class="p">:</span> <span class="kt">Move</span>
+
+    <span class="kd">func</span> <span class="nf">score</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="n">theirMove</span> <span class="o">==</span> <span class="n">myMove</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="n">myMove</span><span class="o">.</span><span class="n">rawValue</span> <span class="o">+</span> <span class="mi">3</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Now we’ve got two other outcomes to consider:</p>
+<ul>
+  <li>My move defeats their move</li>
+  <li>Their move defeats my move</li>
+</ul>
+
+<p>To try and keep the expressiveness we’ve already established, and trying to anticipate any changes we’ll need for part two, we can make another container and a small lookup function to map one move to the move that it’ll defeat. Then we can simply run their move through the lookup helper to get which move it’ll defeat. If that looked up move is ours, we know we’ve lost and otherwise we know we’ve won:</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">struct</span> <span class="kt">CounterMoves</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">losingMove</span><span class="p">:</span> <span class="kt">Move</span>
+<span class="p">}</span>
+
+<span class="c1">// Rock defeats Scissors, defeated by Paper</span>
+<span class="c1">// Paper defeats Rock, defeated by Scissors</span>
+<span class="c1">// Scissors defeats Paper, defeated by Rock</span>
+<span class="kd">func</span> <span class="nf">possibleCountersFor</span><span class="p">(</span><span class="n">_</span> <span class="nv">move</span><span class="p">:</span> <span class="kt">Move</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CounterMoves</span> <span class="p">{</span>
+    <span class="k">switch</span> <span class="n">move</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nv">rock</span><span class="p">:</span> <span class="k">return</span> <span class="o">.</span><span class="nf">init</span><span class="p">(</span><span class="nv">losingMove</span><span class="p">:</span> <span class="o">.</span><span class="n">scissors</span><span class="p">)</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nv">paper</span><span class="p">:</span> <span class="k">return</span> <span class="o">.</span><span class="nf">init</span><span class="p">(</span><span class="nv">losingMove</span><span class="p">:</span> <span class="o">.</span><span class="n">rock</span><span class="p">)</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nv">scissors</span><span class="p">:</span> <span class="k">return</span> <span class="o">.</span><span class="nf">init</span><span class="p">(</span><span class="nv">losingMove</span><span class="p">:</span> <span class="o">.</span><span class="n">paper</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Using a struct here means that if we need to, say, encode the move that’ll defeat their move as well as which move is defeated by their move, we can just add another field to the struct without too many code changes.</p>
+
+<p>Using this in practice looks a bit like this:</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">myPossibleMoves</span> <span class="o">=</span> <span class="nf">possibleCountersFor</span><span class="p">(</span><span class="n">theirMove</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">myPossibleMoves</span><span class="o">.</span><span class="n">losingMove</span> <span class="o">==</span> <span class="n">myMove</span> <span class="p">{</span>
+    <span class="c1">// I've lost :-(</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="c1">// I've won! :-D</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Let’s add that to our <code class="language-plaintext highlighter-rouge">RoundStragety#score()</code> function:</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">score</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="n">theirMove</span> <span class="o">==</span> <span class="n">myMove</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">myMove</span><span class="o">.</span><span class="n">rawValue</span> <span class="o">+</span> <span class="mi">3</span>
+    <span class="p">}</span>
+
+    <span class="k">let</span> <span class="nv">myPossibleMoves</span> <span class="o">=</span> <span class="nf">possibleCountersFor</span><span class="p">(</span><span class="n">theirMove</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">myPossibleMoves</span><span class="o">.</span><span class="n">losingMove</span> <span class="o">==</span> <span class="n">myMove</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">myMove</span><span class="o">.</span><span class="n">rawValue</span> <span class="o">+</span> <span class="mi">0</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">myMove</span><span class="o">.</span><span class="n">rawValue</span> <span class="o">+</span> <span class="mi">6</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>With that we should be able to write some sanity check tests around the scoring functionality for all possible combinations and ensure that it scores correctly. For example, using the puzzles example:</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">final</span> <span class="kd">class</span> <span class="nv">day02Tests</span><span class="p">:</span> <span class="kt">XCTestCase</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">testRoundScoring</span><span class="p">()</span> <span class="k">throws</span> <span class="p">{</span>
+        <span class="kt">XCTAssertEqual</span><span class="p">(</span><span class="kt">RoundStrategy</span><span class="p">(</span><span class="nv">theirMove</span><span class="p">:</span> <span class="o">.</span><span class="n">rock</span><span class="p">,</span> <span class="nv">myMove</span><span class="p">:</span> <span class="o">.</span><span class="n">paper</span><span class="p">)</span><span class="o">.</span><span class="nf">score</span><span class="p">(),</span> <span class="mi">8</span><span class="p">)</span>
+        <span class="kt">XCTAssertEqual</span><span class="p">(</span><span class="kt">RoundStrategy</span><span class="p">(</span><span class="nv">theirMove</span><span class="p">:</span> <span class="o">.</span><span class="n">paper</span><span class="p">,</span> <span class="nv">myMove</span><span class="p">:</span> <span class="o">.</span><span class="n">rock</span><span class="p">)</span><span class="o">.</span><span class="nf">score</span><span class="p">(),</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="kt">XCTAssertEqual</span><span class="p">(</span><span class="kt">RoundStrategy</span><span class="p">(</span><span class="nv">theirMove</span><span class="p">:</span> <span class="o">.</span><span class="n">scissors</span><span class="p">,</span> <span class="nv">myMove</span><span class="p">:</span> <span class="o">.</span><span class="n">scissors</span><span class="p">)</span><span class="o">.</span><span class="nf">score</span><span class="p">(),</span> <span class="mi">6</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>With tests written and passing we can tie everything together, parsing our full puzzle input into an array of <code class="language-plaintext highlighter-rouge">RoundStragety</code>s and then simply map them to each round’s score and sum all the scores up. You can do this in one go using a reduce as well:</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">rounds</span><span class="o">.</span><span class="nf">reduce</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="p">{</span> <span class="n">memo</span><span class="p">,</span> <span class="n">round</span> <span class="k">in</span> <span class="n">memo</span> <span class="o">+</span> <span class="n">round</span><span class="o">.</span><span class="nf">score</span><span class="p">()</span> <span class="p">})</span>
+</code></pre></div></div>
+
+<h2 id="part-two">Part Two</h2>
+<blockquote>
+  <p>Following the Elf’s instructions for the second column, what would your total score be if everything goes exactly according to your strategy guide?</p>
+</blockquote>
+
+<p>This just in: we were wrong! The second character for each round isn’t our move but the outcome of the round. We’ll have to figure out what move to make based off of our opponents move and the outcome of the round. The outcome is mapped as such:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">X</code> we need to lose</li>
+  <li><code class="language-plaintext highlighter-rouge">Y</code> we need to cause a draw</li>
+  <li><code class="language-plaintext highlighter-rouge">Z</code> we need to win</li>
+</ul>
+
+<p>There are a couple of different ways to tackle this problem, some of which will be a little more expressive than the approach I’m going to take. We’ve got a problem with our current <code class="language-plaintext highlighter-rouge">RoundStrategy</code> with this twist: the <code class="language-plaintext highlighter-rouge">.myMove</code> is actually the outcome of the game and we have to narrow it down to which move we should actually take. However, after we figure that move out, the scoring stays the same. To make things easier, why don’t we just make a utility that’ll take in an incorrect <code class="language-plaintext highlighter-rouge">RoundStrategy</code> and produce a corrected <code class="language-plaintext highlighter-rouge">RoundStrategy</code> with the correct <code class="language-plaintext highlighter-rouge">myMove</code>? We can start off with the easy case: when the outcome is a draw, or when the incoming <code class="language-plaintext highlighter-rouge">myMove</code> is a <code class="language-plaintext highlighter-rouge">.paper</code>:</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// We've got their side and the outcome is under `myMove` because naming is hard</span>
+<span class="c1">// myMove .rock =&gt; lose</span>
+<span class="c1">// myMove .paper =&gt; draw</span>
+<span class="c1">// myMove .scissors =&gt; win</span>
+<span class="kd">func</span> <span class="nf">remapFromOutcomeToMyMove</span><span class="p">(</span><span class="n">_</span> <span class="nv">round</span><span class="p">:</span> <span class="kt">RoundStrategy</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">RoundStrategy</span> <span class="p">{</span>
+    <span class="c1">// Draw so myMove is their move</span>
+    <span class="k">if</span> <span class="n">round</span><span class="o">.</span><span class="n">myMove</span> <span class="o">==</span> <span class="o">.</span><span class="n">paper</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="o">.</span><span class="nf">init</span><span class="p">(</span><span class="nv">theirMove</span><span class="p">:</span> <span class="n">round</span><span class="o">.</span><span class="n">theirMove</span><span class="p">,</span> <span class="nv">myMove</span><span class="p">:</span> <span class="n">round</span><span class="o">.</span><span class="n">theirMove</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>From here we can reuse our existing <code class="language-plaintext highlighter-rouge">possibleCountersFor()</code> function to get the case of when the outcome is a loss, or when <code class="language-plaintext highlighter-rouge">.myMove</code> is a <code class="language-plaintext highlighter-rouge">.rock</code>:</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">myPossibleMoves</span> <span class="o">=</span> <span class="nf">possibleCountersFor</span><span class="p">(</span><span class="n">round</span><span class="o">.</span><span class="n">theirMove</span><span class="p">)</span>
+
+<span class="c1">// I need to lose, what their move wins against is my move</span>
+<span class="k">if</span> <span class="n">round</span><span class="o">.</span><span class="n">myMove</span> <span class="o">==</span> <span class="o">.</span><span class="n">rock</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="o">.</span><span class="nf">init</span><span class="p">(</span><span class="nv">theirMove</span><span class="p">:</span> <span class="n">round</span><span class="o">.</span><span class="n">theirMove</span><span class="p">,</span> <span class="nv">myMove</span><span class="p">:</span> <span class="n">myPossibleMoves</span><span class="o">.</span><span class="n">losingMove</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>To find the correct move for the last case, where we need to win we have a few options but I think it’d be easiest to simply add another field to our <code class="language-plaintext highlighter-rouge">CounterMoves</code> struct, one for the corresponding move that’ll defeat the looked-up move instead:</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">struct</span> <span class="kt">CounterMoves</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">losingMove</span><span class="p">:</span> <span class="kt">Move</span>
+    <span class="k">let</span> <span class="nv">winningMove</span><span class="p">:</span> <span class="kt">Move</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>And now we just need to adjust our look up function to include this <code class="language-plaintext highlighter-rouge">winningMove</code> as well:</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Rock defeats Scissors, defeated by Paper</span>
+<span class="c1">// Paper defeats Rock, defeated by Scissors</span>
+<span class="c1">// Scissors defeats Paper, defeated by Rock</span>
+<span class="kd">func</span> <span class="nf">possibleCountersFor</span><span class="p">(</span><span class="n">_</span> <span class="nv">move</span><span class="p">:</span> <span class="kt">Move</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CounterMoves</span> <span class="p">{</span>
+    <span class="k">switch</span> <span class="n">move</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nv">rock</span><span class="p">:</span> <span class="k">return</span> <span class="o">.</span><span class="nf">init</span><span class="p">(</span><span class="nv">losingMove</span><span class="p">:</span> <span class="o">.</span><span class="n">scissors</span><span class="p">,</span> <span class="nv">winningMove</span><span class="p">:</span> <span class="o">.</span><span class="n">paper</span><span class="p">)</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nv">paper</span><span class="p">:</span> <span class="k">return</span> <span class="o">.</span><span class="nf">init</span><span class="p">(</span><span class="nv">losingMove</span><span class="p">:</span> <span class="o">.</span><span class="n">rock</span><span class="p">,</span> <span class="nv">winningMove</span><span class="p">:</span> <span class="o">.</span><span class="n">scissors</span><span class="p">)</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nv">scissors</span><span class="p">:</span> <span class="k">return</span> <span class="o">.</span><span class="nf">init</span><span class="p">(</span><span class="nv">losingMove</span><span class="p">:</span> <span class="o">.</span><span class="n">paper</span><span class="p">,</span> <span class="nv">winningMove</span><span class="p">:</span> <span class="o">.</span><span class="n">rock</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>And that’s it, the secret sauce which gives us the final case:</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">myPossibleMoves</span> <span class="o">=</span> <span class="nf">possibleCountersFor</span><span class="p">(</span><span class="n">round</span><span class="o">.</span><span class="n">theirMove</span><span class="p">)</span>
+
+<span class="c1">// I need to win, what their move loses against is my move</span>
+<span class="k">return</span> <span class="o">.</span><span class="nf">init</span><span class="p">(</span><span class="nv">theirMove</span><span class="p">:</span> <span class="n">round</span><span class="o">.</span><span class="n">theirMove</span><span class="p">,</span> <span class="nv">myMove</span><span class="p">:</span> <span class="n">myPossibleMoves</span><span class="o">.</span><span class="n">winningMove</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Now all we have to do is adjust our reduce call from part one to first remap the struct to get our correct moves in place before calculating the score:</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">rounds</span><span class="o">.</span><span class="nf">reduce</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="p">{</span> <span class="n">memo</span><span class="p">,</span> <span class="n">round</span> <span class="k">in</span>
+    <span class="n">memo</span> <span class="o">+</span> <span class="kt">RoundStrategy</span><span class="o">.</span><span class="nf">remapFromOutcomeToMyMove</span><span class="p">(</span><span class="n">round</span><span class="p">)</span><span class="o">.</span><span class="nf">score</span><span class="p">()</span>
+<span class="p">})</span>
+</code></pre></div></div>
+
+<p>And with that, part two is also solved!</p>
+
+<hr />
+
+<p><a href="/aoc/2022/12/01/aoc-2022.html">2022 Day Index</a><br />
+Previously:  <a href="/aoc/2022/12/01/AoC-2022-Day-01.html">Day 1</a><br />
+Next: <a href="/aoc/2022/12/03/AoC-2022-Day-03.html">Day 3</a></p>
+
+</article>
+
+    </main>
+  </div>
+
+  <footer class="border-t-2 border-sky-900 my-4 pt-4 text-sm w-full flex justify-center">
+    <p class="prose text-xs dark:prose-invert mx-4">
+      Found an error or have an improvement?
+      <a href="https://github.com/JoshAshby/joshashby.github.io/tree/source/_posts/2022-12-02-AoC-2022-Day-02.md">Suggest a correction!</a> | <span class="text-gray-300 text-xs">© Joshua Ashby</span>
+    </p>
+  </footer>
+
+  
+  <script src="/vite/assets/application.2826b514.js" crossorigin="anonymous" type="module"></script>
+
+
+</body>
+</html>

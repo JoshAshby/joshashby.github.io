@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Advent of Code 2022 Anthology - Ashby's Hideout</title>
+  <meta name="description" content="">
+
+  <link type="application/atom+xml" rel="alternate" href="https://joshisa.ninja/feed.xml" title="Ashby's Hideout" />
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Advent of Code 2022 Anthology | Ashby’s Hideout</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Advent of Code 2022 Anthology" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Welcome back to the end of another year and that means another season of Advent of Code!" />
+<meta property="og:description" content="Welcome back to the end of another year and that means another season of Advent of Code!" />
+<link rel="canonical" href="https://joshisa.ninja/aoc/2022/12/01/aoc-2022.html" />
+<meta property="og:url" content="https://joshisa.ninja/aoc/2022/12/01/aoc-2022.html" />
+<meta property="og:site_name" content="Ashby’s Hideout" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-12-01T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Advent of Code 2022 Anthology" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-12-01T00:00:00+00:00","datePublished":"2022-12-01T00:00:00+00:00","description":"Welcome back to the end of another year and that means another season of Advent of Code!","headline":"Advent of Code 2022 Anthology","mainEntityOfPage":{"@type":"WebPage","@id":"https://joshisa.ninja/aoc/2022/12/01/aoc-2022.html"},"url":"https://joshisa.ninja/aoc/2022/12/01/aoc-2022.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <link rel="stylesheet" href="/vite/assets/ashby.002df90b.css" media="screen"/>
+
+  <style>
+  
+  </style>
+</head>
+
+<body>
+  <div id="master-chief">
+    <section id="main-sidebar">
+      <nav class="sidebar-nav">
+        <h2><a href="/">Ashby's Hideout</a></h2>
+
+        <div id="nav-links" class="expandable">
+          <ul class="nav-list">
+            <li class="nav-item"><a href="/posts/">Posts</a></li>
+            <li class="nav-item"><a href="/photos/">Photos</a></li>
+            <li class="nav-item"><a href="/projects/">Projects</a></li>
+            <li class="nav-item"><a href="/resume/">Resume</a></li>
+
+            
+          </ul>
+        </div>
+
+        <div class="hamburger-bun">
+          <button class="nav-item" data-behavior="toggle-hidden" data-target="#nav-links">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          </button>
+        </div>
+      </nav>
+    </section>
+
+    <main>
+      <article class="default-post">
+  <header id="page-header">
+  <div class="flex flex-col flex-grow space-y-4">
+    <h1 class="mb-2">Advent of Code 2022 Anthology</h1>
+
+    <div class="flex flex-row space-x-2 items-center">
+      <div class="flex flex-col md:flex-row items-center space-x-1 text-sm leading-5 text-gray-500 dark:text-gray-400 sm:mr-6 font-sans">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+        <time class="whitespace-nowrap" datetime="2022-12-01">2022-Dec-01</time>
+      </div>
+
+      <div class="flex flex-row flex-wrap space-x-1 items-center justify-end flex-grow">
+        
+          <a href="/tags#aoc" name="aoc"><span class="tag">aoc</span></a>
+
+        
+          <a href="/tags#swift" name="swift"><span class="tag">swift</span></a>
+
+        
+          <a href="/tags#puzzles" name="puzzles"><span class="tag">puzzles</span></a>
+
+        
+      </div>
+    </div>
+  </div>
+</header>
+
+
+  <p>Welcome back to the end of another year and that means another season of <a href="adventofcode.com/">Advent of Code</a>!</p>
+
+<p>Last year was the first time that I actively participated and I chose to solve the challenges using OCaml to better familiarize myself with the language. This year I decided that, as much as I enjoy OCaml, I’ve been doing enough Swift for some side projects that I’d love to learn some of the language’s features better.</p>
+
+<p>While I didn’t do write up’s last year, I’ve set the challenge to put together a small write up of my solutions for this year as I work through them with the hopes of practicing my technical writing skills. Additionally, while there is some joy in trying to solve the problems the fastest and most golfed, clever code, I’m also looking to strike a balance of maintainable and readable code and exploring some more features of the language, so every day’s write up may not be super advanced OR optimal.</p>
+
+<p>This years theme is: The elves stage a tropical expedition, in the name of the reindeer’s magical energy supply, to find 50 star fruit.</p>
+
+<h2 id="days">Days</h2>
+<ul>
+  <li><a href="/aoc/2022/12/01/AoC-2022-Day-01.html">01 - The elves count calories, we do an intro</a></li>
+  <li><a href="/aoc/2022/12/02/AoC-2022-Day-02.html">02 - The elves play Rock, Paper, Scissors, we win</a></li>
+  <li><a href="/aoc/2022/12/03/AoC-2022-Day-03.html">03 - The elves redo one particularly lacky elf’s job, we fire the elf</a></li>
+  <li><a href="/aoc/2022/12/04/AoC-2022-Day-04.html">04 - The elves clean up base camp, we free up resources</a></li>
+  <li><a href="/aoc/2022/12/05/AoC-2022-Day-05.html">05 - The elves rearrange some crates on a boat, we play alphabet blocks with the crates</a></li>
+  <li><a href="/aoc/2022/12/06/AoC-2022-Day-06.html">06 - The elves recieve an email, we decode it</a></li>
+  <li><a href="/aoc/2022/12/07/AoC-2022-Day-07.html">07 - The elves give you an outdated device with not enough disk space, we delete the filesystem</a></li>
+</ul>
+
+</article>
+
+    </main>
+  </div>
+
+  <footer class="border-t-2 border-sky-900 my-4 pt-4 text-sm w-full flex justify-center">
+    <p class="prose text-xs dark:prose-invert mx-4">
+      Found an error or have an improvement?
+      <a href="https://github.com/JoshAshby/joshashby.github.io/tree/source/_posts/2022-12-01-aoc-2022.md">Suggest a correction!</a> | <span class="text-gray-300 text-xs">© Joshua Ashby</span>
+    </p>
+  </footer>
+
+  
+  <script src="/vite/assets/application.2826b514.js" crossorigin="anonymous" type="module"></script>
+
+
+</body>
+</html>

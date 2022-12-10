@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>AoC 2022 Day 04 - Ashby's Hideout</title>
+  <meta name="description" content="">
+
+  <link type="application/atom+xml" rel="alternate" href="https://joshisa.ninja/feed.xml" title="Ashby's Hideout" />
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>AoC 2022 Day 04 | Ashby’s Hideout</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="AoC 2022 Day 04" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="This post contains inline annotations/footnotes to help add context, helpful tips or expand upon a tangent in the text. Expand them by clicking or tapping on them Annotations might have their own annotationsSuch as this one! inside of them too." />
+<meta property="og:description" content="This post contains inline annotations/footnotes to help add context, helpful tips or expand upon a tangent in the text. Expand them by clicking or tapping on them Annotations might have their own annotationsSuch as this one! inside of them too." />
+<link rel="canonical" href="https://joshisa.ninja/aoc/2022/12/04/AoC-2022-Day-04.html" />
+<meta property="og:url" content="https://joshisa.ninja/aoc/2022/12/04/AoC-2022-Day-04.html" />
+<meta property="og:site_name" content="Ashby’s Hideout" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-12-04T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="AoC 2022 Day 04" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-12-04T00:00:00+00:00","datePublished":"2022-12-04T00:00:00+00:00","description":"This post contains inline annotations/footnotes to help add context, helpful tips or expand upon a tangent in the text. Expand them by clicking or tapping on them Annotations might have their own annotationsSuch as this one! inside of them too.","headline":"AoC 2022 Day 04","mainEntityOfPage":{"@type":"WebPage","@id":"https://joshisa.ninja/aoc/2022/12/04/AoC-2022-Day-04.html"},"url":"https://joshisa.ninja/aoc/2022/12/04/AoC-2022-Day-04.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <link rel="stylesheet" href="/vite/assets/ashby.002df90b.css" media="screen"/>
+
+  <style>
+  
+  </style>
+</head>
+
+<body>
+  <div id="master-chief">
+    <section id="main-sidebar">
+      <nav class="sidebar-nav">
+        <h2><a href="/">Ashby's Hideout</a></h2>
+
+        <div id="nav-links" class="expandable">
+          <ul class="nav-list">
+            <li class="nav-item"><a href="/posts/">Posts</a></li>
+            <li class="nav-item"><a href="/photos/">Photos</a></li>
+            <li class="nav-item"><a href="/projects/">Projects</a></li>
+            <li class="nav-item"><a href="/resume/">Resume</a></li>
+
+            
+          </ul>
+        </div>
+
+        <div class="hamburger-bun">
+          <button class="nav-item" data-behavior="toggle-hidden" data-target="#nav-links">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          </button>
+        </div>
+      </nav>
+    </section>
+
+    <main>
+      <article class="default-post">
+  <header id="page-header">
+  <div class="flex flex-col flex-grow space-y-4">
+    <h1 class="mb-2">AoC 2022 Day 04</h1>
+
+    <div class="flex flex-row space-x-2 items-center">
+      <div class="flex flex-col md:flex-row items-center space-x-1 text-sm leading-5 text-gray-500 dark:text-gray-400 sm:mr-6 font-sans">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+        <time class="whitespace-nowrap" datetime="2022-12-04">2022-Dec-04</time>
+      </div>
+
+      <div class="flex flex-row flex-wrap space-x-1 items-center justify-end flex-grow">
+        
+          <a href="/tags#swift" name="swift"><span class="tag">swift</span></a>
+
+        
+          <a href="/tags#aoc" name="aoc"><span class="tag">aoc</span></a>
+
+        
+          <a href="/tags#puzzles" name="puzzles"><span class="tag">puzzles</span></a>
+
+        
+      </div>
+    </div>
+  </div>
+</header>
+
+
+  <div>
+  <em>
+  This post contains inline annotations/footnotes to help add context, helpful tips or expand upon a tangent in the text. Expand them by <a href="#annotation-1" class="annotation-trigger -gray">clicking or tapping on them</a>
+<span id="annotation-1" class="annotation">Annotations might have their own <a href="#annotation-2" class="annotation-trigger -red">annotations</a><span id="annotation-2" class="annotation">Such as this one!</span> inside of them too.</span>
+
+  </em>
+</div>
+
+<p>I felt that today’s puzzle was rather easy, but I acknowledge that a big part of that is because the swift language and standard library had all of the tools necessary built in to solve the problem with minimal fanfare. I also started solving the second part without knowing it before I finished reading the first part’s challenge, lol.</p>
+
+<h2 id="part-one">Part One</h2>
+<blockquote>
+  <p>In how many assignment pairs does one range fully contain the other?</p>
+</blockquote>
+
+<p>Our input for today maps two elves per line, where each elf is assigned a contiguous range of sections to clean up. We’ve got to find how many of these elves are assigned to clean up sections that are completely assigned to their pair already. An elf assigned to 2-4 in the input is actually assigned to sections 2, 3, and 4 and this is starting to look awfully like the concept of a range of numbers. A lot of us have probably seen the following code in some form before:</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="k">let</span> <span class="nv">i</span> <span class="k">in</span> <span class="mi">0</span><span class="o">..&lt;</span><span class="mi">6</span> <span class="p">{</span> <span class="p">}</span>
+<span class="c1">// OR</span>
+<span class="k">for</span> <span class="k">let</span> <span class="nv">i</span> <span class="k">in</span> <span class="mi">0</span><span class="o">...</span><span class="mi">5</span> <span class="p">{</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">..&lt;</code> and <code class="language-plaintext highlighter-rouge">...</code> operators are actually creating a range object in the background: <code class="language-plaintext highlighter-rouge">Range</code> for <code class="language-plaintext highlighter-rouge">..&lt;</code> which is a half-open range from the lower bound up to but not including the upper-bound and <code class="language-plaintext highlighter-rouge">...</code> for <code class="language-plaintext highlighter-rouge">ClosedRange</code> which is from the lower bound up to and including the upper bound. For the sake of convenience today, we’ll be using <code class="language-plaintext highlighter-rouge">ClosedRange</code>s. A single section range in the input looks like the following: <code class="language-plaintext highlighter-rouge">2-4</code> so we’ll split on <code class="language-plaintext highlighter-rouge">-</code>, convert the two parts to <code class="language-plaintext highlighter-rouge">Int</code>s and then map them to a <code class="language-plaintext highlighter-rouge">ClosedRange</code> with <code class="language-plaintext highlighter-rouge">...</code>:</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">sectionToRange</span><span class="p">(</span><span class="n">_</span> <span class="nv">sectionString</span><span class="p">:</span> <span class="kt">Substring</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">ClosedRange</span><span class="o">&lt;</span><span class="kt">Int</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">parts</span> <span class="o">=</span> <span class="n">sectionString</span>
+        <span class="o">.</span><span class="nf">split</span><span class="p">(</span><span class="nv">separator</span><span class="p">:</span> <span class="s">"-"</span><span class="p">,</span> <span class="nv">maxSplits</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="kt">Int</span><span class="p">(</span><span class="kt">String</span><span class="p">(</span><span class="nv">$0</span><span class="p">))</span><span class="o">!</span> <span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">parts</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">...</span><span class="n">parts</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>To make things a little easier to understand, as per usual we’ll combine this into a container struct per line. Today’s will hold the two elves zone’s <code class="language-plaintext highlighter-rouge">ClosedRange</code>s and we’ll use our helper from above to build the two ranges:</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">struct</span> <span class="kt">ZonePairs</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">leftZone</span><span class="p">:</span> <span class="kt">ClosedRange</span><span class="o">&lt;</span><span class="kt">Int</span><span class="o">&gt;</span>
+    <span class="k">let</span> <span class="nv">rightZone</span><span class="p">:</span> <span class="kt">ClosedRange</span><span class="o">&lt;</span><span class="kt">Int</span><span class="o">&gt;</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nf">parseLine</span><span class="p">(</span><span class="n">_</span> <span class="nv">line</span><span class="p">:</span> <span class="kt">Substring</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">ZonePairs</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">parts</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="nf">split</span><span class="p">(</span><span class="nv">separator</span><span class="p">:</span> <span class="s">","</span><span class="p">,</span> <span class="nv">maxSplits</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="o">.</span><span class="nf">init</span><span class="p">(</span>
+        <span class="nv">leftZone</span><span class="p">:</span> <span class="nf">sectionToRange</span><span class="p">(</span><span class="n">parts</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span>
+        <span class="nv">rightZone</span><span class="p">:</span> <span class="nf">sectionToRange</span><span class="p">(</span><span class="n">parts</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Here’s the neat bit, though: <code class="language-plaintext highlighter-rouge">Range</code> turns out to be incredibly helpful for us because it has <a href="https://developer.apple.com/documentation/swift/range/contains%28_:%29"><code class="language-plaintext highlighter-rouge">contains</code></a> which pretty much solve this first part of the challenge. Now that we’ve got our input mapped to an array of <code class="language-plaintext highlighter-rouge">ZonePairs</code> we can filter the array down to pairs where either the left or the right zone fully contain the right or left zone respectively and then simply count the number of zone pairs left:</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">elfZonePairs</span>
+    <span class="o">.</span><span class="n">filter</span> <span class="p">{</span> <span class="nv">$0</span><span class="o">.</span><span class="n">leftZone</span><span class="o">.</span><span class="nf">contains</span><span class="p">(</span><span class="nv">$0</span><span class="o">.</span><span class="n">rightZone</span><span class="p">)</span> <span class="o">||</span> <span class="nv">$0</span><span class="o">.</span><span class="n">rightZone</span><span class="o">.</span><span class="nf">contains</span><span class="p">(</span><span class="nv">$0</span><span class="o">.</span><span class="n">leftZone</span><span class="p">)</span> <span class="p">}</span>
+    <span class="o">.</span><span class="n">count</span>
+</code></pre></div></div>
+
+<h2 id="part-two">Part Two</h2>
+<blockquote>
+  <p>In how many assignment pairs do the ranges overlap?</p>
+</blockquote>
+
+<p>This part is actually even easier than the first part. As we’ve just seen, <code class="language-plaintext highlighter-rouge">Range</code> has a lot of provisions already, so we can go looking for something that’ll tell us if one <code class="language-plaintext highlighter-rouge">Range</code> overlaps another <code class="language-plaintext highlighter-rouge">Range</code> and sure enough we’ll come across <a href="https://developer.apple.com/documentation/swift/range/overlaps%28_:%29-7osha"><code class="language-plaintext highlighter-rouge">overlaps</code></a>. Now, instead of filtering down to the set of zone pairs that contains the other pair, we’re just filtering them down to the pairs that overlap:</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">elfZonePairs</span>
+    <span class="o">.</span><span class="n">filter</span> <span class="p">{</span> <span class="nv">$0</span><span class="o">.</span><span class="n">leftZone</span><span class="o">.</span><span class="nf">overlaps</span><span class="p">(</span><span class="nv">$0</span><span class="o">.</span><span class="n">rightZone</span><span class="p">)</span> <span class="p">}</span>
+    <span class="o">.</span><span class="n">count</span>
+</code></pre></div></div>
+
+<p>And that’s it for today!</p>
+
+<hr />
+
+<p><a href="/aoc/2022/12/01/aoc-2022.html">2022 Day Index</a><br />
+Previously:  <a href="/aoc/2022/12/03/AoC-2022-Day-03.html">Day 3</a><br />
+Next: <a href="/aoc/2022/12/05/AoC-2022-Day-05.html">Day 5</a></p>
+
+</article>
+
+    </main>
+  </div>
+
+  <footer class="border-t-2 border-sky-900 my-4 pt-4 text-sm w-full flex justify-center">
+    <p class="prose text-xs dark:prose-invert mx-4">
+      Found an error or have an improvement?
+      <a href="https://github.com/JoshAshby/joshashby.github.io/tree/source/_posts/2022-12-04-AoC-2022-Day-04.md">Suggest a correction!</a> | <span class="text-gray-300 text-xs">© Joshua Ashby</span>
+    </p>
+  </footer>
+
+  
+  <script src="/vite/assets/application.2826b514.js" crossorigin="anonymous" type="module"></script>
+
+
+</body>
+</html>

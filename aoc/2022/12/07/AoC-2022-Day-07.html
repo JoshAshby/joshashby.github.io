@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>AoC 2022 Day 07 - Ashby's Hideout</title>
+  <meta name="description" content="">
+
+  <link type="application/atom+xml" rel="alternate" href="https://joshisa.ninja/feed.xml" title="Ashby's Hideout" />
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>AoC 2022 Day 07 | Ashby’s Hideout</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="AoC 2022 Day 07" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="This post contains inline annotations/footnotes to help add context, helpful tips or expand upon a tangent in the text. Expand them by clicking or tapping on them Annotations might have their own annotationsSuch as this one! inside of them too." />
+<meta property="og:description" content="This post contains inline annotations/footnotes to help add context, helpful tips or expand upon a tangent in the text. Expand them by clicking or tapping on them Annotations might have their own annotationsSuch as this one! inside of them too." />
+<link rel="canonical" href="https://joshisa.ninja/aoc/2022/12/07/AoC-2022-Day-07.html" />
+<meta property="og:url" content="https://joshisa.ninja/aoc/2022/12/07/AoC-2022-Day-07.html" />
+<meta property="og:site_name" content="Ashby’s Hideout" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-12-07T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="AoC 2022 Day 07" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-12-07T00:00:00+00:00","datePublished":"2022-12-07T00:00:00+00:00","description":"This post contains inline annotations/footnotes to help add context, helpful tips or expand upon a tangent in the text. Expand them by clicking or tapping on them Annotations might have their own annotationsSuch as this one! inside of them too.","headline":"AoC 2022 Day 07","mainEntityOfPage":{"@type":"WebPage","@id":"https://joshisa.ninja/aoc/2022/12/07/AoC-2022-Day-07.html"},"url":"https://joshisa.ninja/aoc/2022/12/07/AoC-2022-Day-07.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <link rel="stylesheet" href="/vite/assets/ashby.002df90b.css" media="screen"/>
+
+  <style>
+  
+  </style>
+</head>
+
+<body>
+  <div id="master-chief">
+    <section id="main-sidebar">
+      <nav class="sidebar-nav">
+        <h2><a href="/">Ashby's Hideout</a></h2>
+
+        <div id="nav-links" class="expandable">
+          <ul class="nav-list">
+            <li class="nav-item"><a href="/posts/">Posts</a></li>
+            <li class="nav-item"><a href="/photos/">Photos</a></li>
+            <li class="nav-item"><a href="/projects/">Projects</a></li>
+            <li class="nav-item"><a href="/resume/">Resume</a></li>
+
+            
+          </ul>
+        </div>
+
+        <div class="hamburger-bun">
+          <button class="nav-item" data-behavior="toggle-hidden" data-target="#nav-links">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          </button>
+        </div>
+      </nav>
+    </section>
+
+    <main>
+      <article class="default-post">
+  <header id="page-header">
+  <div class="flex flex-col flex-grow space-y-4">
+    <h1 class="mb-2">AoC 2022 Day 07</h1>
+
+    <div class="flex flex-row space-x-2 items-center">
+      <div class="flex flex-col md:flex-row items-center space-x-1 text-sm leading-5 text-gray-500 dark:text-gray-400 sm:mr-6 font-sans">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+        <time class="whitespace-nowrap" datetime="2022-12-07">2022-Dec-07</time>
+      </div>
+
+      <div class="flex flex-row flex-wrap space-x-1 items-center justify-end flex-grow">
+        
+          <a href="/tags#swift" name="swift"><span class="tag">swift</span></a>
+
+        
+          <a href="/tags#aoc" name="aoc"><span class="tag">aoc</span></a>
+
+        
+          <a href="/tags#puzzles" name="puzzles"><span class="tag">puzzles</span></a>
+
+        
+      </div>
+    </div>
+  </div>
+</header>
+
+
+  <div>
+  <em>
+  This post contains inline annotations/footnotes to help add context, helpful tips or expand upon a tangent in the text. Expand them by <a href="#annotation-1" class="annotation-trigger -gray">clicking or tapping on them</a>
+<span id="annotation-1" class="annotation">Annotations might have their own <a href="#annotation-2" class="annotation-trigger -red">annotations</a><span id="annotation-2" class="annotation">Such as this one!</span> inside of them too.</span>
+
+  </em>
+</div>
+
+<p>Welcome back to day number 7 of the 2022 Advent of Code, we’ll have worked our way through a whole week of challenges after finishing today’s puzzle!</p>
+
+<p>Continuing with our theme of trying to write not over engineered, but also not terribly unclear “clever” code, we’ll be parsing the input into an actual tree structure. This’ll also give us a taste of using classes and protocols and give us some practice with working with types!</p>
+
+<h2 id="parsing">Parsing</h2>
+
+<p>Parsing today’s input isn’t as funky as day 5 was, but it’s still more involved than previous days where we could get away with a few splits and a map.</p>
+
+<p>Per the usual, let’s build out the base containers for our tree. We’ve got both files and directories to represent and we know that directories have some children and a parent, while files are just a size and pathname. Technically, to solve the problem we only need to store the sizes and could represent this as a single type, but for the sake of making debugging easier, I’ve chosen to split directories and files apart and to store extra information such as the path.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="kt">Directory</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">path</span><span class="p">:</span> <span class="kt">String</span>
+    <span class="k">var</span> <span class="nv">size</span><span class="p">:</span> <span class="kt">Int</span> <span class="p">{</span> <span class="mi">0</span> <span class="p">}</span> <span class="c1">// TODO: Implement this</span>
+
+    <span class="k">let</span> <span class="nv">parent</span><span class="p">:</span> <span class="kt">Directory</span><span class="p">?</span>
+    <span class="k">var</span> <span class="nv">children</span><span class="p">:</span> <span class="p">[</span><span class="kt">Any</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1">// TODO: We'll need to figure out what this is</span>
+
+    <span class="nf">init</span><span class="p">(</span><span class="n">_</span> <span class="nv">path</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">parent</span><span class="p">:</span> <span class="kt">Directory</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">path</span> <span class="o">=</span> <span class="n">path</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">parent</span> <span class="o">=</span> <span class="n">parent</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="kt">File</span><span class="p">:</span> <span class="kt">Node</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">path</span><span class="p">:</span> <span class="kt">String</span>
+    <span class="k">let</span> <span class="nv">size</span><span class="p">:</span> <span class="kt">Int</span>
+
+    <span class="nf">init</span><span class="p">(</span><span class="n">_</span> <span class="nv">path</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">_</span> <span class="nv">size</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">path</span> <span class="o">=</span> <span class="n">path</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="n">size</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>We have two problems, as our little <code class="language-plaintext highlighter-rouge">// TODO</code> comment’s points out. The first is that we need a way to calculate the size of a directory, and the second is that <code class="language-plaintext highlighter-rouge">children</code> can be <em>both</em> directories <strong>and</strong> files so how do we make an array that can hold both? We need to know how to store the children before we can worry about finding the size of a directory so let’s focus on that for now.</p>
+
+<p>In order to store both files and directories in <code class="language-plaintext highlighter-rouge">children</code> we’ll need to have a common base that they both implement. We have two options here, we could either use a type union, or we could use a protocol. In swift, the equivalent of a type union is created using an <a href="https://docs.swift.org/swift-book/LanguageGuide/Enumerations.html#ID148">enum</a> with an associated value, like so:</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">enum</span> <span class="kt">Node</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="nf">directory</span><span class="p">(</span><span class="kt">Directory</span><span class="p">)</span>
+    <span class="k">case</span> <span class="nf">file</span><span class="p">(</span><span class="kt">File</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="k">var</span> <span class="nv">children</span><span class="p">:</span> <span class="p">[</span><span class="kt">Node</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="o">.</span><span class="nf">directory</span><span class="p">(</span><span class="kt">Directory</span><span class="p">(</span><span class="s">"a"</span><span class="p">)),</span>
+    <span class="o">.</span><span class="nf">file</span><span class="p">(</span><span class="kt">File</span><span class="p">(</span><span class="s">"b.txt"</span><span class="p">,</span> <span class="mi">14848514</span><span class="p">))</span>
+<span class="p">]</span>
+</code></pre></div></div>
+
+<p>This’ll work dandy, but it duplicates information that is already encoded in the type of object: A directory is a directory and a file is a file.</p>
+
+<p>We can do better with protocols and even gain some functionality while we’re at it. A protocol in swift is typically called an “interface” in other languages. It’s basically a way to tell swift “these two, separate types implement this subset of functionality, so I can use them interchangeably” and it looks a bit like this:</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">protocol</span> <span class="kt">Node</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">path</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span>
+    <span class="k">var</span> <span class="nv">size</span><span class="p">:</span> <span class="kt">Int</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Update these definitions to state that Directory and File implement our new protocol:</span>
+<span class="kd">class</span> <span class="kt">Directory</span><span class="p">:</span> <span class="kt">Node</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">children</span><span class="p">:</span> <span class="p">[</span><span class="kt">Node</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="c1">// Same as before</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="kt">File</span><span class="p">:</span> <span class="kt">Node</span> <span class="p">{</span>
+    <span class="c1">// Same as before</span>
+<span class="p">}</span>
+
+<span class="c1">// Now we can do this:</span>
+<span class="k">var</span> <span class="nv">children</span><span class="p">:</span> <span class="p">[</span><span class="kt">Node</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="kt">Directory</span><span class="p">(</span><span class="s">"a"</span><span class="p">),</span>
+    <span class="kt">File</span><span class="p">(</span><span class="s">"b.txt"</span><span class="p">,</span> <span class="mi">14848514</span><span class="p">)</span>
+<span class="p">]</span>
+</code></pre></div></div>
+
+<p>That’s not too different from the enum setup above, but now we don’t have to worry about duplicating information that is intrinsic to our system already. Using the protocol also lets us store both directories and files in our <code class="language-plaintext highlighter-rouge">children</code> array but it has an added benefit: we can specify functions and properties that all <code class="language-plaintext highlighter-rouge">Node</code>s should implement and can call them without having to worry about any type casting. For example, to get an Array of the sizes of each child we can just map over them and call the protocols <code class="language-plaintext highlighter-rouge">.size</code> property:</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">children</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="nv">$1</span><span class="o">.</span><span class="n">size</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<p>Now that we’ve got our base containers set up, let’s get into parsing our input into our tree structure. Scanning through our input, we find 4 different formats:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">$ cd /</code> moves us up and down the tree</li>
+  <li><code class="language-plaintext highlighter-rouge">$ ls</code> marks the start of several lines denoting the current node’s contents</li>
+  <li><code class="language-plaintext highlighter-rouge">dir a</code> tells us that there is a directory <code class="language-plaintext highlighter-rouge">a</code> we need to add to our children array</li>
+  <li><code class="language-plaintext highlighter-rouge">14848514 b.txt</code> tells us that there is a file <code class="language-plaintext highlighter-rouge">b.txt</code> we need to add to our children array</li>
+</ul>
+
+<p>We can actually ignore <code class="language-plaintext highlighter-rouge">$ ls</code> lines completely since they’re just a marker in our input saying, “the next lines are a listing for the directory we just moved into.”</p>
+
+<p>We can also ignore the first <code class="language-plaintext highlighter-rouge">$ cd /</code> since it’s telling us that we’re starting at the top, the root of the tree. We’ll take into account when we set up our parser which will remove the need to handle creating a root when we come across <code class="language-plaintext highlighter-rouge">$ cd /</code>, further simplifying the cases we need to deal with.</p>
+
+<p>Swift’s iterator helpers makes it easy to ignore both the <code class="language-plaintext highlighter-rouge">$ ls</code> lines, and our first line (<code class="language-plaintext highlighter-rouge">$ cd /</code>) with <code class="language-plaintext highlighter-rouge">dropFirst()</code> and <code class="language-plaintext highlighter-rouge">filter(where:)</code>. After that we just have to parse each line to build up our tree:</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="nv">currentParent</span> <span class="o">=</span> <span class="kt">Directory</span><span class="p">(</span><span class="s">"/"</span><span class="p">)</span>
+
+<span class="kd">func</span> <span class="nf">parseString</span><span class="p">(</span><span class="n">_</span> <span class="nv">input</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Directory</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">root</span> <span class="o">=</span> <span class="n">currentParent</span>
+
+    <span class="k">var</span> <span class="nv">lines</span> <span class="o">=</span> <span class="n">input</span>
+        <span class="o">.</span><span class="nf">split</span><span class="p">(</span><span class="nv">separator</span><span class="p">:</span> <span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span>
+        <span class="o">.</span><span class="nf">dropFirst</span><span class="p">()</span>
+        <span class="o">.</span><span class="n">filter</span> <span class="p">{</span> <span class="nv">$0</span> <span class="o">!=</span> <span class="s">"$ ls"</span> <span class="p">}</span>
+        <span class="o">.</span><span class="nf">forEach</span><span class="p">(</span><span class="n">parseLine</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">root</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nf">parseLine</span><span class="p">(</span><span class="n">_</span> <span class="nv">line</span><span class="p">:</span> <span class="kt">Substring</span><span class="p">)</span> <span class="p">{}</span>
+</code></pre></div></div>
+
+<p>We’ll use <code class="language-plaintext highlighter-rouge">currentParent</code> to handle inserting nodes into the correct child array and we’ll use <code class="language-plaintext highlighter-rouge">$ cd &lt;path&gt;</code> to change it. Since we want to operate on the root of the tree once we get to solving the challenge, I’ve kept a reference to the root node for convenience which lets us freely change where <code class="language-plaintext highlighter-rouge">currentParent</code> is pointing at.</p>
+
+<p>With this we’ve narrowed our cases down to three and we can further investigate them for a pattern that’ll make it easy to determine which case each line falls into. If we split each line on spaces, we’ll get the following:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">$ cd a</code> can be split into <code class="language-plaintext highlighter-rouge">["$", "cd", "a"]</code></li>
+  <li><code class="language-plaintext highlighter-rouge">dir a</code> can be split into <code class="language-plaintext highlighter-rouge">["dir", "a"]</code></li>
+  <li><code class="language-plaintext highlighter-rouge">14848514 b.txt</code> can be split into <code class="language-plaintext highlighter-rouge">["14848514", "b.txt"]</code></li>
+</ul>
+
+<p>In other words our pattern is:</p>
+
+<ul>
+  <li>If the line starts with <code class="language-plaintext highlighter-rouge">$</code> it’s a cd command and the third index is our directory to change into</li>
+  <li>If the line starts with <code class="language-plaintext highlighter-rouge">dir</code> it’s a new directory command and the second index is the directory name</li>
+  <li>Otherwise it’s a new file command where the first index is the size and the second is file name</li>
+</ul>
+
+<p>There’s one wrinkle we’ll have to address for <code class="language-plaintext highlighter-rouge">cd</code> commands specifically: <code class="language-plaintext highlighter-rouge">$ cd ..</code>. This means we’ll need to navigate to the current directory’s parent, not a child directory.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">parseLine</span><span class="p">(</span><span class="n">_</span> <span class="nv">line</span><span class="p">:</span> <span class="kt">Substring</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">parts</span> <span class="o">=</span> <span class="kt">String</span><span class="p">(</span><span class="n">line</span><span class="p">)</span><span class="o">.</span><span class="nf">split</span><span class="p">(</span><span class="nv">separator</span><span class="p">:</span> <span class="s">" "</span><span class="p">)</span>
+
+    <span class="k">switch</span> <span class="n">parts</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="s">"$"</span><span class="p">:</span>
+            <span class="k">let</span> <span class="nv">dir</span> <span class="o">=</span> <span class="kt">String</span><span class="p">(</span><span class="n">parts</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+
+            <span class="k">if</span> <span class="n">dir</span> <span class="o">==</span> <span class="s">".."</span> <span class="p">{</span>
+                <span class="n">currentParent</span> <span class="o">=</span> <span class="n">currentParent</span><span class="o">.</span><span class="n">parent</span><span class="o">!</span>
+                <span class="k">return</span>
+            <span class="p">}</span>
+
+            <span class="k">guard</span> <span class="k">let</span> <span class="nv">newParent</span> <span class="o">=</span> <span class="n">currentParent</span><span class="o">.</span><span class="n">children</span><span class="o">.</span><span class="nf">first</span><span class="p">(</span><span class="nv">where</span><span class="p">:</span> <span class="p">{</span> <span class="nv">$0</span><span class="o">.</span><span class="n">path</span> <span class="o">==</span> <span class="n">dir</span> <span class="p">})</span> <span class="k">as?</span> <span class="kt">Directory</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="nf">fatalError</span><span class="p">(</span><span class="s">"Can't find a directory for path </span><span class="se">\(</span><span class="n">dir</span><span class="se">)</span><span class="s"> in </span><span class="se">\(</span><span class="n">currentParent</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+            <span class="p">}</span>
+
+            <span class="n">currentParent</span> <span class="o">=</span> <span class="n">newParent</span>
+
+        <span class="k">case</span> <span class="s">"dir"</span><span class="p">:</span>
+            <span class="k">let</span> <span class="nv">dir</span> <span class="o">=</span> <span class="kt">String</span><span class="p">(</span><span class="n">parts</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+            <span class="k">let</span> <span class="nv">newDirectory</span> <span class="o">=</span> <span class="kt">Directory</span><span class="p">(</span><span class="n">dir</span><span class="p">,</span> <span class="nv">parent</span><span class="p">:</span> <span class="n">currentParent</span><span class="p">)</span>
+            <span class="n">currentParent</span><span class="o">.</span><span class="n">children</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">newDirectory</span><span class="p">)</span>
+
+        <span class="k">default</span><span class="p">:</span>
+            <span class="k">let</span> <span class="nv">path</span> <span class="o">=</span> <span class="kt">String</span><span class="p">(</span><span class="n">parts</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+            <span class="k">let</span> <span class="nv">size</span> <span class="o">=</span> <span class="kt">Int</span><span class="p">(</span><span class="n">parts</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="p">??</span> <span class="mi">0</span>
+
+            <span class="k">let</span> <span class="nv">newFile</span> <span class="o">=</span> <span class="kt">File</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
+            <span class="n">currentParent</span><span class="o">.</span><span class="n">children</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">newFile</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Here we get our first taste of guard statements this season as well:</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">guard</span> <span class="k">let</span> <span class="nv">newParent</span> <span class="o">=</span> <span class="n">currentParent</span><span class="o">.</span><span class="n">children</span><span class="o">.</span><span class="nf">first</span><span class="p">(</span><span class="nv">where</span><span class="p">:</span> <span class="p">{</span> <span class="nv">$0</span><span class="o">.</span><span class="n">path</span> <span class="o">==</span> <span class="n">dir</span> <span class="p">})</span> <span class="k">as?</span> <span class="kt">Directory</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nf">fatalError</span><span class="p">(</span><span class="s">"Can't find a directory for path </span><span class="se">\(</span><span class="n">dir</span><span class="se">)</span><span class="s"> in </span><span class="se">\(</span><span class="n">currentParent</span><span class="o">.</span><span class="n">path</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>This is essentially a smart <code class="language-plaintext highlighter-rouge">if</code> statement that lets swift set the guarantee for any code after the <code class="language-plaintext highlighter-rouge">guard</code> that <code class="language-plaintext highlighter-rouge">newParent</code> will exist and be a <code class="language-plaintext highlighter-rouge">Directory</code>. Typically guard statements are a better way to go than the forced optional-unwrapping and forced casting that we’ve done on previous days but since we suspect that no file will be named the same as a directory and thus causing some issues, we could in theory shorten this to:</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">newParent</span> <span class="o">=</span> <span class="n">currentParent</span><span class="o">.</span><span class="n">children</span><span class="o">.</span><span class="nf">first</span><span class="p">(</span><span class="nv">where</span><span class="p">:</span> <span class="p">{</span> <span class="nv">$0</span><span class="o">.</span><span class="n">path</span> <span class="o">==</span> <span class="n">dir</span> <span class="p">})</span><span class="o">!</span> <span class="k">as!</span> <span class="kt">Directory</span>
+</code></pre></div></div>
+
+<p>But those two <code class="language-plaintext highlighter-rouge">!</code> forces make the code a bit uglier and are a smell to me.</p>
+
+<p>There are a few other optional related gotchas: we’re assuming that we’ll never try to navigate to the roots parent, which would be nil and we could in theory get a file of size <code class="language-plaintext highlighter-rouge">0</code> if the int parsing fails. Both of those are fair assumptions we can make, however, since we know the format “shouldn’t” have either of those issues.</p>
+
+<p>Finally we’ve got our input parsed into a tree structure and we can focus on solving this!</p>
+
+<h2 id="part-one">Part One</h2>
+<blockquote>
+  <p>Find all of the directories with a total size of at most 100000. What is the sum of the total sizes of those directories?</p>
+</blockquote>
+
+<p>In order to solve this, for each directory in our tree we need to get an array consisting of that directory’s size as well as the size of all the child directories. We’ll want to combine all of these into a single array which we can filter down to all sizes equal to or less than 100000 before finally summing them together. In order to do this, we’ll need to finish our calculation for the size of a directory first. Remember how we’ve got a computed property setup in our <code class="language-plaintext highlighter-rouge">Directory</code>?</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="nv">size</span><span class="p">:</span> <span class="kt">Int</span> <span class="p">{</span> <span class="mi">0</span> <span class="p">}</span> <span class="c1">// TODO: Implement this</span>
+</code></pre></div></div>
+
+<p>This is where having <code class="language-plaintext highlighter-rouge">size</code> on the protocol, and having all our children using this protocol comes in handy. To get the size of a directory it’s simply a summation of all the sizes of its children:</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="nv">size</span><span class="p">:</span> <span class="kt">Int</span> <span class="p">{</span> <span class="n">children</span><span class="o">.</span><span class="nf">reduce</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="p">{</span> <span class="nv">$0</span> <span class="o">+</span> <span class="nv">$1</span><span class="o">.</span><span class="n">size</span> <span class="p">}</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<p>Next up we need to build an array of directory sizes. We’ll use some swift pattern matching, specifically a <code class="language-plaintext highlighter-rouge">for in where</code> statement to iterate through our children array and only pull out the directories. I attached this function as an instance function for a <code class="language-plaintext highlighter-rouge">Directory</code>:</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="kt">Directory</span><span class="p">:</span> <span class="kt">Node</span> <span class="p">{</span>
+    <span class="c1">// Existing code ...</span>
+
+    <span class="kd">func</span> <span class="nf">subSizes</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="p">{</span>
+        <span class="k">var</span> <span class="nv">sizes</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">size</span><span class="p">]</span>
+
+        <span class="k">for</span> <span class="n">child</span> <span class="k">in</span> <span class="n">children</span> <span class="k">where</span> <span class="n">child</span> <span class="k">is</span> <span class="kt">Directory</span> <span class="p">{</span>
+            <span class="c1">// we can safely force cast this since we filtered</span>
+            <span class="c1">// it down to directories in the where clause above</span>
+            <span class="k">let</span> <span class="nv">child</span> <span class="o">=</span> <span class="n">child</span> <span class="k">as!</span> <span class="kt">Directory</span>
+
+            <span class="n">sizes</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="nv">contentsOf</span><span class="p">:</span> <span class="n">child</span><span class="o">.</span><span class="nf">subSizes</span><span class="p">())</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="n">sizes</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>For every directory we’ll take its size and append the sizes, we get back from all of the children directories. For example, if we’ve got a tree that looks like this, where the sizes are in parentheses:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- / (13)
+  - a/ (2)
+    - b.txt (2)
+  - e/ (11)
+    - f/ (11)
+      - dodge.coin (6)
+      - hat.trick (5)
+</code></pre></div></div>
+
+<ul>
+  <li>We’ll start at <code class="language-plaintext highlighter-rouge">/</code> and <code class="language-plaintext highlighter-rouge">sizes</code> will be <code class="language-plaintext highlighter-rouge">[13]</code>.</li>
+  <li>Next we’ll loop over the child directories, so we’ll visit <code class="language-plaintext highlighter-rouge">a</code> first which will give us back <code class="language-plaintext highlighter-rouge">[2]</code> since <code class="language-plaintext highlighter-rouge">a</code> only has a single file with size <code class="language-plaintext highlighter-rouge">2</code> in it</li>
+  <li>We’ll continue at the end of our for-loop and we’ll append the contents of <code class="language-plaintext highlighter-rouge">a</code>’s <code class="language-plaintext highlighter-rouge">[2]</code> to our existing <code class="language-plaintext highlighter-rouge">[13]</code> in the root for <code class="language-plaintext highlighter-rouge">[13, 2]</code></li>
+  <li>Then we’ll visit <code class="language-plaintext highlighter-rouge">e</code> which takes us down into <code class="language-plaintext highlighter-rouge">f</code></li>
+  <li>in <code class="language-plaintext highlighter-rouge">f</code> we’ll get <code class="language-plaintext highlighter-rouge">[11]</code></li>
+  <li>returning back to <code class="language-plaintext highlighter-rouge">e</code>, we’ll have the equivelent of <code class="language-plaintext highlighter-rouge">[11].append(contentsOf: [11])</code></li>
+  <li>finally back to the root where we have <code class="language-plaintext highlighter-rouge">[13, 2].append(contentsOf: [11, 11])</code></li>
+</ul>
+
+<p>For a little more of a visual aid, this shows the nesting we’ll see while traversing from the root into <code class="language-plaintext highlighter-rouge">f/</code>:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>┌────────────────────────────────────────────────┐
+│              ┌─────────────────────────────┐   │
+│              │            ┌────────────┐   │   │
+│ / - [ 13, 2, │ e/ - [ 11, │ f/ - [11]  │ ] │ ] │
+│              │            └────────────┘   │   │
+│              └─────────────────────────────┘   │
+└────────────────────────────────────────────────┘
+</code></pre></div></div>
+
+<p>Since we’re using <code class="language-plaintext highlighter-rouge">append(contentsOf:)</code>, which is implicitly flattening our arrays as we go, our final array that <code class="language-plaintext highlighter-rouge">root.subSizes()</code> returns is:</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="mi">13</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">11</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>From here we can do a filter where the element is less than or equal to 100000 and finally sum it up for our part on solution:</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">root</span><span class="o">.</span><span class="nf">subSizes</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">filter</span> <span class="p">{</span> <span class="nv">$0</span> <span class="o">&lt;=</span> <span class="mi">100000</span> <span class="p">}</span>
+    <span class="o">.</span><span class="nf">reduce</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">+</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="part-two">Part Two</h2>
+<blockquote>
+  <p>Find the smallest directory that, if deleted, would free up enough space on the file system to run the update. What is the total size of that directory?</p>
+</blockquote>
+
+<p>We’ve got to first find out the minimum size of directory that we need to delete. We’ll start with finding how much space we have free which is the total space we have on the disk, <code class="language-plaintext highlighter-rouge">70000000</code> minus the size of our root directory. Then we find the amount of extra space required for the update, ie: the minimum amount of space we need to delete by taking the update size and subtracting the existing free space that we can use.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">totalSpace</span> <span class="o">=</span> <span class="mi">70000000</span>
+
+<span class="k">let</span> <span class="nv">usedSpace</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">size</span>
+<span class="k">let</span> <span class="nv">freeSpace</span> <span class="o">=</span> <span class="n">totalSpace</span> <span class="o">-</span> <span class="n">usedSpace</span>
+
+<span class="k">let</span> <span class="nv">requiredSpace</span> <span class="o">=</span> <span class="mi">30000000</span> <span class="o">-</span> <span class="n">freeSpace</span>
+</code></pre></div></div>
+
+<p>This gives us the number we need to filter our directories down with: any directory size equal to or more than the required space is a candidate for deletion. From that filtered down list of directory sizes, we’ll take the minimum and will have our solution:</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">root</span><span class="o">.</span><span class="nf">subSizes</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">filter</span> <span class="p">{</span> <span class="nv">$0</span> <span class="o">&gt;=</span> <span class="n">requiredSpace</span> <span class="p">}</span>
+    <span class="o">.</span><span class="nf">min</span><span class="p">()</span> <span class="p">??</span> <span class="mi">0</span>
+</code></pre></div></div>
+
+<hr />
+
+<p><a href="/aoc/2022/12/01/aoc-2022.html">2022 Day Index</a><br />
+Previously:  <a href="/aoc/2022/12/06/AoC-2022-Day-06.html">Day 6</a></p>
+
+</article>
+
+    </main>
+  </div>
+
+  <footer class="border-t-2 border-sky-900 my-4 pt-4 text-sm w-full flex justify-center">
+    <p class="prose text-xs dark:prose-invert mx-4">
+      Found an error or have an improvement?
+      <a href="https://github.com/JoshAshby/joshashby.github.io/tree/source/_posts/2022-12-07-AoC-2022-Day-07.md">Suggest a correction!</a> | <span class="text-gray-300 text-xs">© Joshua Ashby</span>
+    </p>
+  </footer>
+
+  
+  <script src="/vite/assets/application.2826b514.js" crossorigin="anonymous" type="module"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>AoC 2022 Day 01 - Ashby's Hideout</title>
+  <meta name="description" content="">
+
+  <link type="application/atom+xml" rel="alternate" href="https://joshisa.ninja/feed.xml" title="Ashby's Hideout" />
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>AoC 2022 Day 01 | Ashby’s Hideout</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="AoC 2022 Day 01" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="This post contains inline annotations/footnotes to help add context, helpful tips or expand upon a tangent in the text. Expand them by clicking or tapping on them Annotations might have their own annotationsSuch as this one! inside of them too." />
+<meta property="og:description" content="This post contains inline annotations/footnotes to help add context, helpful tips or expand upon a tangent in the text. Expand them by clicking or tapping on them Annotations might have their own annotationsSuch as this one! inside of them too." />
+<link rel="canonical" href="https://joshisa.ninja/aoc/2022/12/01/AoC-2022-Day-01.html" />
+<meta property="og:url" content="https://joshisa.ninja/aoc/2022/12/01/AoC-2022-Day-01.html" />
+<meta property="og:site_name" content="Ashby’s Hideout" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-12-01T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="AoC 2022 Day 01" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-12-01T00:00:00+00:00","datePublished":"2022-12-01T00:00:00+00:00","description":"This post contains inline annotations/footnotes to help add context, helpful tips or expand upon a tangent in the text. Expand them by clicking or tapping on them Annotations might have their own annotationsSuch as this one! inside of them too.","headline":"AoC 2022 Day 01","mainEntityOfPage":{"@type":"WebPage","@id":"https://joshisa.ninja/aoc/2022/12/01/AoC-2022-Day-01.html"},"url":"https://joshisa.ninja/aoc/2022/12/01/AoC-2022-Day-01.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <link rel="stylesheet" href="/vite/assets/ashby.002df90b.css" media="screen"/>
+
+  <style>
+  
+  </style>
+</head>
+
+<body>
+  <div id="master-chief">
+    <section id="main-sidebar">
+      <nav class="sidebar-nav">
+        <h2><a href="/">Ashby's Hideout</a></h2>
+
+        <div id="nav-links" class="expandable">
+          <ul class="nav-list">
+            <li class="nav-item"><a href="/posts/">Posts</a></li>
+            <li class="nav-item"><a href="/photos/">Photos</a></li>
+            <li class="nav-item"><a href="/projects/">Projects</a></li>
+            <li class="nav-item"><a href="/resume/">Resume</a></li>
+
+            
+          </ul>
+        </div>
+
+        <div class="hamburger-bun">
+          <button class="nav-item" data-behavior="toggle-hidden" data-target="#nav-links">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          </button>
+        </div>
+      </nav>
+    </section>
+
+    <main>
+      <article class="default-post">
+  <header id="page-header">
+  <div class="flex flex-col flex-grow space-y-4">
+    <h1 class="mb-2">AoC 2022 Day 01</h1>
+
+    <div class="flex flex-row space-x-2 items-center">
+      <div class="flex flex-col md:flex-row items-center space-x-1 text-sm leading-5 text-gray-500 dark:text-gray-400 sm:mr-6 font-sans">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+        <time class="whitespace-nowrap" datetime="2022-12-01">2022-Dec-01</time>
+      </div>
+
+      <div class="flex flex-row flex-wrap space-x-1 items-center justify-end flex-grow">
+        
+          <a href="/tags#swift" name="swift"><span class="tag">swift</span></a>
+
+        
+          <a href="/tags#aoc" name="aoc"><span class="tag">aoc</span></a>
+
+        
+          <a href="/tags#puzzles" name="puzzles"><span class="tag">puzzles</span></a>
+
+        
+      </div>
+    </div>
+  </div>
+</header>
+
+
+  <div>
+  <em>
+  This post contains inline annotations/footnotes to help add context, helpful tips or expand upon a tangent in the text. Expand them by <a href="#annotation-1" class="annotation-trigger -gray">clicking or tapping on them</a>
+<span id="annotation-1" class="annotation">Annotations might have their own <a href="#annotation-2" class="annotation-trigger -red">annotations</a><span id="annotation-2" class="annotation">Such as this one!</span> inside of them too.</span>
+
+  </em>
+</div>
+
+<p>Welcome back to Advent of Code 2022! I haven’t written about my experience using OCaml for last year’s puzzles yet, but I figured I’d try to get a head start on this year while it’s all fresh in my mind. This year I’ll be trying to solve the puzzles using small swift CLI apps and will be trying to do write-ups of my solutions as I go.</p>
+
+<p>For the most part, I’m not going for speed or cleverness so much as expressiveness and maintainability. I like to try and focus on learning patterns that lend themselves to understanding the code quicker 7 months later and to think about what adding additional features or changing requirements on the code could mean. I’m also not going to be focusing on the superfluous and boilerplate code that wraps and integrates my solutions into a CLI and I’m assuming that you the reader has enough general knowledge to do tasks like reading and splitting an input file by newlines and familiarity with iterators and map/reduce functions.</p>
+
+<p>Since this is the first day, however, let’s take a look at how I’ve got this all set up just for reference. Each day I’ll scaffold a new CLI app using the swift package manager:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>swift package init <span class="nt">--type</span> executable
+</code></pre></div></div>
+
+<p>Then I’ll add in the <a href="https://github.com/apple/swift-argument-parser">Swift Argument Parser</a> package. I’ll use a slightly modified <code class="language-plaintext highlighter-rouge">Package.swift</code> as well which I can copy-paste to the next day to hit the ground running without needing to worry about changing anything for each day’s different name:</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// swift-tools-version: 5.7</span>
+
+<span class="kd">import</span> <span class="kt">PackageDescription</span>
+<span class="kd">import</span> <span class="kt">Foundation</span>
+
+<span class="c1">// Turns the directory "AOC/2022/day04" into just "day04" for example</span>
+<span class="k">let</span> <span class="nv">dayName</span> <span class="o">=</span> <span class="p">(</span><span class="kt">FileManager</span><span class="p">()</span><span class="o">.</span><span class="n">currentDirectoryPath</span> <span class="k">as</span> <span class="kt">NSString</span><span class="p">)</span><span class="o">.</span><span class="n">lastPathComponent</span>
+
+<span class="k">let</span> <span class="nv">package</span> <span class="o">=</span> <span class="kt">Package</span><span class="p">(</span>
+    <span class="nv">name</span><span class="p">:</span> <span class="n">dayName</span><span class="p">,</span>
+    <span class="nv">platforms</span><span class="p">:</span> <span class="p">[</span><span class="o">.</span><span class="nf">macOS</span><span class="p">(</span><span class="o">.</span><span class="n">v13</span><span class="p">)],</span>
+    <span class="nv">dependencies</span><span class="p">:</span> <span class="p">[</span>
+        <span class="o">.</span><span class="nf">package</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="s">"https://github.com/apple/swift-argument-parser"</span><span class="p">,</span> <span class="nv">from</span><span class="p">:</span> <span class="s">"1.2.0"</span><span class="p">)</span>
+    <span class="p">],</span>
+    <span class="nv">targets</span><span class="p">:</span> <span class="p">[</span>
+        <span class="o">.</span><span class="nf">executableTarget</span><span class="p">(</span>
+            <span class="nv">name</span><span class="p">:</span> <span class="n">dayName</span><span class="p">,</span>
+            <span class="nv">dependencies</span><span class="p">:</span> <span class="p">[</span><span class="o">.</span><span class="nf">product</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"ArgumentParser"</span><span class="p">,</span> <span class="nv">package</span><span class="p">:</span> <span class="s">"swift-argument-parser"</span><span class="p">)]),</span>
+        <span class="o">.</span><span class="nf">testTarget</span><span class="p">(</span>
+            <span class="nv">name</span><span class="p">:</span> <span class="s">"</span><span class="se">\(</span><span class="n">dayName</span><span class="se">)</span><span class="s">Tests"</span><span class="p">,</span>
+            <span class="nv">dependencies</span><span class="p">:</span> <span class="p">[</span><span class="o">.</span><span class="nf">target</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="n">dayName</span><span class="p">)]),</span>
+    <span class="p">]</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<p>And finally I’ll use a boilerplate for the command under <code class="language-plaintext highlighter-rouge">Sources/dayXX/dayXX.swift</code> that looks a bit like this:</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
+<span class="kd">import</span> <span class="kt">OSLog</span>
+<span class="kd">import</span> <span class="kt">ArgumentParser</span>
+
+<span class="k">let</span> <span class="nv">dayName</span> <span class="o">=</span> <span class="p">(</span><span class="kt">FileManager</span><span class="p">()</span><span class="o">.</span><span class="n">currentDirectoryPath</span> <span class="k">as</span> <span class="kt">NSString</span><span class="p">)</span><span class="o">.</span><span class="n">lastPathComponent</span>
+<span class="k">let</span> <span class="nv">dayNumber</span> <span class="o">=</span> <span class="kt">Int</span><span class="p">(</span><span class="n">dayName</span><span class="o">.</span><span class="nf">components</span><span class="p">(</span><span class="nv">separatedBy</span><span class="p">:</span> <span class="kt">CharacterSet</span><span class="o">.</span><span class="n">decimalDigits</span><span class="o">.</span><span class="n">inverted</span><span class="p">)</span><span class="o">.</span><span class="nf">joined</span><span class="p">())</span> <span class="p">??</span> <span class="mi">0</span>
+
+<span class="kd">extension</span> <span class="kt">Logger</span> <span class="p">{</span>
+    <span class="kd">static</span> <span class="k">let</span> <span class="nv">parsing</span> <span class="o">=</span> <span class="kt">Logger</span><span class="p">(</span><span class="nv">subsystem</span><span class="p">:</span> <span class="s">"com.aoc22.</span><span class="se">\(</span><span class="n">dayName</span><span class="se">)</span><span class="s">"</span><span class="p">,</span> <span class="nv">category</span><span class="p">:</span> <span class="s">"Parsing"</span><span class="p">)</span>
+    <span class="kd">static</span> <span class="k">let</span> <span class="nv">solution</span> <span class="o">=</span> <span class="kt">Logger</span><span class="p">(</span><span class="nv">subsystem</span><span class="p">:</span> <span class="s">"com.aoc22.</span><span class="se">\(</span><span class="n">dayName</span><span class="se">)</span><span class="s">"</span><span class="p">,</span> <span class="nv">category</span><span class="p">:</span> <span class="s">"Solution"</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kd">@main</span>
+<span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Challenge</span><span class="p">:</span> <span class="kt">ParsableCommand</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">configuration</span> <span class="o">=</span> <span class="kt">CommandConfiguration</span><span class="p">(</span>
+        <span class="nv">abstract</span><span class="p">:</span> <span class="s">"Day </span><span class="se">\(</span><span class="n">dayNumber</span><span class="se">)</span><span class="s">!"</span><span class="p">,</span>
+
+        <span class="nv">version</span><span class="p">:</span> <span class="s">"1.0.0"</span><span class="p">,</span>
+
+        <span class="nv">subcommands</span><span class="p">:</span> <span class="p">[</span><span class="kt">PartOne</span><span class="o">.</span><span class="k">self</span><span class="p">,</span> <span class="kt">PartTwo</span><span class="o">.</span><span class="k">self</span><span class="p">]</span>
+    <span class="p">)</span>
+
+    <span class="kd">public</span> <span class="nf">init</span><span class="p">()</span> <span class="p">{}</span>
+<span class="p">}</span>
+
+<span class="kd">struct</span> <span class="kt">BaseOptions</span><span class="p">:</span> <span class="kt">ParsableArguments</span> <span class="p">{</span>
+    <span class="kd">@Argument</span><span class="p">(</span><span class="nv">help</span><span class="p">:</span> <span class="s">"The file to work upon for the puzzle input"</span><span class="p">)</span>
+    <span class="k">var</span> <span class="nv">inputFile</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">"input"</span>
+<span class="p">}</span>
+
+<span class="kd">extension</span> <span class="kt">Challenge</span> <span class="p">{</span>
+    <span class="kd">struct</span> <span class="kt">PartOne</span><span class="p">:</span> <span class="kt">ParsableCommand</span> <span class="p">{</span>
+        <span class="kd">static</span> <span class="k">var</span> <span class="nv">configuration</span> <span class="o">=</span> <span class="kt">CommandConfiguration</span><span class="p">(</span>
+            <span class="nv">abstract</span><span class="p">:</span> <span class="s">""</span>
+        <span class="p">)</span>
+
+        <span class="kd">@OptionGroup</span> <span class="k">var</span> <span class="nv">options</span><span class="p">:</span> <span class="kt">BaseOptions</span>
+
+        <span class="k">mutating</span> <span class="kd">func</span> <span class="nf">run</span><span class="p">()</span> <span class="p">{</span>
+            <span class="k">let</span> <span class="nv">parsedInput</span> <span class="o">=</span> <span class="kt">Parser</span><span class="p">()</span><span class="o">.</span><span class="nf">parseFile</span><span class="p">(</span><span class="n">options</span><span class="o">.</span><span class="n">inputFile</span><span class="p">)</span>
+            <span class="k">let</span> <span class="nv">solution</span> <span class="o">=</span> <span class="nf">solve</span><span class="p">(</span><span class="n">parsedInput</span><span class="p">)</span>
+
+            <span class="nf">print</span><span class="p">(</span><span class="s">"</span><span class="se">\(</span><span class="n">solution</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+        <span class="p">}</span>
+
+        <span class="kd">func</span> <span class="nf">solve</span><span class="p">(</span><span class="n">_</span> <span class="nv">input</span><span class="p">:</span> <span class="p">[</span><span class="kt">ParsedLine</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="mi">0</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="kd">struct</span> <span class="kt">PartTwo</span><span class="p">:</span> <span class="kt">ParsableCommand</span> <span class="p">{</span>
+        <span class="kd">static</span> <span class="k">var</span> <span class="nv">configuration</span> <span class="o">=</span> <span class="kt">CommandConfiguration</span><span class="p">(</span>
+            <span class="nv">abstract</span><span class="p">:</span> <span class="s">""</span>
+        <span class="p">)</span>
+
+        <span class="kd">@OptionGroup</span> <span class="k">var</span> <span class="nv">options</span><span class="p">:</span> <span class="kt">BaseOptions</span>
+
+        <span class="k">mutating</span> <span class="kd">func</span> <span class="nf">run</span><span class="p">()</span> <span class="p">{</span>
+            <span class="k">let</span> <span class="nv">parsedInput</span> <span class="o">=</span> <span class="kt">Parser</span><span class="p">()</span><span class="o">.</span><span class="nf">parseFile</span><span class="p">(</span><span class="n">options</span><span class="o">.</span><span class="n">inputFile</span><span class="p">)</span>
+            <span class="k">let</span> <span class="nv">solution</span> <span class="o">=</span> <span class="nf">solve</span><span class="p">(</span><span class="n">parsedInput</span><span class="p">)</span>
+
+            <span class="nf">print</span><span class="p">(</span><span class="s">"</span><span class="se">\(</span><span class="n">solution</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+        <span class="p">}</span>
+
+        <span class="kd">func</span> <span class="nf">solve</span><span class="p">(</span><span class="n">_</span> <span class="nv">input</span><span class="p">:</span> <span class="p">[</span><span class="kt">ParsedLine</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="mi">0</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">typealias</span> <span class="kt">ParsedLine</span> <span class="o">=</span> <span class="kt">String</span><span class="c1">// TODO: Fill me in</span>
+
+<span class="kd">struct</span> <span class="kt">Parser</span> <span class="p">{</span>
+    <span class="kd">fileprivate</span> <span class="kd">func</span> <span class="nf">parseLine</span><span class="p">(</span><span class="n">_</span> <span class="nv">line</span><span class="p">:</span> <span class="kt">Substring</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">ParsedLine</span> <span class="p">{</span>
+        <span class="c1">// TODO: Fill me in</span>
+        <span class="k">return</span> <span class="kt">String</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kd">func</span> <span class="nf">parseString</span><span class="p">(</span><span class="n">_</span> <span class="nv">input</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">ParsedLine</span><span class="p">]</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">input</span>
+            <span class="o">.</span><span class="nf">split</span><span class="p">(</span><span class="nv">separator</span><span class="p">:</span> <span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span>
+            <span class="o">.</span><span class="nf">map</span><span class="p">(</span><span class="n">parseLine</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kd">func</span> <span class="nf">parseFile</span><span class="p">(</span><span class="n">_</span> <span class="nv">filename</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">ParsedLine</span><span class="p">]</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">url</span> <span class="o">=</span> <span class="kt">URL</span><span class="p">(</span><span class="nv">fileURLWithPath</span><span class="p">:</span> <span class="n">filename</span><span class="p">)</span>
+
+        <span class="k">guard</span> <span class="k">let</span> <span class="nv">contents</span> <span class="o">=</span> <span class="k">try</span><span class="p">?</span> <span class="kt">String</span><span class="p">(</span><span class="nv">contentsOf</span><span class="p">:</span> <span class="n">url</span><span class="p">,</span> <span class="nv">encoding</span><span class="p">:</span> <span class="o">.</span><span class="n">utf8</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="nf">fatalError</span><span class="p">(</span><span class="s">"Couldn't parse the file!"</span><span class="p">)</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="nf">parseString</span><span class="p">(</span><span class="n">contents</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>This gives me a quick and ready structure, leaving me with the details of how a line from the input is parsed and what that resulting container looks like, letting me focus on writing a solution by filling in <code class="language-plaintext highlighter-rouge">parseLine()</code> and the two <code class="language-plaintext highlighter-rouge">solve()</code>s without fussing with the setup. I’ve got a few other patterns setup in here too, such as the input always being under at <code class="language-plaintext highlighter-rouge">./input</code> and some logging for debugging purposes, which I found to be extremely helpful last year. I’ve gone a bit further too and have a small CLI that downloads the days input automatically: <code class="language-plaintext highlighter-rouge">aoc-utils download</code> after a puzzle is released and <code class="language-plaintext highlighter-rouge">./input</code> is set up and ready to go as well!</p>
+
+<p>The last part to all of this is a set of tests. I like to start off with tests against the example input and the known solution to those samples as well as tests against my final solution so that I can refactor my code and ensure the solution stays the same.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">XCTest</span>
+<span class="kd">@testable</span> <span class="kd">import</span> <span class="n">dayXX</span>
+
+<span class="k">let</span> <span class="nv">testInput</span> <span class="o">=</span> <span class="s">"""
+"""</span>
+
+<span class="kd">final</span> <span class="kd">class</span> <span class="nv">dayXXTests</span><span class="p">:</span> <span class="kt">XCTestCase</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">testPartOneExample</span><span class="p">()</span> <span class="k">throws</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">parsedOutput</span> <span class="o">=</span> <span class="kt">Parser</span><span class="p">()</span><span class="o">.</span><span class="nf">parseString</span><span class="p">(</span><span class="n">testInput</span><span class="p">)</span>
+        <span class="k">let</span> <span class="nv">solution</span> <span class="o">=</span> <span class="kt">Challenge</span><span class="o">.</span><span class="kt">PartOne</span><span class="p">()</span><span class="o">.</span><span class="nf">solve</span><span class="p">(</span><span class="n">parsedOutput</span><span class="p">)</span>
+
+        <span class="kt">XCTAssertEqual</span><span class="p">(</span><span class="n">solution</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="kd">func</span> <span class="nf">testPartTwoExample</span><span class="p">()</span> <span class="k">throws</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">parsedOutput</span> <span class="o">=</span> <span class="kt">Parser</span><span class="p">()</span><span class="o">.</span><span class="nf">parseString</span><span class="p">(</span><span class="n">testInput</span><span class="p">)</span>
+        <span class="k">let</span> <span class="nv">solution</span> <span class="o">=</span> <span class="kt">Challenge</span><span class="o">.</span><span class="kt">PartTwo</span><span class="p">()</span><span class="o">.</span><span class="nf">solve</span><span class="p">(</span><span class="n">parsedOutput</span><span class="p">)</span>
+
+        <span class="kt">XCTAssertEqual</span><span class="p">(</span><span class="n">solution</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="kd">func</span> <span class="nf">testPartOneRealInput</span><span class="p">()</span> <span class="k">throws</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">parsedOutput</span> <span class="o">=</span> <span class="kt">Parser</span><span class="p">()</span><span class="o">.</span><span class="nf">parseFile</span><span class="p">(</span><span class="s">"input"</span><span class="p">)</span>
+        <span class="k">let</span> <span class="nv">solution</span> <span class="o">=</span> <span class="kt">Challenge</span><span class="o">.</span><span class="kt">PartOne</span><span class="p">()</span><span class="o">.</span><span class="nf">solve</span><span class="p">(</span><span class="n">parsedOutput</span><span class="p">)</span>
+
+        <span class="kt">XCTAssertEqual</span><span class="p">(</span><span class="n">solution</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="kd">func</span> <span class="nf">testPartTwoRealInput</span><span class="p">()</span> <span class="k">throws</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">parsedOutput</span> <span class="o">=</span> <span class="kt">Parser</span><span class="p">()</span><span class="o">.</span><span class="nf">parseFile</span><span class="p">(</span><span class="s">"input"</span><span class="p">)</span>
+        <span class="k">let</span> <span class="nv">solution</span> <span class="o">=</span> <span class="kt">Challenge</span><span class="o">.</span><span class="kt">PartTwo</span><span class="p">()</span><span class="o">.</span><span class="nf">solve</span><span class="p">(</span><span class="n">parsedOutput</span><span class="p">)</span>
+
+        <span class="kt">XCTAssertEqual</span><span class="p">(</span><span class="n">solution</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Now, once everything is in place and I’ve got a solution setup I can run <code class="language-plaintext highlighter-rouge">swift test</code> and make sure my solution is correct, and <code class="language-plaintext highlighter-rouge">swift run dayXX part-one</code> / <code class="language-plaintext highlighter-rouge">swift run dayXX part-two</code> to get my solution to put in on the site.</p>
+
+<p>With that all in place, let’s dive into the first puzzle which’ll give us a nice warm up for the season!</p>
+
+<h2 id="part-one">Part One</h2>
+<blockquote>
+  <p>Find the Elf carrying the most Calories. How many total Calories are that Elf carrying?</p>
+</blockquote>
+
+<p>We’ll take a fairly common and slightly naive approach today. There is a way to solve this without building an array of every elf’s calories, instead you just keep track of the highest seen calorie count and the calorie count for the current elf, but that “clever” solution isn’t what I’m after and doesn’t lend itself to showing off some of the language features around iterators.</p>
+
+<p>Looking at our input, we can see each elf’s calorie list is separated by a blank line, and each elf has one or more lines of integer numbers that’ll we will need to sum up in order to find that elf’s total number of calories carried. We can start by splitting the input into an <a href="#annotation-3" class="annotation-trigger -gray">array of strings</a>
+<span id="annotation-3" class="annotation">In Swift’s type annotations: <code class="language-plaintext highlighter-rouge">[String]</code>, although in reality what we’ll get is actually a <code class="language-plaintext highlighter-rouge">[Substring]</code> where <code class="language-plaintext highlighter-rouge">Substring</code> is actually a <a href="https://developer.apple.com/documentation/swift/substring">reference</a> to the slice of our original string which contains our split out components. A <code class="language-plaintext highlighter-rouge">Substring</code> is intended to be short-lived, so we normally wouldn’t want to pass it around without copying the contents to a separate <code class="language-plaintext highlighter-rouge">String</code> however today we’ll be fairly quickly converting the <code class="language-plaintext highlighter-rouge">Substring</code> into an <code class="language-plaintext highlighter-rouge">Int</code> so it shouldn’t matter too much.</span>
+. From there we should be able to iterate over this array, and split each string into even smaller strings representing each item’s calories. From there it’ll be a matter of converting the stringified numbers to Swift <code class="language-plaintext highlighter-rouge">Int</code>s and summing them up.</p>
+
+<p>Assuming <code class="language-plaintext highlighter-rouge">input</code> is our string representing our puzzle’s … well, input, we can use the <a href="https://developer.apple.com/documentation/swift/string/split%28separator:maxsplits:omittingemptysubsequences:%29"><code class="language-plaintext highlighter-rouge">split(separator:)</code></a> function to split on two newlines (<code class="language-plaintext highlighter-rouge">\n\n</code>):</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">input</span><span class="o">.</span><span class="nf">split</span><span class="p">(</span><span class="nv">separator</span><span class="p">:</span> <span class="s">"</span><span class="se">\n\n</span><span class="s">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Now that we’ve got each elf’s calories separated out we can focus on a single elf at a time. Again we’ll need to split, but only on a single new line this time, and then we’ll convert each element in that split to an integer and sum them up. Swift’s iterators make this fairly easy to do in one go using <a href="https://developer.apple.com/documentation/swift/array/reduce%28_:_:%29"><code class="language-plaintext highlighter-rouge">reduce(_:_:)</code></a>:</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">parseElf</span><span class="p">(</span><span class="n">_</span> <span class="nv">rawLinesOfCalories</span><span class="p">:</span> <span class="kt">Substring</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">rawLinesOfCalories</span>
+        <span class="o">.</span><span class="nf">split</span><span class="p">(</span><span class="nv">separator</span><span class="p">:</span> <span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span>
+        <span class="o">.</span><span class="nf">reduce</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="p">{</span> <span class="n">memo</span><span class="p">,</span> <span class="n">caloriesLine</span> <span class="k">in</span> <span class="n">memo</span> <span class="o">+</span> <span class="p">(</span><span class="kt">Int</span><span class="p">(</span><span class="n">caloriesLine</span><span class="p">)</span> <span class="p">??</span> <span class="mi">0</span><span class="p">)</span> <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>The biggest thing with this process is that parsing our string into an integer with <code class="language-plaintext highlighter-rouge">Int(_: String) -&gt; Int?</code> returns an <a href="https://docs.swift.org/swift-book/ReferenceManual/Types.html#ID452">Optional</a>. We could, for the sake of this challenge since we know the input is well formed, force unwrap it with <code class="language-plaintext highlighter-rouge">Int(caloriesLine)!</code> but we could also provide a fallback just in case, using the <a href="https://docs.swift.org/swift-book/LanguageGuide/BasicOperators.html#ID72">nil-coalescing operator <code class="language-plaintext highlighter-rouge">??</code></a>. Note that we’re putting this parsing into a separate function as it’ll make the next bit a little easier.</p>
+
+<p>Next, we can map over our split up input, calling this new <code class="language-plaintext highlighter-rouge">paseElf(_:)</code> function and have an array that’ll give us the answer to both parts. I’m going to go a step further and shove them into a small container to make debugging easier and to get our first taste of <code class="language-plaintext highlighter-rouge">typealias</code>:</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">typealias</span> <span class="kt">ElfToCalories</span> <span class="o">=</span> <span class="p">(</span><span class="nv">elf</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">calories</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span>
+
+<span class="kd">func</span> <span class="nf">parseString</span><span class="p">(</span><span class="n">_</span> <span class="nv">input</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">ElfToCalories</span><span class="p">]</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">input</span><span class="o">.</span><span class="nf">split</span><span class="p">(</span><span class="nv">separator</span><span class="p">:</span> <span class="s">"</span><span class="se">\n\n</span><span class="s">"</span><span class="p">)</span>
+        <span class="o">.</span><span class="nf">map</span><span class="p">(</span><span class="n">parseElf</span><span class="p">)</span>
+        <span class="o">.</span><span class="nf">enumerated</span><span class="p">()</span>
+        <span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">calories</span><span class="p">)</span> <span class="k">in</span>
+            <span class="k">let</span> <span class="nv">elfsTuple</span> <span class="o">=</span> <span class="p">(</span><span class="nv">elf</span><span class="p">:</span> <span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nv">calories</span><span class="p">:</span> <span class="n">calories</span><span class="p">)</span>
+
+            <span class="kt">Logger</span><span class="o">.</span><span class="n">parsing</span><span class="o">.</span><span class="nf">debug</span><span class="p">(</span><span class="s">"Elf </span><span class="se">\(</span><span class="n">elfsTuple</span><span class="o">.</span><span class="n">elf</span><span class="se">)</span><span class="s">: </span><span class="se">\(</span><span class="n">elfsTuple</span><span class="o">.</span><span class="n">calories</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+
+            <span class="k">return</span> <span class="n">elfsTuple</span>
+        <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Breaking this down a little bit, we can see that we’re defining a <code class="language-plaintext highlighter-rouge">typealias</code> for a named-element tuple containing the elf’s number in our input (we’ll 1-index this to make it easier to debug against the problems example) and their calories. Next we do our existing split on the double new lines and we map each element into an integer. At the point that we call <code class="language-plaintext highlighter-rouge">.enumerated()</code>, we’ll have an array of integers (<code class="language-plaintext highlighter-rouge">[Int]</code>). <code class="language-plaintext highlighter-rouge">.enumerated()</code> is the magic that lets us get the elf’s index within the array, it transforms our array of integers into an array of tuples, where the first element of each tuple is the index and the second is the original value:</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">elfCalories</span> <span class="o">=</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="mi">38</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+<span class="n">elfCalories</span><span class="o">.</span><span class="nf">enumerated</span><span class="p">()</span> <span class="c1">// Equivalent to: [(0, 50), (1, 42), (2, 38), (3, 9)]</span>
+</code></pre></div></div>
+
+<p>Finally we map over this one last time to convert our 0-indexed into 1-indexing and our <code class="language-plaintext highlighter-rouge">ElfToCalories</code> tuple and to log out some helpful messages. Finally we’ve gotten our input parsed into a helpful data structure and we’re able to get on with the challenge. We need to find the elf that is carrying the most amount of calories, which we can do using <a href="https://developer.apple.com/documentation/swift/array/max%28by:%29"><code class="language-plaintext highlighter-rouge">max(by:)</code></a>. This returns an optional but we know that we’ll have a max so we’ll take the shortcut and force unwrap it. Since we’re working with our named-element tuple, we can pull out the calories to get our solution:</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">solve</span><span class="p">(</span><span class="n">_</span> <span class="nv">input</span><span class="p">:</span> <span class="p">[</span><span class="kt">ElfToCalories</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">input</span>
+        <span class="o">.</span><span class="n">max</span> <span class="p">{</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="k">in</span> <span class="n">a</span><span class="o">.</span><span class="n">calories</span> <span class="o">&lt;</span> <span class="n">b</span><span class="o">.</span><span class="n">calories</span> <span class="p">}</span><span class="o">!</span>
+        <span class="o">.</span><span class="n">calories</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="part-two">Part Two</h2>
+<blockquote>
+  <p>Find the top three Elves carrying the most Calories. How many Calories are those Elves carrying in total?</p>
+</blockquote>
+
+<p>We can stick with the same parsing for part one but instead of using <code class="language-plaintext highlighter-rouge">max(by:)</code>, we’ll have to find <em>three</em> elves and add their calories together. Thankfully Swift has <a href="https://developer.apple.com/documentation/swift/array/sorted%28by:%29"><code class="language-plaintext highlighter-rouge">sorted(by:)</code></a> and <a href="https://developer.apple.com/documentation/swift/array/prefix%28_:%29"><code class="language-plaintext highlighter-rouge">prefix(_:)</code></a> which we can use to first sort our array so that the highest calorie elves are at the front, and then we can take the first 3 elves. From there we can use <code class="language-plaintext highlighter-rouge">reduce(_:_:)</code> again to sum up their combined calories for our solution!</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">solve</span><span class="p">(</span><span class="n">_</span> <span class="nv">input</span><span class="p">:</span> <span class="p">[</span><span class="kt">ElfToCalories</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">input</span>
+        <span class="o">.</span><span class="n">sorted</span> <span class="p">{</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="k">in</span> <span class="n">a</span><span class="o">.</span><span class="n">calories</span> <span class="o">&gt;</span> <span class="n">b</span><span class="o">.</span><span class="n">calories</span> <span class="p">}</span>
+        <span class="o">.</span><span class="nf">prefix</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+        <span class="o">.</span><span class="nf">reduce</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="p">{</span> <span class="nv">$0</span> <span class="o">+</span> <span class="nv">$1</span><span class="o">.</span><span class="n">calories</span> <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>And that’s it, we’ve survived day 1, see you tomorrow!</p>
+
+<hr />
+
+<p><a href="/aoc/2022/12/01/aoc-2022.html">2022 Day Index</a><br />
+Next: <a href="/aoc/2022/12/02/AoC-2022-Day-02.html">Day 2</a></p>
+
+</article>
+
+    </main>
+  </div>
+
+  <footer class="border-t-2 border-sky-900 my-4 pt-4 text-sm w-full flex justify-center">
+    <p class="prose text-xs dark:prose-invert mx-4">
+      Found an error or have an improvement?
+      <a href="https://github.com/JoshAshby/joshashby.github.io/tree/source/_posts/2022-12-01-AoC-2022-Day-01.md">Suggest a correction!</a> | <span class="text-gray-300 text-xs">© Joshua Ashby</span>
+    </p>
+  </footer>
+
+  
+  <script src="/vite/assets/application.2826b514.js" crossorigin="anonymous" type="module"></script>
+
+
+</body>
+</html>
