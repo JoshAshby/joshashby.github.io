@@ -1,6 +1,6 @@
 ---
 title: Browser Extension with Rollup - Svelte & Settings
-layout: post
+
 tags:
 - browser-extension
 - rollupjs
@@ -10,7 +10,7 @@ tags:
 
 <em>
 This post contains inline annotations/footnotes to help add context, helpful tips or expand upon a tangent in the text. Expand them by {% aside clicking or tapping on them %}
-Annotations might have their own {% aside annotations | red %} 
+Annotations might have their own {% aside annotations | red %}
 Such as this one!
 {% endaside %} inside of them too.
 {% endaside %}
@@ -19,7 +19,7 @@ In the [previous post](/2021/10/22/browser-extensions-with-rollup-omnibox-chatte
 
 As a reminder of what we're building through this series: A simple browser extension that allows for the creation of "aliases" via the URL bar, e.g., if the browser extension registers `goto` as the keyword, the user could set up the alias `github/me` to go to their GitHub profile and type in `goto github/me` to the URL bar to make use of the alias; Something similar to [Redirector](https://github.com/einaregilsson/Redirector).
 
-Along the way, we'll cover an introduction to browser extensions, talk about making them function under both Chrome and Firefox with minimal changes and how to use tools like Rollup.js to help bundle one. 
+Along the way, we'll cover an introduction to browser extensions, talk about making them function under both Chrome and Firefox with minimal changes and how to use tools like Rollup.js to help bundle one.
 
 {: .callout.blue}
 While I'm writing these posts using my own preferences on techniques and technologies (which include Rollup.js as well as [TypeScript](https://www.typescriptlang.org/), [Svelte](https://svelte.dev/)), there are a lot of alternative approaches, and it's the concepts that are the core take away. Nothing precludes you from using different technologies; if you'd like to follow along using Vanilla ES6+ and [esbuild](https://esbuild.github.io/), or any other number of setups, {% aside go right ahead! | purple %}

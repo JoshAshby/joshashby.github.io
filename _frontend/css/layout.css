@@ -1,11 +1,6 @@
-/**
- * TODOS
- *  - Nav Menu items have a weird and not ideal click area
- *  - Do i want a larger XL size that puts the sidebar to the right as a full
- *    height thing?
- *  -
- *
- **/
+/****************************
+ * Mobile dropdown navbar & Sidebar navs
+*****************************/
 .expandable {
   @apply bg-gray-800 overflow-hidden absolute left-0 w-full px-4;
 
@@ -16,15 +11,6 @@
 
   &.expand {
     max-height: 100vh;
-  }
-}
-
-@screen lg {
-  .expandable {
-    @apply relative mt-2 p-0;
-
-    top: initial;
-    max-height: initial;
   }
 }
 
@@ -40,116 +26,111 @@
   }
 }
 
-@screen lg {
-  .sidebar-nav {
-    @apply justify-center flex-col items-center h-auto border-0;
-  }
-}
-
 ul.nav-list {
   @apply list-none px-0 py-2 w-full font-sans;
 
-  & .list-divider {
+  & .nav-list-divider {
     @apply my-1 border-b border-gray-700;
   }
-}
 
-@screen lg {
-  ul.nav-list {
-    @apply p-0;
-  }
-}
+  & li.nav-item {
+    @apply cursor-pointer text-gray-200 rounded p-2 relative;
 
-.nav-item {
-  @apply cursor-pointer text-gray-200 rounded p-2;
+    &:hover, &.active {
+      @apply text-white bg-gray-900 inset-0;
 
-  &:hover, &.active {
-    @apply text-white bg-gray-900;
+      & a {
+        @apply text-white;
+      }
+    }
 
     & a {
-      @apply text-white;
-    }
-  }
+      @apply block w-full rounded text-gray-200;
 
-  & a {
-    @apply block w-full rounded text-gray-200;
-
-    &:visited {
-      @apply text-white;
+      &:visited {
+        @apply text-white;
+      }
     }
   }
 }
 
 .hamburger-bun {
-  @apply flex flex-row justify-around;
+  @apply flex flex-row justify-around text-white stroke-current;
 }
 
 @screen lg {
+  .expandable {
+    @apply relative mt-2 p-0;
+
+    top: initial;
+    max-height: initial;
+  }
+
+  .sidebar-nav {
+    @apply justify-center flex-col items-center h-auto border-0;
+  }
+
+  ul.nav-list {
+    @apply p-0;
+  }
+
   .hamburger-bun {
     @apply hidden;
   }
 }
 
+/****************************
+ * Body and content styling
+*****************************/
+
 body {
-  @apply grid dark:bg-slate-900;
+  @apply dark:bg-slate-900 min-h-screen flex flex-col;
+}
+
+#master-chief {
+  @apply grid gap-x-4 mx-auto flex-grow w-full;
+  max-width: 1000px;
 
   grid:
-    "sidebar" auto
+    "sidebar" 4em
     "content" auto
     / 100%;
 }
 
-@screen lg {
-  body {
-    @apply mx-auto;
-    max-width: 1000px;
-
-    grid:
-      "content sidebar" 8rem
-      "content aside" auto
-      / calc(100% - 16rem) 16rem;
-  }
-}
-
 #main-sidebar {
-  @apply w-full flex flex-col sticky top-0 z-30;
-
   grid-area: sidebar;
-}
 
-@media print {
-  #main-sidebar {
-    display: none !important;
-  }
-}
-
-@screen lg {
-  #main-sidebar {
-  }
+  @apply w-full flex flex-col sticky top-0 z-30;
 }
 
 main {
   grid-area: content;
 
-  @apply flex flex-col mx-4;
+  @apply prose dark:prose-invert h-full w-full min-w-full px-4 py-10;
+}
+
+aside {
+  grid-area: aside;
 }
 
 @screen lg {
+  #master-chief {
+    grid:
+      "content sidebar" 8rem
+      "content aside" auto
+      / calc(100% - 16rem) 16rem;
+  }
+
   main {
-    @apply ml-0 mr-4;
+    @apply px-0 py-5;
   }
 }
 
-#page-header {
-  @apply flex flex-col border-b-2 border-gray-200 mb-4 py-2;
-
-  & h1 {
-    @apply text-4xl m-0 mb-4;
-  }
-}
-
-@screen lg {
-  #page-header {
-    @apply flex-row justify-between items-baseline mx-0;
+/* TODO: Make a custom print stylesheet that hides things as this doesn't work
+ * and there's a lot more to hide anyways
+**/
+@media print {
+  #main-sidebar {
+    display: none !important;
   }
 }

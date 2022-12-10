@@ -12,7 +12,7 @@ title: Posts by Tag
 
   <div class="flex flex-col space-y-8">
     {% for post in posts %}
-      {% include post_block.html %}
+      {% include post-block.html %}
     {% endfor %}
   </div>
 

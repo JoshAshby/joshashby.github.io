@@ -1,13 +1,13 @@
 ---
 title: Browser Extensions with Rollup - Omnibox Chatter
-layout: post
+
 tags:
 - browser-extension
 - rollupjs
 - typescript
 ---
 
-{% include annotation_info.html %}
+{% include annotation-info.html %}
 
 In the [previous post](/2021/10/16/web-extensions-with-rollup-getting-started.html), we laid down the groundwork for building a browser extension using [Rollup.js](https://rollupjs.org/) that logged "Hello, World!" out to the extensions background page's console. Today we'll take that idea a little further and start to tie into the browser's "Omnibox," which will let the browser give our extension the users input into the URL bar after they've entered a keyword with which we'll register in the extensions `manifest.json`. As part of this, we'll set up TypeScript and a polyfill to help us out.
 

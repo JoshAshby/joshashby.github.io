@@ -3,25 +3,25 @@
 }
 
 .callout.red {
-  @apply bg-red-50 border-red-400 text-red-800 dark:bg-[#6E4A4A] dark:text-red-100;
+  @apply bg-red-50 border-red-400 text-red-800 marker:text-red-800 dark:bg-[#6E4A4A] dark:text-red-100 dark:marker:text-red-100;
 }
 
 .callout.orange {
-  @apply bg-orange-50 border-orange-400 text-orange-800 dark:bg-[#755E4C] dark:text-orange-100;
+  @apply bg-orange-50 border-orange-400 text-orange-800 marker:text-orange-800 dark:bg-[#755E4C] dark:text-orange-100 dark:marker:text-orange-100;
 }
 
 .callout.yellow {
-  @apply bg-yellow-50 border-yellow-400 text-yellow-800 dark:bg-[#645C41] dark:text-yellow-100;
+  @apply bg-yellow-50 border-yellow-400 text-yellow-800 marker:text-yellow-800 dark:bg-[#645C41] dark:text-yellow-100 dark:marker:text-yellow-100;
 }
 
 .callout.blue {
-  @apply bg-sky-50 border-sky-400 text-sky-800 dark:bg-[#2B4D59] dark:text-sky-100;
+  @apply bg-sky-50 border-sky-400 text-sky-800 marker:text-sky-800 dark:bg-[#2B4D59] dark:text-sky-100 dark:marker:text-sky-100;
 }
 
 .callout.purple {
-  @apply bg-purple-50 border-purple-400 text-purple-800 dark:bg-[#4D4159] dark:text-purple-100;
+  @apply bg-purple-50 border-purple-400 text-purple-800 marker:text-purple-800 dark:bg-[#4D4159] dark:text-purple-100 dark:marker:text-purple-100;
 }
 
 .callout.green {
-  @apply bg-green-50 border-green-400 text-green-800 dark:bg-[#2D4233] dark:text-green-100;
+  @apply bg-green-50 border-green-400 text-green-800 marker:text-green-800 dark:bg-[#2D4233] dark:text-green-100 dark:marker:text-green-100;
 }

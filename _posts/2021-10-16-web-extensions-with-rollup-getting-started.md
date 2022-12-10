@@ -1,12 +1,12 @@
 ---
 title: Browser Extensions with Rollup - Getting Started
-layout: post
+
 tags:
 - browser-extension
 - rollupjs
 ---
 
-{% include annotation_info.html %}
+{% include annotation-info.html %}
 
 *Updated 2021-Oct-23 to cleanup some wording and adjust some formatting things*
 

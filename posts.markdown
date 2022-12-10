@@ -31,6 +31,6 @@ permalink: "/posts/"
 
 <div class="flex flex-col space-y-8">
   {% for post in site.posts %}
-    {% include post_block.html %}
+    {% include post-block.html %}
   {% endfor %}
 </div>

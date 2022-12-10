@@ -1,6 +1,6 @@
 ---
 title: Using Github Actions to build a Jekyll 4 site and host it on Github Pages
-layout: post
+
 tags:
  - github actions
  - jekyll
@@ -32,7 +32,7 @@ For some different configuration options, take a look at [these docs](https://do
 Thi decision to have two branches means that we'll need to:
 - Pull from `source`
 - Build Jekyll
--  Commit and Push the built `_site/`directory to `master` 
+-  Commit and Push the built `_site/`directory to `master`
 
 ```yaml
 on:

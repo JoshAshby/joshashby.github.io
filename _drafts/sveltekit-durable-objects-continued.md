@@ -1,6 +1,4 @@
 ---
-layout: post
-
 title: Durable Objects & SvelteKit - My Setup
 description: |
   A talk through of my setup for using SvelteKit with Cloudflare Page Functions and
@@ -14,7 +12,7 @@ tags:
 - cloudflare-durable-objects
 ---
 
-{% include annotation_info.html %}
+{% include annotation-info.html %}
 
 In my previous post I talked about hacking my way around getting Websockets to
 Cloudflare Durable Objects working within SvelteKits routing setup. During that
@@ -23,18 +21,16 @@ the current frictions between Durable Objects and Pages so I wanted to circle
 back and talk about the setup I'm using to manage a SvelteKit project that also
 has Durable Objects and what the automation of this setup looks like.
 
-{: .callout }
-<div>
+{: .callout.yellow }
+<div markdown="1">
   This post was written against the following versions and the information may
   not be completely up to date in the future, given the beta nature of
   Page Functions and SvelteKit.
 
-  <ul>
-    <li>Node.JS version 18.4.0</li>
-    <li>NPM version 8.12.1</li>
-    <li>Wrangler version 2.0.14</li>
-    <li>SvelteKit version 1.0.0-next.350</li>
-  </ul>
+  - Node.JS version 18.4.0
+  - NPM version 8.12.1
+  - Wrangler version 2.0.14
+  - SvelteKit version 1.0.0-next.350
 </div>
 
 Before I dive into _how_ to set things up the way I have, lets talk over the
@@ -97,7 +93,7 @@ and `/package.json` looks a bit like:
 
 With each `site/package.json` and `durable_objects/package.json` having a
 `name` that looks a bit like `@top-secret-project/site` and
-`@top-secret-project/durable_objects`.
+`@top-secret-project/durable_objects` respectfully.
 
 One issue that arises out of splitting the Durable Object and SvelteKit
 projects is the high likelihood that the SvelteKit project is going
@@ -118,7 +114,8 @@ import { type Turtle, PetsEnum } from "@top-secret-project/core/lib/animals"
 
 # The Hows
 
-Let's actually build this setup out to see how things work!
+With the Whys and some of the problems we're going to address outlined, let's
+actually build this setup out to see how things really work!
 
 ## Initial Setup
 

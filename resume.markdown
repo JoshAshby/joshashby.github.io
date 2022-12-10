@@ -5,9 +5,7 @@ permalink: "/resume/"
 
 # Joshua Ashby
 
-For a PDF version of this page, please shoot me an email at: hello <span
-class="text-red-900">(at)</span> joshashby <span
-class="text-red-900">(dot)</span> com
+For a PDF version of this page, please shoot me an email at: hello <span class="text-red-900 dark:text-red-500">(at)</span> joshashby <span class="text-red-900 dark:text-red-500">(dot)</span> com
 
 I'm a quick and enthusiastic learner on new technologies and code bases and I'm passionate about continuous growth. I'm experienced with being in knowledge leadership roles. I am comfortable working collaboratively, remotely or on my own.
 
@@ -23,7 +21,19 @@ I'm a quick and enthusiastic learner on new technologies and code bases and I'm 
 
 <h3>Professional Experience</h3>
 
-<h5>Subatomic Agency - Denver, CO (January 2021 — May 2022)</h5>
+<h5 class="mt-10">Lifespark, LLC - Remote/St. Louis Park, MN (June 2022 — Present)</h5>
+_Staff Data Engineer_<br />
+**Technologies:** Python, Dagster, dbt, Snowflake, CUE/Cloudformation, AWS, Bash, TypeScript/ReactJS/React Native, Postgres
+
+* Maintaining and implementing new features in a data pipeline using Dagster, dbt
+  and Snowflake.
+* Managing DevOps on AWS and Heroku infrastructure with CUE and Cloudformation
+* Maintained and implemented new features in a React Native mobile application
+* Made use of GraphQL to implement and communicate with a variety of API's
+* Built out an internal administrative panel using React
+
+
+<h5 class="mt-10">Subatomic Agency - Remote/Denver, CO (January 2021 — May 2022)</h5>
 _Senior Software Engineer_<br />
 **Technologies:** Elixir/Phoenix, TypeScript/ReactJS, Python/Django, Postgres, Redis, Elasticsearch, Terraform, AWS, Bash
 
@@ -35,7 +45,7 @@ _Senior Software Engineer_<br />
 * Mentored developers on TypeScript/ReactJS and Elixir/Phoenix paradigms and approaches
 
 
-<h5 class="mt-10">Tumbler Lock - Longmont, CO (August 2019 — December 2020)</h5>
+<h5 class="mt-10">Tumbler Lock - Remote/Longmont, CO (August 2019 — December 2020)</h5>
 _Software Engineer, Contractor_<br />
 **Technologies:** Ruby/Ruby on Rails, TypeScript, ReactJS, Python, Flask, Postgres, Redis, Terraform, AWS, Bash
 
@@ -50,6 +60,7 @@ _Senior Software Engineer, Backend Tech Lead, Chief Architect_<br />
 
 * Architected a NodeJS API solution, storing data in Elasticsearch and PostgreSQL, to facilitate survey activities at colleges, report on the survey results and enable discovering campuses for expansion
 * Mentored junior developers and new hires on best practices, problem solving approaches and code review strategies
+
 
 <h5 class="mt-10">Gloo - Boulder, CO (May 2014 — April 2018)</h5>
 _Software Engineer, Data/ETL Engineer_<br />
