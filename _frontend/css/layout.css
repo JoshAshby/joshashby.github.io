@@ -84,7 +84,11 @@ ul.nav-list {
 *****************************/
 
 body {
-  @apply dark:bg-slate-900 min-h-screen flex flex-col;
+  @apply dark:bg-[#161616] min-h-screen flex flex-col;
+}
+
+a:visited {
+  @apply text-[#a700b5];
 }
 
 #master-chief {
