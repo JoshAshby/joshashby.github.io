@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://joshisa.ninja/feed.xml" rel="self" type="application/atom+xml" /><link href="https://joshisa.ninja/" rel="alternate" type="text/html" /><updated>2022-12-10T00:34:07+00:00</updated><id>https://joshisa.ninja/feed.xml</id><title type="html">Ashby’s Hideout</title><subtitle>Sometimes I convert coffee into code. Rubber ducks are awesome.</subtitle><entry><title type="html">AoC 2022 Day 07</title><link href="https://joshisa.ninja/aoc/2022/12/07/AoC-2022-Day-07.html" rel="alternate" type="text/html" title="AoC 2022 Day 07" /><published>2022-12-07T00:00:00+00:00</published><updated>2022-12-07T00:00:00+00:00</updated><id>https://joshisa.ninja/aoc/2022/12/07/AoC-2022-Day-07</id><content type="html" xml:base="https://joshisa.ninja/aoc/2022/12/07/AoC-2022-Day-07.html"><![CDATA[<div>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://joshisa.ninja/feed.xml" rel="self" type="application/atom+xml" /><link href="https://joshisa.ninja/" rel="alternate" type="text/html" /><updated>2022-12-10T03:35:27+00:00</updated><id>https://joshisa.ninja/feed.xml</id><title type="html">Ashby’s Hideout</title><subtitle>Sometimes I convert coffee into code. Rubber ducks are awesome.</subtitle><entry><title type="html">AoC 2022 Day 07 - The elves give you an outdated device with not enough disk space, we delete the filesystem</title><link href="https://joshisa.ninja/aoc/2022/12/07/AoC-2022-Day-07.html" rel="alternate" type="text/html" title="AoC 2022 Day 07 - The elves give you an outdated device with not enough disk space, we delete the filesystem" /><published>2022-12-07T23:59:00+00:00</published><updated>2022-12-07T23:59:00+00:00</updated><id>https://joshisa.ninja/aoc/2022/12/07/AoC-2022-Day-07</id><content type="html" xml:base="https://joshisa.ninja/aoc/2022/12/07/AoC-2022-Day-07.html"><![CDATA[<div>
   <em>
   This post contains inline annotations/footnotes to help add context, helpful tips or expand upon a tangent in the text. Expand them by <a href="#annotation-1" class="annotation-trigger -gray">clicking or tapping on them</a>
 <span id="annotation-1" class="annotation">Annotations might have their own <a href="#annotation-2" class="annotation-trigger -red">annotations</a><span id="annotation-2" class="annotation">Such as this one!</span> inside of them too.</span>
@@ -294,8 +294,14 @@
 
 <hr />
 
-<p><a href="/aoc/2022/12/01/aoc-2022.html">2022 Day Index</a><br />
-Previously:  <a href="/aoc/2022/12/06/AoC-2022-Day-06.html">Day 6</a></p>]]></content><author><name></name></author><category term="aoc" /><category term="swift" /><category term="aoc" /><category term="puzzles" /><summary type="html"><![CDATA[This post contains inline annotations/footnotes to help add context, helpful tips or expand upon a tangent in the text. Expand them by clicking or tapping on them Annotations might have their own annotationsSuch as this one! inside of them too.]]></summary></entry><entry><title type="html">AoC 2022 Day 06</title><link href="https://joshisa.ninja/aoc/2022/12/06/AoC-2022-Day-06.html" rel="alternate" type="text/html" title="AoC 2022 Day 06" /><published>2022-12-06T00:00:00+00:00</published><updated>2022-12-06T00:00:00+00:00</updated><id>https://joshisa.ninja/aoc/2022/12/06/AoC-2022-Day-06</id><content type="html" xml:base="https://joshisa.ninja/aoc/2022/12/06/AoC-2022-Day-06.html"><![CDATA[<div>
+<ul>
+  <li>
+    <p><a href="/aoc/2022/12/01/aoc-2022.html">2022 Day Index</a></p>
+  </li>
+  <li>
+    <p>Previous: <a href="/aoc/2022/12/06/AoC-2022-Day-06.html">Day 06</a></p>
+  </li>
+</ul>]]></content><author><name></name></author><category term="aoc" /><category term="swift" /><category term="aoc" /><category term="puzzles" /><summary type="html"><![CDATA[This post contains inline annotations/footnotes to help add context, helpful tips or expand upon a tangent in the text. Expand them by clicking or tapping on them Annotations might have their own annotationsSuch as this one! inside of them too.]]></summary></entry><entry><title type="html">AoC 2022 Day 06 - The elves recieve an email, we decode it</title><link href="https://joshisa.ninja/aoc/2022/12/06/AoC-2022-Day-06.html" rel="alternate" type="text/html" title="AoC 2022 Day 06 - The elves recieve an email, we decode it" /><published>2022-12-06T23:59:00+00:00</published><updated>2022-12-06T23:59:00+00:00</updated><id>https://joshisa.ninja/aoc/2022/12/06/AoC-2022-Day-06</id><content type="html" xml:base="https://joshisa.ninja/aoc/2022/12/06/AoC-2022-Day-06.html"><![CDATA[<div>
   <em>
   This post contains inline annotations/footnotes to help add context, helpful tips or expand upon a tangent in the text. Expand them by <a href="#annotation-1" class="annotation-trigger -gray">clicking or tapping on them</a>
 <span id="annotation-1" class="annotation">Annotations might have their own <a href="#annotation-2" class="annotation-trigger -red">annotations</a><span id="annotation-2" class="annotation">Such as this one!</span> inside of them too.</span>
@@ -369,9 +375,17 @@ Previously:  <a href="/aoc/2022/12/06/AoC-2022-Day-06.html">Day 6</a></p>]]></co
 
 <hr />
 
-<p><a href="/aoc/2022/12/01/aoc-2022.html">2022 Day Index</a><br />
-Previously:  <a href="/aoc/2022/12/05/AoC-2022-Day-05.html">Day 5</a><br />
-Next: <a href="/aoc/2022/12/07/AoC-2022-Day-07.html">Day 7</a></p>]]></content><author><name></name></author><category term="aoc" /><category term="swift" /><category term="aoc" /><category term="puzzles" /><summary type="html"><![CDATA[This post contains inline annotations/footnotes to help add context, helpful tips or expand upon a tangent in the text. Expand them by clicking or tapping on them Annotations might have their own annotationsSuch as this one! inside of them too.]]></summary></entry><entry><title type="html">AoC 2022 Day 05</title><link href="https://joshisa.ninja/aoc/2022/12/05/AoC-2022-Day-05.html" rel="alternate" type="text/html" title="AoC 2022 Day 05" /><published>2022-12-05T00:00:00+00:00</published><updated>2022-12-05T00:00:00+00:00</updated><id>https://joshisa.ninja/aoc/2022/12/05/AoC-2022-Day-05</id><content type="html" xml:base="https://joshisa.ninja/aoc/2022/12/05/AoC-2022-Day-05.html"><![CDATA[<div>
+<ul>
+  <li>
+    <p><a href="/aoc/2022/12/01/aoc-2022.html">2022 Day Index</a></p>
+  </li>
+  <li>
+    <p>Next: <a href="/aoc/2022/12/07/AoC-2022-Day-07.html">Day 07</a></p>
+  </li>
+  <li>
+    <p>Previous: <a href="/aoc/2022/12/05/AoC-2022-Day-05.html">Day 05</a></p>
+  </li>
+</ul>]]></content><author><name></name></author><category term="aoc" /><category term="swift" /><category term="aoc" /><category term="puzzles" /><summary type="html"><![CDATA[This post contains inline annotations/footnotes to help add context, helpful tips or expand upon a tangent in the text. Expand them by clicking or tapping on them Annotations might have their own annotationsSuch as this one! inside of them too.]]></summary></entry><entry><title type="html">AoC 2022 Day 05 - The elves rearrange some crates on a boat, we play alphabet blocks with the crates</title><link href="https://joshisa.ninja/aoc/2022/12/05/AoC-2022-Day-05.html" rel="alternate" type="text/html" title="AoC 2022 Day 05 - The elves rearrange some crates on a boat, we play alphabet blocks with the crates" /><published>2022-12-05T23:59:00+00:00</published><updated>2022-12-05T23:59:00+00:00</updated><id>https://joshisa.ninja/aoc/2022/12/05/AoC-2022-Day-05</id><content type="html" xml:base="https://joshisa.ninja/aoc/2022/12/05/AoC-2022-Day-05.html"><![CDATA[<div>
   <em>
   This post contains inline annotations/footnotes to help add context, helpful tips or expand upon a tangent in the text. Expand them by <a href="#annotation-1" class="annotation-trigger -gray">clicking or tapping on them</a>
 <span id="annotation-1" class="annotation">Annotations might have their own <a href="#annotation-2" class="annotation-trigger -red">annotations</a><span id="annotation-2" class="annotation">Such as this one!</span> inside of them too.</span>
@@ -622,9 +636,17 @@ stacks[move.fromStackIndex] = fromStack[0..&lt;slicePoint]
 
 <hr />
 
-<p><a href="/aoc/2022/12/01/aoc-2022.html">2022 Day Index</a><br />
-Previously:  <a href="/aoc/2022/12/04/AoC-2022-Day-04.html">Day 4</a><br />
-Next: <a href="/aoc/2022/12/06/AoC-2022-Day-06.html">Day 6</a></p>]]></content><author><name></name></author><category term="aoc" /><category term="swift" /><category term="aoc" /><category term="puzzles" /><summary type="html"><![CDATA[This post contains inline annotations/footnotes to help add context, helpful tips or expand upon a tangent in the text. Expand them by clicking or tapping on them Annotations might have their own annotationsSuch as this one! inside of them too.]]></summary></entry><entry><title type="html">AoC 2022 Day 04</title><link href="https://joshisa.ninja/aoc/2022/12/04/AoC-2022-Day-04.html" rel="alternate" type="text/html" title="AoC 2022 Day 04" /><published>2022-12-04T00:00:00+00:00</published><updated>2022-12-04T00:00:00+00:00</updated><id>https://joshisa.ninja/aoc/2022/12/04/AoC-2022-Day-04</id><content type="html" xml:base="https://joshisa.ninja/aoc/2022/12/04/AoC-2022-Day-04.html"><![CDATA[<div>
+<ul>
+  <li>
+    <p><a href="/aoc/2022/12/01/aoc-2022.html">2022 Day Index</a></p>
+  </li>
+  <li>
+    <p>Next: <a href="/aoc/2022/12/06/AoC-2022-Day-06.html">Day 06</a></p>
+  </li>
+  <li>
+    <p>Previous: <a href="/aoc/2022/12/04/AoC-2022-Day-04.html">Day 04</a></p>
+  </li>
+</ul>]]></content><author><name></name></author><category term="aoc" /><category term="swift" /><category term="aoc" /><category term="puzzles" /><summary type="html"><![CDATA[This post contains inline annotations/footnotes to help add context, helpful tips or expand upon a tangent in the text. Expand them by clicking or tapping on them Annotations might have their own annotationsSuch as this one! inside of them too.]]></summary></entry><entry><title type="html">AoC 2022 Day 04 - The elves clean up base camp, we free up resources</title><link href="https://joshisa.ninja/aoc/2022/12/04/AoC-2022-Day-04.html" rel="alternate" type="text/html" title="AoC 2022 Day 04 - The elves clean up base camp, we free up resources" /><published>2022-12-04T23:59:00+00:00</published><updated>2022-12-04T23:59:00+00:00</updated><id>https://joshisa.ninja/aoc/2022/12/04/AoC-2022-Day-04</id><content type="html" xml:base="https://joshisa.ninja/aoc/2022/12/04/AoC-2022-Day-04.html"><![CDATA[<div>
   <em>
   This post contains inline annotations/footnotes to help add context, helpful tips or expand upon a tangent in the text. Expand them by <a href="#annotation-1" class="annotation-trigger -gray">clicking or tapping on them</a>
 <span id="annotation-1" class="annotation">Annotations might have their own <a href="#annotation-2" class="annotation-trigger -red">annotations</a><span id="annotation-2" class="annotation">Such as this one!</span> inside of them too.</span>
@@ -697,9 +719,17 @@ Next: <a href="/aoc/2022/12/06/AoC-2022-Day-06.html">Day 6</a></p>]]></content><
 
 <hr />
 
-<p><a href="/aoc/2022/12/01/aoc-2022.html">2022 Day Index</a><br />
-Previously:  <a href="/aoc/2022/12/03/AoC-2022-Day-03.html">Day 3</a><br />
-Next: <a href="/aoc/2022/12/05/AoC-2022-Day-05.html">Day 5</a></p>]]></content><author><name></name></author><category term="aoc" /><category term="swift" /><category term="aoc" /><category term="puzzles" /><summary type="html"><![CDATA[This post contains inline annotations/footnotes to help add context, helpful tips or expand upon a tangent in the text. Expand them by clicking or tapping on them Annotations might have their own annotationsSuch as this one! inside of them too.]]></summary></entry><entry><title type="html">AoC 2022 Day 03</title><link href="https://joshisa.ninja/aoc/2022/12/03/AoC-2022-Day-03.html" rel="alternate" type="text/html" title="AoC 2022 Day 03" /><published>2022-12-03T00:00:00+00:00</published><updated>2022-12-03T00:00:00+00:00</updated><id>https://joshisa.ninja/aoc/2022/12/03/AoC-2022-Day-03</id><content type="html" xml:base="https://joshisa.ninja/aoc/2022/12/03/AoC-2022-Day-03.html"><![CDATA[<div>
+<ul>
+  <li>
+    <p><a href="/aoc/2022/12/01/aoc-2022.html">2022 Day Index</a></p>
+  </li>
+  <li>
+    <p>Next: <a href="/aoc/2022/12/05/AoC-2022-Day-05.html">Day 05</a></p>
+  </li>
+  <li>
+    <p>Previous: <a href="/aoc/2022/12/03/AoC-2022-Day-03.html">Day 03</a></p>
+  </li>
+</ul>]]></content><author><name></name></author><category term="aoc" /><category term="swift" /><category term="aoc" /><category term="puzzles" /><summary type="html"><![CDATA[This post contains inline annotations/footnotes to help add context, helpful tips or expand upon a tangent in the text. Expand them by clicking or tapping on them Annotations might have their own annotationsSuch as this one! inside of them too.]]></summary></entry><entry><title type="html">AoC 2022 Day 03 - The elves redo one particularly incompetent elf’s job, we fire the elf</title><link href="https://joshisa.ninja/aoc/2022/12/03/AoC-2022-Day-03.html" rel="alternate" type="text/html" title="AoC 2022 Day 03 - The elves redo one particularly incompetent elf’s job, we fire the elf" /><published>2022-12-03T23:59:00+00:00</published><updated>2022-12-03T23:59:00+00:00</updated><id>https://joshisa.ninja/aoc/2022/12/03/AoC-2022-Day-03</id><content type="html" xml:base="https://joshisa.ninja/aoc/2022/12/03/AoC-2022-Day-03.html"><![CDATA[<div>
   <em>
   This post contains inline annotations/footnotes to help add context, helpful tips or expand upon a tangent in the text. Expand them by <a href="#annotation-1" class="annotation-trigger -gray">clicking or tapping on them</a>
 <span id="annotation-1" class="annotation">Annotations might have their own <a href="#annotation-2" class="annotation-trigger -red">annotations</a><span id="annotation-2" class="annotation">Such as this one!</span> inside of them too.</span>
@@ -864,9 +894,17 @@ Next: <a href="/aoc/2022/12/05/AoC-2022-Day-05.html">Day 5</a></p>]]></content><
 
 <hr />
 
-<p><a href="/aoc/2022/12/01/aoc-2022.html">2022 Day Index</a><br />
-Previously:  <a href="/aoc/2022/12/02/AoC-2022-Day-02.html">Day 2</a><br />
-Next: <a href="/aoc/2022/12/04/AoC-2022-Day-04.html">Day 4</a></p>]]></content><author><name></name></author><category term="aoc" /><category term="swift" /><category term="aoc" /><category term="puzzles" /><summary type="html"><![CDATA[This post contains inline annotations/footnotes to help add context, helpful tips or expand upon a tangent in the text. Expand them by clicking or tapping on them Annotations might have their own annotationsSuch as this one! inside of them too.]]></summary></entry><entry><title type="html">AoC 2022 Day 02</title><link href="https://joshisa.ninja/aoc/2022/12/02/AoC-2022-Day-02.html" rel="alternate" type="text/html" title="AoC 2022 Day 02" /><published>2022-12-02T00:00:00+00:00</published><updated>2022-12-02T00:00:00+00:00</updated><id>https://joshisa.ninja/aoc/2022/12/02/AoC-2022-Day-02</id><content type="html" xml:base="https://joshisa.ninja/aoc/2022/12/02/AoC-2022-Day-02.html"><![CDATA[<div>
+<ul>
+  <li>
+    <p><a href="/aoc/2022/12/01/aoc-2022.html">2022 Day Index</a></p>
+  </li>
+  <li>
+    <p>Next: <a href="/aoc/2022/12/04/AoC-2022-Day-04.html">Day 04</a></p>
+  </li>
+  <li>
+    <p>Previous: <a href="/aoc/2022/12/02/AoC-2022-Day-02.html">Day 02</a></p>
+  </li>
+</ul>]]></content><author><name></name></author><category term="aoc" /><category term="swift" /><category term="aoc" /><category term="puzzles" /><summary type="html"><![CDATA[This post contains inline annotations/footnotes to help add context, helpful tips or expand upon a tangent in the text. Expand them by clicking or tapping on them Annotations might have their own annotationsSuch as this one! inside of them too.]]></summary></entry><entry><title type="html">AoC 2022 Day 02 - The elves play Rock, Paper, Scissors, we win</title><link href="https://joshisa.ninja/aoc/2022/12/02/AoC-2022-Day-02.html" rel="alternate" type="text/html" title="AoC 2022 Day 02 - The elves play Rock, Paper, Scissors, we win" /><published>2022-12-02T23:59:00+00:00</published><updated>2022-12-02T23:59:00+00:00</updated><id>https://joshisa.ninja/aoc/2022/12/02/AoC-2022-Day-02</id><content type="html" xml:base="https://joshisa.ninja/aoc/2022/12/02/AoC-2022-Day-02.html"><![CDATA[<div>
   <em>
   This post contains inline annotations/footnotes to help add context, helpful tips or expand upon a tangent in the text. Expand them by <a href="#annotation-1" class="annotation-trigger -gray">clicking or tapping on them</a>
 <span id="annotation-1" class="annotation">Annotations might have their own <a href="#annotation-2" class="annotation-trigger -red">annotations</a><span id="annotation-2" class="annotation">Such as this one!</span> inside of them too.</span>
@@ -1137,9 +1175,17 @@ The opponent’s move is encoded as:</p>
 
 <hr />
 
-<p><a href="/aoc/2022/12/01/aoc-2022.html">2022 Day Index</a><br />
-Previously:  <a href="/aoc/2022/12/01/AoC-2022-Day-01.html">Day 1</a><br />
-Next: <a href="/aoc/2022/12/03/AoC-2022-Day-03.html">Day 3</a></p>]]></content><author><name></name></author><category term="aoc" /><category term="swift" /><category term="aoc" /><category term="puzzles" /><summary type="html"><![CDATA[This post contains inline annotations/footnotes to help add context, helpful tips or expand upon a tangent in the text. Expand them by clicking or tapping on them Annotations might have their own annotationsSuch as this one! inside of them too.]]></summary></entry><entry><title type="html">AoC 2022 Day 01</title><link href="https://joshisa.ninja/aoc/2022/12/01/AoC-2022-Day-01.html" rel="alternate" type="text/html" title="AoC 2022 Day 01" /><published>2022-12-01T00:00:00+00:00</published><updated>2022-12-01T00:00:00+00:00</updated><id>https://joshisa.ninja/aoc/2022/12/01/AoC-2022-Day-01</id><content type="html" xml:base="https://joshisa.ninja/aoc/2022/12/01/AoC-2022-Day-01.html"><![CDATA[<div>
+<ul>
+  <li>
+    <p><a href="/aoc/2022/12/01/aoc-2022.html">2022 Day Index</a></p>
+  </li>
+  <li>
+    <p>Next: <a href="/aoc/2022/12/03/AoC-2022-Day-03.html">Day 03</a></p>
+  </li>
+  <li>
+    <p>Previous: <a href="/aoc/2022/12/01/AoC-2022-Day-01.html">Day 01</a></p>
+  </li>
+</ul>]]></content><author><name></name></author><category term="aoc" /><category term="swift" /><category term="aoc" /><category term="puzzles" /><summary type="html"><![CDATA[This post contains inline annotations/footnotes to help add context, helpful tips or expand upon a tangent in the text. Expand them by clicking or tapping on them Annotations might have their own annotationsSuch as this one! inside of them too.]]></summary></entry><entry><title type="html">AoC 2022 Day 01 - The elves count calories, we do an intro</title><link href="https://joshisa.ninja/aoc/2022/12/01/AoC-2022-Day-01.html" rel="alternate" type="text/html" title="AoC 2022 Day 01 - The elves count calories, we do an intro" /><published>2022-12-01T23:59:00+00:00</published><updated>2022-12-01T23:59:00+00:00</updated><id>https://joshisa.ninja/aoc/2022/12/01/AoC-2022-Day-01</id><content type="html" xml:base="https://joshisa.ninja/aoc/2022/12/01/AoC-2022-Day-01.html"><![CDATA[<div>
   <em>
   This post contains inline annotations/footnotes to help add context, helpful tips or expand upon a tangent in the text. Expand them by <a href="#annotation-1" class="annotation-trigger -gray">clicking or tapping on them</a>
 <span id="annotation-1" class="annotation">Annotations might have their own <a href="#annotation-2" class="annotation-trigger -red">annotations</a><span id="annotation-2" class="annotation">Such as this one!</span> inside of them too.</span>
@@ -1405,8 +1451,14 @@ Next: <a href="/aoc/2022/12/03/AoC-2022-Day-03.html">Day 3</a></p>]]></content><
 
 <hr />
 
-<p><a href="/aoc/2022/12/01/aoc-2022.html">2022 Day Index</a><br />
-Next: <a href="/aoc/2022/12/02/AoC-2022-Day-02.html">Day 2</a></p>]]></content><author><name></name></author><category term="aoc" /><category term="swift" /><category term="aoc" /><category term="puzzles" /><summary type="html"><![CDATA[This post contains inline annotations/footnotes to help add context, helpful tips or expand upon a tangent in the text. Expand them by clicking or tapping on them Annotations might have their own annotationsSuch as this one! inside of them too.]]></summary></entry><entry><title type="html">Advent of Code 2022 Anthology</title><link href="https://joshisa.ninja/aoc/2022/12/01/aoc-2022.html" rel="alternate" type="text/html" title="Advent of Code 2022 Anthology" /><published>2022-12-01T00:00:00+00:00</published><updated>2022-12-01T00:00:00+00:00</updated><id>https://joshisa.ninja/aoc/2022/12/01/aoc-2022</id><content type="html" xml:base="https://joshisa.ninja/aoc/2022/12/01/aoc-2022.html"><![CDATA[<p>Welcome back to the end of another year and that means another season of <a href="adventofcode.com/">Advent of Code</a>!</p>
+<ul>
+  <li>
+    <p><a href="/aoc/2022/12/01/aoc-2022.html">2022 Day Index</a></p>
+  </li>
+  <li>
+    <p>Next: <a href="/aoc/2022/12/02/AoC-2022-Day-02.html">Day 02</a></p>
+  </li>
+</ul>]]></content><author><name></name></author><category term="aoc" /><category term="swift" /><category term="aoc" /><category term="puzzles" /><summary type="html"><![CDATA[This post contains inline annotations/footnotes to help add context, helpful tips or expand upon a tangent in the text. Expand them by clicking or tapping on them Annotations might have their own annotationsSuch as this one! inside of them too.]]></summary></entry><entry><title type="html">Advent of Code 2022 Anthology</title><link href="https://joshisa.ninja/aoc/2022/12/01/aoc-2022.html" rel="alternate" type="text/html" title="Advent of Code 2022 Anthology" /><published>2022-12-01T01:00:00+00:00</published><updated>2022-12-01T01:00:00+00:00</updated><id>https://joshisa.ninja/aoc/2022/12/01/aoc-2022</id><content type="html" xml:base="https://joshisa.ninja/aoc/2022/12/01/aoc-2022.html"><![CDATA[<p>Welcome back to the end of another year and that means another season of <a href="adventofcode.com/">Advent of Code</a>!</p>
 
 <p>Last year was the first time that I actively participated and I chose to solve the challenges using OCaml to better familiarize myself with the language. This year I decided that, as much as I enjoy OCaml, I’ve been doing enough Swift for some side projects that I’d love to learn some of the language’s features better.</p>
 
@@ -1415,14 +1467,29 @@ Next: <a href="/aoc/2022/12/02/AoC-2022-Day-02.html">Day 2</a></p>]]></content><
 <p>This years theme is: The elves stage a tropical expedition, in the name of the reindeer’s magical energy supply, to find 50 star fruit.</p>
 
 <h2 id="days">Days</h2>
+
 <ul>
-  <li><a href="/aoc/2022/12/01/AoC-2022-Day-01.html">01 - The elves count calories, we do an intro</a></li>
-  <li><a href="/aoc/2022/12/02/AoC-2022-Day-02.html">02 - The elves play Rock, Paper, Scissors, we win</a></li>
-  <li><a href="/aoc/2022/12/03/AoC-2022-Day-03.html">03 - The elves redo one particularly lacky elf’s job, we fire the elf</a></li>
-  <li><a href="/aoc/2022/12/04/AoC-2022-Day-04.html">04 - The elves clean up base camp, we free up resources</a></li>
-  <li><a href="/aoc/2022/12/05/AoC-2022-Day-05.html">05 - The elves rearrange some crates on a boat, we play alphabet blocks with the crates</a></li>
-  <li><a href="/aoc/2022/12/06/AoC-2022-Day-06.html">06 - The elves recieve an email, we decode it</a></li>
-  <li><a href="/aoc/2022/12/07/AoC-2022-Day-07.html">07 - The elves give you an outdated device with not enough disk space, we delete the filesystem</a></li>
+  <li>
+    <p><a href="/aoc/2022/12/01/AoC-2022-Day-01.html">AoC 2022 Day 01 - The elves count calories, we do an intro</a></p>
+  </li>
+  <li>
+    <p><a href="/aoc/2022/12/02/AoC-2022-Day-02.html">AoC 2022 Day 02 - The elves play Rock, Paper, Scissors, we win</a></p>
+  </li>
+  <li>
+    <p><a href="/aoc/2022/12/03/AoC-2022-Day-03.html">AoC 2022 Day 03 - The elves redo one particularly incompetent elf’s job, we fire the elf</a></p>
+  </li>
+  <li>
+    <p><a href="/aoc/2022/12/04/AoC-2022-Day-04.html">AoC 2022 Day 04 - The elves clean up base camp, we free up resources</a></p>
+  </li>
+  <li>
+    <p><a href="/aoc/2022/12/05/AoC-2022-Day-05.html">AoC 2022 Day 05 - The elves rearrange some crates on a boat, we play alphabet blocks with the crates</a></p>
+  </li>
+  <li>
+    <p><a href="/aoc/2022/12/06/AoC-2022-Day-06.html">AoC 2022 Day 06 - The elves recieve an email, we decode it</a></p>
+  </li>
+  <li>
+    <p><a href="/aoc/2022/12/07/AoC-2022-Day-07.html">AoC 2022 Day 07 - The elves give you an outdated device with not enough disk space, we delete the filesystem</a></p>
+  </li>
 </ul>]]></content><author><name></name></author><category term="aoc" /><category term="aoc" /><category term="swift" /><category term="puzzles" /><summary type="html"><![CDATA[Welcome back to the end of another year and that means another season of Advent of Code!]]></summary></entry><entry><title type="html">SvelteKit &amp;amp; Cloudflare Durable Object Websockets</title><link href="https://joshisa.ninja/2022/05/18/sveltekit-cloudflare-durable-object-websockets.html" rel="alternate" type="text/html" title="SvelteKit &amp;amp; Cloudflare Durable Object Websockets" /><published>2022-05-18T00:00:00+00:00</published><updated>2022-05-18T00:00:00+00:00</updated><id>https://joshisa.ninja/2022/05/18/sveltekit-cloudflare-durable-object-websockets</id><content type="html" xml:base="https://joshisa.ninja/2022/05/18/sveltekit-cloudflare-durable-object-websockets.html"><![CDATA[<div>
   <em>
   This post contains inline annotations/footnotes to help add context, helpful tips or expand upon a tangent in the text. Expand them by <a href="#annotation-1" class="annotation-trigger -gray">clicking or tapping on them</a>
