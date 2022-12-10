@@ -10,18 +10,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           path: source
 
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           ref: master
           path: build
 
-      - uses: actions/setup-ruby@v1
+      - uses: ruby/setup-ruby@v1
         with:
           ruby-version: '2.7'
+          bundler-cache: true
 
       - uses: actions/setup-node@v1
         with:
@@ -67,6 +68,3 @@ jobs:
           git add .
           git commit -m "Update GitHub pages from Jekyll build for commit ${GITHUB_SHA}"
           git push origin master
-
-
-
