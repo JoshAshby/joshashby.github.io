@@ -17,7 +17,7 @@
     & pre.highlight {
       @apply bg-slate-900 dark:bg-slate-800 text-white leading-normal font-mono p-4 overflow-scroll;
 
-      @apply border-0 border-t-8 border-sky-900 rounded-none md:px-8;
+      @apply border-0 border-t-8 border-[#0c4a6e] rounded-none md:px-8;
     }
   }
 
@@ -30,7 +30,7 @@
     }
 
     & > pre {
-      @apply bg-slate-900 dark:bg-slate-800 border-0 border-t-8 border-sky-900 overflow-scroll p-4 md:px-8 rounded-none;
+      @apply bg-slate-900 dark:bg-slate-800 border-0 border-t-8 border-[#0c4a6e] overflow-scroll p-4 md:px-8 rounded-none;
     }
 
     & > div.source-location + pre {
@@ -53,7 +53,7 @@
     }
 
     & .gutter {
-      @apply border-0 border-r border-sky-900 p-0;
+      @apply border-0 border-r border-[#0c4a6e] p-0;
 
       & > pre {
         @apply leading-normal font-mono text-gray-500;

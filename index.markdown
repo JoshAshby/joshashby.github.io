@@ -11,6 +11,8 @@ Looking to get a hold of me?
  - Find me on the [libera irc network](https://libera.chat/) as `JoshAshby`
  - Ping me on <a rel="me" href="https://octodon.social/@ashby">Mastodon</a> as `@ashby@octodon.social`
 
+This site has an [Atom](/feed.xml) feed available as well!
+
 <hr />
 
 #### Recent Posts
