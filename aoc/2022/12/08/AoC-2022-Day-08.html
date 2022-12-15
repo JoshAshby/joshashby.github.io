@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="apple-mobile-web-app-status-bar-style" content="#1f2937">
+  <meta name="theme-color" content="#1f2937" />
+
+  <title>AoC 2022 Day 08 - The elves want a hidden treehouse with a great view, we're their realtor - Ashby's Hideout</title>
+  <meta name="description" content="">
+
+  <link type="application/atom+xml" rel="alternate" href="https://joshisa.ninja/feed.xml" title="Ashby's Hideout" />
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>AoC 2022 Day 08 - The elves want a hidden treehouse with a great view, we’re their realtor | Ashby’s Hideout</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="AoC 2022 Day 08 - The elves want a hidden treehouse with a great view, we’re their realtor" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="This post contains inline annotations/footnotes to help add context, helpful tips or expand upon a tangent in the text. Expand them by clicking or tapping on them Annotations might have their own annotationsSuch as this one! inside of them too." />
+<meta property="og:description" content="This post contains inline annotations/footnotes to help add context, helpful tips or expand upon a tangent in the text. Expand them by clicking or tapping on them Annotations might have their own annotationsSuch as this one! inside of them too." />
+<link rel="canonical" href="https://joshisa.ninja/aoc/2022/12/08/AoC-2022-Day-08.html" />
+<meta property="og:url" content="https://joshisa.ninja/aoc/2022/12/08/AoC-2022-Day-08.html" />
+<meta property="og:site_name" content="Ashby’s Hideout" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-12-08T23:59:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="AoC 2022 Day 08 - The elves want a hidden treehouse with a great view, we’re their realtor" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-12-08T23:59:00+00:00","datePublished":"2022-12-08T23:59:00+00:00","description":"This post contains inline annotations/footnotes to help add context, helpful tips or expand upon a tangent in the text. Expand them by clicking or tapping on them Annotations might have their own annotationsSuch as this one! inside of them too.","headline":"AoC 2022 Day 08 - The elves want a hidden treehouse with a great view, we’re their realtor","mainEntityOfPage":{"@type":"WebPage","@id":"https://joshisa.ninja/aoc/2022/12/08/AoC-2022-Day-08.html"},"url":"https://joshisa.ninja/aoc/2022/12/08/AoC-2022-Day-08.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <link rel="stylesheet" href="/vite/assets/ashby.52d43250.css" media="screen"/>
+
+  <style>
+  
+  </style>
+</head>
+
+<body>
+  <div id="master-chief">
+    <section id="main-sidebar">
+      <nav class="sidebar-nav">
+        <h2><a href="/">Ashby's Hideout</a></h2>
+
+        <div id="nav-links" class="expandable">
+          <ul class="nav-list">
+            <li class="nav-item"><a href="/posts/">Posts</a></li>
+            <li class="nav-item"><a href="/photos/">Photos</a></li>
+            <li class="nav-item"><a href="/projects/">Projects</a></li>
+            <li class="nav-item"><a href="/resume/">Resume</a></li>
+
+            
+          </ul>
+        </div>
+
+        <div class="hamburger-bun">
+          <button class="nav-item" data-behavior="toggle-hidden" data-target="#nav-links">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          </button>
+        </div>
+      </nav>
+    </section>
+
+    <main>
+      <article class="default-post">
+  <header id="page-header">
+  <div class="flex flex-col flex-grow space-y-4">
+    <h1 class="mb-2">AoC 2022 Day 08 - The elves want a hidden treehouse with a great view, we're their realtor</h1>
+
+    <div class="flex flex-row space-x-2 items-center">
+      <div class="flex flex-col md:flex-row items-center space-x-1 text-sm leading-5 text-gray-500 dark:text-gray-400 sm:mr-6 font-sans">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+        <time class="font-mono text-sm whitespace-nowrap" datetime="2022-12-08">Dec 08, 2022</time>
+      </div>
+
+      
+
+      <div class="flex flex-row flex-wrap space-x-1 items-center justify-end flex-grow">
+        
+          <a href="/tags#swift" name="swift"><span class="tag">swift</span></a>
+
+        
+          <a href="/tags#aoc" name="aoc"><span class="tag">aoc</span></a>
+
+        
+          <a href="/tags#puzzles" name="puzzles"><span class="tag">puzzles</span></a>
+
+        
+      </div>
+    </div>
+  </div>
+</header>
+
+
+  <div>
+  <em>
+  This post contains inline annotations/footnotes to help add context, helpful tips or expand upon a tangent in the text. Expand them by <a href="#annotation-1" class="annotation-trigger -gray">clicking or tapping on them</a>
+<span id="annotation-1" class="annotation">Annotations might have their own <a href="#annotation-2" class="annotation-trigger -red">annotations</a><span id="annotation-2" class="annotation">Such as this one!</span> inside of them too.</span>
+
+  </em>
+</div>
+
+<p>The elves, with us in tow, have come across a fantastic grove of trees and for whatever reason they think it’s a great place (and time to build a tree house). They’ve mapped out the tree heights and want to find the best point that’s hidden from the outside but still has a great view.</p>
+
+<p>Today’s solution isn’t going to be the most efficient but I still had fun solving it and further cleaning up my solutions from the mess I made racing the clock. I’ve also grown more comfortable with the basics of the language, enough so that I feel that I can start stepping out and exploring more of the features available with firmer footing under me.</p>
+
+<h2 id="parsing">Parsing</h2>
+
+<p>As we’ve already seen, AoC has a number of different input formats and today’s is no different. We’ve got a 2-d array represented in text as a column per character and a row per line, each element is an integer within the range of 0-9. Compared to some other days, this is fairly trivial and a good format to get comfortable with as it’ll surely appear again in the future of either this year or the next.</p>
+
+<p>If you recall, on day 1 we made heavy use of <code class="language-plaintext highlighter-rouge">split(separator:)</code> to break apart lines and on day 6 we used <code class="language-plaintext highlighter-rouge">Array(_: String)</code> to convert a string to an array where each element is a character in the string. There’s a further trick to reduce our work which is that Strings implement iterators that return a <code class="language-plaintext highlighter-rouge">String.Element</code>, aka a <code class="language-plaintext highlighter-rouge">Character</code>, each time, meaning we can directly call <code class="language-plaintext highlighter-rouge">map(_:)</code> on strings, neat! We can tie these together along with <code class="language-plaintext highlighter-rouge">Int(_: String) -&gt; Int?</code> to parse our input into a 2-d array that’s ready to go with minimal work, but we’ve got some snag. Firing up a REPL (<code class="language-plaintext highlighter-rouge">swift repl</code>) we see that there isn’t an <code class="language-plaintext highlighter-rouge">Int(_: Character)</code> initializer!</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  1&gt; Int(Character("1"))
+
+  # whole bunch of messages like this:
+  Swift.FixedWidthInteger:3:23: note: candidate expects value of type 'String' for parameter #1 (got 'Character')
+</code></pre></div></div>
+
+<p>Well, that’s inconvenient. We <em>could</em> convert the Character to a String and then initialize an Int but that’s just straight up messy. Looking through the docs for <code class="language-plaintext highlighter-rouge">Character</code> however we see that there’s a helpful <a href="https://developer.apple.com/documentation/swift/character/wholenumbervalue"><code class="language-plaintext highlighter-rouge">wholeNumberValue</code></a> property, perfect.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">typealias</span> <span class="kt">TreeHeight</span> <span class="o">=</span> <span class="kt">Int</span>
+<span class="kd">typealias</span> <span class="kt">TreeGridRow</span> <span class="o">=</span> <span class="p">[</span><span class="kt">TreeHeight</span><span class="p">]</span>
+<span class="kd">typealias</span> <span class="kt">TreeHeightGrid</span> <span class="o">=</span> <span class="p">[</span><span class="kt">GridRow</span><span class="p">]</span>
+
+<span class="k">let</span> <span class="nv">trees</span><span class="p">:</span> <span class="kt">TreeHeightGrid</span> <span class="o">=</span> <span class="n">input</span><span class="o">.</span><span class="nf">split</span><span class="p">(</span><span class="nv">separator</span><span class="p">:</span> <span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="n">line</span> <span class="k">in</span>
+  <span class="n">line</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="n">char</span> <span class="k">in</span> <span class="n">char</span><span class="o">.</span><span class="n">wholeNumberValue</span><span class="o">!</span> <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>We’re okay with failing if the character doesn’t parse into an integer since that means our input is malformed and we don’t want to continue, so we’ll take the easy route of force-unwrapping it. Ideally we’d probably want to make a nice error message, however, to help reduce the time taken to track down where failures are.</p>
+
+<p>To make our code a little more expressive, we also define a few <code class="language-plaintext highlighter-rouge">typealiases</code> to make it clear that <code class="language-plaintext highlighter-rouge">trees</code> is a 2-d array of our tree heights. This is a little contrived but it’s something that really helps me remember what a specific data structure is storing, beyond the plain <code class="language-plaintext highlighter-rouge">[[Int]]</code>.</p>
+
+<h3 id="a-tangent">A Tangent</h3>
+
+<p>Since we’re (or at least I am) getting more comfortable with the language, let’s try golfing this a tiny bit for fun and learn what we can!</p>
+
+<p>I’ve glossed over these in previous days but Swift has implicitly args for its closures, called <a href="https://docs.swift.org/swift-book/LanguageGuide/Closures.html#ID100">Shorthand Argument Names</a> which means that our <code class="language-plaintext highlighter-rouge">line.map(_:)</code> can turn into:</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">trees</span><span class="p">:</span> <span class="kt">TreeGrid</span> <span class="o">=</span> <span class="n">input</span><span class="o">.</span><span class="nf">split</span><span class="p">(</span><span class="nv">separator</span><span class="p">:</span> <span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="n">line</span> <span class="k">in</span>
+  <span class="n">line</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="nv">$0</span><span class="o">.</span><span class="n">wholeNumberValue</span><span class="o">!</span> <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>In this case though, it’s not too clear what <code class="language-plaintext highlighter-rouge">$0</code> is immediately as we’re in a closure … wrapped in a closure. Not really ideal there, is it? I’m always on the fence about how much I like using shorthands in any language, since it does make the code a little harder to reason about so let’s keep digging.</p>
+
+<p>As it turns out, we can get this even smaller. Swift also has <a href="https://docs.swift.org/swift-book/ReferenceManual/Expressions.html#ID563">Key-Path Expressions</a> which allow us to reference a property or subscript on a value using a <code class="language-plaintext highlighter-rouge">\.&lt;name&gt;</code> pattern. In this case, swift knows that our <code class="language-plaintext highlighter-rouge">map(_:)</code> is getting called on a <code class="language-plaintext highlighter-rouge">Character</code> type so we can reference the <code class="language-plaintext highlighter-rouge">Character</code>’s <code class="language-plaintext highlighter-rouge">wholeNumberValue</code> property via <code class="language-plaintext highlighter-rouge">\.wholeNumberValue</code>. This will still return an optional, though, but thankfully the key-path support optional and force-unwrapping so our final parsing code can become:</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">trees</span><span class="p">:</span> <span class="kt">TreeGrid</span> <span class="o">=</span> <span class="n">input</span><span class="o">.</span><span class="nf">split</span><span class="p">(</span><span class="nv">separator</span><span class="p">:</span> <span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="nv">$0</span><span class="o">.</span><span class="nf">map</span><span class="p">(\</span><span class="o">.</span><span class="n">wholeNumberValue</span><span class="o">!</span><span class="p">)</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<p>There are certainly more ways to golf this down further but I find this to be a good balance of extracting the data and being clean and seems like it’ll fit well with a lot of the AoC parsing problems if I go back and clean up old code!</p>
+
+<h2 id="part-one">Part One</h2>
+<blockquote>
+  <p>Consider your map; how many trees are visible from outside the grid?</p>
+</blockquote>
+
+<p>So we’ve got our tree height map all parsed out into a fancy 2-d array and now we’ve got to find which trees the elves <em>shouldn’t</em> build in, because those trees are visible from outside the grove. We’ve got a couple of options here for how we go about checking if a tree is visible or hidden but we’ll do the easy route and just check each tree individually. To do this we need to:</p>
+
+<ul>
+  <li>Get our current tree’s height</li>
+  <li>Get the trees above, below, left and right of our current tree</li>
+  <li>Ensure that in all 4 directions there are trees equal to or greater in height than the current tree</li>
+</ul>
+
+<p>We’ll need a few things to make this easier to work with, firstly a typealias for coordinates which we’ll store as a named-element tuple:</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">typealias</span> <span class="kt">Coords</span> <span class="o">=</span> <span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>And next up a struct container for some helpful functions for interacting with our map:</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">struct</span> <span class="kt">HeightMap</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">grid</span><span class="p">:</span> <span class="kt">TreeHeightGrid</span>
+
+    <span class="k">let</span> <span class="nv">xBounds</span><span class="p">:</span> <span class="kt">Range</span><span class="o">&lt;</span><span class="kt">Int</span><span class="o">&gt;</span>
+    <span class="k">let</span> <span class="nv">yBounds</span><span class="p">:</span> <span class="kt">Range</span><span class="o">&lt;</span><span class="kt">Int</span><span class="o">&gt;</span>
+
+    <span class="nf">init</span><span class="p">(</span><span class="n">_</span> <span class="nv">grid</span><span class="p">:</span> <span class="kt">TreeHeightGrid</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">grid</span> <span class="o">=</span> <span class="n">grid</span>
+
+        <span class="k">self</span><span class="o">.</span><span class="n">xBounds</span> <span class="o">=</span> <span class="mi">0</span><span class="o">..&lt;</span><span class="n">grid</span><span class="o">.</span><span class="n">first</span><span class="o">!.</span><span class="n">count</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">yBounds</span> <span class="o">=</span> <span class="mi">0</span><span class="o">..&lt;</span><span class="n">grid</span><span class="o">.</span><span class="n">count</span>
+    <span class="p">}</span>
+
+    <span class="kd">func</span> <span class="nf">contains</span><span class="p">(</span><span class="n">_</span> <span class="nv">coords</span><span class="p">:</span> <span class="kt">Coords</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="n">xBounds</span> <span class="o">~=</span> <span class="n">coords</span><span class="o">.</span><span class="n">x</span> <span class="o">&amp;&amp;</span> <span class="n">yBounds</span> <span class="o">~=</span> <span class="n">coords</span><span class="o">.</span><span class="n">y</span> <span class="p">}</span>
+
+    <span class="kd">func</span> <span class="nf">heightAt</span><span class="p">(</span><span class="n">_</span> <span class="nv">coords</span><span class="p">:</span> <span class="kt">Coords</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">TreeHeight</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="o">!</span><span class="nf">contains</span><span class="p">(</span><span class="n">coords</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nf">fatalError</span><span class="p">(</span><span class="s">"Coords </span><span class="se">\(</span><span class="n">coords</span><span class="se">)</span><span class="s"> are not within the maps coordinate space!"</span><span class="p">)</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="n">grid</span><span class="p">[</span><span class="n">coords</span><span class="o">.</span><span class="n">y</span><span class="p">][</span><span class="n">coords</span><span class="o">.</span><span class="n">x</span><span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>There’s a bit to break down here, we’re storing some bounds, and have a few helpers including one that gets the height of a tree if we have a set of coordinates.</p>
+
+<p>When we initialize a new <code class="language-plaintext highlighter-rouge">HeightMap</code>, we’re also building two ranges which represent the bounds of our map. Using ranges here gets us two nice-to-haves: it’s easy to check if a coordinate calls within the map, and we can iterate over them to build lists of coordinates that are all within the map automatically. We’ll see this more in a minute.</p>
+
+<p>Now, Ashby there’s a typo in <code class="language-plaintext highlighter-rouge">contains(_:)</code>, you might say. What’s this <code class="language-plaintext highlighter-rouge">~=</code> business? It’s actually a shortcut operator for <a href="https://developer.apple.com/documentation/swift/range/~=%28_:_:%29"><code class="language-plaintext highlighter-rouge">contains(_:)</code> that’s defined on <code class="language-plaintext highlighter-rouge">Range</code></a>! It’s not the most expressive but it does allow us to neatly condense our contains check for both dimensions into one line.</p>
+
+<p>Finally, we’ve got a helper that does a bounds check before returning the height of the tree at a given set of coordinates. We’d probably want to make this a <code class="language-plaintext highlighter-rouge">func heightAt(_ coords: Coords) throws -&gt; TreeHeight</code> and have a specific <code class="language-plaintext highlighter-rouge">OutOfBounds</code> error rather than just fatally erroring out and exiting if this was production code, but we shouldn’t hit any failures during our normal puzzle operations so it’s more of a ‘we did our math wrong’ debugging helper.</p>
+
+<p>We know that we’re going to need a list of coordinates for all of the trees, so how can we programmatically build that? We’ll use our ranges from the bounds! Because I want to also cut down on how many trees we have to iterate through, we’ll actually make an <code class="language-plaintext highlighter-rouge">interiorCoordinates</code> property on our <code class="language-plaintext highlighter-rouge">HeightMap</code> struct:</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="nv">interiorCoords</span><span class="p">:</span> <span class="p">[</span><span class="kt">Coords</span><span class="p">]</span> <span class="p">{</span>
+    <span class="n">yBounds</span><span class="o">.</span><span class="nf">dropFirst</span><span class="p">()</span><span class="o">.</span><span class="nf">dropLast</span><span class="p">()</span><span class="o">.</span><span class="n">flatMap</span> <span class="p">{</span> <span class="n">y</span> <span class="k">in</span>
+        <span class="n">xBounds</span><span class="o">.</span><span class="nf">dropFirst</span><span class="p">()</span><span class="o">.</span><span class="nf">dropLast</span><span class="p">()</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="n">x</span> <span class="nf">in</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">.dropFirst().dropLast()</code> jazz will remove the perimeter trees and what we get back Wil be an array of just the interior trees coordinates. With this in place, we can start working on our solution to part one:</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">baseVisible</span> <span class="o">=</span> <span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">xBounds</span><span class="o">.</span><span class="n">count</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">yBounds</span><span class="o">.</span><span class="n">count</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="mi">4</span>
+
+<span class="k">return</span> <span class="n">grid</span>
+    <span class="o">.</span><span class="n">interiorCoords</span>
+    <span class="o">.</span><span class="nf">reduce</span><span class="p">(</span><span class="n">baseVisible</span><span class="p">)</span> <span class="p">{</span> <span class="n">accumulator</span><span class="p">,</span> <span class="n">coords</span> <span class="k">in</span>
+        <span class="k">let</span> <span class="nv">currentHeight</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="nf">heightAt</span><span class="p">(</span><span class="n">coords</span><span class="p">)</span>
+
+        <span class="k">let</span> <span class="nv">isHidden</span> <span class="o">=</span> <span class="c1">// ????</span>
+
+        <span class="k">return</span> <span class="n">accumulator</span> <span class="o">+</span> <span class="p">(</span><span class="n">isHidden</span> <span class="p">?</span> <span class="mi">0</span> <span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="p">}</span>
+</code></pre></div></div>
+
+<p>We’ set up <code class="language-plaintext highlighter-rouge">baseVisible</code> using the count of all the trees along the perimeter as they’re already known to be visible. Because the 4 corners are included in both the xBounds and the yBounds ranges, however, we’ll over count the number of trees by 4, so we have to correct that.</p>
+
+<p>Next, we reduce over the array of our interior coordinates, grab the height of the current tree and then decide if the tree is hidden or not. If it’s not hidden, we’ll add it to our accumulator.</p>
+
+<p>Now things get fun. For each tree we need 4 arrays: trees above, below, left and right. Let’s work a little backwards here and start by scaffolding a <code class="language-plaintext highlighter-rouge">radiateOutFrom()</code> which will return these 4 arrays:</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">radiateOutFrom</span><span class="p">(</span><span class="n">_</span> <span class="nv">coords</span><span class="p">:</span> <span class="kt">Coords</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[[</span><span class="kt">Coords</span><span class="p">]]</span> <span class="p">{}</span>
+</code></pre></div></div>
+
+<p>And we can even fill in our <code class="language-plaintext highlighter-rouge">// ????</code> in our solution code too:</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">isHidden</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="nf">radiateOutFrom</span><span class="p">(</span><span class="n">coords</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="n">direction</span> <span class="k">in</span> <span class="n">direction</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="n">otherCoords</span> <span class="k">in</span> <span class="n">grid</span><span class="o">.</span><span class="nf">heightAt</span><span class="p">(</span><span class="n">otherCoords</span><span class="p">)</span> <span class="p">}</span> <span class="p">}</span>
+    <span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="n">otherHeights</span> <span class="k">in</span> <span class="n">otherHeights</span><span class="o">.</span><span class="n">firstIndex</span> <span class="p">{</span> <span class="n">height</span> <span class="k">in</span> <span class="n">height</span> <span class="o">&gt;=</span> <span class="n">currentHeight</span> <span class="p">}</span> <span class="p">}</span>
+    <span class="o">.</span><span class="n">allSatisfy</span> <span class="p">{</span> <span class="nv">$0</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<p>We’ll grab an array of arrays of coordinates, representing the 4 directions, map those coordinates to the height and then look to see if every direction has a tree which meets the requirements of being equal to or greater than the current tree’s height. If the current tree is taller than any of its peers in any direction than our <code class="language-plaintext highlighter-rouge">firstIndex(_:)</code> will return a nil and we’ll fail our <code class="language-plaintext highlighter-rouge">allSatisfy(_:)</code>).</p>
+
+<p>Let us fill in the blanks with this <code class="language-plaintext highlighter-rouge">radiateOutFrom(_:)</code> and start by making a small helper. We want something that we can give a “direction” vector to and it’ll return the list of coordinates, without our origin, till the edge of the map:</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">moveAwayFrom</span><span class="p">(</span><span class="n">from</span> <span class="nv">coords</span><span class="p">:</span> <span class="kt">Coords</span><span class="p">,</span> <span class="nv">inDirection</span><span class="p">:</span> <span class="kt">Coords</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">Coords</span><span class="p">]</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">steps</span><span class="p">:</span> <span class="p">[</span><span class="kt">Coords</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">var</span> <span class="nv">currentStep</span> <span class="o">=</span> <span class="n">coords</span>
+    <span class="k">var</span> <span class="nv">nextStep</span><span class="p">:</span> <span class="kt">Coords</span> <span class="o">=</span> <span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="n">currentStep</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">inDirection</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="n">currentStep</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">inDirection</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+
+    <span class="k">while</span> <span class="nf">contains</span><span class="p">(</span><span class="n">nextStep</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">currentStep</span> <span class="o">=</span> <span class="n">nextStep</span>
+        <span class="n">nextStep</span> <span class="o">=</span> <span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="n">currentStep</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">inDirection</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="n">currentStep</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">inDirection</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+        <span class="n">steps</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">currentStep</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">steps</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>You could probably muck with <code class="language-plaintext highlighter-rouge">stride()</code> or <code class="language-plaintext highlighter-rouge">zip</code> here to make this a little more condensed, but the general gist is that we’ll add our direction vector to our coordinates, appending the new set of coordinates to a list for as long as we’re still on the map. Once an edge is hit, we’ll include the edge and then return the full array of coordinates.</p>
+
+<p>With that, we just need to provide a “direction” vector for each of the directions, map over them and return the results:</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">radiateOutFrom</span><span class="p">(</span><span class="n">_</span> <span class="nv">coords</span><span class="p">:</span> <span class="kt">Coords</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[[</span><span class="kt">Coords</span><span class="p">]]</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">[</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="p">]</span>
+        <span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="n">direction</span> <span class="k">in</span> <span class="nf">moveAwayFrom</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="n">coords</span><span class="p">,</span> <span class="nv">inDirection</span><span class="p">:</span> <span class="n">direction</span><span class="p">)</span> <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>With that, our solution to part one should be done!</p>
+
+<h2 id="part-two">Part Two</h2>
+<blockquote>
+  <p>Consider each tree on your map. What is the highest scenic score possible for any tree?</p>
+</blockquote>
+
+<p>Naturally being well hidden shouldn’t preclude the tree house from having a great view. We’ll have to again iterate through the interior trees and this time, calculate the view score which consists of the distance to the first tree that is of equal or greater height all multiplied together for each direction. After we’ve done this, we’ll need to find the highest-ranking view score.</p>
+
+<p>Our initial setup for the solution starts off the same as before, we iterate over the interior coordinates and then get our list of tree heights in the 4 directions. The only difference is that we’ll take the first index of the tree matching our criteria OR the total number of trees in that direction, ie the count of the directions array:</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">return</span> <span class="n">grid</span>
+    <span class="o">.</span><span class="n">interiorCoords</span>
+    <span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="n">coords</span> <span class="k">in</span>
+        <span class="k">let</span> <span class="nv">currentHeight</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="nf">heightAt</span><span class="p">(</span><span class="n">coords</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">grid</span><span class="o">.</span><span class="nf">radiateOutFrom</span><span class="p">(</span><span class="n">coords</span><span class="p">)</span>
+            <span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="n">direction</span> <span class="k">in</span> <span class="n">direction</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="n">otherCoords</span> <span class="k">in</span> <span class="n">grid</span><span class="o">.</span><span class="nf">heightAt</span><span class="p">(</span><span class="n">otherCoords</span><span class="p">)</span> <span class="p">}</span> <span class="p">}</span>
+            <span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="n">otherHeights</span> <span class="k">in</span>
+                <span class="k">let</span> <span class="nv">index</span> <span class="o">=</span> <span class="n">otherHeights</span><span class="o">.</span><span class="n">firstIndex</span> <span class="p">{</span> <span class="n">height</span> <span class="k">in</span> <span class="n">height</span> <span class="o">&gt;=</span> <span class="n">currentHeight</span> <span class="p">}?</span><span class="o">.</span><span class="nf">advance</span><span class="p">(</span><span class="nv">by</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">index</span> <span class="p">??</span> <span class="n">otherHeights</span><span class="o">.</span><span class="n">count</span>
+            <span class="p">}</span>
+            <span class="o">.</span><span class="nf">reduce</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="o">.</span><span class="nf">max</span><span class="p">()</span> <span class="p">??</span> <span class="mi">0</span>
+</code></pre></div></div>
+
+<p>There’s one little trick in here, that <code class="language-plaintext highlighter-rouge">advance(by: 1)</code> which is the same as <code class="language-plaintext highlighter-rouge">index + 1</code> but has the advantage of being optionally chainable. We’re doing this because, as we’ve seen the week before, we have to convert our 0-indexed problem space into a 1-indexed solution space for the puzzle to correctly validate.</p>
+
+<p>And that’s it!</p>
+
+<p>There’s some additional clean up that you could do. For example, I consolidated the index/advance/nil-coalescing into my <code class="language-plaintext highlighter-rouge">radiateOutFrom</code> function such that it’s signature looks like:</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">radiateOutFrom</span><span class="p">(</span><span class="n">_</span> <span class="nv">coords</span><span class="p">:</span> <span class="kt">Coords</span><span class="p">,</span> <span class="nv">tallerThan</span><span class="p">:</span> <span class="kt">TreeHeight</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[(</span><span class="nv">index</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)]</span>
+</code></pre></div></div>
+
+<p>I’ll leave it as an exercise for the reader to figure out what other changes need to be made for each solution and whether or not this is a cleaner approach.</p>
+
+<p>Until tomorrow!</p>
+
+<hr />
+
+<ul>
+  <li>
+    <p><a href="/aoc/2022/12/01/aoc-2022.html">2022 Day Index</a></p>
+  </li>
+  <li>
+    <p>Previous: <a href="/aoc/2022/12/07/AoC-2022-Day-07.html">Day 07</a></p>
+  </li>
+</ul>
+
+
+</article>
+
+    </main>
+  </div>
+
+  <footer class="border-t-2 border-sky-900 my-4 pt-4 text-sm w-full flex justify-center">
+    <p class="prose text-xs dark:prose-invert mx-4">
+      Found an error or have an improvement?
+      <a href="https://github.com/JoshAshby/joshashby.github.io/tree/source/_posts/2022-12-08-AoC-2022-Day-08.md">Suggest a correction!</a> | <span class="text-gray-300 text-xs">© Joshua Ashby</span>
+    </p>
+  </footer>
+
+  
+  <script src="/vite/assets/application.2826b514.js" crossorigin="anonymous" type="module"></script>
+
+
+</body>
+</html>

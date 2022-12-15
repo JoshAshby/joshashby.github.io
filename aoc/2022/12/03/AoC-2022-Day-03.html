@@ -31,7 +31,7 @@
 <!-- End Jekyll SEO tag -->
 
 
-  <link rel="stylesheet" href="/vite/assets/ashby.3d2ee3e1.css" media="screen"/>
+  <link rel="stylesheet" href="/vite/assets/ashby.52d43250.css" media="screen"/>
 
   <style>
   
@@ -101,6 +101,9 @@
 
   </em>
 </div>
+
+<p><em>Updated Dec 12, 2022 to remove shorthand argument names in the last reduce
+to help clarify what’s going on</em></p>
 
 <h2 id="part-one">Part One</h2>
 <blockquote>
@@ -173,7 +176,7 @@
 
 <p>With that we’ve got all we need to solve this part of the puzzle:</p>
 
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">rucksacks</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="nv">$0</span><span class="o">.</span><span class="n">compartmentA</span><span class="o">.</span><span class="nf">intersection</span><span class="p">(</span><span class="nv">$0</span><span class="o">.</span><span class="n">compartmentB</span><span class="p">)</span><span class="o">.</span><span class="n">first</span><span class="o">!</span> <span class="p">}</span>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">rucksacks</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="n">sack</span> <span class="k">in</span> <span class="n">sack</span><span class="o">.</span><span class="n">compartmentA</span><span class="o">.</span><span class="nf">intersection</span><span class="p">(</span><span class="n">sack</span><span class="o">.</span><span class="n">compartmentB</span><span class="p">)</span><span class="o">.</span><span class="n">first</span><span class="o">!</span> <span class="p">}</span>
     <span class="o">.</span><span class="nf">map</span><span class="p">(</span><span class="n">remapCharToPriority</span><span class="p">)</span>
     <span class="o">.</span><span class="nf">reduce</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">+</span><span class="p">)</span>
 </code></pre></div></div>
@@ -187,7 +190,7 @@
 
 <p>Now, instead of finding the duplicated item across a single rucksack’s compartments, we’re looking for a duplicated item across three elfs’ rucksacks. It turns out that we can keep our mapping logic the same, and our only changes will be how we apply intersections across the rucksacks. The first thing we can change is unioning the two compartments of each rucksack together since we don’t care about duplicates for a single elf anymore:</p>
 
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">rucksacks</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="nv">$0</span><span class="o">.</span><span class="n">compartmentA</span><span class="o">.</span><span class="nf">union</span><span class="p">(</span><span class="nv">$0</span><span class="o">.</span><span class="n">compartmentB</span><span class="p">)</span> <span class="p">}</span>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">rucksacks</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="n">sack</span> <span class="k">in</span> <span class="n">sack</span><span class="o">.</span><span class="n">compartmentA</span><span class="o">.</span><span class="nf">union</span><span class="p">(</span><span class="n">sack</span><span class="o">.</span><span class="n">compartmentB</span><span class="p">)</span> <span class="p">}</span>
 </code></pre></div></div>
 
 <p>The next thing we need to do is divide the rucksacks into groups of three. Unfortunately swift doesn’t have a built in <code class="language-plaintext highlighter-rouge">cons</code>, <code class="language-plaintext highlighter-rouge">pairs</code>, or <code class="language-plaintext highlighter-rouge">slicesOf</code> function for any data structure, so we’ll have to make our own. We’ll do this using an extension onto Array so let’s write our signature that we’re aiming for first:</p>
@@ -239,7 +242,7 @@
 <p>With this in place, we can finish up our task as we can now group the elves into sets of 3. We’ll reduce each group, calling <code class="language-plaintext highlighter-rouge">Set#intersection</code> to compute the final intersection of the group to determine what they’ve gotten duplicated amongst themselves. After that, we’ll return to our first solution and map each item to the priority number and finally sum it all together:</p>
 
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">rucksacks</span>
-    <span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="nv">$0</span><span class="o">.</span><span class="n">compartmentA</span><span class="o">.</span><span class="nf">union</span><span class="p">(</span><span class="nv">$0</span><span class="o">.</span><span class="n">compartmentB</span><span class="p">)</span> <span class="p">}</span>
+    <span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="n">sack</span> <span class="k">in</span> <span class="n">sack</span><span class="o">.</span><span class="n">compartmentA</span><span class="o">.</span><span class="nf">union</span><span class="p">(</span><span class="n">sack</span><span class="o">.</span><span class="n">compartmentB</span><span class="p">)</span> <span class="p">}</span>
     <span class="o">.</span><span class="nf">chunked</span><span class="p">(</span><span class="nv">into</span><span class="p">:</span> <span class="mi">3</span><span class="p">)</span>
     <span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="n">chunk</span> <span class="k">in</span>
         <span class="n">chunk</span><span class="p">[</span><span class="mi">1</span><span class="o">..&lt;</span><span class="n">chunk</span><span class="o">.</span><span class="n">count</span><span class="p">]</span><span class="o">.</span><span class="nf">reduce</span><span class="p">(</span><span class="n">chunk</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="p">{</span> <span class="n">innerMemo</span><span class="p">,</span> <span class="n">prioritySet</span> <span class="k">in</span>
