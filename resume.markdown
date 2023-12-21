@@ -11,9 +11,9 @@ permalink: "/resume/"
 
 {{ site.data.resume.aboutMe }}
 
-**Primary Technologies:** {{ site.data.resume.primaryTechnologies|join(", ") }}
+**Primary Technologies:** {{ site.data.resume.primaryTechnologies | join: ", " }}
 
-**Comfortable Tools & Platforms:** {{ site.data.resume.primaryTools|join(", ") }}
+**Comfortable Tools & Platforms:** {{ site.data.resume.primaryTools | join: ", " }}
 
 ## Notable Work
 
@@ -29,12 +29,12 @@ permalink: "/resume/"
         {{ job.role }}
 
         {% if job.hats %}
-            <small class="!text-xs">{{ job.hats|join("/") }}</small>
+            <small class="!text-xs">{{ job.hats | join: "/" }}</small>
         {% endif %}
     </h3>
 
     {% if job.link %}
-        <a href="{{job.link}}">{{ job.company }}</a>
+        <a href="{{ job.link }}">{{ job.company }}</a>
     {% else %}
         {{ job.company }}
     {% endif %}
