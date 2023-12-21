@@ -8,25 +8,25 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="#1f2937">
   <meta name="theme-color" content="#1f2937" />
 
-  <title>Project - Bones - Ashby's Hideout</title>
+  <title>Project - LimeJuice - Ashby's Hideout</title>
   <meta name="description" content="">
 
   <link type="application/atom+xml" rel="alternate" href="https://joshisa.ninja/feed.xml" title="Ashby&apos;s Hideout" />
   <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Project - Bones | Ashby’s Hideout</title>
+<title>Project - LimeJuice | Ashby’s Hideout</title>
 <meta name="generator" content="Jekyll v4.2.2" />
-<meta property="og:title" content="Project - Bones" />
+<meta property="og:title" content="Project - LimeJuice" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Sometimes I convert coffee into code. Rubber ducks are awesome." />
 <meta property="og:description" content="Sometimes I convert coffee into code. Rubber ducks are awesome." />
-<link rel="canonical" href="https://joshisa.ninja/projects/bones" />
-<meta property="og:url" content="https://joshisa.ninja/projects/bones" />
+<link rel="canonical" href="https://joshisa.ninja/projects/limejuice" />
+<meta property="og:url" content="https://joshisa.ninja/projects/limejuice" />
 <meta property="og:site_name" content="Ashby’s Hideout" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Project - Bones" />
+<meta property="twitter:title" content="Project - LimeJuice" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"Sometimes I convert coffee into code. Rubber ducks are awesome.","headline":"Project - Bones","url":"https://joshisa.ninja/projects/bones"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"Sometimes I convert coffee into code. Rubber ducks are awesome.","headline":"Project - LimeJuice","url":"https://joshisa.ninja/projects/limejuice"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -65,58 +65,63 @@
     <main>
       <div class="not-prose mb-2">
   <div class="relative group">
-    <figure class="not-prose bg-gray-100 dark:bg-gray-700">
-  <img src="/assets/projects/bones/cover.png" srcset="" alt="Bones cover image" />
-
-  
-    <figcaption class="font-mono text-xs text-gray-500 dark:text-gray-200 p-2">Icon: <a href="https://thenounproject.com/icon/dinosaur-skull-347287/">Dinosaur Skull by Erik Kuroow from NounProject.com</a></figcaption>
-  
-</figure>
-
-
     <div class="mt-4 flex items-center justify-between text-base font-medium space-x-8">
-      <h3>Bones</h3>
+      <h3>LimeJuice</h3>
 
       <div class="flex items-center divide-solid divide-x-2 divide-gray-300">
-        <a href="https://bones.isin.space/" class="px-2">
-          WWW
-        </a>
-        <a href="https://bones.isin.space/user/JoshAshby/repository/Bones/" class="px-2">
+        <a href="https://bones.isin.space/user/JoshAshby/repository/LimeJuice/" class="px-2">
           Code
         </a>
       </div>
     </div>
 
-    <span class="tag">Web App</span>
+    <span class="tag">Web Service</span>
   </div>
 </div>
 
-<p><strong>TL;DR</strong> Bones is a small tool for managing remote <a href="https://fossil-scm.org/">Fossil-SCM</a>
-repositories, giving an interface to find/recall as well as create new
-Fossil repositories.</p>
+<p><strong>TL;DR</strong> LimeJuice is my own attempt at replicating the great <a href="https://pocketbase.io/">PocketBase</a>
+using Server Side Swift instead of Go, and WASM as the integration language
+instead of Javascript.</p>
 
-<p>I’ve slowly been using Fossil for more of my personal projects. The idea of the
-self-contained nature of Fossil as well as the ease to host them remotely
-appeals to me a lot, but I wanted a nice interface for making and navigating to
-the various repositories I’ve got. There’s already the great
-<a href="https://chiselapp.com/">Chisel</a> but I enjoy reinventing wheels, and was
-looking to build something which I could eventually integrate additional
-tooling into, such as a CI/CD pipeline and centralized auth.</p>
+<p>LimeJuice is still pretty unfinished, and while the “collections” feature
+works, most of the interesting WASM integration is still in development.</p>
 
 <h2 id="screenshots">Screenshots</h2>
-<p><img src="/assets/projects/bones/repos.png" alt="" />
-<!--![](/assets/projects/bones/)-->
-<!--![](/assets/projects/bones/)--></p>
+<figure class="not-prose bg-gray-100 dark:bg-gray-700">
+  <img src="/assets/projects/limejuice/viewing-a-collection.png" srcset="" alt="" />
+
+  
+    <figcaption class="font-mono text-xs text-gray-500 dark:text-gray-200 p-2"></figcaption>
+  
+</figure>
+
+<figure class="not-prose bg-gray-100 dark:bg-gray-700">
+  <img src="/assets/projects/limejuice/editing-a-collection.png" srcset="" alt="" />
+
+  
+    <figcaption class="font-mono text-xs text-gray-500 dark:text-gray-200 p-2"></figcaption>
+  
+</figure>
+
+<figure class="not-prose bg-gray-100 dark:bg-gray-700">
+  <img src="/assets/projects/limejuice/editing-a-record.png" srcset="" alt="" />
+
+  
+    <figcaption class="font-mono text-xs text-gray-500 dark:text-gray-200 p-2"></figcaption>
+  
+</figure>
 
 <h2 id="technology">Technology</h2>
 <ul>
-  <li>Ruby, Roda, Sqlite, with some Tailwind CSS bundled together with PostCSS</li>
+  <li>SvelteKit (Svelte, Typescript, Skeleton UI/Tailwind CSS)</li>
+  <li>Server Side Swift with Vapor 4/Swift 5.9</li>
+  <li>JavascriptCore for the JS/WASM engine</li>
+  <li>SQLite</li>
+  <li>WASM SDK in Zig</li>
 </ul>
 
 <h2 id="neat-details">Neat Details</h2>
-<ul>
-  <li>Bones manages Bones’ repository.</li>
-</ul>
+<p>-</p>
 
     </main>
   </div>
@@ -124,7 +129,7 @@ tooling into, such as a CI/CD pipeline and centralized auth.</p>
   <footer class="border-t-2 border-sky-900 my-4 pt-4 text-sm w-full flex justify-center">
     <p class="prose text-xs dark:prose-invert mx-4">
       Found an error or have an improvement?
-      <a href="https://github.com/JoshAshby/joshashby.github.io/tree/source/projects/bones.md">Suggest a correction!</a> | <span class="text-gray-300 text-xs">© Joshua Ashby</span>
+      <a href="https://github.com/JoshAshby/joshashby.github.io/tree/source/projects/limejuice.md">Suggest a correction!</a> | <span class="text-gray-300 text-xs">© Joshua Ashby</span>
     </p>
   </footer>
 
