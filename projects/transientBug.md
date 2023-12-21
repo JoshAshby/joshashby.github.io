@@ -1,5 +1,5 @@
 ---
-title: Project -transientBug
+title: Project - transientBug
 permalink: "/projects/transientBug"
 ---
 

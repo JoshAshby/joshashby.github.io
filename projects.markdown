@@ -7,9 +7,16 @@ permalink: "/projects/"
 
 I've got plenty of side projects that range from small experiments, helpful
 little tools to learning aids for new languages or frameworks. Once in a
-while they grow into something of their own that I want to share or at the
+while they grow into something of their own that I want to share, or at the
 least showcase. This list, while certainly not exhaustive, is a small showcase
 of those projects that I'm most proud of or get a lot of value out of daily.
+
+Not all of the projects listed here are "finished" and many are in a state of
+maintenance or abandon but I'm still proud of the lessons and ideas that I
+extracted from them.
+
+A lot of older code and other projects that might not be listed here can also
+be found on my [GitHub profile](https://github.com/JoshAshby).
 
 <hr />
 
@@ -59,6 +66,52 @@ of those projects that I'm most proud of or get a lot of value out of daily.
         feeds and get out of your way, packaged as a browser extension. Raton
         is currently in a private beta state and not quite ready for public
         release.
+      </p>
+    </div>
+  </div>
+
+  <div class="relative group">
+    <!--<div class="overflow-hidden bg-gray-100">-->
+      <!--<img src="/assets/projects/broom/cover.png" alt="Broom cover image" class="object-center object-cover">-->
+    <!--</div>-->
+
+    <div class="mt-4 flex items-center justify-between text-base font-medium text-gray-900 space-x-8">
+      <h3>
+        <a href="/projects/limejuice">
+          <span aria-hidden="true" class="absolute inset-0"></span>
+          LimeJuice
+        </a>
+      </h3>
+    </div>
+
+    <div class="prose prose-sm dark:prose-invert">
+      <span class="tag">Web Service</span>
+
+      <p class="mt-2">
+        LimeJuice is my own adventure in replicating the great <a href="https://pocketbase.io/">PocketBase</a>, using Server Side Swift and SvelteKit.
+      </p>
+    </div>
+  </div>
+
+  <div class="relative group">
+    <!--<div class="overflow-hidden bg-gray-100">-->
+      <!--<img src="/assets/projects/broom/cover.png" alt="Broom cover image" class="object-center object-cover">-->
+    <!--</div>-->
+
+    <div class="mt-4 flex items-center justify-between text-base font-medium text-gray-900 space-x-8">
+      <h3>
+        <a href="https://bones.isin.space/user/JoshAshby/repository/SpiderMite-lang/dir?ci=tip&type=tree">
+          <span aria-hidden="true" class="absolute inset-0"></span>
+          SpiderMite
+        </a>
+      </h3>
+    </div>
+
+    <div class="prose prose-sm dark:prose-invert">
+      <span class="tag">Programming Language</span>
+
+      <p class="mt-2">
+        SpiderMite-lang is a multi-pass programming language implementation that I've been using to explore the ideas of how to implement type-checking and pattern matching.
       </p>
     </div>
   </div>
