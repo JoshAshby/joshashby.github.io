@@ -55,7 +55,9 @@ jobs:
         with:
           version: 'v0.10.0'
 
-      - run: typst compile --root=./ --font-path=assets/fonts/ resume/Resume2023.typ resume.pdf
+      - name: Build resume PDF with Typst
+        working-directory: source
+        run: typst compile --root=./ --font-path=assets/fonts/ resume/Resume2023.typ resume.pdf
 
       - name: Jekyll Build
         working-directory: source
@@ -63,7 +65,9 @@ jobs:
           JEKYLL_ENV: production
         run: bundle exec jekyll build -d ../build
 
-      - run: cp resume.pdf ../build/
+      - name: Copy resume PDF to build dir
+        working-directory: source
+        run: cp resume.pdf ../build/
 
       - name: Commit and push changes to master
         working-directory: build
