@@ -10,11 +10,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           path: source
 
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           ref: master
           path: build
@@ -24,23 +24,19 @@ jobs:
           ruby-version: '2.7'
           bundler-cache: true
 
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@v4
         with:
           node-version: '16.4.x'
 
-      - uses: actions/cache@v2
+      - uses: actions/cache@v3
         with:
           path: source/vendor/bundle
           key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-gems-
 
-      - uses: actions/cache@v2
+      - uses: actions/cache@v3
         with:
           path: source/node_modules
           key: ${{ runner.os }}-npm-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-npm-
 
       - name: Bundle install
         working-directory: source
