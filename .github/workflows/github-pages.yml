@@ -57,7 +57,7 @@ jobs:
 
       - name: Build resume PDF with Typst
         working-directory: source
-        run: typst compile --root=./ --font-path=assets/fonts/ resume/Resume2023.typ resume.pdf
+        run: typst compile --root=./ --font-path=assets/fonts/ resume/_resume2023.typ resume.pdf
 
       - name: Jekyll Build
         working-directory: source

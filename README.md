@@ -20,13 +20,13 @@ jekyll-admin provides a nice web based authoring interface for new content.
 ### Resume
 
 The resume page and PDF are backed by a combo of a YAML data file
-(`_data/resume.yml`), a Jekyll page `resume.markdown` and a [Typst](https://typst.app/) template
-(`resume/Resume2023.typ`).
+(`_data/resume.yml`), a Jekyll page `resume/index.md` and a [Typst](https://typst.app/) template
+(`resume/_resume2023.typ`).
 
 On deploys, the PDF version is built with the following command:
 
 ```
-typst compile --root=./ --font-path=assets/fonts/ resume/Resume2023.typ resume.pdf
+typst compile --root=./ --font-path=assets/fonts/ resume/_resume2023.typ resume.pdf
 ```
 
 And then copied into the final site after Jekyll is ran. This allows the two
