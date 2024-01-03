@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="apple-mobile-web-app-status-bar-style" content="#1f2937">
+  <meta name="theme-color" content="#1f2937" />
+
+  <title>AnglerFrame - Ashby's Hideout</title>
+  <meta name="description" content="">
+
+  <link type="application/atom+xml" rel="alternate" href="https://joshisa.ninja/feed.xml" title="Ashby&apos;s Hideout" />
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>AnglerFrame | Ashby’s Hideout</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="AnglerFrame" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Like I am with programming languages, I’ve also always been facinated by TUI based text editors and when I stumbled across gram, a Zig port of kilo I was hooked and just knew that one day I’d make my own text editor. When I later found this wonderful tutorial from Paige that breaks down building kilo from the groundup, I just had to get started." />
+<meta property="og:description" content="Like I am with programming languages, I’ve also always been facinated by TUI based text editors and when I stumbled across gram, a Zig port of kilo I was hooked and just knew that one day I’d make my own text editor. When I later found this wonderful tutorial from Paige that breaks down building kilo from the groundup, I just had to get started." />
+<link rel="canonical" href="https://joshisa.ninja/projects/anglerframe" />
+<meta property="og:url" content="https://joshisa.ninja/projects/anglerframe" />
+<meta property="og:site_name" content="Ashby’s Hideout" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-01-03T00:09:24+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="AnglerFrame" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-01-03T00:09:24+00:00","datePublished":"2024-01-03T00:09:24+00:00","description":"Like I am with programming languages, I’ve also always been facinated by TUI based text editors and when I stumbled across gram, a Zig port of kilo I was hooked and just knew that one day I’d make my own text editor. When I later found this wonderful tutorial from Paige that breaks down building kilo from the groundup, I just had to get started.","headline":"AnglerFrame","mainEntityOfPage":{"@type":"WebPage","@id":"https://joshisa.ninja/projects/anglerframe"},"url":"https://joshisa.ninja/projects/anglerframe"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <link rel="stylesheet" href="/vite/assets/ashby.c039ba63.css" media="screen"/>
+
+  <style>
+  
+  </style>
+</head>
+
+<body>
+  <div id="master-chief">
+    <section id="main-sidebar">
+      <nav class="sidebar-nav">
+        <h2><a href="/">Ashby's Hideout</a></h2>
+
+        <div id="nav-links" class="expandable">
+          <ul class="nav-list">
+            <li class="nav-item"><a href="/posts/">Posts</a></li>
+            <li class="nav-item"><a href="/photos/">Photos</a></li>
+            <li class="nav-item"><a href="/projects/">Projects</a></li>
+            <li class="nav-item"><a href="/resume/">Resume</a></li>
+
+            
+          </ul>
+        </div>
+
+        <div class="hamburger-bun">
+          <button class="nav-item" data-behavior="toggle-hidden" data-target="#nav-links">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          </button>
+        </div>
+      </nav>
+    </section>
+
+    <main>
+      <div class="not-prose mb-2">
+  <div class="relative group">
+    
+
+    <div class="mt-4 flex items-center justify-between text-base font-medium space-x-8">
+      <h3>AnglerFrame</h3>
+
+      
+
+      <div class="flex items-center divide-solid divide-x-2 divide-gray-300">
+        
+          <a href="https://bones.isin.space/user/JoshAshby/repository/AnglerFrame" class="px-2">Fossil Repository
+</a>
+        
+      </div>
+    </div>
+
+    
+      <span class="tag">TUI Text Editor</span>
+    
+  </div>
+</div>
+
+<strong>TL;DR:</strong> AnglerFrame is a (partial) Swift based port of <a href="https://github.com/antirez/kilo">Antirez’s <code class="language-plaintext highlighter-rouge">kilo</code> editor</a> and is intended as a learning experiment into VT100 commands as well as more “system” programming using Swift.
+
+
+
+<p>Like I am with programming languages, I’ve also always been facinated by TUI
+based text editors and when I stumbled across
+<a href="https://github.com/bingcicle/gram"><code class="language-plaintext highlighter-rouge">gram</code></a>, a Zig port of <code class="language-plaintext highlighter-rouge">kilo</code> I was hooked
+and just knew that one day I’d make my own text editor. When I later found
+<a href="https://viewsourcecode.org/snaptoken/kilo/index.html">this wonderful tutorial</a>
+from <a href="https://viewsourcecode.org/">Paige</a> that breaks down building <code class="language-plaintext highlighter-rouge">kilo</code> from
+the groundup, I just had to get started.</p>
+
+<p>With AnglerFrame I’m not aiming to make a complete port of <code class="language-plaintext highlighter-rouge">kilo</code>, at least not
+initially, but instead am using it as a sandbox for learning. I don’t have a
+ton of experience using VT100 commands or making syscalls from Swift, so
+having an established and somewhat guided introduction has already been a
+wonderful adventure.</p>
+
+<h2 id="technology">Technology</h2>
+<ul>
+  <li>Swift 5.9</li>
+</ul>
+
+
+    </main>
+  </div>
+
+  <footer class="border-t-2 border-sky-900 my-4 pt-4 text-sm w-full flex justify-center">
+    <p class="prose text-xs dark:prose-invert mx-4">
+      Found an error or have an improvement?
+      <a href="https://github.com/JoshAshby/joshashby.github.io/tree/source/_projects/anglerframe.md">Suggest a correction!</a> | <span class="text-gray-300 text-xs">© Joshua Ashby</span>
+    </p>
+  </footer>
+
+  
+  <script src="/vite/assets/application.2826b514.js" crossorigin="anonymous" type="module"></script>
+
+
+</body>
+</html>
