@@ -53,7 +53,7 @@ jobs:
       - uses: typst-community/setup-typst@v3
         id: setup-typst
         with:
-          version: 'v0.10.0'
+          typst-version: 'v0.10.0'
 
       - name: Build resume PDF with Typst
         working-directory: source
