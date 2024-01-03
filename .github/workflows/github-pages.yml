@@ -50,7 +50,7 @@ jobs:
         run: |
           yarn install
 
-      - uses: yusancky/setup-typst@v2
+      - uses: typst-community/setup-typst@v3
         id: setup-typst
         with:
           version: 'v0.10.0'
