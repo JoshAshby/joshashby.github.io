@@ -1,4 +1,66 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://joshisa.ninja/feed.xml" rel="self" type="application/atom+xml" /><link href="https://joshisa.ninja/" rel="alternate" type="text/html" /><updated>2024-01-03T00:18:44+00:00</updated><id>https://joshisa.ninja/feed.xml</id><title type="html">Ashby’s Hideout</title><subtitle>Sometimes I convert coffee into code. Rubber ducks are awesome.</subtitle><entry><title type="html">AoC 2022 Day 08 - The elves want a hidden treehouse with a great view, we’re their realtor</title><link href="https://joshisa.ninja/aoc/2022/12/08/AoC-2022-Day-08.html" rel="alternate" type="text/html" title="AoC 2022 Day 08 - The elves want a hidden treehouse with a great view, we’re their realtor" /><published>2022-12-08T23:59:00+00:00</published><updated>2022-12-08T23:59:00+00:00</updated><id>https://joshisa.ninja/aoc/2022/12/08/AoC-2022-Day-08</id><content type="html" xml:base="https://joshisa.ninja/aoc/2022/12/08/AoC-2022-Day-08.html"><![CDATA[<div>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://joshisa.ninja/feed.xml" rel="self" type="application/atom+xml" /><link href="https://joshisa.ninja/" rel="alternate" type="text/html" /><updated>2024-01-03T00:22:04+00:00</updated><id>https://joshisa.ninja/feed.xml</id><title type="html">Ashby’s Hideout</title><subtitle>Sometimes I convert coffee into code. Rubber ducks are awesome.</subtitle><entry><title type="html">I also redid my resume with Typst (and Jekyll)</title><link href="https://joshisa.ninja/2024/01/02/i-also-redid-my-resume-with-typst-and-jekyll.html" rel="alternate" type="text/html" title="I also redid my resume with Typst (and Jekyll)" /><published>2024-01-02T00:00:00+00:00</published><updated>2024-01-02T00:00:00+00:00</updated><id>https://joshisa.ninja/2024/01/02/i-also-redid-my-resume-with-typst-and-jekyll</id><content type="html" xml:base="https://joshisa.ninja/2024/01/02/i-also-redid-my-resume-with-typst-and-jekyll.html"><![CDATA[<p>Like <a href="https://mattrighetti.com/2023/10/25/i-rewrote-my-cv-in-typst">many</a> <a href="https://xeiaso.net/blog/xesite-v4/">folks</a> <a href="https://mattsanetra.uk/blog/bye-latex-hello-typst/">in</a> <a href="https://tristan.partin.io/blog/2023/08/30/a-love-letter-to-typst/">the</a> industry, I too recently rebuilt my resume using <a href="https://typst.app/">Typst</a> and had a lovely experience doing so.</p>
+
+<p>I’ll skip over what <a href="https://typst.app/">Typst</a> is, since hopefully one of the above folk covers it, but I do want to share how I made my life a little easier by combining Typst and Jekyll.</p>
+
+<p>In addition to a PDF version, I’ve traditionally kept a version of my resume on this site as a regular webpage, making it easy to point to in a pinch. One of the biggest pains that I’ve had in the past has been keeping that old Pages based resume and the “resume” page on this website up to date, and more importantly, synced up. It involved a lot of copy-and-paste, formatting (and more reformatting), and was generally just a bummer and a time sink.</p>
+
+<p>Lately, I’ve been trying to make better use of Jekyll’s data files support and thought to myself, “resumes are generally pretty well structured … gee it’d be nice to put my resume data into a file that Jekyll <em>AND</em> LaTeX can render versions of!”</p>
+
+<p>(Spoilers: Lo and behold, <a href="https://github.com/Xe/site/blob/e0bc5ecdfafb144a868f0a9aafe33231a1bfd08c/dhall/resume.dhall">Xe</a> already did it!)</p>
+
+<p>The <strong>big</strong> problem with that thought (besides the whole YAML bit) was that I’m not a fan of LaTeX, mostly because I haven’t bothered to learn how to use it properly.</p>
+
+<p>That’s where the LaTeX ~killer~ alternative and hero of our story, Typst, comes in. I found Typst almost <em>too</em> easy to get started with and pretty quickly had the best-looking version of my resume that I’ve ever had. However, even though the formatting was a lot easier since markdown and Typst have a lot of overlap, I was still copying content in.</p>
+
+<p>“Let’s fix that,” I thought.</p>
+
+<p>A cool thing about Typst is that it can <a href="https://typst.app/docs/reference/data-loading/">load a variety of data files</a>, for example YAML:</p>
+
+<pre><code class="language-typ">let data = yaml("/_data/stuff.yml")
+</code></pre>
+
+<p>That’s neat!</p>
+
+<p>Additionally, I can throw that YAML file into my sites <code class="language-plaintext highlighter-rouge">_data/</code> directory, so that Jekyll will automatically read it into a <code class="language-plaintext highlighter-rouge">site.data.stuff</code> variable that I can interact with in a template.</p>
+
+<p>From here it was pretty easy to pull out all of the data from my resume into this YAML file, and my Typst code became a series of for loops and templating out data which quickly translated into similar Jekyll Liquid template code.</p>
+
+<p>The end result is three files (plus some supporting font and icon files for the Typst template):</p>
+
+<ul>
+  <li><a href="https://github.com/JoshAshby/joshashby.github.io/blob/bb345c5dea338917c1401437ff1dcfda2c57b655/_data/resume.yml"><code class="language-plaintext highlighter-rouge">_data/resume.yml</code></a></li>
+  <li><a href="https://github.com/JoshAshby/joshashby.github.io/blob/bb345c5dea338917c1401437ff1dcfda2c57b655/resume/_resume2023.typ"><code class="language-plaintext highlighter-rouge">resume/_resume2023.typ</code></a></li>
+  <li><a href="https://github.com/JoshAshby/joshashby.github.io/blob/bb345c5dea338917c1401437ff1dcfda2c57b655/resume/index.md"><code class="language-plaintext highlighter-rouge">resume/index.md</code></a></li>
+</ul>
+
+<p>Lastly, I wanted the GitHub Actions Workflow <a href="/2020/10/14/using-github-actions-to-build-a-jekyll-4-site-and-host-it-on-github-pages.html">which builds and publishes</a> this site to also keep the Typst generated PDF version up to date. This worked out to be a pretty easy addition, as the command to render the PDF is fairly simple and easily added to the workflow so long as Typst is installed:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>typst compile <span class="nt">--root</span><span class="o">=</span>./ <span class="nt">--font-path</span><span class="o">=</span>assets/fonts/ resume/_resume2023.typ resume.pdf
+</code></pre></div></div>
+
+<p>I used the pleasant <a href="https://github.com/typst-community/setup-typst">typst-community/setup-typst@v3</a> action to get Typst into the environment and then set up the build step to render the PDF version before Jekyll runs:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="pi">-</span> <span class="na">uses</span><span class="pi">:</span> <span class="s">typst-community/setup-typst@v3</span>
+  <span class="na">id</span><span class="pi">:</span> <span class="s">setup-typst</span>
+  <span class="na">with</span><span class="pi">:</span>
+    <span class="na">typst-version</span><span class="pi">:</span> <span class="s1">'</span><span class="s">v0.10.0'</span>
+
+<span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Build resume PDF with Typst</span>
+  <span class="na">working-directory</span><span class="pi">:</span> <span class="s">source</span>
+  <span class="na">run</span><span class="pi">:</span> <span class="s">typst compile --root=./ --font-path=assets/fonts/ resume/_resume2023.typ resume.pdf</span>
+
+<span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Jekyll Build</span>
+  <span class="na">working-directory</span><span class="pi">:</span> <span class="s">source</span>
+  <span class="na">env</span><span class="pi">:</span>
+    <span class="na">JEKYLL_ENV</span><span class="pi">:</span> <span class="s">production</span>
+  <span class="na">run</span><span class="pi">:</span> <span class="s">bundle exec jekyll build -d ../build</span>
+</code></pre></div></div>
+
+<p>(You can see the full <a href="https://github.com/JoshAshby/joshashby.github.io/blob/694a1d733b90ad0a0648f60338aaaf87f95fff22/.github/workflows/github-pages.yml">workflow file here</a>.)</p>
+
+<p>Now keeping both my site and the nicer PDF version up to date is a breeze, and with the formatting decoupled from the presentation in both versions, it’s equally as easy to adjust styling and layout without feeling like I’m starting over with all of the content!</p>
+
+<p>Overall I’d give Typst a 9/10 and would recommend folks check it out if you find yourself writing LaTeX or making documents that render to PDFs often and have the option to look into other tools. It’d be a 10/10 if the error messages were a little better but it’s still improving and is already a fantastic tool.</p>]]></content><author><name></name></author><category term="typst" /><category term="jekyll" /><category term="meta" /><summary type="html"><![CDATA[Like many folks in the industry, I too recently rebuilt my resume using Typst and had a lovely experience doing so.]]></summary></entry><entry><title type="html">AoC 2022 Day 08 - The elves want a hidden treehouse with a great view, we’re their realtor</title><link href="https://joshisa.ninja/aoc/2022/12/08/AoC-2022-Day-08.html" rel="alternate" type="text/html" title="AoC 2022 Day 08 - The elves want a hidden treehouse with a great view, we’re their realtor" /><published>2022-12-08T23:59:00+00:00</published><updated>2022-12-08T23:59:00+00:00</updated><id>https://joshisa.ninja/aoc/2022/12/08/AoC-2022-Day-08</id><content type="html" xml:base="https://joshisa.ninja/aoc/2022/12/08/AoC-2022-Day-08.html"><![CDATA[<div>
   <em>
   This post contains inline annotations/footnotes to help add context, helpful tips or expand upon a tangent in the text. Expand them by <a href="#annotation-1" class="annotation-trigger -gray">clicking or tapping on them</a>
 <span id="annotation-1" class="annotation">Annotations might have their own <a href="#annotation-2" class="annotation-trigger -red">annotations</a><span id="annotation-2" class="annotation">Such as this one!</span> inside of them too.</span>
@@ -1733,189 +1795,4 @@ to help clarify what’s going on</em></p>
   <li>
     <p><a href="/aoc/2022/12/08/AoC-2022-Day-08.html">AoC 2022 Day 08 - The elves want a hidden treehouse with a great view, we’re their realtor</a></p>
   </li>
-</ul>]]></content><author><name></name></author><category term="aoc" /><category term="aoc" /><category term="swift" /><category term="puzzles" /><summary type="html"><![CDATA[Welcome back to the end of another year and that means another season of Advent of Code!]]></summary></entry><entry><title type="html">SvelteKit &amp;amp; Cloudflare Durable Object Websockets</title><link href="https://joshisa.ninja/2022/05/18/sveltekit-cloudflare-durable-object-websockets.html" rel="alternate" type="text/html" title="SvelteKit &amp;amp; Cloudflare Durable Object Websockets" /><published>2022-05-18T00:00:00+00:00</published><updated>2022-05-18T00:00:00+00:00</updated><id>https://joshisa.ninja/2022/05/18/sveltekit-cloudflare-durable-object-websockets</id><content type="html" xml:base="https://joshisa.ninja/2022/05/18/sveltekit-cloudflare-durable-object-websockets.html"><![CDATA[<div>
-  <em>
-  This post contains inline annotations/footnotes to help add context, helpful tips or expand upon a tangent in the text. Expand them by <a href="#annotation-1" class="annotation-trigger -gray">clicking or tapping on them</a>
-<span id="annotation-1" class="annotation">Annotations might have their own <a href="#annotation-2" class="annotation-trigger -red">annotations</a><span id="annotation-2" class="annotation">Such as this one!</span> inside of them too.</span>
-
-  </em>
-</div>
-
-<p>I’m always eyeing light-weight setups to build out little personal tools that let me have a combo of static or Svelte based frontends and little server side APIs for persistence and the likes. Historically this took the shape of Ruby/Roda/SQLite backends with a Vite.js/Svelte frontend setup, but recently I decided to give SvelteKit a go since it checks all the boxes and requires minimal setup. I still need somewhere to painlessly host these SvelteKit based projects as I don’t feel like spinning up a VPS and my go to static host, GitHub Pages, doesn’t allow me to run a small back-end server. Cloudflare’s been making some big splashes in this area as of late, however, so I decided to give them a go and see what’s what with thier Worker and Pages platforms.</p>
-
-<p>Today, I’ll just be focusing on some friction I hit when trying to use a websocket to a Cloudflare Durable Object from within a SvelteKit Endpoint hosted with Cloudflare Page Functions, and my exploration of a crude solution to keep the ergonomics of Endpoints while accomplishing my goal of establishing this websocket connection.</p>
-<h3 id="intros">Intros</h3>
-<p>Pages are Cloudflares static hosting solution that entered General Availablility in April of 2021, and back in November of 2021 they announced a new feature to Pages called <a href="https://blog.cloudflare.com/cloudflare-pages-goes-full-stack/">“Functions”</a> which are slightly specialized versions of <a href="#annotation-3" class="annotation-trigger -gray">Cloudflare Workers</a>
-<span id="annotation-3" class="annotation">Cloudflare Workers being their stateless, “serverless” solution, running your code on a per-request basis in an isolated V8 environment.</span>
- that can be deployed alongside your Pages project to provide a full API or even do server side rendering or other tasks. While Page Functions are in <a href="https://developers.cloudflare.com/pages/platform/functions/">beta still</a>, they’re already powerful and fun to play with and open a ton of doors for progressively enhancing existing static sites with more dynamic and server side functionality, due to Pages’ support for easily publishing existing frameworks such as my beloved Jekyll.</p>
-
-<p>While Page Functions, like the Workers they use behind the scenes, are stateless, Cloudflare has also released into General Availability a feature to Workers that they call <a href="https://blog.cloudflare.com/durable-objects-ga/">“Durable Objects”</a>. Durable Objects are essentially another form of specialized Workers that have disk and cache backed storage for persistence and aim to help solve issues around state keeping in the distributed environment that Worker’s run in.</p>
-
-<p>Finally, SvelteKit is the official Svelte based setup for building static, server side rendered, and single page applications. It’s similar in concept to Next.js/Nuxt.js but using Svelte instead. SvelteKit has two parts: the Svelte stuff, which can be server side rendered, or prerendered into a static site, and server side <a href="https://kit.svelte.dev/docs/routing#endpoints">“Endpoints”</a> which write and route very similar to Page Functions and give you the ability to fairly painlessly build out APIs and other back-end functionality that ties in with the rest of your Svelte project seamlessly. The other neat thing about SvelteKit is that it already has an “adaptor” to build and deploy to Cloudflare Pages, including the ability to convert it’s endpoints into Page Functions!</p>
-
-<h3 id="and-the-websockets">And the WebSockets?</h3>
-<p>One neat thing with Durable Objects is that a single instance can hold onto multiple websocket connections, a feature that the demonstrate with their <a href="https://github.com/cloudflare/workers-chat-demo">chat demo</a>:</p>
-
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Our DurableObject</span>
-<span class="k">export</span> <span class="kd">class</span> <span class="nx">Room</span> <span class="p">{</span>
-  <span class="nl">sockets</span><span class="p">:</span> <span class="nx">WebSocket</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[]</span>
-
-  <span class="kd">constructor</span><span class="p">(</span><span class="k">public</span> <span class="nx">state</span><span class="p">:</span> <span class="nx">DurableObjectState</span><span class="p">,</span> <span class="k">public</span> <span class="nx">env</span><span class="p">:</span> <span class="nx">Env</span><span class="p">)</span> <span class="p">{}</span>
-
-  <span class="k">async</span> <span class="nx">fetch</span><span class="p">(</span><span class="nx">request</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="nx">pair</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">WebSocketPair</span><span class="p">()</span>
-		<span class="nx">pair</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nx">accept</span><span class="p">()</span>
-
-    <span class="k">this</span><span class="p">.</span><span class="nx">sockets</span> <span class="o">=</span> <span class="p">[...</span><span class="k">this</span><span class="p">.</span><span class="nx">sockets</span><span class="p">,</span> <span class="nx">pair</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span>
-
-    <span class="nx">pair</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nx">onMessage</span><span class="p">(({</span> <span class="nx">data</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">))</span>
-
-    <span class="k">this</span><span class="p">.</span><span class="nx">sockets</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">socket</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="nx">socket</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="dl">"</span><span class="s2">new connection!</span><span class="dl">"</span><span class="p">)</span>
-    <span class="p">})</span>
-
-    <span class="k">return</span> <span class="k">new</span> <span class="nx">Response</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="p">{</span> <span class="na">status</span><span class="p">:</span> <span class="mi">101</span><span class="p">,</span> <span class="na">webSocket</span><span class="p">:</span> <span class="nx">pair</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">})</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>To use this feature from a regular Worker, you pretty much just pass through the request from the client to the Durable Object. Since Page Functions are just Workers wrapped with a little more structure, we can use the same concept for them in our Pages project just within a <code class="language-plaintext highlighter-rouge">onRequestXYZ</code> handler:</p>
-
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// functions/api/rooms/[id]/[[restUrl]].ts</span>
-<span class="k">export</span> <span class="k">async</span> <span class="kd">function</span> <span class="nx">onRequestGet</span><span class="p">({</span> <span class="nx">request</span><span class="p">,</span> <span class="nx">env</span> <span class="p">})</span> <span class="p">{</span>
-  <span class="kd">let</span> <span class="nx">url</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">URL</span><span class="p">(</span><span class="nx">request</span><span class="p">.</span><span class="nx">url</span><span class="p">)</span>
-
-  <span class="kd">const</span> <span class="nx">id</span> <span class="o">=</span> <span class="nx">env</span><span class="p">.</span><span class="nx">rooms</span><span class="p">.</span><span class="nx">idFromName</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span>
-  <span class="kd">const</span> <span class="nx">roomObject</span> <span class="o">=</span> <span class="nx">env</span><span class="p">.</span><span class="nx">rooms</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span>
-
-  <span class="k">return</span> <span class="nx">roomObject</span><span class="p">.</span><span class="nx">fetch</span><span class="p">(</span><span class="nx">url</span><span class="p">.</span><span class="nx">pathname</span><span class="p">,</span> <span class="nx">request</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>Obviously you’d want to put in some path handling, validation and error handling and removing dead connections from <code class="language-plaintext highlighter-rouge">sockets</code> to both sides, but this is the general approach for setting up this feature and getting multiple clients all coordinating through websockets. While nothing new and groundbreaking, this is by far the easiest and lowest entry barrier into a setup like this, and I’ve been pretty happy with the developer experience even with all the rough edges a lot of this still has in Cloudflare.</p>
-
-<h3 id="sveltekit">SvelteKit</h3>
-<p>SvelteKit endpoints look and write pretty similar to Page Functions, and as stated above they can be deployed to Cloudflare Page Functions with ease. Unfortunately, I’m new to using SvelteKit (and it’s pre-1.0 still so stuff is in flux just like with half of the Cloudflare features we’re using here already) so I had a bit of a learning experience to figure out how to ~best work with~ hack around with stuff to get DO’s inside of SvelteKit endpoints working.</p>
-
-<p>Let’s take a stab at converting the above Page Function into an endpoint:</p>
-
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// src/routes/api/rooms/[id]/[...restUrl].ts</span>
-<span class="k">import</span> <span class="kd">type</span> <span class="p">{</span> <span class="nx">RequestHandler</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./[...restUrl].d</span><span class="dl">"</span>
-
-<span class="k">export</span> <span class="kd">const</span> <span class="kd">get</span><span class="p">:</span> <span class="nx">RequestHandler</span> <span class="o">=</span> <span class="k">async</span> <span class="p">({</span>
-  <span class="nx">params</span><span class="p">,</span>
-  <span class="nx">platform</span><span class="p">,</span>
-  <span class="nx">request</span><span class="p">,</span>
-<span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">roomId</span> <span class="o">=</span> <span class="nx">platform</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">rooms</span><span class="p">.</span><span class="nx">idFromName</span><span class="p">(</span><span class="nx">params</span><span class="p">.</span><span class="nx">id</span><span class="p">)</span>
-  <span class="kd">const</span> <span class="nx">room</span> <span class="o">=</span> <span class="nx">platform</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">rooms</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="nx">roomId</span><span class="p">)</span>
-
-  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">room</span><span class="p">)</span> <span class="k">return</span> <span class="p">{</span> <span class="na">status</span><span class="p">:</span> <span class="mi">404</span> <span class="p">}</span>
-
-  <span class="k">return</span> <span class="nx">room</span><span class="p">.</span><span class="nx">fetch</span><span class="p">(</span><span class="nx">params</span><span class="p">.</span><span class="nx">restUrl</span><span class="p">,</span> <span class="nx">request</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>Unsurprisingly, it looks pretty dang similar, but it doesn’t work. The first problem is that Endpoints don’t return a <code class="language-plaintext highlighter-rouge">Response</code> object, like Page Functions do; instead they have a simplified type of <code class="language-plaintext highlighter-rouge">{ status, headers, body }</code> which you can return. This is a bit of a problem, because as you might have guessed already, <code class="language-plaintext highlighter-rouge">room.fetch()</code> is returning a <code class="language-plaintext highlighter-rouge">Response</code> object. Let’s try and change our endpoint to account for this difference and see where it gets us:</p>
-
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">const</span> <span class="nx">res</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">room</span><span class="p">.</span><span class="nx">fetch</span><span class="p">(</span><span class="nx">params</span><span class="p">.</span><span class="nx">restUrl</span><span class="p">,</span> <span class="nx">request</span><span class="p">)</span>
-
-  <span class="k">return</span> <span class="p">{</span>
-    <span class="na">status</span><span class="p">:</span> <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">,</span>
-    <span class="na">headers</span><span class="p">:</span> <span class="nx">res</span><span class="p">.</span><span class="nx">headers</span><span class="p">,</span>
-    <span class="na">body</span><span class="p">:</span> <span class="nx">res</span><span class="p">.</span><span class="nx">body</span><span class="p">,</span>
-  <span class="p">}</span>
-</code></pre></div></div>
-
-<p>This works for non-websocket requests, but as soon as you try to open a websocket to the DO you hit this fun error:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>RangeError: Responses may only be constructed with status codes in the range 200 to 599, inclusive.
-</code></pre></div></div>
-
-<p>Wut. I get that frameworks like SvelteKit try to make things easier but come on, HTTP is a lot more flexible than 200..599 status codes and the classic GET/POST/PUT/PATCH/DELETE/HEAD methods. Anyways.</p>
-
-<p>Let’s take a step back for a second and poke around the SvelteKit docs. In here, we’ll find this little thing called <a href="https://kit.svelte.dev/docs/hooks#handle">“Hooks”</a> and specifically, the <code class="language-plaintext highlighter-rouge">handle</code> hook. This is a function that takes in a <code class="language-plaintext highlighter-rouge">Request</code> and is expected to return a <code class="language-plaintext highlighter-rouge">Response</code> object and is called for nearly every request that hits the server. Ah-HA! Just what we need, the ability to return a <code class="language-plaintext highlighter-rouge">Response</code> object directly. Let’s make a hook that does this:</p>
-
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// src/hooks.ts</span>
-<span class="k">import</span> <span class="kd">type</span> <span class="p">{</span> <span class="nx">Handle</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@sveltejs/kit</span><span class="dl">"</span>
-
-<span class="k">export</span> <span class="kd">const</span> <span class="nx">handle</span><span class="p">:</span> <span class="nx">Handle</span> <span class="o">=</span> <span class="k">async</span> <span class="p">({</span> <span class="nx">event</span><span class="p">,</span> <span class="nx">resolve</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="p">{</span>
-    <span class="nx">request</span><span class="p">,</span>
-    <span class="na">url</span><span class="p">:</span> <span class="p">{</span> <span class="nx">pathname</span> <span class="p">},</span>
-    <span class="nx">params</span><span class="p">,</span>
-    <span class="nx">platform</span><span class="p">,</span>
-  <span class="p">}</span> <span class="o">=</span> <span class="nx">event</span>
-
-  <span class="k">if</span> <span class="p">(</span><span class="nx">pathname</span><span class="p">.</span><span class="nx">endsWith</span><span class="p">(</span><span class="dl">"</span><span class="s2">/websocket</span><span class="dl">"</span><span class="p">))</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="nx">roomId</span> <span class="o">=</span> <span class="nx">platform</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">rooms</span><span class="p">.</span><span class="nx">idFromName</span><span class="p">(</span><span class="nx">params</span><span class="p">.</span><span class="nx">id</span><span class="p">)</span>
-    <span class="kd">const</span> <span class="nx">room</span> <span class="o">=</span> <span class="nx">platform</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">rooms</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="nx">roomId</span><span class="p">)</span>
-
-    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">room</span><span class="p">)</span> <span class="k">return</span> <span class="k">new</span> <span class="nx">Response</span><span class="p">(</span><span class="dl">"</span><span class="s2">Not found</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span> <span class="na">status</span><span class="p">:</span> <span class="mi">404</span> <span class="p">})</span>
-
-    <span class="k">return</span> <span class="nx">room</span><span class="p">.</span><span class="nx">fetch</span><span class="p">(</span><span class="nx">params</span><span class="p">.</span><span class="nx">restUrl</span><span class="p">,</span> <span class="nx">request</span><span class="p">)</span>
-  <span class="p">}</span>
-
-  <span class="k">return</span> <span class="nx">resolve</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>This is a dirty and naive attempt, we’re just expecting the url to end with <code class="language-plaintext highlighter-rouge">/websocket</code> and that there is a <code class="language-plaintext highlighter-rouge">params.id</code> and <code class="language-plaintext highlighter-rouge">params.restUrl</code> if we’re going to return the raw response from the DO. But sure enough, it’ll work! I’d clean this up and add better checks to ensure that we’re on the right route before attempting to interact with the DO, but the principle is there.</p>
-
-<h3 id="on-ergonomics">On Ergonomics</h3>
-<p>So we’ve got our SvelteKit app, hosted on Cloudflare Pages and using Page Functions for the SvelteKit endpoints, responding to a websocket request and passing it through to our Durable Object which’ll do all the heavy lifting to coordinate all connected clients. But it’s using a naive, inflexible and not really ergonomic solution right now. For starters, it misses out on the routing that our endpoint gave us, so we have to do a bunch of path checking ourselves to make sure that we’re handling the correct request. It also disconnects the logic from the rest of the relevant code, as it lives in <code class="language-plaintext highlighter-rouge">src/hooks.ts</code> whereas our other logic for talking with these DO is located in the <code class="language-plaintext highlighter-rouge">src/routes/api/rooms/</code> directory.</p>
-
-<p>This is where my dirty, no good, hack solution comes in. I wanted to be able to use and return the <code class="language-plaintext highlighter-rouge">room.fetch()</code> calls directly from my endpoints rather than having to stuff them under a hook. The best way to do this, so far as I can tell right now, is to stuff things into <a href="https://kit.svelte.dev/docs/types#app-locals"><code class="language-plaintext highlighter-rouge">locals</code></a> from the request event that endpoints receive, and having a hook that’ll return a response that is stuffed into there. It’s <strong>not ideal</strong> and I would not recommend this for any production app, but it does work. Let’s take a look at the hook for this:</p>
-
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// src/hooks.ts</span>
-<span class="k">import</span> <span class="kd">type</span> <span class="p">{</span> <span class="nx">Handle</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@sveltejs/kit</span><span class="dl">"</span>
-
-<span class="k">export</span> <span class="kd">const</span> <span class="nx">handle</span><span class="p">:</span> <span class="nx">Handle</span> <span class="o">=</span> <span class="k">async</span> <span class="p">({</span> <span class="nx">event</span><span class="p">,</span> <span class="nx">resolve</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="p">{</span> <span class="nx">locals</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">event</span>
-
-  <span class="kd">const</span> <span class="nx">res</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">resolve</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span>
-  <span class="k">if</span> <span class="p">(</span><span class="nx">locals</span><span class="p">.</span><span class="nx">wsResponse</span><span class="p">)</span> <span class="k">return</span> <span class="nx">locals</span><span class="p">.</span><span class="nx">wsResponse</span>
-  <span class="k">return</span> <span class="nx">res</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>And how it’s used within the endpoint:</p>
-
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// src/routes/api/rooms/[id]/[...restUrl].ts</span>
-<span class="k">import</span> <span class="kd">type</span> <span class="p">{</span> <span class="nx">RequestHandler</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./[...restUrl].d</span><span class="dl">"</span>
-
-<span class="k">export</span> <span class="kd">const</span> <span class="kd">get</span><span class="p">:</span> <span class="nx">RequestHandler</span> <span class="o">=</span> <span class="k">async</span> <span class="p">({</span>
-  <span class="nx">params</span><span class="p">,</span>
-  <span class="nx">platform</span><span class="p">,</span>
-  <span class="nx">request</span><span class="p">,</span>
-  <span class="nx">locals</span><span class="p">,</span>
-<span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">roomId</span> <span class="o">=</span> <span class="nx">platform</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">rooms</span><span class="p">.</span><span class="nx">idFromName</span><span class="p">(</span><span class="nx">params</span><span class="p">.</span><span class="nx">id</span><span class="p">)</span>
-  <span class="kd">const</span> <span class="nx">room</span> <span class="o">=</span> <span class="nx">platform</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">rooms</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="nx">roomId</span><span class="p">)</span>
-
-  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">room</span><span class="p">)</span> <span class="k">return</span> <span class="p">{</span> <span class="na">status</span><span class="p">:</span> <span class="mi">404</span> <span class="p">}</span>
-
-  <span class="kd">const</span> <span class="nx">res</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">room</span><span class="p">.</span><span class="nx">fetch</span><span class="p">(</span><span class="nx">params</span><span class="p">.</span><span class="nx">restUrl</span><span class="p">,</span> <span class="nx">request</span><span class="p">)</span>
-
-  <span class="c1">// Hack to allow this endpoint to handle websockets from the DO</span>
-  <span class="c1">// The hook will return the contents of local.wsResponse</span>
-  <span class="c1">// if present since endpoints can't return a Response object and</span>
-  <span class="c1">// can't return status codes under 200 (or over 599).</span>
-  <span class="k">if</span> <span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="mi">101</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">locals</span><span class="p">.</span><span class="nx">wsResponse</span> <span class="o">=</span> <span class="nx">res</span>
-    <span class="k">return</span> <span class="p">{</span> <span class="na">status</span><span class="p">:</span> <span class="mi">200</span> <span class="p">}</span>
-  <span class="p">}</span>
-
-  <span class="k">return</span> <span class="p">{</span>
-    <span class="na">status</span><span class="p">:</span> <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">,</span>
-    <span class="na">headers</span><span class="p">:</span> <span class="nx">res</span><span class="p">.</span><span class="nx">headers</span><span class="p">,</span>
-    <span class="na">body</span><span class="p">:</span> <span class="nx">res</span><span class="p">.</span><span class="nx">body</span><span class="p">,</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>Told you it was a hack. But it does work, helps keep the logic all contained in one spot and gives us the ergonomics of endpoints with only a minor inconvenience. It’d probably take this further and bundle it up into a little helper function to hide the implementation details and to help avoid abuse, but the general principle would be the same.</p>
-
-<p>After getting this figured out, things have been pretty smooth sailing overall. I hope that SvelteKit gains the ability to return a raw Reponse from an endpoint in the future, or at least enough support to allow one to <a href="https://github.com/sveltejs/kit/issues/1491">handle websockets</a> a little better so that this hack isn’t necessary. I also wish Durable Objects were creatable from Pages’ projects, or on their own without needing a <a href="#annotation-4" class="annotation-trigger -gray">no-op Worker</a>
-<span id="annotation-4" class="annotation">I’ll try to write about this experience on a later date once I’ve gotten some more experience with this setup.</span>
-, as currently I’ve got a separate setup to publish the DO’s that my SvelteKit project is using. This separate setup even has it’s own deploy step that isn’t handled by the Pages deploy. Additionally, I hope that Page Functions get logging <em>soon</em> and that they stop requiring Git integration to get Page Functions uploaded, but for a beta they’re pretty powerful already and I’m excited to build some tools on top of this setup.</p>]]></content><author><name></name></author><category term="svelte" /><category term="sveltekit" /><category term="cloudflare" /><category term="cloudflare-pages" /><category term="cloudflare-durable-objects" /><summary type="html"><![CDATA[Hacking my way through tying together SvelteKit Endpoints and Websockets to Cloudflare Durable Objects.]]></summary></entry></feed>
+</ul>]]></content><author><name></name></author><category term="aoc" /><category term="aoc" /><category term="swift" /><category term="puzzles" /><summary type="html"><![CDATA[Welcome back to the end of another year and that means another season of Advent of Code!]]></summary></entry></feed>
