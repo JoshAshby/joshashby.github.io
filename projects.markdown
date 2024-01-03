@@ -3,7 +3,7 @@ title: Projects
 permalink: "/projects/"
 ---
 
-# Projects!!! Stuff!! Things!
+# Projectfolio
 
 I've got plenty of side projects that range from small experiments, helpful
 little tools, to learning aids for new languages or frameworks. Once in a
@@ -13,8 +13,8 @@ of those projects that I'm most proud of or get a lot of value out of daily.
 
 {: .callout}
 Most of the projects listed here are **not** "finished" and many are in a state
-of maintenance or abandon, but I'm still proud of the lessons, ideas and
-experience that I extracted from them.
+of maintenance or hibernation, but I still found the experience, lessons and
+ideas from them fulfilling.
 
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: Advent of Code solutions
+title: Advent of Code Solutions
 showcase: 6
 cover:
   description: I started actively participating in [Advent of Code](https://adventofcode.com/) in 2021 and have made a point of trying to write understandable code, rather than reach the solution the fastest.
