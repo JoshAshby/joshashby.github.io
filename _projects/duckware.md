@@ -1,20 +1,11 @@
 ---
-title: Project - Duckware
-permalink: "/projects/duckware"
+title: 🦆 ware (Duckware)
+slug: duckware
+cover:
+  description: Duckware is a QA and developers dream. It records events happening on a webpage, ranging from clicks to websocket data and network requests and allows packaging it up with timestamped screen recordings to send over to developers to help hunt bugs.
+tags:
+  - Browser Extension
 ---
-
-<div class="not-prose mb-2">
-  <div class="relative group">
-    <div class="mt-4 flex items-center justify-between text-base font-medium space-x-8">
-      <h3>🦆 Ware</h3>
-    </div>
-
-    <span class="tag">Browser Extension</span>
-  </div>
-</div>
-
-**TL;DR** Duckware records events and screen captures to help developers
-identify and recreate bugs faster.
 
 Duckware is a new and evolving project for me, so this page should be considered
 "Under Construction" as new features get built out and the extension gets more
@@ -38,7 +29,7 @@ In Progress Features:
   - Including play back of recorded user interactions
 
 ## Screenshots
-![](/assets/projects/duckware/log.png)
+{% include figure.html src="/assets/projects/duckware/log.png" caption="" %}
 {% include figure.html src="/assets/projects/duckware/log-recording.png" caption="Starting a screen capture enables additional controls in the log UI" %}
 
 

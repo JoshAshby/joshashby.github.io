@@ -1,7 +1,7 @@
 <figure class="not-prose bg-gray-100 dark:bg-gray-700">
   <img src="{{ include.src }}" srcset="{{ include.srcset }}" alt="{{ include.alt }}" />
 
-  {% if include.caption != blank %}
+  {% if include.caption != empty %}
     <figcaption class="font-mono text-xs text-gray-500 dark:text-gray-200 p-2">{{ include.caption }}</figcaption>
   {% endif %}
 </figure>

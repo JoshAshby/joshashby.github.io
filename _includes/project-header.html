@@ -1,0 +1,41 @@
+<div class="not-prose mb-2">
+  <div class="relative group">
+    {% if page.cover.url %}
+      {% capture alt %}
+        {{ page.title }}'s cover image
+      {% endcapture %}
+
+      {% assign credit = "" %}
+
+      {% if page.logo_credit %}
+        {% capture credit %}
+          Icon: {{ page.logo_credit | markdownify | remove: '<p>' | remove: '</p>' }}
+        {% endcapture %}
+      {% endif %}
+
+      {% include figure.html src=page.cover.url alt=alt caption=credit %}
+    {% endif %}
+
+    <div class="mt-4 flex items-center justify-between text-base font-medium space-x-8">
+      <h3>{{ page.title }}</h3>
+
+      {% if page.center_header %}
+        <div class="flex items-center space-x-4">
+          {{ page.center_header }}
+        </div>
+      {% endif %}
+
+      <div class="flex items-center divide-solid divide-x-2 divide-gray-300">
+        {% for link in page.links %}
+          <a href="{{ link.url }}" class="px-2">{{ link.content | markdownify | remove: '<p>' | remove: '</p>' }}</a>
+        {% endfor %}
+      </div>
+    </div>
+
+    {% for tag in page.tags %}
+      <span class="tag">{{ tag }}</span>
+    {% endfor %}
+  </div>
+</div>
+
+<strong>TL;DR:</strong> {{ page.cover.description | markdownify | remove: '<p>' | remove: '</p>' }}

@@ -45,6 +45,13 @@ defaults:
     values:
       layout: "default-post"
 
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+      type: "projects"
+    values:
+      layout: "default-project"
+
 plugins:
   - jekyll/vite
   - jekyll-feed
@@ -64,9 +71,14 @@ jekyll-archives:
     month: "/:year/:month/"
     day: "/:year/:month/:day/"
 
-# This is a hack to get drafts to show up in jekyll-admin
+
 collections:
-  - drafts
+  # This is a hack to get drafts to show up in jekyll-admin
+  drafts:
+  projects:
+    output: true
+    sort_by: showcase
+    permalink: /:collection/:title
 
 # Exclude from processing.
 # The following items will not be processed, by default.
