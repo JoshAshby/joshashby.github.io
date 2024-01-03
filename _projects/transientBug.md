@@ -2,7 +2,7 @@
 showcase: 3
 title: transientBug
 cover:
-  url: /assets/projects/transientbug/cover.png
+  url: /assets/projects/transientBug/cover.png
   description: transientBug is a bookmark manager designed to help solve the problem of aging and dead links.
 tags:
   - Web App
