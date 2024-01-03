@@ -110,3 +110,10 @@ exclude:
   - purgecss.config.js
   - postcss.config.js
   - devops/
+  - README.md
+  - Rakefile
+  - Procfile.dev
+  - "*.typ"
+
+include:
+  - resume.pdf

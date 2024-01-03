@@ -65,10 +65,6 @@ jobs:
           JEKYLL_ENV: production
         run: bundle exec jekyll build -d ../build
 
-      - name: Copy resume PDF to build dir
-        working-directory: source
-        run: cp resume.pdf ../build/
-
       - name: Commit and push changes to master
         working-directory: build
         run: |
