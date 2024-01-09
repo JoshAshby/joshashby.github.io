@@ -1,0 +1,12 @@
+{% assign logs = site.projects|where: "type", "project-log"|where: "project", include.project_id|sort: date|reverse %}
+{% if logs.size > 0 %}
+    <hr />
+
+    <h2 id="log">Project Log</h2>
+
+    {% for log in logs %}
+        <h5>{{ log.date|date_to_string: "ordinal", "US" }}</h5>
+
+        {{ log.content|markdownify }}
+    {% endfor %}
+{% endif %}
