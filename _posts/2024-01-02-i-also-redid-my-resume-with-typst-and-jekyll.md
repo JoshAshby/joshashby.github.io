@@ -24,7 +24,7 @@ That's where the LaTeX ~killer~ alternative and hero of our story, Typst, comes 
 
 A cool thing about Typst is that it can [load a variety of data files](https://typst.app/docs/reference/data-loading/), for example YAML:
 
-```typ
+```
 let data = yaml("/_data/stuff.yml")
 ```
 

@@ -21,7 +21,7 @@ ideas from them fulfilling.
 <div class="mt-6 grid grid-cols-1 gap-x-8 gap-y-8 sm:grid-cols-2 sm:gap-y-10 lg:grid-cols-3 not-prose">
   {% assign showcased = site.projects|where_exp: 'item', 'item.cover.url' %}
   {% for project in showcased %}
-    {% assign latest_log = site.projects|where: "type", "project-log"|where: "project", project.id|sort: date|reverse|first %}
+    {% assign latest_log = site.posts|where: "dev_log_project_id", project.id|sort: date|reverse|first %}
 
     <div class="group">
       <div class="relative">
@@ -53,7 +53,7 @@ ideas from them fulfilling.
 <div class="mt-6 grid grid-cols-1 gap-x-8 gap-y-8 not-prose w-full">
   {% assign non_showcased = site.projects|where: 'cover.url', nil %}
   {% for project in non_showcased %}
-    {% assign latest_log = site.projects|where: "type", "project-log"|where: "project", project.id|sort: date|reverse|first %}
+    {% assign latest_log = site.posts|where: "dev_log_project_id", project.id|sort: date|reverse|first %}
 
     <div class="group">
       <div class="mt-4 flex items-center justify-between text-base font-medium text-gray-900 space-x-8 relative">
