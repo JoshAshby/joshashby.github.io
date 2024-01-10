@@ -17,8 +17,8 @@
 <meta name="generator" content="Jekyll v4.2.2" />
 <meta property="og:title" content="Advent of Code 2022 Anthology" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Welcome back to the end of another year and that means another season of Advent of Code!" />
-<meta property="og:description" content="Welcome back to the end of another year and that means another season of Advent of Code!" />
+<meta name="description" content="Welcome back to the end of another year and that means another season of Advent of Code! Last year was the first time that I actively participated and I chose to solve the challenges using OCaml to better familiarize myself with the language. This year I decided that, as much as I enjoy OCaml, I’ve been doing enough Swift for some side projects that I’d love to learn some of the language’s features better. While I didn’t do write up’s last year, I’ve set the challenge to put together a small write up of my solutions for this year as I work through them with the hopes of practicing my technical writing skills. Additionally, while there is some joy in trying to solve the problems the fastest and most golfed, clever code, I’m also looking to strike a balance of maintainable and readable code and exploring some more features of the language, so every day’s write up may not be super advanced OR optimal. This years theme is: The elves stage a tropical expedition, in the name of the reindeer’s magical energy supply, to find 50 star fruit. Days AoC 2022 Day 01 - The elves count calories, we do an intro AoC 2022 Day 02 - The elves play Rock, Paper, Scissors, we win AoC 2022 Day 03 - The elves redo one particularly incompetent elf’s job, we fire the elf AoC 2022 Day 04 - The elves clean up base camp, we free up resources AoC 2022 Day 05 - The elves rearrange some crates on a boat, we play alphabet blocks with the crates AoC 2022 Day 06 - The elves recieve an email, we decode it AoC 2022 Day 07 - The elves give you an outdated device with not enough disk space, we delete the filesystem AoC 2022 Day 08 - The elves want a hidden treehouse with a great view, we’re their realtor" />
+<meta property="og:description" content="Welcome back to the end of another year and that means another season of Advent of Code! Last year was the first time that I actively participated and I chose to solve the challenges using OCaml to better familiarize myself with the language. This year I decided that, as much as I enjoy OCaml, I’ve been doing enough Swift for some side projects that I’d love to learn some of the language’s features better. While I didn’t do write up’s last year, I’ve set the challenge to put together a small write up of my solutions for this year as I work through them with the hopes of practicing my technical writing skills. Additionally, while there is some joy in trying to solve the problems the fastest and most golfed, clever code, I’m also looking to strike a balance of maintainable and readable code and exploring some more features of the language, so every day’s write up may not be super advanced OR optimal. This years theme is: The elves stage a tropical expedition, in the name of the reindeer’s magical energy supply, to find 50 star fruit. Days AoC 2022 Day 01 - The elves count calories, we do an intro AoC 2022 Day 02 - The elves play Rock, Paper, Scissors, we win AoC 2022 Day 03 - The elves redo one particularly incompetent elf’s job, we fire the elf AoC 2022 Day 04 - The elves clean up base camp, we free up resources AoC 2022 Day 05 - The elves rearrange some crates on a boat, we play alphabet blocks with the crates AoC 2022 Day 06 - The elves recieve an email, we decode it AoC 2022 Day 07 - The elves give you an outdated device with not enough disk space, we delete the filesystem AoC 2022 Day 08 - The elves want a hidden treehouse with a great view, we’re their realtor" />
 <link rel="canonical" href="https://joshisa.ninja/aoc/2022/12/01/aoc-2022.html" />
 <meta property="og:url" content="https://joshisa.ninja/aoc/2022/12/01/aoc-2022.html" />
 <meta property="og:site_name" content="Ashby’s Hideout" />
@@ -27,7 +27,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Advent of Code 2022 Anthology" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-12-01T01:00:00+00:00","datePublished":"2022-12-01T01:00:00+00:00","description":"Welcome back to the end of another year and that means another season of Advent of Code!","headline":"Advent of Code 2022 Anthology","mainEntityOfPage":{"@type":"WebPage","@id":"https://joshisa.ninja/aoc/2022/12/01/aoc-2022.html"},"url":"https://joshisa.ninja/aoc/2022/12/01/aoc-2022.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-12-01T01:00:00+00:00","datePublished":"2022-12-01T01:00:00+00:00","description":"Welcome back to the end of another year and that means another season of Advent of Code! Last year was the first time that I actively participated and I chose to solve the challenges using OCaml to better familiarize myself with the language. This year I decided that, as much as I enjoy OCaml, I’ve been doing enough Swift for some side projects that I’d love to learn some of the language’s features better. While I didn’t do write up’s last year, I’ve set the challenge to put together a small write up of my solutions for this year as I work through them with the hopes of practicing my technical writing skills. Additionally, while there is some joy in trying to solve the problems the fastest and most golfed, clever code, I’m also looking to strike a balance of maintainable and readable code and exploring some more features of the language, so every day’s write up may not be super advanced OR optimal. This years theme is: The elves stage a tropical expedition, in the name of the reindeer’s magical energy supply, to find 50 star fruit. Days AoC 2022 Day 01 - The elves count calories, we do an intro AoC 2022 Day 02 - The elves play Rock, Paper, Scissors, we win AoC 2022 Day 03 - The elves redo one particularly incompetent elf’s job, we fire the elf AoC 2022 Day 04 - The elves clean up base camp, we free up resources AoC 2022 Day 05 - The elves rearrange some crates on a boat, we play alphabet blocks with the crates AoC 2022 Day 06 - The elves recieve an email, we decode it AoC 2022 Day 07 - The elves give you an outdated device with not enough disk space, we delete the filesystem AoC 2022 Day 08 - The elves want a hidden treehouse with a great view, we’re their realtor","headline":"Advent of Code 2022 Anthology","mainEntityOfPage":{"@type":"WebPage","@id":"https://joshisa.ninja/aoc/2022/12/01/aoc-2022.html"},"url":"https://joshisa.ninja/aoc/2022/12/01/aoc-2022.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -79,19 +79,21 @@
 
       <div class="flex flex-row flex-wrap space-x-1 items-center justify-end flex-grow">
         
-          <a href="/tags#aoc" name="aoc"><span class="tag">aoc</span></a>
+          <a href="/tags#aoc"><span class="tag">aoc</span></a>
 
         
-          <a href="/tags#swift" name="swift"><span class="tag">swift</span></a>
+          <a href="/tags#swift"><span class="tag">swift</span></a>
 
         
-          <a href="/tags#puzzles" name="puzzles"><span class="tag">puzzles</span></a>
+          <a href="/tags#puzzles"><span class="tag">puzzles</span></a>
 
         
       </div>
     </div>
   </div>
 </header>
+
+  
 
 
   <p>Welcome back to the end of another year and that means another season of <a href="adventofcode.com/">Advent of Code</a>!</p>

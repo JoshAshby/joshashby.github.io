@@ -80,10 +80,10 @@
 
       <div class="flex flex-row flex-wrap space-x-1 items-center justify-end flex-grow">
         
-          <a href="/tags#browser-extension" name="browser-extension"><span class="tag">browser-extension</span></a>
+          <a href="/tags#browser-extension"><span class="tag">browser-extension</span></a>
 
         
-          <a href="/tags#food-for-thought" name="food-for-thought"><span class="tag">food-for-thought</span></a>
+          <a href="/tags#food-for-thought"><span class="tag">food-for-thought</span></a>
 
         
       </div>
@@ -91,17 +91,19 @@
   </div>
 </header>
 
+  
+
 
   <div>
   <em>
   This post contains inline annotations/footnotes to help add context, helpful tips or expand upon a tangent in the text. Expand them by <a href="#annotation-1" class="annotation-trigger -gray">clicking or tapping on them</a>
-<span id="annotation-1" class="annotation">Annotations might have their own <a href="#annotation-2" class="annotation-trigger -red">annotations</a><span id="annotation-2" class="annotation">Such as this one!</span> inside of them too.</span>
+<span id="annotation-1" class="annotation"> Annotations might have their own <a href="#annotation-2" class="annotation-trigger -red">annotations</a><span id="annotation-2" class="annotation"> Such as this one! </span> inside of them too. </span>
 
   </em>
 </div>
 
 <p>I like making browser extensions. <a href="#annotation-3" class="annotation-trigger -yellow">Big Surprise.</a>
-<span id="annotation-3" class="annotation">Correction: I specifically like making browser extensions that aren’t hampered by Google’s unabashed attempts to kill ad blockers at any cost. Eg: MV3 seems like a real crap shoot so far, tbh</span></p>
+<span id="annotation-3" class="annotation"> Correction: I specifically like making browser extensions that aren’t hampered by Google’s unabashed attempts to kill ad blockers at any cost. Eg: MV3 seems like a real crap shoot so far, tbh </span></p>
 
 <p>Browsers are pretty great pieces of software, am I right? They’re integral to our digital world these days, rendering everything from the endless cats and memes to our work and collaboration spaces. But they do a lot more: browsers have long had their own micro-ecosystems. They give users the ability to extend them with additional software that can change how the browser functions or imbue websites and apps with additional functionality and superpowers through browser extensions.</p>
 
@@ -109,13 +111,13 @@
 <p>I got into extension development back around 2017; I’m admittedly late to the party and missed out on the great <a href="https://en.wikipedia.org/wiki/XUL">XUL</a> jazz. That said, I’ve built some pretty cool things over the years regardless and we appear to be approaching a nice golden age of technology for extensions to enhance webpages.</p>
 
 <p>Why is that? Well, we have fairly good support for <a href="#annotation-4" class="annotation-trigger -blue">Web Components</a>
-<span id="annotation-4" class="annotation">Ironically, Chrome is still lacking here even though Google is behind some of the first big pushes into Web Components: you have to use a Google maintained polyfill for Web Components inside of Chrome extensions. FFS</span>
+<span id="annotation-4" class="annotation"> Ironically, Chrome is still lacking here even though Google is behind some of the first big pushes into Web Components: you have to use a Google maintained polyfill for Web Components inside of Chrome extensions. FFS </span>
  and Shadow DOM which give nice and succinct ways to encapsulate components in a <a href="https://blog.revillweb.com/open-vs-closed-shadow-dom-9f3d7427d1af">“good-enough”</a> isolated environment. Aiding that, many frameworks are starting to integrate with these technologies to make building self-contained components much easier, such as <a href="svelte.dev/">Svelte</a> and <a href="lit.dev">Lit</a>. On the browser extension side, they have <a href="#annotation-5" class="annotation-trigger -orange">Content Scripts</a>
-<span id="annotation-5" class="annotation">With the added ability of being able to register content scripts <a href="#annotation-6" class="annotation-trigger -red">dynamically at runtime</a><span id="annotation-6" class="annotation">A feature that <a href="https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/contentScripts">Firefox has had for a long time</a> and Chrome <a href="https://developer.chrome.com/blog/crx-scripting-api/">reinvented for MV3</a> rather than play nice and work together to improve the existing solution. Because screw cooperation.</span>, this gets even more powerful while potentially better respecting the users’ privacy by not needing the catch-all <code class="language-plaintext highlighter-rouge">&lt;all_urls&gt;</code> permissions.</span>
+<span id="annotation-5" class="annotation"> With the added ability of being able to register content scripts <a href="#annotation-6" class="annotation-trigger -red">dynamically at runtime</a><span id="annotation-6" class="annotation"> A feature that <a href="https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/contentScripts">Firefox has had for a long time</a> and Chrome <a href="https://developer.chrome.com/blog/crx-scripting-api/">reinvented for MV3</a> rather than play nice and work together to improve the existing solution. Because screw cooperation. </span>, this gets even more powerful while potentially better respecting the users’ privacy by not needing the catch-all <code class="language-plaintext highlighter-rouge">&lt;all_urls&gt;</code> permissions. </span>
  which run alongside the tab’s DOM, allowing for the Content Scripts to make changes to the webpage that are visible to the end user.</p>
 
 <p>Couple these together and <strong>POOF</strong> you can inject UI onto a webpage without fear of style collisions. That’s awesome and <em>powerful</em>. <a href="#annotation-7" class="annotation-trigger -green">Grammarly</a>
-<span id="annotation-7" class="annotation">Putting the privacy concerns around their data collection and what not aside, they have a pretty well-functioning browser extension that is a great example of using extensions to enhance normal webpage experiences.</span>
+<span id="annotation-7" class="annotation"> Putting the privacy concerns around their data collection and what not aside, they have a pretty well-functioning browser extension that is a great example of using extensions to enhance normal webpage experiences. </span>
  uses this to inject their UI into text boxes, rending all the suggestions and the little tone icons and what not. Keepass-XC’s extension use this to add little indicators to login fields they’ve saved as well as several other UI elements.</p>
 
 <p>While this is possible without Web Components and Shadow DOM, it gets messy with the older IFrame techniques floating around out there. Making matters worse, this technique isn’t well supported in frameworks leading to some weird looking code, and the risk of style collisions on your outer IFrame.</p>
@@ -131,7 +133,7 @@ flow of the document</li>
 </ul>
 
 <p>The former case is used by the likes of Refined-Github to inject <a href="#annotation-8" class="annotation-trigger -blue">near-native</a>
-<span id="annotation-8" class="annotation">That is, components that look and often act like they’re a part of the original website rather than part of the extension</span>
+<span id="annotation-8" class="annotation"> That is, components that look and often act like they’re a part of the original website rather than part of the extension </span>
  components into the site that add functionality that’s missing from the original page, a use case which is already pretty well supported by the current Content Script abilities and not of interest to me today.</p>
 
 <p>The latter interests me a lot, however, as it’s the realm that most of my extensions fall into and the use of Web Components and Shadow DOM feels … overkill for the features I often need. Something that comes to mind when thinking about this conundrum is an old overhead transparency put on top of a piece of paper.</p>

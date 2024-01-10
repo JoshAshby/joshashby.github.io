@@ -17,17 +17,17 @@
 <meta name="generator" content="Jekyll v4.2.2" />
 <meta property="og:title" content="AnglerFrame" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Like I am with programming languages, I’ve also always been facinated by TUI based text editors and when I stumbled across gram, a Zig port of kilo I was hooked and just knew that one day I’d make my own text editor. When I later found this wonderful tutorial from Paige that breaks down building kilo from the groundup, I just had to get started." />
-<meta property="og:description" content="Like I am with programming languages, I’ve also always been facinated by TUI based text editors and when I stumbled across gram, a Zig port of kilo I was hooked and just knew that one day I’d make my own text editor. When I later found this wonderful tutorial from Paige that breaks down building kilo from the groundup, I just had to get started." />
+<meta name="description" content="Like I am with programming languages, I’ve also always been facinated by TUI based text editors and when I stumbled across gram, a Zig port of kilo I was hooked and just knew that one day I’d make my own text editor. When I later found this wonderful tutorial from Paige that breaks down building kilo from the groundup, I just had to get started. AnglerFrame’s top priority is to be a sandbox for learning about topics such as VT100 commands, raw-mode terminals and TUI implementations and syscalls from Swift. I don’t have a ton of experience with any of these, let alone in Swift, so having an established and somewhat guided introduction has already been a wonderful adventure. Notable differences from kilo: UTF-8 support Line numbers More Vim-like cursor movement, allowing the cursor to “remember” where it was on longer lines while navigating through a file Technology Swift 5.9" />
+<meta property="og:description" content="Like I am with programming languages, I’ve also always been facinated by TUI based text editors and when I stumbled across gram, a Zig port of kilo I was hooked and just knew that one day I’d make my own text editor. When I later found this wonderful tutorial from Paige that breaks down building kilo from the groundup, I just had to get started. AnglerFrame’s top priority is to be a sandbox for learning about topics such as VT100 commands, raw-mode terminals and TUI implementations and syscalls from Swift. I don’t have a ton of experience with any of these, let alone in Swift, so having an established and somewhat guided introduction has already been a wonderful adventure. Notable differences from kilo: UTF-8 support Line numbers More Vim-like cursor movement, allowing the cursor to “remember” where it was on longer lines while navigating through a file Technology Swift 5.9" />
 <link rel="canonical" href="https://joshisa.ninja/projects/anglerframe" />
 <meta property="og:url" content="https://joshisa.ninja/projects/anglerframe" />
 <meta property="og:site_name" content="Ashby’s Hideout" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2024-01-09T06:12:48+00:00" />
+<meta property="article:published_time" content="2024-01-10T00:16:46+00:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="AnglerFrame" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-01-09T06:12:48+00:00","datePublished":"2024-01-09T06:12:48+00:00","description":"Like I am with programming languages, I’ve also always been facinated by TUI based text editors and when I stumbled across gram, a Zig port of kilo I was hooked and just knew that one day I’d make my own text editor. When I later found this wonderful tutorial from Paige that breaks down building kilo from the groundup, I just had to get started.","headline":"AnglerFrame","mainEntityOfPage":{"@type":"WebPage","@id":"https://joshisa.ninja/projects/anglerframe"},"url":"https://joshisa.ninja/projects/anglerframe"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-01-10T00:16:46+00:00","datePublished":"2024-01-10T00:16:46+00:00","description":"Like I am with programming languages, I’ve also always been facinated by TUI based text editors and when I stumbled across gram, a Zig port of kilo I was hooked and just knew that one day I’d make my own text editor. When I later found this wonderful tutorial from Paige that breaks down building kilo from the groundup, I just had to get started. AnglerFrame’s top priority is to be a sandbox for learning about topics such as VT100 commands, raw-mode terminals and TUI implementations and syscalls from Swift. I don’t have a ton of experience with any of these, let alone in Swift, so having an established and somewhat guided introduction has already been a wonderful adventure. Notable differences from kilo: UTF-8 support Line numbers More Vim-like cursor movement, allowing the cursor to “remember” where it was on longer lines while navigating through a file Technology Swift 5.9","headline":"AnglerFrame","mainEntityOfPage":{"@type":"WebPage","@id":"https://joshisa.ninja/projects/anglerframe"},"url":"https://joshisa.ninja/projects/anglerframe"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -119,42 +119,84 @@ introduction has already been a wonderful adventure.</p>
 
 
 
-    <hr />
+  <hr />
 
-    <h2 id="log">Project Log</h2>
+  <h2 id="log">Dev Logs</h2>
 
+  
+    <div class="flex flex-col space-y-1">
+  <div class="flex flex-row space-x-2 items-baseline">
+    <time datetime="2024-01-08" class="font-mono text-sm whitespace-nowrap">Jan 08, 2024</time>
+
+    <div class="flex flex-col">
+      <div>
+        <a href="/2024/01/08/cursor-movement-and-string-indexing-in-anglerframe.html">Cursor Movement and String Indexing in AnglerFrame</a>
+
+        
+      </div>
+
+      <div class="flex flex-row flex-wrap space-x-1">
+        
+          <a href="/tags#swift"><span class="tag">swift</span></a>
+
+        
+          <a href="/tags#kilo-editor"><span class="tag">kilo-editor</span></a>
+
+        
+          <a href="/tags#anglerframe"><span class="tag">AnglerFrame</span></a>
+
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+    <p>I’ve spent an evening hour or so a day for the last week working on AnglerFrame
+and following along with the <a href="https://viewsourcecode.org/snaptoken/kilo">fantastic
+tutorial</a> for building
+<a href="https://github.com/antirez/kilo"><code class="language-plaintext highlighter-rouge">kilo</code></a> from the ground up, and have made it
+about halfway through “Chapter 4” which is the first chapter to really pick up
+the pace with the “text editor” bits. Up to this point (Chapters 1-3), we’ve
+been concerned with laying down the groundwork for building a UI using VT100
+commands and doing tasks like moving the cursor around the screen and handling
+interacting with the terminal device in a clean fashion. Chapter 4 concerns
+itself with making a text viewer and really brings out the quirks in human
+language as we start to dive into handling displaying text and moving a cursor
+around it in a meaningful way.</p>
+
+<p>At this point I’ve already implemented a few features that take a departure
+from the standard <code class="language-plaintext highlighter-rouge">kilo</code>, as well as having a fairly different take on the code
+layout. I’ve gotten UTF-8 displaying without issue thanks to Swift (although
+I’m sure I’ve got a few length bugs and other issues that’ll surface as I work
+on “Chapter 5” which implements text-editing) and I’ve made the cursor behave
+more similar to Vim (more on this below) and I’ve got line numbers in a
+“gutter.”</p>
+
+<figure class="ashby-img not-prose bg-gray-100 dark:bg-gray-700">
+  <img src="/assets/projects/anglerframe/2024-01-08-unicode.png" srcset="" alt="" />
+
+  
+    <figcaption class="font-mono text-xs text-gray-500 dark:text-gray-200 p-2"><p>AnglerFrame Displaying <a href="https://www.cl.cam.ac.uk/~mgk25/ucs/examples/UTF-8-demo.txt">Markus Kuhn’s UTF-8 plain text
+demo</a>!</p>
+</figcaption>
+  
+</figure>
+
+
+
+    <!--This is probably not going to work because of markdownify, if i had to guess?-->
     
-        <h5>Jan 8th, 2024</h5>
-
-        <p>Hey wow, my first project log entry (ever on this site :O)!</p>
-
-<p>I’ve spent an evening hour or so a day for the last week working on AnglerFrame and following along with the <a href="https://viewsourcecode.org/snaptoken/kilo">fantastic tutorial</a> and have made it about halfway through “Chapter 4” which is the first chapter to really pick up the pace with the “text editor” bits. Up to this point (Chapters 1-3), we’ve been concerned with laying down the groundwork for building a UI using VT100 commands and doing tasks like moving the cursor around the screen and handling interacting with the terminal device in a clean fashion. Chapter 4 concerns itself with making a text viewer and really brings out the quirks in human language as we start to dive into handling displaying text and moving a cursor around it in a meaningful way.</p>
-
-<p>At this point I’ve already implemented a few features that take a departure from the standard <code class="language-plaintext highlighter-rouge">kilo</code>, as well as having a fairly different take on the code layout. I’ve gotten UTF-8 displaying without issue thanks to Swift (although I’m sure I’ve got a few length bugs and other issues that’ll surface as I work on “Chapter 5” which implements text-editing) and I’ve made the cursor behave more similar to Vim (more on this below) and I’ve got line numbers in a “gutter.”</p>
-
-<p>For example, here’s AnglerFrame displaying <a href="https://www.cl.cam.ac.uk/~mgk25/ucs/examples/UTF-8-demo.txt">Markus Kuhn’s UTF-8 plain text demo</a>:
-<img src="/assets/projects/anglerframe/2024-01-08-unicode.png" alt="AnglerFrame Displaying a UTF-8 Sample File!" /></p>
-
-<p>In terms of code changes, I’ve made use of structs and classes in Swift to organize and further abstract some of the code away. At the moment, I’ve got an <code class="language-plaintext highlighter-rouge">Editor</code> class which is the heart of the system, integrating with a <code class="language-plaintext highlighter-rouge">Display</code> object which concerns itself with outputting things, and an <code class="language-plaintext highlighter-rouge">Input</code> object which concerns itself with converting raw input from <code class="language-plaintext highlighter-rouge">FileHandle.read(_:)</code> into a nicer enum. This should make it a little nicer to work on future expansions, such as: convert the <code class="language-plaintext highlighter-rouge">Input</code> code into an async system, where it’d write into a buffer that can be read from the main thread. It also feels a lot more “Swifty” to me and gets around some of the ugliness of C and its lack of name spacing and methods.</p>
-<h3 id="cursor-movement">Cursor Movement</h3>
-<p>The situation: You’re moving vertically from a longer line to a shorter line, and the cursor is positioned in a column past the end of the shorter lines length.</p>
-
-<p>Take, for example, the following lines:</p>
-<ul>
-  <li>line 1: 5 columns</li>
-  <li>line 2: 2 columns</li>
-  <li>line 3: 10 columns</li>
-</ul>
-
-<p>What happens to the cursor if you have it at column 4 on line 1, and move it to line 2? What happens when it moves from line 2 to line 3 after this?</p>
-
-<p>In the original <code class="language-plaintext highlighter-rouge">kilo</code>, the cursor sets its position to the shorter lines length, effectively snapping it to a new position. In the above example, this moves the cursor from column 4 to column 2, and when you subsequently move from line 2 to line 3, the cursor remains in the new position of column 2. This is a little annoying because if you are trying to compare column positions and encounter a blank line, the cursor loses all context of where it originally was!</p>
-
-<p>In Vim, however, the cursor is <em>displayed</em> as snapping to the end of the shorter line but it retains its original column position when navigating. This means that in our example above, the cursor appears to snap back to column 2 on line 2, but will return to column 4 on line 3, keeping continuity a little better. When you insert text where the cursor is displayed at a different column from its remembered position, it resets to the currently displayed position. So if you move from column 4 on line 1 to line 2 and then insert a character, the new cursor’s position will be column 3 after the insert, because it reset to column 2 on the insert and then moved over one column for the inserted character.</p>
-
-<p>I’ve copied this behavior from Vim as I find it a lot more intuitive to how the cursor should move around text and even make use of the feature to find in correct indents, for example.</p>
-
+      <a href="/2024/01/08/cursor-movement-and-string-indexing-in-anglerframe.html">Continue reading</a>
     
+
+    <!--<article class="default-post">-->
+      <!--<h5></h5>-->
+      <!--<small><a href="">View the original blog post</a></small>-->
+
+      <!--
+-->
+    <!--</article>-->
+  
 
 
 

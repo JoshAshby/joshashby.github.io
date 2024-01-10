@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="apple-mobile-web-app-status-bar-style" content="#1f2937">
+  <meta name="theme-color" content="#1f2937" />
+
+  <title>Cursor Movement and String Indexing in AnglerFrame - Ashby's Hideout</title>
+  <meta name="description" content="">
+
+  <link type="application/atom+xml" rel="alternate" href="https://joshisa.ninja/feed.xml" title="Ashby&apos;s Hideout" />
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Cursor Movement and String Indexing in AnglerFrame | Ashby’s Hideout</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Cursor Movement and String Indexing in AnglerFrame" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="I’ve spent an evening hour or so a day for the last week working on AnglerFrame and following along with the fantastic tutorial for building kilo from the ground up, and have made it about halfway through “Chapter 4” which is the first chapter to really pick up the pace with the “text editor” bits. Up to this point (Chapters 1-3), we’ve been concerned with laying down the groundwork for building a UI using VT100 commands and doing tasks like moving the cursor around the screen and handling interacting with the terminal device in a clean fashion. Chapter 4 concerns itself with making a text viewer and really brings out the quirks in human language as we start to dive into handling displaying text and moving a cursor around it in a meaningful way. At this point I’ve already implemented a few features that take a departure from the standard kilo, as well as having a fairly different take on the code layout. I’ve gotten UTF-8 displaying without issue thanks to Swift (although I’m sure I’ve got a few length bugs and other issues that’ll surface as I work on “Chapter 5” which implements text-editing) and I’ve made the cursor behave more similar to Vim (more on this below) and I’ve got line numbers in a “gutter.” AnglerFrame Displaying Markus Kuhn’s UTF-8 plain text demo!" />
+<meta property="og:description" content="I’ve spent an evening hour or so a day for the last week working on AnglerFrame and following along with the fantastic tutorial for building kilo from the ground up, and have made it about halfway through “Chapter 4” which is the first chapter to really pick up the pace with the “text editor” bits. Up to this point (Chapters 1-3), we’ve been concerned with laying down the groundwork for building a UI using VT100 commands and doing tasks like moving the cursor around the screen and handling interacting with the terminal device in a clean fashion. Chapter 4 concerns itself with making a text viewer and really brings out the quirks in human language as we start to dive into handling displaying text and moving a cursor around it in a meaningful way. At this point I’ve already implemented a few features that take a departure from the standard kilo, as well as having a fairly different take on the code layout. I’ve gotten UTF-8 displaying without issue thanks to Swift (although I’m sure I’ve got a few length bugs and other issues that’ll surface as I work on “Chapter 5” which implements text-editing) and I’ve made the cursor behave more similar to Vim (more on this below) and I’ve got line numbers in a “gutter.” AnglerFrame Displaying Markus Kuhn’s UTF-8 plain text demo!" />
+<link rel="canonical" href="https://joshisa.ninja/2024/01/08/cursor-movement-and-string-indexing-in-anglerframe.html" />
+<meta property="og:url" content="https://joshisa.ninja/2024/01/08/cursor-movement-and-string-indexing-in-anglerframe.html" />
+<meta property="og:site_name" content="Ashby’s Hideout" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-01-08T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Cursor Movement and String Indexing in AnglerFrame" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-01-08T00:00:00+00:00","datePublished":"2024-01-08T00:00:00+00:00","description":"I’ve spent an evening hour or so a day for the last week working on AnglerFrame and following along with the fantastic tutorial for building kilo from the ground up, and have made it about halfway through “Chapter 4” which is the first chapter to really pick up the pace with the “text editor” bits. Up to this point (Chapters 1-3), we’ve been concerned with laying down the groundwork for building a UI using VT100 commands and doing tasks like moving the cursor around the screen and handling interacting with the terminal device in a clean fashion. Chapter 4 concerns itself with making a text viewer and really brings out the quirks in human language as we start to dive into handling displaying text and moving a cursor around it in a meaningful way. At this point I’ve already implemented a few features that take a departure from the standard kilo, as well as having a fairly different take on the code layout. I’ve gotten UTF-8 displaying without issue thanks to Swift (although I’m sure I’ve got a few length bugs and other issues that’ll surface as I work on “Chapter 5” which implements text-editing) and I’ve made the cursor behave more similar to Vim (more on this below) and I’ve got line numbers in a “gutter.” AnglerFrame Displaying Markus Kuhn’s UTF-8 plain text demo!","headline":"Cursor Movement and String Indexing in AnglerFrame","mainEntityOfPage":{"@type":"WebPage","@id":"https://joshisa.ninja/2024/01/08/cursor-movement-and-string-indexing-in-anglerframe.html"},"url":"https://joshisa.ninja/2024/01/08/cursor-movement-and-string-indexing-in-anglerframe.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <link rel="stylesheet" href="/vite/assets/ashby.3732f74d.css" media="screen"/>
+
+  <style>
+  
+  </style>
+</head>
+
+<body>
+  <div id="master-chief">
+    <section id="main-sidebar">
+      <nav class="sidebar-nav">
+        <h2><a href="/">Ashby's Hideout</a></h2>
+
+        <div id="nav-links" class="expandable">
+          <ul class="nav-list">
+            <li class="nav-item"><a href="/posts/">Posts</a></li>
+            <li class="nav-item"><a href="/photos/">Photos</a></li>
+            <li class="nav-item"><a href="/projects/">Projects</a></li>
+            <li class="nav-item"><a href="/resume/">Resume</a></li>
+
+            
+          </ul>
+        </div>
+
+        <div class="hamburger-bun">
+          <button class="nav-item" data-behavior="toggle-hidden" data-target="#nav-links">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          </button>
+        </div>
+      </nav>
+    </section>
+
+    <main>
+      <article class="default-post">
+  <header id="page-header">
+  <div class="flex flex-col flex-grow space-y-4">
+    <h1 class="mb-2">Cursor Movement and String Indexing in AnglerFrame</h1>
+
+    <div class="flex flex-row space-x-2 items-center">
+      <div class="flex flex-col md:flex-row items-center space-x-1 text-sm leading-5 text-gray-500 dark:text-gray-400 sm:mr-6 font-sans">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+        <time class="font-mono text-sm whitespace-nowrap" datetime="2024-01-08">Jan 08, 2024</time>
+      </div>
+
+      
+
+      <div class="flex flex-row flex-wrap space-x-1 items-center justify-end flex-grow">
+        
+          <a href="/tags#swift"><span class="tag">swift</span></a>
+
+        
+          <a href="/tags#kilo-editor"><span class="tag">kilo-editor</span></a>
+
+        
+          <a href="/tags#anglerframe"><span class="tag">AnglerFrame</span></a>
+
+        
+      </div>
+    </div>
+  </div>
+</header>
+
+  
+  
+  <div markdown="0">
+    <p>
+      This post is part of the dev log for my <a href="#annotation-1" class="annotation-trigger -gray">AnglerFrame</a>
+<span id="annotation-1" class="annotation"> AnglerFrame is a (partial) Swift based port of <a href="https://github.com/antirez/kilo">Antirez’s <code class="language-plaintext highlighter-rouge">kilo</code> editor</a> and is intended as a learning experiment into VT100 commands as well as more “system” programming using Swift.<br /><a href="/projects/anglerframe">Read more about AnglerFrame</a> </span>
+ project.
+    </p>
+  </div>
+
+
+
+  <p>I’ve spent an evening hour or so a day for the last week working on AnglerFrame
+and following along with the <a href="https://viewsourcecode.org/snaptoken/kilo">fantastic
+tutorial</a> for building
+<a href="https://github.com/antirez/kilo"><code class="language-plaintext highlighter-rouge">kilo</code></a> from the ground up, and have made it
+about halfway through “Chapter 4” which is the first chapter to really pick up
+the pace with the “text editor” bits. Up to this point (Chapters 1-3), we’ve
+been concerned with laying down the groundwork for building a UI using VT100
+commands and doing tasks like moving the cursor around the screen and handling
+interacting with the terminal device in a clean fashion. Chapter 4 concerns
+itself with making a text viewer and really brings out the quirks in human
+language as we start to dive into handling displaying text and moving a cursor
+around it in a meaningful way.</p>
+
+<p>At this point I’ve already implemented a few features that take a departure
+from the standard <code class="language-plaintext highlighter-rouge">kilo</code>, as well as having a fairly different take on the code
+layout. I’ve gotten UTF-8 displaying without issue thanks to Swift (although
+I’m sure I’ve got a few length bugs and other issues that’ll surface as I work
+on “Chapter 5” which implements text-editing) and I’ve made the cursor behave
+more similar to Vim (more on this below) and I’ve got line numbers in a
+“gutter.”</p>
+
+<figure class="ashby-img not-prose bg-gray-100 dark:bg-gray-700">
+  <img src="/assets/projects/anglerframe/2024-01-08-unicode.png" srcset="" alt="" />
+
+  
+    <figcaption class="font-mono text-xs text-gray-500 dark:text-gray-200 p-2"><p>AnglerFrame Displaying <a href="https://www.cl.cam.ac.uk/~mgk25/ucs/examples/UTF-8-demo.txt">Markus Kuhn’s UTF-8 plain text
+demo</a>!</p>
+</figcaption>
+  
+</figure>
+
+<!--more-->
+
+<p>In terms of code changes, I’ve made use of structs and classes in Swift to
+organize and further abstract some of the code away. At the moment, I’ve got an
+<code class="language-plaintext highlighter-rouge">Editor</code> class which is the heart of the system, integrating with a <code class="language-plaintext highlighter-rouge">Display</code>
+object which concerns itself with outputting things, and an <code class="language-plaintext highlighter-rouge">Input</code> object
+which concerns itself with converting raw input from <code class="language-plaintext highlighter-rouge">FileHandle.read(_:)</code> into
+a nicer enum. This should make it a little nicer to work on future expansions,
+such as: convert the <code class="language-plaintext highlighter-rouge">Input</code> code into an async system, where it’d write into a
+buffer that can be read from the main thread. It also feels a lot more “Swifty”
+to me and gets around some of the ugliness of C and its lack of name spacing
+and methods.</p>
+
+<h3 id="cursor-movement">Cursor Movement</h3>
+
+<p>The situation: You’re moving vertically from a longer line to a shorter line,
+and the cursor is positioned in a column past the end of the shorter lines
+length.</p>
+
+<p>Take, for example, the following lines:</p>
+<ul>
+  <li>line 1: 5 columns</li>
+  <li>line 2: 2 columns</li>
+  <li>line 3: 10 columns</li>
+</ul>
+
+<p>What happens to the cursor if you have it at column 4 on line 1, and move it to
+line 2? What happens when it moves from line 2 to line 3 after this?</p>
+
+<p>In the original <code class="language-plaintext highlighter-rouge">kilo</code>, the cursor sets its position to the shorter lines
+length, effectively snapping it to a new position. In the above example, this
+moves the cursor from column 4 to column 2, and when you subsequently move from
+line 2 to line 3, the cursor remains in the new position of column 2. This is a
+little annoying because if you are trying to compare column positions and
+encounter a blank line, the cursor loses all context of where it originally
+was!</p>
+
+<p>In Vim, however, the cursor is <em>displayed</em> as snapping to the end of the
+shorter line but it retains its original column position when navigating. This
+means that in our example above, the cursor appears to snap back to column 2 on
+line 2, but will return to column 4 on line 3, keeping continuity a little
+better. When you insert text where the cursor is displayed at a different
+column from its remembered position, it resets to the currently displayed
+position. So if you move from column 4 on line 1 to line 2 and then insert a
+character, the new cursor’s position will be column 3 after the insert, because
+it reset to column 2 on the insert and then moved over one column for the
+inserted character.</p>
+
+<p>I’ve copied this behavior from Vim as I find it a lot more intuitive to how the
+cursor should move around text and even make use of the feature to find in
+correct indents, for example. It turned out to be fairly easy, using Swift’s
+computed properties:</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// The Cursor is in "file space," not "screen space" which means that it</span>
+<span class="c1">// actually represents where at in the file the cursor is, and requires</span>
+<span class="c1">// translation via adding the scrollOffsets and any gutters/UI paddings</span>
+<span class="c1">// before it can be displayed correctly.</span>
+<span class="k">var</span> <span class="nv">cursor</span><span class="p">:</span> <span class="p">(</span><span class="nv">col</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">row</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="c1">// It's possible that the current row is shorter than the row we just came</span>
+<span class="c1">// from, and that our cursor might be in the middle of nowhere. To match</span>
+<span class="c1">// Vim's behavior where it'll keep the original column as you move around,</span>
+<span class="c1">// visually snapping the cursor to the end of the line, we use this second</span>
+<span class="c1">// "displayedCursor" which snaps the cursor but doesn't change the cursors</span>
+<span class="c1">// original column. If you then insert while on a column that is different</span>
+<span class="c1">// from the current cursor, we'll update the cursor to the current column.</span>
+<span class="k">var</span> <span class="nv">displayedCursor</span><span class="p">:</span> <span class="p">(</span><span class="nv">col</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">row</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">guard</span> <span class="k">let</span> <span class="nv">currentRow</span>
+    <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="n">cursor</span> <span class="p">}</span>
+
+    <span class="k">let</span> <span class="nv">minCol</span> <span class="o">=</span> <span class="nf">min</span><span class="p">(</span><span class="n">currentRow</span><span class="o">.</span><span class="n">count</span><span class="p">,</span> <span class="n">cursor</span><span class="o">.</span><span class="n">col</span><span class="p">)</span>
+    <span class="nf">return</span> <span class="p">(</span><span class="n">minCol</span><span class="p">,</span> <span class="n">cursor</span><span class="o">.</span><span class="n">row</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Now, when moving the cursor with the escape sequence: <code class="language-plaintext highlighter-rouge">^[&lt;row&gt;;&lt;col&gt;H</code>, I just
+have to pass in the <code class="language-plaintext highlighter-rouge">displayedCursor</code> values instead to get this visual
+snapping while remembering the original column. And when navigating left/right,
+and when I get to inserting text in the next chapter, I just have a small check
+to reset the cursor’s real position to the displayed position if the two don’t
+match.</p>
+
+<h3 id="string-indexing">String Indexing</h3>
+
+<p>One of the big “pain points” that I’ve hit so far is dealing with differences
+in string handling. In <code class="language-plaintext highlighter-rouge">kilo</code>, both because it’s concerned with just ASCII text
+where a character fits into a single byte, and because C-strings are just
+simple arrays, it gets away with using direct indexing into the string and
+directly manipulating a length integer when it needs a slice. This plays nicely
+with tracking the column width and scroll offsets in integers as well, since
+you can start indexing from the scroll offset directly, up to the column width
+or string length.</p>
+
+<p>So, for example, to pick out the text that is visible during a horizontal scroll,
+<code class="language-plaintext highlighter-rouge">kilo</code> does something similar to:</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">len</span> <span class="o">=</span> <span class="n">E</span><span class="p">.</span><span class="n">row</span><span class="p">[</span><span class="n">filerow</span><span class="p">].</span><span class="n">rsize</span> <span class="o">-</span> <span class="n">E</span><span class="p">.</span><span class="n">coloff</span><span class="p">;</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">len</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="n">len</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">len</span> <span class="o">&gt;</span> <span class="n">E</span><span class="p">.</span><span class="n">screencols</span><span class="p">)</span> <span class="n">len</span> <span class="o">=</span> <span class="n">E</span><span class="p">.</span><span class="n">screencols</span><span class="p">;</span>
+<span class="n">abAppend</span><span class="p">(</span><span class="n">ab</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">E</span><span class="p">.</span><span class="n">row</span><span class="p">[</span><span class="n">filerow</span><span class="p">].</span><span class="n">render</span><span class="p">[</span><span class="n">E</span><span class="p">.</span><span class="n">coloff</span><span class="p">],</span> <span class="n">len</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Where <code class="language-plaintext highlighter-rouge">E.coloff</code> is the horizontal scroll offset, <code class="language-plaintext highlighter-rouge">E.screencols</code> is the screens
+width in columns, with <code class="language-plaintext highlighter-rouge">E.row[filerow].render</code> being the character array/string
+for a single line and finally <code class="language-plaintext highlighter-rouge">rsize</code> being the number of characters in the
+current line.</p>
+
+<p>This code is fairly short and succinct but it doesn’t translate one-to-one in
+Swift. One initial thought, you might think we could write something similar to:</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="nv">len</span> <span class="o">=</span> <span class="nf">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">editor</span><span class="o">.</span><span class="n">rows</span><span class="p">[</span><span class="n">filerow</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">)</span>
+<span class="n">len</span> <span class="o">=</span> <span class="nf">min</span><span class="p">(</span><span class="n">len</span><span class="p">,</span> <span class="n">editor</span><span class="o">.</span><span class="n">screenSize</span><span class="o">.</span><span class="n">cols</span><span class="p">)</span>
+<span class="n">display</span><span class="o">.</span><span class="nf">buffer</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="n">editor</span><span class="o">.</span><span class="n">rows</span><span class="p">[</span><span class="n">filerow</span><span class="p">][</span><span class="n">editior</span><span class="o">.</span><span class="n">scrollOffset</span><span class="o">.</span><span class="n">col</span><span class="o">..&lt;</span><span class="n">len</span><span class="p">])</span>
+</code></pre></div></div>
+
+<p>But we quickly run into an error:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>error: 'subscript(_:)' is unavailable: cannot subscript String with an integer range, use a String.Index range instead.
+</code></pre></div></div>
+
+<p>Swift explicitly tells us that it needs us to use <code class="language-plaintext highlighter-rouge">String.Index</code> instead of
+integers, but why?. A big reason is because internally Swift represents strings
+differently from C, allowing it to better handle things like Unicode. In
+Unicode, such as the UTF-8 version, a single character visually might be
+composed of a number of bytes (a “grapheme cluster”) rather than just one. By
+using <code class="language-plaintext highlighter-rouge">String.Index</code>, Swift can correctly calculate things like “the next
+character” without cutting a grapheme cluster in half. So how do we use it?</p>
+
+<p>Well, thankfully Swift gives us a few helpers, such as the <code class="language-plaintext highlighter-rouge">String.startIndex</code> and
+<code class="language-plaintext highlighter-rouge">String.endIndex</code> properties as well as <code class="language-plaintext highlighter-rouge">String.index(_:offsetBy:)</code>. Using
+these, we can slice our line in the same fashion that <code class="language-plaintext highlighter-rouge">kilo</code> does, all while
+being (more) aware of UTF-8 and friends:</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">row</span> <span class="o">=</span> <span class="n">rows</span><span class="p">[</span><span class="n">fileRow</span><span class="p">]</span>
+
+<span class="k">let</span> <span class="nv">startOffset</span> <span class="o">=</span> <span class="n">scrollOffset</span><span class="o">.</span><span class="n">col</span>
+<span class="k">let</span> <span class="nv">endOffset</span> <span class="o">=</span> <span class="n">lineLength</span> <span class="o">+</span> <span class="n">scrollOffset</span><span class="o">.</span><span class="n">col</span>
+
+<span class="k">if</span> <span class="k">let</span> <span class="nv">startIndex</span> <span class="o">=</span> <span class="n">row</span><span class="o">.</span><span class="nf">index</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">startIndex</span><span class="p">,</span> <span class="nv">offsetBy</span><span class="p">:</span> <span class="n">startOffset</span><span class="p">,</span> <span class="nv">limitedBy</span><span class="p">:</span> <span class="n">row</span><span class="o">.</span><span class="n">endIndex</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">endIndex</span> <span class="o">=</span> <span class="n">row</span><span class="o">.</span><span class="nf">index</span><span class="p">(</span><span class="n">startIndex</span><span class="p">,</span> <span class="nv">offsetBy</span><span class="p">:</span> <span class="n">endOffset</span><span class="p">,</span> <span class="nv">limitedBy</span><span class="p">:</span> <span class="n">row</span><span class="o">.</span><span class="n">endIndex</span><span class="p">)</span> <span class="p">??</span> <span class="n">row</span><span class="o">.</span><span class="n">endIndex</span>
+
+    <span class="k">let</span> <span class="nv">displayedRow</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="n">startIndex</span><span class="o">..&lt;</span><span class="n">endIndex</span><span class="p">]</span>
+    <span class="n">display</span><span class="o">.</span><span class="nf">buffer</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="kt">String</span><span class="p">(</span><span class="n">displayedRow</span><span class="p">))</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Here, we can calculate the offsets the same way, just using some simple integer
+math, but we have to convert them into indexes. We also use <code class="language-plaintext highlighter-rouge">limitedBy:</code> to
+ensure that we’re not going to throw an out-of-bounds error if we’re trying to
+access an offset that is bigger than the current lines length. This approach
+also forces us to consider common failure cases such as a line that is shorter
+than the screen, or a line that has been completely scrolled off the screen.</p>
+
+<p>Every time I run into this, it feels a bit frustrating to write at the time.
+It’s something that feels like a case that the language should smooth over for
+the developer and it’s a lot more verbose than the same code in a lot of other
+languages. However, it’s not all bad: the design of this system forces the
+developer to move past the outdated fashion of thinking of text as a simple
+array of bytes and towards the thought that it’s a more complex system that
+handles a number of quirks and oddities that come from the complexities of
+human writing.</p>
+
+<p>Anyways, hopefully this has been a fun little adventure into two of the
+many little adventures I’ve had while working on this fun side project!</p>
+
+</article>
+
+    </main>
+  </div>
+
+  <footer class="border-t-2 border-sky-900 my-4 pt-4 text-sm w-full flex justify-center">
+    <p class="prose text-xs dark:prose-invert mx-4">
+      Found an error or have an improvement?
+      <a href="https://github.com/JoshAshby/joshashby.github.io/tree/source/_posts/2024-01-08-cursor-movement-and-string-indexing-in-anglerframe.md">Suggest a correction!</a> | <span class="text-gray-300 text-xs">© Joshua Ashby</span>
+    </p>
+  </footer>
+
+  
+  <script src="/vite/assets/application.2826b514.js" crossorigin="anonymous" type="module"></script>
+
+
+</body>
+</html>

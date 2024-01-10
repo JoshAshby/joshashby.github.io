@@ -81,19 +81,19 @@ Cloudflare Durable Objects.
 
       <div class="flex flex-row flex-wrap space-x-1 items-center justify-end flex-grow">
         
-          <a href="/tags#svelte" name="svelte"><span class="tag">svelte</span></a>
+          <a href="/tags#svelte"><span class="tag">svelte</span></a>
 
         
-          <a href="/tags#sveltekit" name="sveltekit"><span class="tag">sveltekit</span></a>
+          <a href="/tags#sveltekit"><span class="tag">sveltekit</span></a>
 
         
-          <a href="/tags#cloudflare" name="cloudflare"><span class="tag">cloudflare</span></a>
+          <a href="/tags#cloudflare"><span class="tag">cloudflare</span></a>
 
         
-          <a href="/tags#cloudflare-pages" name="cloudflare-pages"><span class="tag">cloudflare-pages</span></a>
+          <a href="/tags#cloudflare-pages"><span class="tag">cloudflare-pages</span></a>
 
         
-          <a href="/tags#cloudflare-durable-objects" name="cloudflare-durable-objects"><span class="tag">cloudflare-durable-objects</span></a>
+          <a href="/tags#cloudflare-durable-objects"><span class="tag">cloudflare-durable-objects</span></a>
 
         
       </div>
@@ -101,11 +101,13 @@ Cloudflare Durable Objects.
   </div>
 </header>
 
+  
+
 
   <div>
   <em>
   This post contains inline annotations/footnotes to help add context, helpful tips or expand upon a tangent in the text. Expand them by <a href="#annotation-1" class="annotation-trigger -gray">clicking or tapping on them</a>
-<span id="annotation-1" class="annotation">Annotations might have their own <a href="#annotation-2" class="annotation-trigger -red">annotations</a><span id="annotation-2" class="annotation">Such as this one!</span> inside of them too.</span>
+<span id="annotation-1" class="annotation"> Annotations might have their own <a href="#annotation-2" class="annotation-trigger -red">annotations</a><span id="annotation-2" class="annotation"> Such as this one! </span> inside of them too. </span>
 
   </em>
 </div>
@@ -115,7 +117,7 @@ Cloudflare Durable Objects.
 <p>Today, I’ll just be focusing on some friction I hit when trying to use a websocket to a Cloudflare Durable Object from within a SvelteKit Endpoint hosted with Cloudflare Page Functions, and my exploration of a crude solution to keep the ergonomics of Endpoints while accomplishing my goal of establishing this websocket connection.</p>
 <h3 id="intros">Intros</h3>
 <p>Pages are Cloudflares static hosting solution that entered General Availablility in April of 2021, and back in November of 2021 they announced a new feature to Pages called <a href="https://blog.cloudflare.com/cloudflare-pages-goes-full-stack/">“Functions”</a> which are slightly specialized versions of <a href="#annotation-3" class="annotation-trigger -gray">Cloudflare Workers</a>
-<span id="annotation-3" class="annotation">Cloudflare Workers being their stateless, “serverless” solution, running your code on a per-request basis in an isolated V8 environment.</span>
+<span id="annotation-3" class="annotation"> Cloudflare Workers being their stateless, “serverless” solution, running your code on a per-request basis in an isolated V8 environment. </span>
  that can be deployed alongside your Pages project to provide a full API or even do server side rendering or other tasks. While Page Functions are in <a href="https://developers.cloudflare.com/pages/platform/functions/">beta still</a>, they’re already powerful and fun to play with and open a ton of doors for progressively enhancing existing static sites with more dynamic and server side functionality, due to Pages’ support for easily publishing existing frameworks such as my beloved Jekyll.</p>
 
 <p>While Page Functions, like the Workers they use behind the scenes, are stateless, Cloudflare has also released into General Availability a feature to Workers that they call <a href="https://blog.cloudflare.com/durable-objects-ga/">“Durable Objects”</a>. Durable Objects are essentially another form of specialized Workers that have disk and cache backed storage for persistence and aim to help solve issues around state keeping in the distributed environment that Worker’s run in.</p>
@@ -286,7 +288,7 @@ Cloudflare Durable Objects.
 <p>Told you it was a hack. But it does work, helps keep the logic all contained in one spot and gives us the ergonomics of endpoints with only a minor inconvenience. It’d probably take this further and bundle it up into a little helper function to hide the implementation details and to help avoid abuse, but the general principle would be the same.</p>
 
 <p>After getting this figured out, things have been pretty smooth sailing overall. I hope that SvelteKit gains the ability to return a raw Reponse from an endpoint in the future, or at least enough support to allow one to <a href="https://github.com/sveltejs/kit/issues/1491">handle websockets</a> a little better so that this hack isn’t necessary. I also wish Durable Objects were creatable from Pages’ projects, or on their own without needing a <a href="#annotation-4" class="annotation-trigger -gray">no-op Worker</a>
-<span id="annotation-4" class="annotation">I’ll try to write about this experience on a later date once I’ve gotten some more experience with this setup.</span>
+<span id="annotation-4" class="annotation"> I’ll try to write about this experience on a later date once I’ve gotten some more experience with this setup. </span>
 , as currently I’ve got a separate setup to publish the DO’s that my SvelteKit project is using. This separate setup even has it’s own deploy step that isn’t handled by the Pages deploy. Additionally, I hope that Page Functions get logging <em>soon</em> and that they stop requiring Git integration to get Page Functions uploaded, but for a beta they’re pretty powerful already and I’m excited to build some tools on top of this setup.</p>
 
 </article>
