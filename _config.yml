@@ -40,17 +40,19 @@ defaults:
 
   -
     scope:
-      path: "" # an empty string here means all files in the project
+      path: ""
       type: "posts"
     values:
       layout: "default-post"
 
   -
     scope:
-      path: "" # an empty string here means all files in the project
+      path: ""
       type: "projects"
     values:
       layout: "default-project"
+
+excerpt_separator: <!--more-->
 
 plugins:
   - jekyll/vite
