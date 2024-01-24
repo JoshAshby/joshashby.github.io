@@ -1,0 +1,23 @@
+{% assign logs = site.posts|where: "dev_log_project_id", include.project_id|sort: date|reverse %}
+{% if logs.size > 0 %}
+  <hr />
+
+  <h2 id="log">Dev Logs</h2>
+
+  {% for post in logs %}
+    {% include post-block.html %}
+    {{ post.excerpt }}
+
+    <!--This is probably not going to work because of markdownify, if i had to guess?-->
+    {% if post.content != post.excerpt %}
+      <a href="{{post.url}}">Continue reading</a>
+    {% endif %}
+
+    <!--<article class="default-post">-->
+      <!--<h5>{{ log.date|date_to_string: "ordinal", "US" }}</h5>-->
+      <!--<small><a href="{{ log.url }}">View the original blog post</a></small>-->
+
+      <!--{{ log.content|markdownify }}-->
+    <!--</article>-->
+  {% endfor %}
+{% endif %}

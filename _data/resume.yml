@@ -1,0 +1,163 @@
+whoami: Joshua Ashby
+
+contactPoints:
+  email:
+    text: hello@joshashby.com
+    link: mailto:hello@joshashby.com
+  website:
+    text: https://joshashby.com
+    link: https://joshashby.com
+  github:
+    text: https://github.com/JoshAshby
+    link: https://github.com/JoshAshby
+
+aboutMe: |
+  I'm a full-stack developer with broad experience in web, mobile and data engineering. I'm a quick and enthusiastic learner of new technologies and code bases; Plus I am always looking for new opportunities for continued growth. I'm experienced with being in knowledge leadership roles and I'm comfortable working collaboratively or on my own.
+
+primaryTechnologies:
+  - Server Side Swift
+  - Elixir/Phoenix
+  - Ruby/Ruby on Rails
+  - JavaScript/TypeScript
+  - NodeJS
+  - ReactJS
+  - Svelte
+  - Redis
+  - SQL/PostgreSQL/SQLite/Snowflake
+  - Elasticsearch
+  - CSS
+  - Python
+  - Bash
+  - Terraform
+
+primaryTools:
+  - Git
+  - Fossil-SCM
+  - Terraform
+  - Heroku
+  - AWS
+  - Digital Ocean
+  - Fly.io
+  - Ansible
+  - Chef
+
+notableWork:
+  - "As a consultant and contractor, I've helped teams refactor and architect large TypeScript/React and Elixir/Phoenix code bases to reduce operational costs and risk of mistakes, and increase developer speed and product alignment."
+  - "I architected and developed an extensive in-house ETL framework in Ruby, that transformed data from a number of sources including Elasticsearch, Postgres, Google Sheets, External APIs and Redis into a data lake stored in AWS Redshift."
+  #- "I developed a browser extension for Chrome which makes a given tab to use a virtual cookie store for a marketing and customer success company to manage multiple client accounts at once. It also provides a number of additional tools for generating links with pre-set UTM parameters as well as storing and copying to the clipboard custom text shortcuts."
+
+workExperience:
+  - role: Staff Data Engineer
+    company: Lifespark
+    link: https://lifespark.com/
+    location: Minneapolis, MN (Remote)
+    duration: April 2022 --- Current
+    technologies:
+      - Dagster
+      - DBT
+      - Python/Pandas
+      - Postgres
+      - Snowflake
+      - Parquet
+      - ReactJS
+      - NodeJS
+      - Terraform
+      - AWS
+      - Bash
+    highlights:
+      - "Maintained a Dagster and DTB powered Data Pipeline working against Snowflake and AWS resources."
+      - "Discovered and implemented optimizations for an expensive data model, which reduced build times from 6 hours to 20 minutes. This cut our database compute costs by over $30,000 per year and greatly improved the developer experience."
+      - "Designed a centralized, uniform strategy and tooling for ingesting external, multi-formatted insurance data using Snowflake Snowpipes and Parquet files, reducing the time and effort required to operationalize new data from our partners from a week to 45 minutes, while increasing confidence in the data's integrity."
+      - "Lead an initiative to consolidate a business critical identification service out of an unmaintained Ruby on Rails app and into our existing Python/Dagster project. This increased the operational speed and accuracy of identifying and correcting problematic duplicates."
+      - "Supported a React Native mobile app project, with a focus on a ReactJS administrative panel and NodeJS GraphQL API."
+
+  - role: Senior Software Engineer
+    company: Subatomic Agency
+    link: https://www.subatomicagency.com/
+    location: Denver, CO (Remote)
+    duration: January 2021 --- May 2022
+    technologies:
+      - Elixir/Phoenix
+      - TypeScript/ReactJS
+      - Python/Django
+      - Postgres
+      - Redis
+      - Elasticsearch
+      - Terraform
+      - AWS
+      - Bash
+    highlights:
+      - "Implemented a workflow for migrating complex, dynamically generated forms out of a deprecated Meteor app's MongoDB database and into a Postgres database. Additionally, I helped build an administration panel in React to author new forms, and implemented Elixir modules to render them on a GraphQL endpoint for consumption by a separate React app. This reduced the client's time required to onboard new contracts from two weeks to a few hours."
+      - Maintained four Elixir/Phoenix projects, including a greenfield application, and one open-source library for integrating Elasticsearch with Ecto models.
+      - Maintained and implemented new features in two React projects, one of which was a React Native mobile application.
+      - Managed DevOps on AWS and Heroku infrastructure with Terraform.
+      - Mentored developers on TypeScript/ReactJS and Elixir/Phoenix paradigms.
+
+  - role: Senior Software Engineer
+    company: Tumbler Lock
+    # link: https://tumblerlock.io
+    location: Longmont, CO (Remote)
+    duration: August 2019 --- December 2020
+    technologies:
+      - Ruby/Ruby on Rails
+      - TypeScript
+      - ReactJS
+      - Python
+      - Flask
+      - Postgres
+      - Redis
+      - Terraform
+      - AWS
+      - Bash
+    highlights:
+      - Developed a browser extension for Chrome using React/TypeScript that was backed by an API built with Python 3 and Flask. The client, a marketing and customer success company, used this extension to manage multiple customer accounts at once by allowing individual browser tabs to use different virtual cookie stores, and thus different multiple different logins for a single site at the same time. It also provided a number of additional tools such as generating links with preset UTM parameters, and storing/copying custom text shortcuts to the clipboard.
+      - Migrated and modernized a PHP 5/Drupal/MySQL project to Ruby on Rails 6 with Postgres.
+
+  - role: Senior Software Engineer
+    hats:
+      - Backend Tech Lead
+      - Backend Architect
+    company: Singularity Interactive
+    link: https://singularity-interactive.com/
+    location: Boulder, CO
+    duration: April 2018 --- August 2019
+    technologies:
+      - NodeJS
+      - Elasticsearch
+      - PostgreSQL
+      - Next.JS/ReactJS
+      - AWS Kinesis/Lambda/S3/Beanstalk
+    highlights:
+    - Partnered with Gloo to continue supporting the ETL.
+    - "Built out a data ingestion pipeline and reporting application with React, NodeJS and AWS Lambdas subscribed to AWS SQS to support a client's need to identify locations for expansion."
+
+  - role: Data Engineer
+    company: Gloo
+    link: https://gloo.us
+    location: Boulder, CO
+    duration: May 2014 --- April 2018
+    technologies:
+      - Ruby
+      - Elasticsearch
+      - PostgreSQL/AWS Redshift
+      - Ruby on Rails
+      - AWS SNS/SQS
+      - Kafka
+    highlights:
+      - Principle engineer of a Ruby based ETL which maintained a Star-Schema normalized data warehouse that account managers and leadership used to report on customer engagement and platform health. the ETL incorporated a number of sources including Elasticsearch, Postgres, Redis, AWS Redshift, Google Sheets and External APIs.
+
+schoolExperience:
+  - level: internship
+    name: Sparkfun Electronics
+    location: Niwot, CO
+    duration: Summers of 2012, 2012
+    focus: Software Developer Intern
+    highlights:
+      - Used a variety of language and tools to maintain a PHP, MySQL, Postgres and JavaScript stack for the ecommerce site.
+  - level: university
+    name: Colorado State University
+    location: Fort Collins, CO
+    duration: August 2012 --- May 2015
+    focus: Studied Electrical Computer Engineering
+    highlights:
+      - Worked on electrical and software projects within the CSU Formula-SAE race team.

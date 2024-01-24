@@ -17,6 +17,21 @@ Postcss and tailwindcss are available to provide styling.
 ### Utils
 jekyll-admin provides a nice web based authoring interface for new content.
 
+### Resume
+
+The resume page and PDF are backed by a combo of a YAML data file
+(`_data/resume.yml`), a Jekyll page `resume/index.md` and a [Typst](https://typst.app/) template
+(`resume/_resume2023.typ`).
+
+On deploys, the PDF version is built with the following command:
+
+```
+typst compile --root=./ --font-path=assets/fonts/ resume/_resume2023.typ resume.pdf
+```
+
+And then copied into the final site after Jekyll is ran. This allows the two
+versions to remain in sync and always up to date.
+
 ### Photography Page
 
 The workflow for the photography page is still a work in progress and I try to

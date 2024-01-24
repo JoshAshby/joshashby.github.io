@@ -9,6 +9,10 @@ Some times I take photographs, and in rarer times some of the better ones might 
 
 You can find more of my photos on [my flickr](https://www.flickr.com/photos/joshashby/) {% aside page. %}It's not well maintained by me at the moment, lagging behind by a few years, but it's got a lot of my earlier history.{% endaside %}
 
+I've got one "professional" photo credit to my name so far as the last photo in:
+
+- Redger, Ashlee. “Local Finds: Oso Rojo Hot Sauce Puts Flavor Before Spice” Westworld, 2 Dec. 2022, [https://www.westword.com/restaurants/oso-rojo-hot-sauce-15483836](https://www.westword.com/restaurants/oso-rojo-hot-sauce-15483836)
+
 {: .callout.blue}
 Most of these are of a ridiculously cute little dog named Chief. You've been
 warned 🙂

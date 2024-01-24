@@ -1,0 +1,12 @@
+figure.ashby-img {
+  max-height: 100%;
+  @apply flex flex-col items-center;
+}
+
+figure.ashby-img > img {
+  height: 100%;
+}
+
+figure.ashby-img > figcaption {
+  @apply text-left;
+}

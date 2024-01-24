@@ -26,6 +26,8 @@ module Jekyll
 
           converter = site.find_converter_instance(Jekyll::Converters::Markdown)
 
+          title = Liquid::Template.parse(@title).render(context)
+
           # Yolo
           # Remove the paragraph wrappers from the inner content since liquid
           # wants to render them as is and I'm too lazy to make it work
@@ -35,8 +37,8 @@ module Jekyll
             .gsub(%r{<(p|/p)>}, "")
 
           <<~HTML
-          <a href="#annotation-#{id}" class="annotation-trigger -#{@color}">#{@title}</a>
-          <span id="annotation-#{id}" class="annotation">#{content}</span>
+          <a href="#annotation-#{id}" class="annotation-trigger -#{@color}">#{title}</a>
+          <span id="annotation-#{id}" class="annotation"> #{content} </span>
           HTML
         end
       end

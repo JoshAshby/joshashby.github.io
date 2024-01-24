@@ -10,36 +10,33 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
         with:
           path: source
 
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
         with:
           ref: master
           path: build
 
-      - uses: actions/setup-ruby@v1
+      - uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '2.7'
+          ruby-version: '3.1'
+          bundler-cache: true
 
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@v4
         with:
           node-version: '16.4.x'
 
-      - uses: actions/cache@v2
+      - uses: actions/cache@v3
         with:
           path: source/vendor/bundle
           key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-gems-
 
-      - uses: actions/cache@v2
+      - uses: actions/cache@v3
         with:
           path: source/node_modules
           key: ${{ runner.os }}-npm-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-npm-
 
       - name: Bundle install
         working-directory: source
@@ -52,6 +49,15 @@ jobs:
         working-directory: source
         run: |
           yarn install
+
+      - uses: typst-community/setup-typst@v3
+        id: setup-typst
+        with:
+          typst-version: 'v0.10.0'
+
+      - name: Build resume PDF with Typst
+        working-directory: source
+        run: typst compile --root=./ --font-path=assets/fonts/ resume/_resume2023.typ resume.pdf
 
       - name: Jekyll Build
         working-directory: source
@@ -67,6 +73,3 @@ jobs:
           git add .
           git commit -m "Update GitHub pages from Jekyll build for commit ${GITHUB_SHA}"
           git push origin master
-
-
-

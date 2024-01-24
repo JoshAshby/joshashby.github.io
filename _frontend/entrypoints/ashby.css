@@ -5,9 +5,7 @@
 @import "~/css/callouts.css";
 
 @import "~/css/syntax.css";
-@import "~/css/post.css";
 @import "~/css/tag.css";
 
-.post > *:not(.escape):not(.callout):not(blockquote):not(ul):not(ol):not(figure.highlight):not(div.highlighter-rouge), #page-header > *:not(.escape) {
-  @apply mx-2 md:mx-8;
-}
+@import "~/css/default-post.css";
+@import "~/css/photos.css";

@@ -1,0 +1,11 @@
+{% if page.dev_log_project_id %}
+  {% assign project = site.projects|find: "id", page.dev_log_project_id %}
+  <div markdown="0">
+    <p>
+      This post is part of the dev log for my {% aside {{ project.title }} %}
+{{ project.cover.description|markdownify|remove: '<p>'|remove: '</p>' }}<br />
+[Read more about {{ project.title }}]({{ project.url }})
+      {% endaside %} project.
+    </p>
+  </div>
+{% endif %}

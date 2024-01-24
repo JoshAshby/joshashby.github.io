@@ -14,8 +14,6 @@ permalink: "/posts/"
 
 {% assign unique_post_years = post_years | split: " " | sort | uniq | reverse %}
 
-### By Year
-
 <p>
   {% for year in unique_post_years %}
     <a href="/{{year}}">{{year}}</a>
@@ -27,10 +25,10 @@ permalink: "/posts/"
 
 [By Tag](/tags)
 
-#### All Posts
+## All Posts
 
 <div class="flex flex-col space-y-8">
   {% for post in site.posts %}
-    {% include post_block.html %}
+    {% include post-block.html %}
   {% endfor %}
 </div>

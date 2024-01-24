@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="apple-mobile-web-app-status-bar-style" content="#1f2937">
+  <meta name="theme-color" content="#1f2937" />
+
+  <title>{{ page.title }} - {{ site.title }}</title>
+  <meta name="description" content="{{ page.description }}">
+
+  {% feed_meta %}
+  {% seo %}
+
+  {% vite_stylesheet_tag ashby %}
+
+  <style>
+  {{ page.style }}
+  </style>
+</head>
+
+<body>
+  <div id="master-chief">
+    <section id="main-sidebar">
+      <nav class="sidebar-nav">
+        <h2><a href="/">{{ site.title }}</a></h2>
+
+        <div id="nav-links" class="expandable">
+          <ul class="nav-list">
+            <li class="nav-item"><a href="/posts/">Posts</a></li>
+            <li class="nav-item"><a href="/photos/">Photos</a></li>
+            <li class="nav-item"><a href="/projects/">Projects</a></li>
+            <li class="nav-item"><a href="/resume/">Resume</a></li>
+
+            {% if jekyll.environment == "development" %}
+            <li class="nav-list-divider"></li>
+            <li class="nav-item"><a href="/admin/">Admin</a></li>
+            {% endif %}
+          </ul>
+        </div>
+
+        <div class="hamburger-bun">
+          <button class="nav-item" data-behavior="toggle-hidden" data-target="#nav-links">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          </button>
+        </div>
+      </nav>
+    </section>
+
+    <main>
+      {{ content }}
+    </main>
+  </div>
+
+  <footer class="border-t-2 border-sky-900 my-4 pt-4 text-sm w-full flex justify-center">
+    <p class="prose text-xs dark:prose-invert mx-4">
+      Found an error or have an improvement?
+      <a href="https://github.com/JoshAshby/joshashby.github.io/tree/source/{{ page.path }}">Suggest a correction!</a> | <span class="text-gray-300 text-xs">© Joshua Ashby</span>
+    </p>
+  </footer>
+
+  {% vite_client_tag %}
+  {% vite_javascript_tag application %}
+</body>
+</html>

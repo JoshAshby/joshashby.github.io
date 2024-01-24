@@ -36,14 +36,23 @@ defaults:
     scope:
       path: "" # an empty string here means all files in the project
     values:
-      layout: "default"
+      layout: "ashby"
 
   -
     scope:
-      path: "" # an empty string here means all files in the project
+      path: ""
       type: "posts"
     values:
-      layout: "post"
+      layout: "default-post"
+
+  -
+    scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "default-project"
+
+excerpt_separator: <!--more-->
 
 plugins:
   - jekyll/vite
@@ -64,9 +73,14 @@ jekyll-archives:
     month: "/:year/:month/"
     day: "/:year/:month/:day/"
 
-# This is a hack to get drafts to show up in jekyll-admin
+
 collections:
-  - drafts
+  # This is a hack to get drafts to show up in jekyll-admin
+  drafts:
+  projects:
+    output: true
+    sort_by: showcase
+    permalink: /:collection/:title
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -98,3 +112,10 @@ exclude:
   - purgecss.config.js
   - postcss.config.js
   - devops/
+  - README.md
+  - Rakefile
+  - Procfile.dev
+  - "*.typ"
+
+include:
+  - resume.pdf
