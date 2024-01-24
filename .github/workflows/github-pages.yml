@@ -37,7 +37,6 @@ jobs:
           cache: 'yarn'
 
       - uses: typst-community/setup-typst@v3
-        id: setup-typst
         with:
           typst-version: 'v0.10.0'
 
@@ -48,13 +47,11 @@ jobs:
         id: pages
         uses: actions/configure-pages@v4
 
-      - name: Build resume PDF with Typst
-        run: typst compile --root=./ --font-path=assets/fonts/ resume/_resume2023.typ resume.pdf
-
-      - name: Jekyll Build
+      - name: Build the site
         env:
           JEKYLL_ENV: production
-        run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
+          JEKYLL_BASE_URL: ${{ steps.pages.outputs.base_path }}
+        run: bundle exec rake all
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

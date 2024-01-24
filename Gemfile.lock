@@ -70,6 +70,7 @@ GEM
       rack
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
+    rake (13.1.0)
     rb-fsevent (0.11.1)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
@@ -108,8 +109,8 @@ GEM
 
 PLATFORMS
   arm64-darwin-20
-  x86_64-linux
   arm64-darwin-21
+  x86_64-linux
 
 DEPENDENCIES
   jekyll (~> 4.2.1)
@@ -119,6 +120,7 @@ DEPENDENCIES
   jekyll-seo-tag
   jekyll-sitemap
   jekyll-vite
+  rake (~> 13.1)
   tzinfo (~> 1.2)
   tzinfo-data
   wdm (~> 0.1.1)

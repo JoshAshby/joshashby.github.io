@@ -1,6 +1,8 @@
 This repo contains the Jekyll setup for my personal site.
 
 ## Getting Started
+You'll need to also install [Typst](https://typst.app/) `v0.10.0` in addition to Ruby and NodeJS
+
 ```
 asdf install
 npm install
@@ -8,8 +10,13 @@ bundle install
 foreman start -f Procfile.dev
 ```
 
-The site is built on Github Actions and deployed to Github Page using a setup
-similar to that described [here, by David Stosik](https://davidstosik.github.io/2020/05/31/static-blog-jekyll-410-github-pages-actions.html).
+~~The site is built on Github Actions and deployed to Github Page using a setup
+similar to that described [here, by David Stosik](https://davidstosik.github.io/2020/05/31/static-blog-jekyll-410-github-pages-actions.html).~~
+
+The site is deployed to GitHub Pages using their newer "artifact deploy" action
+[`actions/deploy-pages@v4`](github.com/actions/deploy-pages) setup which
+greatly simplified the process. TL;DR: Install all the deps, then run `rake
+all`.
 
 ### Styling
 Postcss and tailwindcss are available to provide styling.
@@ -23,7 +30,8 @@ The resume page and PDF are backed by a combo of a YAML data file
 (`_data/resume.yml`), a Jekyll page `resume/index.md` and a [Typst](https://typst.app/) template
 (`resume/_resume2023.typ`).
 
-On deploys, the PDF version is built with the following command:
+On deploys, the PDF version is built with the following command (in the form of
+a Rake taks):
 
 ```
 typst compile --root=./ --font-path=assets/fonts/ resume/_resume2023.typ resume.pdf
