@@ -546,9 +546,9 @@ vite-plugin-ruby@^3.0.9:
     debug "^4.3.3"
     fast-glob "^3.2.11"
 
-vite@^2.9.17:
-  version "2.9.17"
-  resolved "https://registry.yarnpkg.com/vite/-/vite-2.9.17.tgz#6b770525e12fa2a2e3a0fa0d028d304f4f7dc7d4"
+vite@^2.9.18:
+  version "2.9.18"
+  resolved "https://registry.yarnpkg.com/vite/-/vite-2.9.18.tgz#74e2a83b29da81e602dac4c293312cc575f091c7"
   dependencies:
     esbuild "^0.14.27"
     postcss "^8.4.13"
