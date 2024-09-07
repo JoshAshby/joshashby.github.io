@@ -24,9 +24,10 @@ primaryTechnologies:
   - Svelte
   - Redis
   - SQL/PostgreSQL/SQLite/Snowflake
+  - Python
+  - DBT
   - Elasticsearch
   - CSS
-  - Python
   - Bash
   - Terraform
 
@@ -66,10 +67,11 @@ workExperience:
       - Bash
     highlights:
       - "Maintained a Dagster and DTB powered Data Pipeline working against Snowflake and AWS resources."
-      - "Discovered and implemented optimizations for an expensive data model, which reduced build times from 6 hours to 20 minutes. This cut our database compute costs by over $30,000 per year and greatly improved the developer experience."
-      - "Designed a centralized, uniform strategy and tooling for ingesting external, multi-formatted insurance data using Snowflake Snowpipes and Parquet files, reducing the time and effort required to operationalize new data from our partners from a week to 45 minutes, while increasing confidence in the data's integrity."
-      - "Lead an initiative to consolidate a business critical identification service out of an unmaintained Ruby on Rails app and into our existing Python/Dagster project. This increased the operational speed and accuracy of identifying and correcting problematic duplicates."
+      - "Discovered and implemented optimizations for an expensive data model, which reduced build times from 6 hours to 20 minutes. This cut our database compute costs by over $30,000 per year (approximately a 50% reduction per year) and greatly improved the developer experience."
+      - "Architected a centralized, uniform strategy and tooling for ingesting external, multi-formatted insurance data using Snowflake Snowpipes and Parquet files, reducing the time and effort required to operationalize new data from our partners from a week to 45 minutes, while increasing confidence in the data's integrity."
+      - "Lead an initiative to consolidate a business critical identification service out of an unmaintained Ruby on Rails app and into our existing Python/Dagster project with zero downtime. This increased the operational speed and accuracy of identifying and correcting problematic duplicates."
       - "Supported a React Native mobile app project, with a focus on a ReactJS administrative panel and NodeJS GraphQL API."
+      - Mentored developers on topics including systematic approaches to debugging, breaking product requirements down into manageable units of work and working with product partners to help maximize the realized value of work.
 
   - role: Senior Software Engineer
     company: Subatomic Agency
@@ -87,11 +89,12 @@ workExperience:
       - AWS
       - Bash
     highlights:
-      - "Implemented a workflow for migrating complex, dynamically generated forms out of a deprecated Meteor app's MongoDB database and into a Postgres database. Additionally, I helped build an administration panel in React to author new forms, and implemented Elixir modules to render them on a GraphQL endpoint for consumption by a separate React app. This reduced the client's time required to onboard new contracts from two weeks to a few hours."
-      - Maintained four Elixir/Phoenix projects, including a greenfield application, and one open-source library for integrating Elasticsearch with Ecto models.
-      - Maintained and implemented new features in two React projects, one of which was a React Native mobile application.
+      - "Implemented a workflow for migrating complex, dynamically generated forms out of a deprecated Meteor app's MongoDB database and into a Postgres database. Additionally, I helped build an administration panel in React to author new forms, and implemented Elixir modules to render them on a GraphQL endpoint for consumption by a separate React app. This reduced the client's time required to onboard new contracts from multiple weeks to a few hours."
+      - Maintained multiple Elixir/Phoenix projects, including a greenfield application, and one open-source library for integrating Elasticsearch with Ecto models.
+      - Maintained and implemented new features in several React projects, including a React Native mobile application.
       - Managed DevOps on AWS and Heroku infrastructure with Terraform.
       - Mentored developers on TypeScript/ReactJS and Elixir/Phoenix paradigms.
+      - Continued supporting Tumbler Lock projects.
 
   - role: Senior Software Engineer
     company: Tumbler Lock
@@ -129,7 +132,7 @@ workExperience:
       - AWS Kinesis/Lambda/S3/Beanstalk
     highlights:
     - Partnered with Gloo to continue supporting the ETL.
-    - "Built out a data ingestion pipeline and reporting application with React, NodeJS and AWS Lambdas subscribed to AWS SQS to support a client's need to identify locations for expansion."
+    - "Built out a data ingestion pipeline and reporting application with React, NodeJS and AWS Lambdas subscribed to AWS SQS events from S3 & external systems to support a client's need to identify locations for expansion."
 
   - role: Data Engineer
     company: Gloo
@@ -144,7 +147,7 @@ workExperience:
       - AWS SNS/SQS
       - Kafka
     highlights:
-      - Principle engineer of a Ruby based ETL which maintained a Star-Schema normalized data warehouse that account managers and leadership used to report on customer engagement and platform health. the ETL incorporated a number of sources including Elasticsearch, Postgres, Redis, AWS Redshift, Google Sheets and External APIs.
+      - Principle engineer of a Ruby based ETL which maintained a Star-Schema normalized data warehouse that account managers and leadership used to report on customer engagement and platform health. The ETL incorporated a number of sources including Elasticsearch, Postgres, Redis, AWS Redshift, Google Sheets and External APIs.
 
 schoolExperience:
   - level: internship
