@@ -94,7 +94,7 @@ workExperience:
       - Maintained and implemented new features in several React projects, including a React Native mobile application.
       - Managed DevOps on AWS and Heroku infrastructure with Terraform.
       - Mentored developers on TypeScript/ReactJS and Elixir/Phoenix paradigms.
-      - Continued supporting Tumbler Lock projects.
+      #- Continued supporting Tumbler Lock projects.
 
   - role: Senior Software Engineer
     company: Tumbler Lock
