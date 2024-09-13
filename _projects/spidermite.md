@@ -62,7 +62,7 @@ print(matchThings(a: 1))
 
 ### 2024 Update
 
-SpiderMite has been a really interesting dive into interpretting and compiling
+SpiderMite has been a really interesting dive into interpreting and compiling
 pattern matching, and both the inclusion of type annotations within the parser
 output as well as the implementation of type checking and type inference
 through a quasi bi-directional type system. It also led me to experiment with
@@ -70,6 +70,33 @@ different approaches to representing the AST that the parser outputs, in a way
 that attempts to work with Swift's own type system and pattern matching without
 requiring too much boilerplate code for each processing pass that interacts
 with the AST.
+
+All of this experience (plus a working fizz-buzz using the pattern matching
+feature) is exactly what my end goal for this project was. Consequently, it
+feels like this is a good point to consider the project done and to start on
+my next round of learnings to take this into a bytecode, stack based virtual
+machine interpreter!
+
+```
+external def print(_ _: Any, terminator: String) -> Nil
+
+let counter = 0
+
+loop do
+  # print(counter, terminator: " ")
+
+  match counter, counter % 3 == 0, counter % 5 == 0 with
+  | 50, _, _ do break nil
+  | count, false, false do print(count, terminator: "")
+  | _, true, false do print("fizz", terminator: "")
+  | _, false, true do print("buzz", terminator: "")
+  | _, true, true do print("fizzbuzz", terminator: "")
+  end
+
+  counter = counter + 1
+  print(" ", terminator: "")
+end
+```
 
 ## Technology
 - Swift 5.9
