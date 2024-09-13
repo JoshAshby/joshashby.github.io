@@ -5,7 +5,8 @@ cover:
     and is intended as a learning experiment into VT100 commands as well as more "system"
     programming using Swift.
 tags:
-- TUI Text Editor
+- Text Editor
+status: Active (2024 --- now)
 links:
 - url: https://bones.isin.space/user/JoshAshby/repository/AnglerFrame
   content: Fossil Repository

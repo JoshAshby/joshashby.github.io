@@ -72,6 +72,10 @@ ideas from them fulfilling.
 
         <p class="mt-2">{{ project.cover.description | markdownify | remove: '<p>' | remove: '</p>' }}</p>
 
+        {% if project.status %}
+          <p>Status: {{ project.status | markdownify | remove: '<p>' | remove: '</p>' }}</p>
+        {% endif %}
+
         {% if latest_log %}
             <p>Latest log entry: <a href="{{ project.url }}#log">{{ latest_log.date|date_to_string: "ordinal", "US" }}</a></p>
         {% endif %}

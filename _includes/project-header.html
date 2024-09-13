@@ -1,4 +1,4 @@
-<div class="not-prose mb-2">
+<div class="not-prose mb-4">
   <div class="relative group">
     {% if page.cover.url %}
       {% capture alt %}
@@ -9,7 +9,7 @@
 
       {% if page.logo_credit %}
         {% capture credit %}
-          Icon: {{ page.logo_credit | markdownify | remove: '<p>' | remove: '</p>' }}
+          Icon: {{ page.logo_credit }}
         {% endcapture %}
       {% endif %}
 
@@ -35,6 +35,14 @@
     {% for tag in page.tags %}
       <span class="tag">{{ tag }}</span>
     {% endfor %}
+
+    {% if page.status %}
+      <div class="flex mt-2">
+        <small>
+          <strong>Status:</strong> {{ page.status | markdownify | remove: '<p>' | remove: '</p>' }}
+        </small>
+      </div>
+    {% endif %}
   </div>
 </div>
 

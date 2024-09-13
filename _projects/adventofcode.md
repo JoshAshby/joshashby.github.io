@@ -4,7 +4,7 @@ showcase: 6
 cover:
   description: I started actively participating in [Advent of Code](https://adventofcode.com/) in 2021 and have made a point of trying to write understandable code, rather than reach the solution the fastest.
 tags:
-  - Puzzle Solutions
+  - Programming Puzzles
 links:
   - url: https://bones.isin.space/user/JoshAshby/repository/AdventOfCode
     content: Fossil Repository (for 2021-2023)

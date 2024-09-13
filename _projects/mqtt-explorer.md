@@ -3,6 +3,7 @@ showcase: 7
 title: MQTT Explorer
 cover:
   description: MQTT Explorer is designed to make monitoring an MQTT bus easier by providing a lightweight app with topic subscriptions, monitoring of latest messages and publishing new messages.
+status: Active (2023 --- now)
 tags:
   - iOS App
   - iPadOS App

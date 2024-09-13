@@ -4,6 +4,7 @@ cover:
   description: SpiderMite-lang is a multi-pass programming language implementation that I've been using to explore the ideas of how to implement type-checking and pattern matching.
 tags:
   - Programming Language
+status: Finished, Lessons Learned (2023 --- 2024)
 links:
   - url: https://bones.isin.space/user/JoshAshby/repository/SpiderMite-lang
     content: Fossil Repository
@@ -58,6 +59,17 @@ end
 
 print(matchThings(a: 1))
 ```
+
+### 2024 Update
+
+SpiderMite has been a really interesting dive into interpretting and compiling
+pattern matching, and both the inclusion of type annotations within the parser
+output as well as the implementation of type checking and type inference
+through a quasi bi-directional type system. It also led me to experiment with
+different approaches to representing the AST that the parser outputs, in a way
+that attempts to work with Swift's own type system and pattern matching without
+requiring too much boilerplate code for each processing pass that interacts
+with the AST.
 
 ## Technology
 - Swift 5.9

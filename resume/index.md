@@ -5,7 +5,7 @@ permalink: "/resume/"
 
 # Joshua Ashby
 
-[Download as a PDF](/resume.pdf)
+This page is also available as a [a PDF](/resume.pdf).
 
 ---
 
