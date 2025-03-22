@@ -15,21 +15,21 @@ aboutMe: |
   I'm a full-stack developer with broad experience in web, mobile and data engineering. I'm a quick and enthusiastic learner of new technologies and code bases; Plus I am always looking for new opportunities for continued growth. I'm experienced with being in knowledge leadership roles and I'm comfortable working collaboratively or on my own.
 
 primaryTechnologies:
-  - Server Side Swift
   - Elixir/Phoenix
   - Ruby/Ruby on Rails
   - JavaScript/TypeScript
-  - NodeJS
   - ReactJS
   - Svelte
-  - Redis
-  - SQL/PostgreSQL/SQLite/Snowflake
+  - NodeJS
   - Python
+  - SQL/PostgreSQL/SQLite/Snowflake
   - DBT
   - Elasticsearch
+  - Redis
   - CSS
   - Bash
   - Terraform
+  - Server Side Swift
 
 primaryTools:
   - Git
@@ -48,11 +48,28 @@ notableWork:
   #- "I developed a browser extension for Chrome which makes a given tab to use a virtual cookie store for a marketing and customer success company to manage multiple client accounts at once. It also provides a number of additional tools for generating links with pre-set UTM parameters as well as storing and copying to the clipboard custom text shortcuts."
 
 workExperience:
+  - role: Senior Engineer
+    hats:
+      - Senior DevOps Engineer
+    company: FinalForms
+    link: https://finalforms.com
+    location: Boulder, CO (Hybrid)
+    duration: February 2025 --- Current
+    technologies:
+      - Ruby/Ruby on Rails
+      - Postgres
+      - Bash
+      - Terraform
+      - CSS
+      - JavaScript/CoffeeScript
+      - Stimulus
+    highlights: []
+
   - role: Staff Data Engineer
     company: Lifespark
     link: https://lifespark.com/
     location: Minneapolis, MN (Remote)
-    duration: April 2022 --- Current
+    duration: April 2022 --- January 2025
     technologies:
       - Dagster
       - DBT
@@ -77,7 +94,7 @@ workExperience:
     company: Subatomic Agency
     link: https://www.subatomicagency.com/
     location: Denver, CO (Remote)
-    duration: January 2021 --- May 2022
+    duration: January 2021 --- April 2022
     technologies:
       - Elixir/Phoenix
       - TypeScript/ReactJS
@@ -153,7 +170,7 @@ schoolExperience:
   - level: internship
     name: Sparkfun Electronics
     location: Niwot, CO
-    duration: Summers of 2012, 2012
+    duration: Summers of 2011, 2012
     focus: Software Developer Intern
     highlights:
       - Used a variety of language and tools to maintain a PHP, MySQL, Postgres and JavaScript stack for the ecommerce site.
