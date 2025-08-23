@@ -1,3 +1,4 @@
+---
 title: Forms in SwiftUI for SwiftData & Co
 description:
 
@@ -26,3 +27,8 @@ Here's the scene I found myself in with these two apps: SwiftUI and SwiftData
 Specifically, these forms needed to create and edit CoreData/SwiftData records,
 but I wanted the edits to be in a "draft" state before explicitly saving them
 back to the record.
+
+There's a few ways to do this as it turns out. The first approach I started off
+using was to open the record in a separate context which had the autosave
+feature turned off. This does work, but I found it to be finiky and difficult
+to work with in a lot of cases.
