@@ -129,5 +129,5 @@ page_gen-dirs: true # uncomment, if you prefer to generate named folders
 page_gen:
   - data: 'photographs'
     template: 'default-gallery'
-    name: 'slug'
+    name: 'title'
     dir: 'photographs'

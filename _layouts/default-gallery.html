@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="h-full">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -21,15 +21,39 @@
   </style>
 </head>
 
-<body>
-  <main>
-    {{ content }}
-  </main>
+<body class="w-full min-h-full md:overflow-hidden bg-black flex flex-col">
+  <div class="flex-1 flex flex-col md:flex-row">
+    <main class="flex-1 flex justify-center m-4">
+      <figure class="not-prose">
+        <img
+          class="object-scale-down"
+          src="{{site.cdn}}/{{page.slug}}-800.jpg"
+          srcset="{{site.cdn}}/{{page.slug}}-400.jpg 400w, {{site.cdn}}/{{page.slug}}-600.jpg 600w, {{site.cdn}}/{{page.slug}}-800.jpg 800w, {{site.cdn}}/{{page.slug}}-1000.jpg 1000w"
+          alt="{{page.title}}"
+        />
+      </figure>
+    </main>
 
-  <footer class="border-t-2 border-sky-900 my-4 pt-4 text-sm w-full flex justify-center">
-    <p class="prose text-xs dark:prose-invert mx-4">
+    <aside class="flex flex-col md:flex-row md:py-4">
+      <div class="w-full md:w-72 flex flex-col px-2 py-4 prose prose-sm dark:prose-invert border-0 md:border-l border-sky-900">
+        <div class="md:h-24"></div>
+        <h1 class="text-xl">{{ page.title }}</h1>
+        <p>{{ page.description }}</p>
+      </div>
+
+      <div class="w-full md:w-12 flex flex-row md:flex-col items-center gap-4 px-2 py-4 border-t md:border-t-0 md:border-l border-sky-900 text-white not-prose">
+        <div class="flex items-center justify-center font-bold text-gray-400 rounded-full w-8 h-8 hover:bg-sky-900/50 hover:cursor-pointer">X</div>
+        <div class="flex items-center justify-center font-bold text-gray-400 rounded-full w-8 h-8 hover:bg-sky-900/50 hover:cursor-pointer"><</div>
+        <div class="flex items-center justify-center font-bold text-gray-400 rounded-full w-8 h-8 hover:bg-sky-900/50 hover:cursor-pointer">></div>
+        <div class="flex items-center justify-center font-bold text-gray-400 rounded-full w-8 h-8 hover:bg-sky-900/50 hover:cursor-pointer">I</div>
+      </div>
+    </aside>
+  </div>
+
+  <footer class="border-t border-sky-900 text-sm w-full flex justify-center">
+    <p class="prose text-xs dark:prose-invert p-2 text-gray-600">
       Found an error or have an improvement?
-      <a href="https://github.com/JoshAshby/joshashby.github.io/tree/source/{{ page.path }}">Suggest a correction!</a> | <span class="text-gray-300 text-xs">© Joshua Ashby</span>
+      <a class="text-gray-600" href="https://github.com/JoshAshby/joshashby.github.io/tree/source/{{ page.path }}">Suggest a correction!</a> | © Joshua Ashby
     </p>
   </footer>
 
