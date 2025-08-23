@@ -31,6 +31,8 @@ social:
   links:
     - https://github.com/JoshAshby
 
+cdn: "https://photos.joshisa.ninja"
+
 defaults:
   -
     scope:
@@ -92,6 +94,7 @@ collections:
 exclude:
   - bin
   - config
+  - _config.dev.yml
   - vite.config.ts
   - tmp
   - .sass-cache/

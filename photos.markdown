@@ -19,9 +19,9 @@ warned 🙂
 
 <hr/>
 
-{% for photo in site.data.photographs.photographs %}
+{% for photo in site.data.photographs %}
   <figure class="not-prose bg-gray-100 dark:bg-gray-700">
-    <img src="{{site.data.photographs.cdn}}/{{photo.slug}}-800.jpg" srcset="{{site.data.photographs.cdn}}/{{photo.slug}}-400.jpg 400w, {{site.data.photographs.cdn}}/{{photo.slug}}-600.jpg 600w, {{site.data.photographs.cdn}}/{{photo.slug}}-800.jpg 800w, {{site.data.photographs.cdn}}/{{photo.slug}}-1000.jpg 1000w" alt="{{photo.title}}"/>
+    <img src="{{site.cdn}}/{{photo.slug}}-800.jpg" srcset="{{site.cdn}}/{{photo.slug}}-400.jpg 400w, {{site.cdn}}/{{photo.slug}}-600.jpg 600w, {{site.cdn}}/{{photo.slug}}-800.jpg 800w, {{site.cdn}}/{{photo.slug}}-1000.jpg 1000w" alt="{{photo.title}}"/>
 
     {% if photo.description != nil and photo.description != '' %}
       <figcaption class="font-mono text-xs text-gray-500 dark:text-gray-200 p-2">{{ photo.description }}</figcaption>
