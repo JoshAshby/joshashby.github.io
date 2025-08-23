@@ -84,12 +84,53 @@ ul.nav-list {
  * Body and content styling
 *****************************/
 
+html, body {
+  @apply font-serif;
+}
+
 body {
   @apply dark:bg-[#161616] min-h-screen flex flex-col;
 }
 
-a:visited {
-  @apply text-[#a700b5];
+h1, h2, h3, h4, h5, h6 {
+  @apply font-sans;
+}
+
+h1 {
+  @apply text-6xl mb-4;
+}
+
+h2 {
+  @apply text-5xl mb-3;
+}
+
+h3 {
+  @apply text-4xl mb-3;
+}
+
+h4 {
+  @apply text-3xl mb-2;
+}
+
+h5 {
+  @apply text-2xl mb-2;
+}
+
+h6 {
+  @apply text-xl mb-1;
+}
+
+a {
+  @apply text-blue-500 cursor-pointer;
+
+  &:hover, &:active, &:focus {
+    @apply text-blue-700;
+  }
+
+  &:visited {
+    /*@apply text-[#a700b5];*/
+    @apply text-purple-700;
+  }
 }
 
 #master-chief {
