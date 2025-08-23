@@ -1,17 +1,14 @@
 This repo contains the Jekyll setup for my personal site.
 
 ## Getting Started
-You'll need to also install [Typst](https://typst.app/) `v0.10.0` in addition to Ruby and NodeJS
 
-```
-asdf install
-npm install
-bundle install
-foreman start -f Procfile.dev
-```
+Dependencies are managed via [`mise`](https://mise.jdx.dev/) and is set up to
+use [`hivemind`](https://github.com/DarthSim/hivemind) to run everything easily:
 
-~~The site is built on Github Actions and deployed to Github Page using a setup
-similar to that described [here, by David Stosik](https://davidstosik.github.io/2020/05/31/static-blog-jekyll-410-github-pages-actions.html).~~
+```shell
+mise install
+mise dev
+```
 
 The site is deployed to GitHub Pages using their newer "artifact deploy" action
 [`actions/deploy-pages@v4`](github.com/actions/deploy-pages) setup which
@@ -19,9 +16,11 @@ greatly simplified the process. TL;DR: Install all the deps, then run `rake
 all`.
 
 ### Styling
+
 Postcss and tailwindcss are available to provide styling.
 
 ### Utils
+
 jekyll-admin provides a nice web based authoring interface for new content.
 
 ### Resume

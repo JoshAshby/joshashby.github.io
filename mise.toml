@@ -1,0 +1,10 @@
+[tools]
+ruby = "3.1.0"
+nodejs = "16.4.1"
+typst = "0.10.0"
+hivemind = "latest"
+aws-cli = "latest"
+
+[tasks.dev]
+description = ""
+run = "hivemind Procfile.dev"
