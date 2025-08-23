@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="apple-mobile-web-app-status-bar-style" content="#1f2937">
+  <meta name="theme-color" content="#1f2937" />
+
+  <title>{{ page.title }} - {{ site.title }}</title>
+  <meta name="description" content="{{ page.description }}">
+
+  {% feed_meta %}
+  {% seo %}
+
+  {% vite_stylesheet_tag gallery %}
+
+  <style>
+  {{ page.style }}
+  </style>
+</head>
+
+<body>
+  <main>
+    {{ content }}
+  </main>
+
+  <footer class="border-t-2 border-sky-900 my-4 pt-4 text-sm w-full flex justify-center">
+    <p class="prose text-xs dark:prose-invert mx-4">
+      Found an error or have an improvement?
+      <a href="https://github.com/JoshAshby/joshashby.github.io/tree/source/{{ page.path }}">Suggest a correction!</a> | <span class="text-gray-300 text-xs">© Joshua Ashby</span>
+    </p>
+  </footer>
+
+  {% vite_client_tag %}
+  {% vite_javascript_tag application %}
+</body>
+</html>

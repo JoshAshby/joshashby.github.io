@@ -12,6 +12,8 @@ group :jekyll_plugins do
 
   gem "jekyll-archives"
 
+  gem "jekyll-datapage-generator"
+
   gem "jekyll-admin"
 end
 
