@@ -93,7 +93,7 @@
                 #if job.at("link", default: none) != none [
                   #link(job.link)[#job.company]
                 ] else [
-                  #job.company
+                  #job.at("company", default: none)
                 ]
               ],
               text(8pt)[#icon("map-pin", height: 8pt) #job.location],

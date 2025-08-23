@@ -11,28 +11,28 @@ contactPoints:
     text: https://github.com/JoshAshby
     link: https://github.com/JoshAshby
 
-aboutMe: |
-  I'm a full-stack developer with broad experience in web, mobile and data engineering. I'm a quick and enthusiastic learner of new technologies and code bases; Plus I am always looking for new opportunities for continued growth. I'm experienced with being in knowledge leadership roles and I'm comfortable working collaboratively or on my own.
+aboutMe: I'm a full-stack developer with broad experience in web, mobile and data engineering. I'm a quick and enthusiastic learner of new technologies and code bases; Plus I am always looking for new opportunities for continued growth. I'm experienced with being in knowledge leadership roles and I'm comfortable working collaboratively or on my own.
 
 primaryTechnologies:
-  - Elixir/Phoenix
   - Ruby/Ruby on Rails
   - JavaScript/TypeScript
+  - Python/FastAPI/Flask
+  - Elixir/Phoenix
   - ReactJS
   - Svelte
-  - NodeJS
-  - Python
-  - SQL/PostgreSQL/SQLite/Snowflake
+  - NodeJS/Bun
+  - SQL (PostgreSQL/SQLite/DuckDB/Snowflake)
   - DBT
   - Elasticsearch
   - Redis
-  - CSS
+  - CSS/Tailwind
   - Bash
   - Terraform
-  - Server Side Swift
+  - Server-Side Swift
 
 primaryTools:
   - Git
+  - Jujutsu
   - Fossil-SCM
   - Terraform
   - Heroku
@@ -45,7 +45,6 @@ primaryTools:
 notableWork:
   - "As a consultant and contractor, I've helped teams refactor and architect large TypeScript/React and Elixir/Phoenix code bases to reduce operational costs and risk of mistakes, and increase developer speed and product alignment."
   - "I architected and developed an extensive in-house ETL framework in Ruby, that transformed data from a number of sources including Elasticsearch, Postgres, Google Sheets, External APIs and Redis into a data lake stored in AWS Redshift."
-  #- "I developed a browser extension for Chrome which makes a given tab to use a virtual cookie store for a marketing and customer success company to manage multiple client accounts at once. It also provides a number of additional tools for generating links with pre-set UTM parameters as well as storing and copying to the clipboard custom text shortcuts."
 
 workExperience:
   - role: Senior Engineer
@@ -63,7 +62,8 @@ workExperience:
       - CSS
       - JavaScript/CoffeeScript
       - Stimulus
-    highlights: []
+    highlights:
+      - Implemented a data report driven process for identifying slow tests and under utilized test runners, leading to a reduction of CI runtimes from 1 hour, 30 minutes to 20 minutes. 
 
   - role: Staff Data Engineer
     company: Lifespark
@@ -111,7 +111,6 @@ workExperience:
       - Maintained and implemented new features in several React projects, including a React Native mobile application.
       - Managed DevOps on AWS and Heroku infrastructure with Terraform.
       - Mentored developers on TypeScript/ReactJS and Elixir/Phoenix paradigms.
-      #- Continued supporting Tumbler Lock projects.
 
   - role: Senior Software Engineer
     company: Tumbler Lock
@@ -174,6 +173,7 @@ schoolExperience:
     focus: Software Developer Intern
     highlights:
       - Used a variety of language and tools to maintain a PHP, MySQL, Postgres and JavaScript stack for the ecommerce site.
+
   - level: university
     name: Colorado State University
     location: Fort Collins, CO
