@@ -59,7 +59,7 @@ ul.nav-list {
   @apply flex flex-row justify-around text-white stroke-current;
 }
 
-@screen lg {
+@variant md {
   .expandable {
     @apply relative mt-2 p-0;
 
@@ -128,13 +128,12 @@ a {
   }
 
   &:visited {
-    /*@apply text-[#a700b5];*/
     @apply text-purple-700;
   }
 }
 
 #master-chief {
-  @apply grid gap-x-4 mx-auto flex-grow w-full;
+  @apply grid gap-4 mx-auto grow w-full;
   max-width: 1000px;
 
   grid:
@@ -159,7 +158,7 @@ aside {
   grid-area: aside;
 }
 
-@screen lg {
+@variant md {
   #master-chief {
     grid:
       "content sidebar" 8rem

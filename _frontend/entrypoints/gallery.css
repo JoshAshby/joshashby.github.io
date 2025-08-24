@@ -3,3 +3,8 @@
 @import "~/css/tag.css";
 @import "~/css/callouts.css";
 
+@custom-variant data-toggled {
+  &:where([data-toggled-state=true] *) {
+    @slot;
+  }
+}

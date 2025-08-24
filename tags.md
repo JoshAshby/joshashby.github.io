@@ -4,7 +4,7 @@ title: Posts by Tag
 
 ## All Tags
 
-<div class="flex flex-row flex-wrap space-x-1 items-center justify-center flex-grow">
+<div class="flex flex-row flex-wrap space-x-1 items-center justify-center grow">
   {% capture tag_names %}
     {% for i in site.tags %}
       {{ i|first }}

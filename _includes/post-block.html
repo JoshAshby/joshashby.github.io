@@ -1,5 +1,5 @@
-<div class="flex flex-col space-y-1">
-  <div class="flex flex-row space-x-2 items-baseline">
+<div class="flex flex-col gap-1">
+  <div class="flex flex-row gap-2 items-baseline">
     <time datetime="{{ post.date | date: "%F" }}" class="font-mono text-sm whitespace-nowrap">{{ post.date | date: "%h %d, %Y" }}</time>
 
     <div class="flex flex-col">
@@ -11,7 +11,7 @@
         {% endif %}
       </div>
 
-      <div class="flex flex-row flex-wrap space-x-1">
+      <div class="flex flex-row flex-wrap gap-1">
         {% for tag in post.tags %}
           {% include tag-pill.html tag=tag %}
         {% endfor %}

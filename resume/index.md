@@ -25,11 +25,11 @@ This page is also available as [a PDF](/resume.pdf).
 
 {% for job in site.data.resume.workExperience %}
 <div class="flex content-baseline items-baseline justify-between">
-    <h3 class="!p-0 !m-0">
+    <h3 class="p-0! m-0!">
         {{ job.role }}
 
         {% if job.hats %}
-            <small class="!text-xs">{{ job.hats | join: "/" }}</small>
+            <small class="text-xs!">{{ job.hats | join: "/" }}</small>
         {% endif %}
     </h3>
 
