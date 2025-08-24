@@ -4,7 +4,7 @@ title: Posts by Tag
 
 ## All Tags
 
-<div class="flex flex-row flex-wrap space-x-1 items-center justify-center grow">
+<div class="flex flex-row flex-wrap gap-x-1 items-center justify-center grow">
   {% capture tag_names %}
     {% for i in site.tags %}
       {{ i|first }}
@@ -26,7 +26,7 @@ title: Posts by Tag
 
   <a href="#{{ tag | slugify }}" name="{{ tag | slugify }}" class="text-xl">{{ tag }}</a>
 
-  <div class="flex flex-col space-y-8">
+  <div class="flex flex-col gap-y-8">
     {% for post in posts %}
       {% include post-block.html %}
     {% endfor %}

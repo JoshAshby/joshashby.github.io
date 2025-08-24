@@ -21,7 +21,7 @@ Looking to get a hold of me?
 
 #### Recent Posts
 
-<div class="flex flex-col space-y-8">
+<div class="flex flex-col gap-y-8">
   {% for post in site.posts limit: 5 %}
     {% include post-block.html %}
   {% endfor %}

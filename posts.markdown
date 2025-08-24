@@ -27,7 +27,7 @@ permalink: "/posts/"
 
 ## All Posts
 
-<div class="flex flex-col space-y-8">
+<div class="flex flex-col gap-y-8">
   {% for post in site.posts %}
     {% include post-block.html %}
   {% endfor %}
