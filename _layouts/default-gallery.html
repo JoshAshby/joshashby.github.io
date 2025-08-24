@@ -21,41 +21,62 @@
   </style>
 </head>
 
-<body class="w-full min-h-full md:overflow-hidden bg-black flex flex-col">
-  <div class="flex-1 flex flex-col md:flex-row">
-    <main class="flex-1 flex justify-center m-4">
-      <figure class="not-prose">
-        <img
-          class="object-scale-down"
-          src="{{site.cdn}}/{{page.slug}}-800.jpg"
-          srcset="{{site.cdn}}/{{page.slug}}-400.jpg 400w, {{site.cdn}}/{{page.slug}}-600.jpg 600w, {{site.cdn}}/{{page.slug}}-800.jpg 800w, {{site.cdn}}/{{page.slug}}-1000.jpg 1000w"
-          alt="{{page.title}}"
-        />
-      </figure>
-    </main>
+<body class="w-full min-h-full max-h-screen h-screen md:overflow-hidden bg-black">
+  <div class="flex flex-col h-full">
+    <div class="flex-1 flex flex-col md:flex-row">
+      <main class="flex-1 flex justify-center m-4 relative">
+        <figure class="not-prose">
+          <img
+            class="object-scale-down object-top absolute inset-0 h-full mx-auto"
+            src="{{site.cdn}}/{{page.slug}}-800.jpg"
+            srcset="{{site.cdn}}/{{page.slug}}-400.jpg 400w, {{site.cdn}}/{{page.slug}}-600.jpg 600w, {{site.cdn}}/{{page.slug}}-800.jpg 800w, {{site.cdn}}/{{page.slug}}-1000.jpg 1000w"
+            alt="{{page.title}}" />
+        </figure>
+      </main>
 
-    <aside class="flex flex-col md:flex-row md:py-4">
-      <div class="w-full md:w-72 flex flex-col px-2 py-4 prose prose-sm dark:prose-invert border-0 md:border-l border-sky-900">
-        <div class="md:h-24"></div>
-        <h1 class="text-xl">{{ page.title }}</h1>
-        <p>{{ page.description }}</p>
-      </div>
+      <aside class="flex flex-col md:flex-row md:py-4">
+        <div class="w-full md:w-72 flex flex-col px-2 py-4 prose prose-sm dark:prose-invert border-0 md:border-l border-sky-900">
+          <div class="md:h-24"></div>
+          <h1 class="text-xl">{{ page.title }}</h1>
+          <p>{{ page.description }}</p>
+        </div>
 
-      <div class="w-full md:w-12 flex flex-row md:flex-col items-center gap-4 px-2 py-4 border-t md:border-t-0 md:border-l border-sky-900 text-white not-prose">
-        <div class="flex items-center justify-center font-bold text-gray-400 rounded-full w-8 h-8 hover:bg-sky-900/50 hover:cursor-pointer">X</div>
-        <div class="flex items-center justify-center font-bold text-gray-400 rounded-full w-8 h-8 hover:bg-sky-900/50 hover:cursor-pointer"><</div>
-        <div class="flex items-center justify-center font-bold text-gray-400 rounded-full w-8 h-8 hover:bg-sky-900/50 hover:cursor-pointer">></div>
-        <div class="flex items-center justify-center font-bold text-gray-400 rounded-full w-8 h-8 hover:bg-sky-900/50 hover:cursor-pointer">I</div>
-      </div>
-    </aside>
+        <div class="w-full md:w-12 flex flex-row md:flex-col items-center gap-4 px-2 py-4 border-t md:border-t-0 md:border-l border-sky-900 text-white not-prose">
+          <a href="/photos" class="group relative flex items-center justify-center font-bold text-gray-400 rounded-full w-8 h-8 hover:bg-sky-900/50 hover:cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x-icon lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+            <span class="pointer-events-none absolute left-0 -top-2 -translate-y-full md:-translate-x-full md:-left-4 md:top-auto md:translate-y-0 w-max opacity-0 transition-opacity group-hover:opacity-100 bg-sky-800 rounded p-2 text-xs">
+              Exit to Exhibit Hall
+            </span>
+          </a>
+          <a href="" class="group relative flex items-center justify-center font-bold text-gray-400 rounded-full w-8 h-8 hover:bg-sky-900/50 hover:cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-left-icon lucide-chevron-left"><path d="m15 18-6-6 6-6"/></svg> 
+            <span class="pointer-events-none absolute left-0 -top-2 -translate-y-full md:-translate-x-full md:-left-4 md:top-auto md:translate-y-0 w-max opacity-0 transition-opacity group-hover:opacity-100 bg-sky-800 rounded p-2 text-xs">
+              Previous Image
+            </span>
+          </a>
+          <a href="" class="group relative flex items-center justify-center font-bold text-gray-400 rounded-full w-8 h-8 hover:bg-sky-900/50 hover:cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right-icon lucide-chevron-right"><path d="m9 18 6-6-6-6"/></svg>
+            <span class="pointer-events-none absolute left-0 -top-2 -translate-y-full md:-translate-x-full md:-left-4 md:top-auto md:translate-y-0 w-max opacity-0 transition-opacity group-hover:opacity-100 bg-sky-800 rounded p-2 text-xs">
+              Next Image
+            </span>
+          </a>
+          <button class="group relative flex items-center justify-center font-bold text-gray-400 rounded-full w-8 h-8 bg-sky-900/50 hover:cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-info-icon lucide-info"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+            <span class="pointer-events-none absolute left-0 -top-2 -translate-y-full md:-translate-x-full md:-left-4 md:top-auto md:translate-y-0 w-max opacity-0 transition-opacity group-hover:opacity-100 bg-sky-800 rounded p-2 text-xs">
+              Image Details
+            </span>
+          </button>
+        </div>
+      </aside>
+    </div>
+
+    <footer class="border-t border-sky-900 text-sm w-full flex justify-center">
+      <p class="prose text-xs dark:prose-invert p-2 text-gray-600">
+        Found an error or have an improvement?
+        <a class="text-gray-600" href="https://github.com/JoshAshby/joshashby.github.io/tree/source/{{ page.path }}">Suggest a correction!</a> | © Joshua Ashby
+      </p>
+    </footer>
   </div>
-
-  <footer class="border-t border-sky-900 text-sm w-full flex justify-center">
-    <p class="prose text-xs dark:prose-invert p-2 text-gray-600">
-      Found an error or have an improvement?
-      <a class="text-gray-600" href="https://github.com/JoshAshby/joshashby.github.io/tree/source/{{ page.path }}">Suggest a correction!</a> | © Joshua Ashby
-    </p>
-  </footer>
 
   {% vite_client_tag %}
   {% vite_javascript_tag application %}
