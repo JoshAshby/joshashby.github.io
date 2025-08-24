@@ -4,6 +4,7 @@ nodejs = "16.4.1"
 typst = "0.10.0"
 hivemind = "latest"
 aws-cli = "latest"
+node = "23.6.0"
 
 [tasks.dev]
 description = ""
