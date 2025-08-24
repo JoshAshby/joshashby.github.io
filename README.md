@@ -6,6 +6,7 @@ Dependencies are managed via [`mise`](https://mise.jdx.dev/) and is set up to
 use [`hivemind`](https://github.com/DarthSim/hivemind) to run everything easily:
 
 ```shell
+mise set MISE_ENV=dev --file mise.local.toml
 mise install
 mise dev
 ```
