@@ -26,19 +26,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: ruby/setup-ruby@v1
+      - uses: jdx/mise-action@v2
         with:
-          ruby-version: '3.1'
-          bundler-cache: true
+          install: true
+          cache: true
 
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '16.4.x'
-          cache: 'yarn'
-
-      - uses: typst-community/setup-typst@v3
-        with:
-          typst-version: 'v0.10.0'
+      - name: Bundle install
+        run: bundle install
 
       - name: Yarn install
         run: yarn install
