@@ -1,10 +1,9 @@
 [tools]
 ruby = "3.1.0"
-nodejs = "16.4.1"
-typst = "0.10.0"
+node = "23.6.0"
+typst = "0.13.1"
 hivemind = "latest"
 aws-cli = "latest"
-node = "23.6.0"
 
 [tasks.dev]
 description = ""

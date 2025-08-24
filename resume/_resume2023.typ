@@ -12,18 +12,17 @@
    "us-letter",
     margin: (x: 54pt, y: 52pt),
 
-  // Sets the page header to the last level 2 header followed by " (Continued)"
-    header: locate(loc => {
+    // Sets the page header to the last level 2 header followed by " (Continued)"
+    header: context {
       let elems = query(
-        selector(heading.where(level: 2)).before(loc),
-        loc,
+        heading.where(level: 2).before(here())
       )
 
       if elems != () {
         let body = elems.last().body
         heading(level: 2, body + " (Continued)")
       }
-    })
+    }
   )
 
   set text(9.8pt, font: "IBM Plex Sans")
