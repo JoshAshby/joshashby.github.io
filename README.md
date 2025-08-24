@@ -16,9 +16,14 @@ The site is deployed to GitHub Pages using their newer "artifact deploy" action
 greatly simplified the process. TL;DR: Install all the deps, then run `rake
 all`.
 
-### Styling
+### Styling / JS
 
-Postcss and tailwindcss are available to provide styling.
+Vite bundles everything together, see `_frontend/entrypoints/`.
+
+There isn't much in the way of JS, just some light utils for show/hide.
+
+Tailwindcss provides styling. Some older parts of the site use a mix of
+Tailwind via `@apply` and vanilla css.
 
 ### Utils
 
@@ -31,7 +36,7 @@ The resume page and PDF are backed by a combo of a YAML data file
 (`resume/_resume2023.typ`).
 
 On deploys, the PDF version is built with the following command (in the form of
-a Rake taks):
+a Rake task):
 
 ```
 typst compile --root=./ --font-path=assets/fonts/ resume/_resume2023.typ resume.pdf
@@ -42,7 +47,7 @@ versions to remain in sync and always up to date.
 
 ### Photography Page
 
-The workflow for the photography page is still a work in progress and I try to
+The workflow for the photography page is still a work in progress as I try to
 figure out the best way to make it scale with my somewhat iPad/mobile based
 workflow. It's modeled after [Brandur's setup](https://github.com/brandur/sorg/blob/cbd52b385f8962be49ee52e8d15a05efb1c7783a/docs/photographs.md) but with some changes such as
 not being backed by dropbox.
@@ -74,11 +79,9 @@ Converting _raw_photos/blehp_chief.jpg -> photos/blehp_chief-2000.jpg
 `upload-photos` does what it says on the tin. It uploads the processed photos
 up to the CDN Bucket.
 
-`_data/photography.yml` contains the CDN url (Makes for easy testing, switch it
-to `"/photos"` for local testing, for example) and an array of the photographs
-with the title, description and name "slug" (without the extension). The url
-could probably be a config for the whole site eventually but meh, I'll get to
-that later.
+`_data/photography.yml` contains an array of the photographs with the title,
+description and name "slug" (without the extension). The url could probably be
+a config for the whole site eventually but meh, I'll get to that later.
 
 Jekyll renders an image tag with a `srcset` for better performance for each
 entry in the data file, using the name and the cdn root url.

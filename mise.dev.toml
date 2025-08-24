@@ -3,5 +3,4 @@ hivemind = "latest"
 aws-cli = "latest"
 
 [tasks.dev]
-description = ""
 run = "hivemind Procfile.dev"
