@@ -21,9 +21,10 @@ document.querySelectorAll(".annotation-trigger").forEach(annotation)
 
 function toggleHidden(node) {
   const dataTarget = document.querySelector(node.dataset.target)
+  const dataClass = node.dataset.toggledClass || "expand"
 
   node.addEventListener("click", e => {
-    dataTarget.classList.toggle("expand")
+    node.dataset.toggledState = dataTarget.classList.toggle(dataClass)
   })
 }
 
