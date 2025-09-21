@@ -6,15 +6,22 @@ permalink: "/photo-gear/"
 # Gear Gear Gear
 
 Cameras:
+ - Canon R8
  - Canon 6D mark II
- - Canon 70D
- - Canon 300D
+ - ~~Sony NEX-5T~~
+ - ~~Canon 70D~~
+ - ~~Canon 300D~~
+ - ~~Canon EOS Rebel~~
  - Minolta SR-T 101
 
 Lenses:
- - Canon "nifty-fifty" 50mm F1/4 fixed prime
- - Various Canon kit lenses
- - Sigma DG 70-300mm F4-5.6
+ - Canon RF 70-200mm F4 L
+ - Canon RF 200-800mm F6.3-9
+ - Canon RF 28mm F2.8 prime
+ - Canon EF "nifty-fifty" 50mm F1.4 prime
+ - Canon EF 24-105mm F3.5-5.6 (6D Kit Lens)
+ - ~~Sigma DG 70-300mm F4-5.6~~
+ - ~~Various other canon kit lenses~~
 
 Flashes:
   - Godox X2T wireless flash trigger, X1R recievers

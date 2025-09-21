@@ -1,0 +1,15 @@
+title: Darkness
+description: Experiments into using shadows, nighttime and contrast.
+
+photographs:
+  - title: "Peace Flame"
+    description: "I really love shooting black backdrops using a high shutter speed and bright subject in daylight (as seen here) or with flashes."
+    slug: "peace_flame"
+    prev: null
+    next: "cabin_stars"
+
+  - title: "Cabin Nighttime"
+    description: ""
+    slug: "cabin_stars"
+    prev: "peace_flame"
+    next: null

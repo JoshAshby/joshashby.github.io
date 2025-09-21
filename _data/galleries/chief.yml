@@ -1,0 +1,33 @@
+title: Chief
+description: An adorable puppy who enjoys getting treats, even if it means he has to sit still and pose.
+
+photographs:
+  - title: "Chief in the Kitchen"
+    description: "Chief, still fairly new to our household, has already established this spot as his supervisor position. Overseeing all kitchen operations, he's primed to diligently get under foot at the drop of a carrot."
+    slug: "kitchen_chief"
+    prev: null
+    next: "crazy_eyes_chief"
+
+  - title: "Chief's Stare"
+    description: "And his goblin ear"
+    slug: "crazy_eyes_chief"
+    prev: "kitchen_chief"
+    next: "blehp_chief"
+
+  - title: "Chief Discovers Tongues"
+    description: "Blehp"
+    slug: "blehp_chief"
+    prev: "crazy_eyes_chief"
+    next: "couch_chief"
+
+  - title: "Chief Snoozing on the Couch"
+    description: ""
+    slug: "couch_chief"
+    prev: "blehp_chief"
+    next: "moody_chief"
+
+  - title: "Chief Gets Moody"
+    description: "Mood: done with your camera crap"
+    slug: "moody_chief"
+    prev: "couch_chief"
+    next: null

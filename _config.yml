@@ -127,7 +127,12 @@ include:
 page_gen-dirs: true # uncomment, if you prefer to generate named folders
 
 page_gen:
-  - data: 'photographs'
+  - data: 'galleries.chief.photographs'
     template: 'default-gallery'
-    name: 'title'
+    name: 'slug'
+    dir: 'photographs'
+
+  - data: 'galleries.black-light.photographs'
+    template: 'default-gallery'
+    name: 'slug'
     dir: 'photographs'
