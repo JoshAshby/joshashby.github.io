@@ -67,8 +67,16 @@ class Routes < Roda
           end
 
           r.post do
-            debugger
-            @gallery.update r.params
+            gallery_params = r.params["gallery"]
+
+            new_photos_attributes = r.params.fetch("photos", []).inject({}) do |hash, file|
+              hash.merge!(SecureRandom.hex => { image: file })
+            end
+
+            photos_attributes = gallery_params["photos_attributes"].to_h.merge(new_photos_attributes)
+            gallery_attributes  = gallery_params.merge("photos_attributes" => photos_attributes)
+
+            @gallery.update gallery_attributes 
             flash["saved"] = true
             r.redirect path(@gallery)
           end
