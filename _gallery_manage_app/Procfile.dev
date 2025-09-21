@@ -1,0 +1,2 @@
+web: bundle exec rackup
+tailwind: tailwindcss -i ./assets/application.css -o ./public/application.css --watch

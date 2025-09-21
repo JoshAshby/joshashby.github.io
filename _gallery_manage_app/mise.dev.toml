@@ -1,0 +1,9 @@
+[tools]
+hivemind = "latest"
+
+[env]
+RACK_ENV = "development"
+APP_SESSION_SECRET = "d278baa0b20559d4a6112aec50b7954237e02e8588d94befcbeecf2d88683634"
+
+[tasks.dev]
+run = "hivemind Procfile.dev"

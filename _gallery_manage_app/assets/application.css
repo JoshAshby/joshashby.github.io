@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+@custom-variant turbo-frame {
+  turbo-frame[src] & {
+    @slot;
+  }
+}
+
+:root {
+  --fadeOut: 1s ease-in-out 500ms fadeOut;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
