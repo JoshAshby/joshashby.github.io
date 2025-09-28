@@ -1,5 +1,6 @@
 require "roda"
 require "phlex"
+require "erubi/capture_block"
 
 class Routes < Roda
   include Helpers::Tags
@@ -8,16 +9,25 @@ class Routes < Roda
     public: "public/",
     assets: "assets/"
 
-  plugin :render, layout_opts: { template: "layout", engine: "erb" }
+  plugin :render,
+    layout: "layouts/page",
+    extract_fixed_locals: true,
+    default_fixed_locals: "()",
+    engine_class: Erubi::CaptureBlockEngine
+
   plugin :content_for
   plugin :partials
   plugin :route_csrf, require_request_specific_tokens: false, check_header: true
   plugin :link_to
 
   plugin :turbo
-  plugin :status_303
+  plugin :status_303 # rubocop:disable Naming/VariableNumber
   # use Rack::MethodOverride
   plugin :forme_route_csrf
+  plugin :response_content_type, mime_types: {
+    html: "text/html",
+    stream: "text/vnd.turbo-stream.html"
+  }
 
   plugin :sessions, secret: ENV.fetch("APP_SESSION_SECRET")
   plugin :flash
@@ -28,6 +38,7 @@ class Routes < Roda
   path(:root, "/")
   path(:galleries, "/galleries")
   path(Models::Gallery) { |gallery, *paths| ["/galleries/#{gallery.id}", *paths].join("/") }
+  path(Models::Photo) { |photo, *paths| ["/photos/#{photo.id}", *paths].join("/") }
 
   route do |r|
     check_csrf!
@@ -54,7 +65,7 @@ class Routes < Roda
 
         r.post do
           @gallery = Models::Gallery.new.save
-          turbo_stream.after "page-header", component(Components::Gallery.new(gallery: @gallery))
+          turbo_stream.prepend "gallery-list", component(Components::Gallery.new(gallery: @gallery))
         end
       end
 
@@ -74,15 +85,20 @@ class Routes < Roda
             end
 
             photos_attributes = gallery_params["photos_attributes"].to_h
-              .transform_values do |photo|
-                next photo unless r.params["bulk"]["selected"].include? photo["id"]
-                photo.merge(r.params["bulk"]["action"])
-              end
               .merge(new_photos_attributes)
 
-            gallery_attributes  = gallery_params.merge("photos_attributes" => photos_attributes)
+            if r.params.dig("bulk", "selected")
+              photos_attributes
+                .transform_values! do |photo|
+                  next photo unless r.params.dig["bulk"]["selected"].include? photo["id"]
 
-            @gallery.update gallery_attributes 
+                  photo.merge(r.params["bulk"]["action"])
+                end
+            end
+
+            gallery_attributes = gallery_params.merge("photos_attributes" => photos_attributes)
+
+            @gallery.update gallery_attributes
             flash["saved"] = true
             r.redirect path(@gallery)
           end
@@ -101,9 +117,30 @@ class Routes < Roda
         view("photos/index")
       end
 
-      r.get Integer do |photo_id|
+      r.on Integer do |photo_id|
         @photo = Models::Photo.with_pk!(photo_id)
-        view("photos/show")
+
+        r.is do
+          r.get do
+            view("photos/show")
+          end
+        end
+
+        r.on :metadata do
+          r.get do
+            response.content_type = :stream
+            turbo_stream.append(
+              "body",
+              view(
+                "gallery/metadata-edit",
+                layout: "layouts/sidebar-modal",
+                layout_opts: {
+                  locals: { modal_id: "photo-#{@photo.id}-metadata", modal_title: "Photo Metadata" }
+                }
+              )
+            )
+          end
+        end
       end
     end
   end

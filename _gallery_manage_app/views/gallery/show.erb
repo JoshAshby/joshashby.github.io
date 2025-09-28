@@ -7,7 +7,7 @@
             <img src="/public<%= @gallery.cover_photo&.image_url || @gallery.photos.first&.image_url %>" alt="Gallery Cover Image" class="aspect-auto object-cover rounded-l-lg" />
           </div>
 
-          <div class="flex-grow">
+          <div class="flex flex-col flex-grow">
             <div class="flex flex-row">
               <div class="flex-grow">
                 <label for="title" class="sr-only">Title</label>
@@ -23,11 +23,11 @@
 
               <div class="p-2 flex flex-row gap-2 items-center">
                 <% if flash["saved"] %>
-                <div class="display-content animate-(--fadeOut)" data-controller="remove-after-animation">
-                  <span class="inline-flex items-center justify-center rounded-full bg-green-500 p-1 text-white">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-icon lucide-check h-3 w-3"><path d="M20 6 9 17l-5-5"/></svg>
-                  </span>
-                </div>
+                  <div class="display-content animate-(--fadeOut)" data-controller="remove-after-animation">
+                    <span class="inline-flex items-center justify-center rounded-full bg-green-500 p-1 text-white">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-icon lucide-check h-3 w-3"><path d="M20 6 9 17l-5-5"/></svg>
+                    </span>
+                  </div>
                 <% end %>
 
                 <div class="inline-flex rounded-md shadow-xs dark:shadow-none">
@@ -56,14 +56,16 @@
               </div>
             </div>
 
-            <label for="description" class="sr-only">Description</label>
-            <textarea
-              id="gallery[description]"
-              name="gallery[description]"
-              rows="2"
-              placeholder="Write a description..."
-              class="block w-full resize-none px-3 py-1.5 text-base text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6 dark:text-white dark:placeholder:text-gray-500"
-            ><%= @gallery.description %></textarea>
+            <div class="flex flex-row flex-grow">
+              <label for="description" class="sr-only">Description</label>
+              <textarea
+                id="gallery[description]"
+                name="gallery[description]"
+                rows="2"
+                placeholder="Write a description..."
+                class="block w-full resize-none px-3 py-1.5 text-base text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6 dark:text-white dark:placeholder:text-gray-500"
+              ><%= @gallery.description %></textarea>
+            </div>
           </div>
         </div>
       </div>
@@ -83,7 +85,7 @@
                 type="checkbox"
                 name="select-all"
                 aria-label="Select all"
-                class="col-start-1 row-start-1 appearance-none rounded-sm border border-gray-300 bg-white checked:border-indigo-600 checked:bg-indigo-600 indeterminate:border-indigo-600 indeterminate:bg-indigo-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 disabled:border-gray-300 disabled:bg-gray-100 disabled:checked:bg-gray-100 dark:border-white/20 dark:bg-transparent dark:checked:border-indigo-500 dark:checked:bg-indigo-500 dark:indeterminate:border-indigo-500 dark:indeterminate:bg-indigo-500 dark:focus-visible:outline-indigo-500 dark:disabled:border-white/5 dark:disabled:bg-white/10 dark:disabled:checked:bg-white/10 forced-colors:appearance-auto"
+                class="col-start-1 row-start-1 appearance-none rounded-sm border border-gray-300 bg-white checked:border-indigo-600 checked:bg-indigo-600 indeterminate:border-indigo-600 indeterminate:bg-indigo-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 disabled:border-gray-300 disabled:bg-gray-100 disabled:checked:bg-gray-100 dark:border-white/20 dark:bg-transparent dark:checked:border-indigo-500 dark:checked:bg-indigo-500 dark:indeterminate:border-indigo-500 dark:indeterminate:bg-indigo-500 dark:focus-visible:outline-indigo-500 dark:disabled:border-white/5 dark:disabled:bg-white/10 dark:disabled:checked:bg-white/10 forced-colors:appearance-auto cursor-pointer"
                 data-action="select-all#selectAll"
                 data-select-all-target="selectAll" />
             <svg viewBox="0 0 14 14" fill="none" class="pointer-events-none col-start-1 row-start-1 size-3.5 self-center justify-self-center stroke-white group-has-disabled:stroke-gray-950/25 dark:group-has-disabled:stroke-white/25">
@@ -160,7 +162,7 @@
               name="bulk[selected][]"
               aria-label="Select all"
               value="<%= photo.id %>"
-              class="col-start-1 row-start-1 appearance-none rounded-sm border border-gray-300 bg-white checked:border-indigo-600 checked:bg-indigo-600 indeterminate:border-indigo-600 indeterminate:bg-indigo-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 disabled:border-gray-300 disabled:bg-gray-100 disabled:checked:bg-gray-100 dark:border-white/20 dark:bg-transparent dark:checked:border-indigo-500 dark:checked:bg-indigo-500 dark:indeterminate:border-indigo-500 dark:indeterminate:bg-indigo-500 dark:focus-visible:outline-indigo-500 dark:disabled:border-white/5 dark:disabled:bg-white/10 dark:disabled:checked:bg-white/10 forced-colors:appearance-auto"
+              class="col-start-1 row-start-1 appearance-none rounded-sm border border-gray-300 bg-white checked:border-indigo-600 checked:bg-indigo-600 indeterminate:border-indigo-600 indeterminate:bg-indigo-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 disabled:border-gray-300 disabled:bg-gray-100 disabled:checked:bg-gray-100 dark:border-white/20 dark:bg-transparent dark:checked:border-indigo-500 dark:checked:bg-indigo-500 dark:indeterminate:border-indigo-500 dark:indeterminate:bg-indigo-500 dark:focus-visible:outline-indigo-500 dark:disabled:border-white/5 dark:disabled:bg-white/10 dark:disabled:checked:bg-white/10 forced-colors:appearance-auto cursor-pointer"
               data-action="select-all#select"
               data-select-all-target="select" />
           <svg viewBox="0 0 14 14" fill="none" class="pointer-events-none col-start-1 row-start-1 size-3.5 self-center justify-self-center stroke-white group-has-disabled:stroke-gray-950/25 dark:group-has-disabled:stroke-white/25">
@@ -184,7 +186,7 @@
           <img src="/public<%= photo.image_url %>" alt="Photo <%= photo.id %>" class="aspect-auto object-cover rounded-lg" />
         </div>
 
-        <div class="flex-grow">
+        <div class="flex-grow flex flex-col">
           <div class="flex flex-row">
             <div class="flex-grow">
               <label for="title" class="sr-only">Title</label>
@@ -223,15 +225,38 @@
             </div>
           </div>
 
-          <label for="description" class="sr-only">Description</label>
-          <textarea
-            form="gallery-form"
-            id="gallery[photos_attributes][<%= index %>][description]"
-            name="gallery[photos_attributes][<%= index %>][description]"
-            rows="2"
-            placeholder="Write a description..."
-            class="block w-full resize-none px-3 py-1.5 text-base text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6 dark:text-white dark:placeholder:text-gray-500"
-          ><%= photo.description %></textarea>
+          <div class="flex flex-row flex-grow">
+            <label for="description" class="sr-only">Description</label>
+            <textarea
+              form="gallery-form"
+              id="gallery[photos_attributes][<%= index %>][description]"
+              name="gallery[photos_attributes][<%= index %>][description]"
+              rows="3"
+              placeholder="Write a description..."
+              class="block w-full resize-none px-3 py-1.5 text-base text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6 dark:text-white dark:placeholder:text-gray-500"
+            ><%= photo.description %></textarea>
+          </div>
+
+          <div class="flex flex-row gap-2 px-3 py-1.5">
+            <% photo.metadata.each do |metadata| %>
+              <span class="inline-flex items-center gap-x-0.5 rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 inset-ring inset-ring-gray-500/10 dark:bg-gray-400/10 dark:text-gray-400 dark:inset-ring-gray-400/20">
+                <%= metadata["label"] %> / <%= metadata["value"] %>
+                <button type="button" class="group relative -mr-1 size-3.5 rounded-xs hover:bg-gray-500/20 dark:hover:bg-gray-500/30 cursor-pointer">
+                  <span class="sr-only">Remove</span>
+                  <svg viewBox="0 0 14 14" class="size-3.5 stroke-gray-600/50 group-hover:stroke-gray-600/75 dark:stroke-gray-400 dark:group-hover:stroke-gray-300">
+                    <path d="M4 4l6 6m0-6l-6 6" />
+                  </svg>
+                  <span class="absolute -inset-1"></span>
+                </button>
+              </span>
+            <% end %>
+
+            <form action="<%= path(photo, :metadata) %>" class="relative" id="photo-<%= photo.id %>-metadata-trigger-form">
+              <button class="inline-flex items-center gap-x-0.5 rounded-md bg-gray-50 px-1 py-1 text-xs font-medium text-gray-600 inset-ring inset-ring-gray-500/10 dark:bg-gray-400/10 dark:text-gray-400 dark:inset-ring-gray-400/20 hover:bg-gray-500/20 dark:hover:bg-gray-500/30 cursor-pointer">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-list-plus-icon lucide-list-plus size-4"><path d="M16 5H3"/><path d="M11 12H3"/><path d="M16 19H3"/><path d="M18 9v6"/><path d="M21 12h-6"/></svg>
+              </button>
+            </form>
+          </div>
         </div>
       </div>
 

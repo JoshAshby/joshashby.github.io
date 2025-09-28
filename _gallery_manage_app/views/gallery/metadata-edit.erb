@@ -1,0 +1,41 @@
+<form
+  action="<%= path(@photo, :metadata) %>"
+  method="post"
+  enctype="multipart/form-data"
+  class="relative flex flex-col gap-4"
+  id="photo-<%= @photo.id %>-form"
+>
+  <fieldset id="metadata">
+    <legend class="block text-sm/6 font-medium text-gray-900 dark:text-white">Metadata</legend>
+
+    <div class="mt-2 grid grid-cols-2">
+      <div class="-mt-px -mr-px">
+        <input
+          id="metadata[][0][label]"
+          name="metadata[][0][label]"
+          type="text"
+          placeholder="Label"
+          aria-label="Label"
+          class="block w-full rounded-l-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:relative focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6 dark:bg-white/5 dark:text-white dark:outline-gray-700 dark:placeholder:text-gray-500 dark:focus:outline-indigo-500" />
+      </div>
+      <div class="-mt-px">
+        <input
+          id="metadata[][0][value]"
+          name="metadata[][0][value]"
+          type="text"
+          placeholder="Value"
+          aria-label="Value"
+          class="block w-full rounded-r-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:relative focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6 dark:bg-white/5 dark:text-white dark:outline-gray-700 dark:placeholder:text-gray-500 dark:focus:outline-indigo-500" />
+      </div>
+    </div>
+
+  </fieldset>
+
+  <div class="flex flex-row items-center justify-center">
+    <button type="button" class="rounded-full bg-indigo-600 p-1 text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:bg-indigo-500 dark:shadow-none dark:hover:bg-indigo-400 dark:focus-visible:outline-indigo-500 cursor-pointer">
+      <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="size-5">
+        <path d="M10.75 4.75a.75.75 0 0 0-1.5 0v4.5h-4.5a.75.75 0 0 0 0 1.5h4.5v4.5a.75.75 0 0 0 1.5 0v-4.5h4.5a.75.75 0 0 0 0-1.5h-4.5v-4.5Z" />
+      </svg>
+    </button>
+  </div>
+</form>
