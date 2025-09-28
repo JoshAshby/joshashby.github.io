@@ -6,6 +6,10 @@
   }
 }
 
+/* Or manually as: in-data-[sticky-stuck=true]:<rule> */
+@custom-variant sticky-stuck (&:where([data-sticky-stuck~="true"] *));
+
+/* Add a custom "fadeOut" animation. Usage: `animate-(--fadeOut)` */
 :root {
   --fadeOut: 1s ease-in-out 500ms fadeOut;
 }

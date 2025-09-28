@@ -74,73 +74,90 @@
 <div class="flex flex-col gap-2 mt-2" data-controller="select-all">
 
   <!-- BEGIN FLOATING ACTION BAR -->
-  <div class="sticky top-2 z-10 flex flex-row items-center w-full gap-2 p-2 rounded-md bg-sky-900/50 backdrop-blur-[2px] backdrop-grayscale">
-
-    <div class="inline-flex rounded-md shadow-xs dark:shadow-none">
-      <span class="inline-flex shrink-0 items-center rounded-l-md border border-gray-300 bg-white px-2 py-2 dark:border-gray-700 dark:bg-gray-800">
-        <div class="group grid size-4 grid-cols-1">
-          <input
-              type="checkbox"
-              name="select-all"
-              aria-label="Select all"
-              class="col-start-1 row-start-1 appearance-none rounded-sm border border-gray-300 bg-white checked:border-indigo-600 checked:bg-indigo-600 indeterminate:border-indigo-600 indeterminate:bg-indigo-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 disabled:border-gray-300 disabled:bg-gray-100 disabled:checked:bg-gray-100 dark:border-white/20 dark:bg-transparent dark:checked:border-indigo-500 dark:checked:bg-indigo-500 dark:indeterminate:border-indigo-500 dark:indeterminate:bg-indigo-500 dark:focus-visible:outline-indigo-500 dark:disabled:border-white/5 dark:disabled:bg-white/10 dark:disabled:checked:bg-white/10 forced-colors:appearance-auto"
-              data-action="select-all#selectAll"
-              data-select-all-target="selectAll" />
-          <svg viewBox="0 0 14 14" fill="none" class="pointer-events-none col-start-1 row-start-1 size-3.5 self-center justify-self-center stroke-white group-has-disabled:stroke-gray-950/25 dark:group-has-disabled:stroke-white/25">
-            <path d="M3 8L6 11L11 3.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-0 group-has-checked:opacity-100" />
-            <path d="M3 7H11" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-0 group-has-indeterminate:opacity-100" />
-          </svg>
-        </div>
-      </span>
-      <el-dropdown class="relative shrink-0 -ml-px block">
-        <button
-            class="inline-flex w-full justify-center gap-x-1.5 rounded-r-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-xs inset-ring-1 inset-ring-gray-300 not-disabled:hover:bg-gray-50 dark:bg-gray-800 dark:text-white dark:shadow-none dark:inset-ring-white/5 not-disabled:dark:hover:bg-gray-700 disabled:cursor-not-allowed cursor-pointer"
-            data-select-all-target="disablable"
-            data-disabled="true"
-            disabled>
-          <span data-select-all-target="selectedCount">0</span> Selected
-          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="size-5">
-            <path d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" fill-rule="evenodd" />
-          </svg>
-        </button>
-        <el-menu anchor="bottom end" popover class="ml-1 w-56 origin-top-right rounded-md bg-white shadow-lg outline-1 outline-black/5 transition transition-discrete [--anchor-gap:--spacing(2)] data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in dark:bg-gray-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
-          <div class="py-1">
-            <button
-              type="submit"
-              formaction="<%= path(@gallery, :delete) %>"
-              class="block w-full text-start px-4 py-2 text-sm text-red-700 focus:bg-red-100 focus:text-gray-900 focus:outline-hidden dark:text-red-300 dark:focus:bg-red-100/5 dark:focus:text-white"
-            >Remove From Gallery</button>
+  <div class="sticky -top-px z-10" data-controller="sticky-stuck">
+    <div class="mt-2 flex flex-row items-center w-full gap-2 p-2 rounded-md bg-sky-900/50 backdrop-blur-[2px] backdrop-grayscale">
+      <div class="inline-flex rounded-md shadow-xs dark:shadow-none">
+        <span class="inline-flex shrink-0 items-center rounded-l-md border border-gray-300 bg-white px-2 py-2 dark:border-gray-700 dark:bg-gray-800">
+          <div class="group grid size-4 grid-cols-1">
+            <input
+                type="checkbox"
+                name="select-all"
+                aria-label="Select all"
+                class="col-start-1 row-start-1 appearance-none rounded-sm border border-gray-300 bg-white checked:border-indigo-600 checked:bg-indigo-600 indeterminate:border-indigo-600 indeterminate:bg-indigo-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 disabled:border-gray-300 disabled:bg-gray-100 disabled:checked:bg-gray-100 dark:border-white/20 dark:bg-transparent dark:checked:border-indigo-500 dark:checked:bg-indigo-500 dark:indeterminate:border-indigo-500 dark:indeterminate:bg-indigo-500 dark:focus-visible:outline-indigo-500 dark:disabled:border-white/5 dark:disabled:bg-white/10 dark:disabled:checked:bg-white/10 forced-colors:appearance-auto"
+                data-action="select-all#selectAll"
+                data-select-all-target="selectAll" />
+            <svg viewBox="0 0 14 14" fill="none" class="pointer-events-none col-start-1 row-start-1 size-3.5 self-center justify-self-center stroke-white group-has-disabled:stroke-gray-950/25 dark:group-has-disabled:stroke-white/25">
+              <path d="M3 8L6 11L11 3.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-0 group-has-checked:opacity-100" />
+              <path d="M3 7H11" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-0 group-has-indeterminate:opacity-100" />
+            </svg>
           </div>
-        </el-menu>
-      </el-dropdown>
-    </div>
+        </span>
+        <el-dropdown class="relative shrink-0 -ml-px block">
+          <button
+              class="inline-flex w-full justify-center gap-x-1.5 rounded-r-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-xs inset-ring-1 inset-ring-gray-300 not-disabled:hover:bg-gray-50 dark:bg-gray-800 dark:text-white dark:shadow-none dark:inset-ring-white/5 not-disabled:dark:hover:bg-gray-700 disabled:cursor-not-allowed cursor-pointer"
+              data-select-all-target="disablable">
+            <span data-select-all-target="selectedCount">0</span> Selected
+            <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="size-5">
+              <path d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" fill-rule="evenodd" />
+            </svg>
+          </button>
+          <el-menu anchor="bottom end" popover class="ml-1 w-56 origin-top-right rounded-md bg-white shadow-lg outline-1 outline-black/5 transition transition-discrete [--anchor-gap:--spacing(2)] data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in dark:bg-gray-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
+            <div class="py-1">
+              <button
+                form="gallery-form"
+                <%#formaction="<%= path(@gallery, :bulk) %>
+                name="bulk[action][_delete]"
+                value="true"
+                class="block w-full text-start px-4 py-2 text-sm text-red-700 focus:bg-red-100 focus:text-gray-900 focus:outline-hidden dark:text-red-300 dark:focus:bg-red-100/5 dark:focus:text-white"
+              >Remove From Gallery</button>
+            </div>
+          </el-menu>
+        </el-dropdown>
+      </div>
 
-    <div class="flex-grow"></div>
+      <div class="flex-grow"></div>
 
-    <div>
-      <label for="new-photo"
-          class="cursor-pointer inline-flex items-center justify-center px-3 py-2 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo transition duration-150 ease-in-out">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-              class="-ml-1 mr-1 h-5 w-5">
-              <path stroke-linecap="round" stroke-linejoin="round"
-                  d="M12 16.5V9.75m0 0 3 3m-3-3-3 3M6.75 19.5a4.5 4.5 0 0 1-1.41-8.775 5.25 5.25 0 0 1 10.233-2.33 3 3 0 0 1 3.758 3.848A3.752 3.752 0 0 1 18 19.5H6.75Z" />
-          </svg>
+      <div class="hidden sticky-stuck:inline-flex">
+        <button
+          type="submit"
+          form="gallery-form"
+          class="relative inline-flex items-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 inset-ring-1 inset-ring-gray-300 hover:bg-gray-50 focus:z-10 dark:bg-white/10 dark:text-white dark:inset-ring-gray-700 dark:hover:bg-white/20"
+        >Save</button>
+      </div>
+
+      <div>
+
+        <label for="new-photo"
+             class="inline-flex items-center gap-x-1.5 rounded-md bg-indigo-600 px-2.5 py-1.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:bg-indigo-500 dark:shadow-none dark:hover:bg-indigo-400 dark:focus-visible:outline-indigo-500">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-image-up-icon lucide-image-up"><path d="M10.3 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10l-3.1-3.1a2 2 0 0 0-2.814.014L6 21"/><path d="m14 19.5 3-3 3 3"/><path d="M17 22v-5.5"/><circle cx="9" cy="9" r="2"/></svg>
           <span>Add Photos</span>
-      </label>
-      <input form="gallery-form" type="file" multiple="true" name="photos[]" id="new-photo" class="hidden" />
-    </div>
+        </label>
+        <input form="gallery-form" type="file" multiple="true" name="photos[]" id="new-photo" value="" class="hidden" data-controller="submit-on-change" data-action="submit-on-change#submit" />
+      </div>
 
+    </div>
   </div>
   <!-- END FLOATING ACTION BAR -->
 
-  <% @gallery.photos.each do |photo| %>
+  <% @gallery.photos.each_with_index do |photo, index| %>
     <div class="flex flex-row gap-2">
-      <div class="">
+      <input type="hidden" form="gallery-form" name="gallery[photos_attributes][<%= index %>][id]" value="<%= photo.id %>" />
+
+      <div class="flex flex-col justify-center items-center">
+        <form action="<%= path(@gallery, :position) %>" method="post">
+          <button
+              name="position[up]"
+              value="<%= photo.id %>"
+              class="py-2 cursor-pointer text-sky-800 hover:text-sky-500" >
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-up-icon lucide-chevron-up"><path d="m18 15-6-6-6 6"/></svg>
+          </button>
+        </form>
+
         <div class="group grid size-4 grid-cols-1">
           <input
               type="checkbox"
               form="gallery-form"
-              name="selected[photos][]"
+              name="bulk[selected][]"
               aria-label="Select all"
               value="<%= photo.id %>"
               class="col-start-1 row-start-1 appearance-none rounded-sm border border-gray-300 bg-white checked:border-indigo-600 checked:bg-indigo-600 indeterminate:border-indigo-600 indeterminate:bg-indigo-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 disabled:border-gray-300 disabled:bg-gray-100 disabled:checked:bg-gray-100 dark:border-white/20 dark:bg-transparent dark:checked:border-indigo-500 dark:checked:bg-indigo-500 dark:indeterminate:border-indigo-500 dark:indeterminate:bg-indigo-500 dark:focus-visible:outline-indigo-500 dark:disabled:border-white/5 dark:disabled:bg-white/10 dark:disabled:checked:bg-white/10 forced-colors:appearance-auto"
@@ -151,8 +168,73 @@
             <path d="M3 7H11" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-0 group-has-indeterminate:opacity-100" />
           </svg>
         </div>
+
+        <form action="<%= path(@gallery, :position) %>" method="post">
+          <button
+              name="position[down]"
+              value="<%= photo.id %>"
+              class="py-2 cursor-pointer text-sky-800 hover:text-sky-500" >
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down-icon lucide-chevron-down"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+        </form>
       </div>
-      <%= component Components::Photo.new(photo: photo) %>
+
+      <div class="flex flex-row gap-2 h-full w-full">
+        <div class="shrink-0 h-full self-center w-64 relative">
+          <img src="/public<%= photo.image_url %>" alt="Photo <%= photo.id %>" class="aspect-auto object-cover rounded-lg" />
+        </div>
+
+        <div class="flex-grow">
+          <div class="flex flex-row">
+            <div class="flex-grow">
+              <label for="title" class="sr-only">Title</label>
+              <input
+                type="text"
+                form="gallery-form"
+                id="gallery[photos_attributes][<%= index %>][title]"
+                name="gallery[photos_attributes][<%= index %>][title]"
+                placeholder="Photo Title ..."
+                value="<%= photo.title %>"
+                class="block w-full px-3 pt-2.5 text-lg font-medium text-gray-900 placeholder:text-gray-400 focus:outline-none dark:text-white dark:placeholder:text-gray-500"
+              />
+            </div>
+
+            <div class="p-2 flex flex-row gap-2 items-center">
+              <div class="inline-flex rounded-md shadow-xs dark:shadow-none">
+                <el-dropdown class="relative -ml-px block">
+                  <button class="relative inline-flex items-center rounded-md bg-white px-2 py-2 text-gray-400 inset-ring-1 inset-ring-gray-300 hover:bg-gray-50 focus:z-10 dark:bg-white/10 dark:inset-ring-gray-700 dark:hover:bg-white/20">
+                    <span class="sr-only">Open options</span>
+                    <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="size-5">
+                      <path d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" fill-rule="evenodd" />
+                    </svg>
+                  </button>
+                  <el-menu anchor="bottom end" popover class="ml-1 w-56 origin-top-right rounded-md bg-white shadow-lg outline-1 outline-black/5 transition transition-discrete [--anchor-gap:--spacing(2)] data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in dark:bg-gray-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
+                    <div class="py-1">
+                      <button
+                        form="gallery-form"
+                        name="gallery[photos_attributes][<%= index %>][_delete]"
+                        value="true"
+                        class="block w-full text-start px-4 py-2 text-sm text-red-700 focus:bg-red-100 focus:text-gray-900 focus:outline-hidden dark:text-red-300 dark:focus:bg-red-100/5 dark:focus:text-white"
+                      >Delete</button>
+                    </div>
+                  </el-menu>
+                </el-dropdown>
+              </div>
+            </div>
+          </div>
+
+          <label for="description" class="sr-only">Description</label>
+          <textarea
+            form="gallery-form"
+            id="gallery[photos_attributes][<%= index %>][description]"
+            name="gallery[photos_attributes][<%= index %>][description]"
+            rows="2"
+            placeholder="Write a description..."
+            class="block w-full resize-none px-3 py-1.5 text-base text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6 dark:text-white dark:placeholder:text-gray-500"
+          ><%= photo.description %></textarea>
+        </div>
+      </div>
+
     </div>
   <% end %>
 </div>

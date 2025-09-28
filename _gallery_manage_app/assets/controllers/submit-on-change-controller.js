@@ -1,7 +1,5 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  connect() {
-    console.log("hello")
-  }
+  submit = (event) => event.target.form.requestSubmit()
 }

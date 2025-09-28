@@ -73,7 +73,13 @@ class Routes < Roda
               hash.merge!(SecureRandom.hex => { image: file })
             end
 
-            photos_attributes = gallery_params["photos_attributes"].to_h.merge(new_photos_attributes)
+            photos_attributes = gallery_params["photos_attributes"].to_h
+              .transform_values do |photo|
+                next photo unless r.params["bulk"]["selected"].include? photo["id"]
+                photo.merge(r.params["bulk"]["action"])
+              end
+              .merge(new_photos_attributes)
+
             gallery_attributes  = gallery_params.merge("photos_attributes" => photos_attributes)
 
             @gallery.update gallery_attributes 
