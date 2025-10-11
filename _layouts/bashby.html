@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <meta name="text-scale" content="scale">
+
+  <title>{{ site.name }} | {{ page.title }}</title>
+
+  <!-- <script src="/js/render-blocking-scripts.js"></script> -->
+  <script>
+    document.documentElement.classList.replace('no-js', 'js');
+  </script>
+
+  <!-- <link rel="stylesheet" href="/css/styles.css"> -->
+  <!-- <link rel="stylesheet" href="/css/print.css" media="print"> -->
+
+  <!-- <script src="/js/non-render-blocking-script.js" type="module"></script> -->
+
+  {% vite_stylesheet_tag bashby %}
+  <style>
+  {{ page.style }}
+  </style>
+
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <link rel="manifest" href="/site.webmanifest">
+
+  <link rel="canonical" href="{{ page.url | absolute_url | replace: "index.html", "" | escape_once }}">
+  <link rel="alternate" type="text/markdown" href="{{ site.source_url }}/{{ page.path }}">
+
+  <link rel="me" href="https://mastodon.social/{{ site.socials.mastodon.handle }}">
+  {% if page.atomosphere.rkey %}
+  <link rel="site.standard.publication" href="at://{{ site.socials.atproto.did }}/site.standard.publication/{{ page.atomosphere.rkey }}">
+  {% endif %}
+
+  <meta name="description" content="{{ page.description }}">
+
+  <meta property="og:url" content="{{ page.url | absolute_url | replace: "index.html", "" | escape_once }}">
+  {% if page.header_image %}
+  <meta property="og:image" content="{{ page.header_image }}">
+  {% endif %}
+
+  <meta property="fediverse:creator" content="{{ site.socials.mastodon.handle }}" >
+
+  <meta name="theme-color" content="{{ site.theme_color }}">
+
+  {% feed_meta %}
+</head>
+
+<body class="flex flex-col min-h-screen dark:bg-(--bashby--page-bg) dark:text-white">
+  <header class="sticky -top-px z-10 w-3xl mx-auto">
+    <div class="mt-4 mb-4 flex flex-row items-center w-full px-2 py-1 rounded-sm bg-sky-900/60 backdrop-blur-[4px] shadow-sm">
+      <a href="/" class="text-md text-white hover:text-[#fb2c36] font-scientifica no-underline">
+        <div class="bg-[#005e83] hover:bg-[rgb(from_#005e83_r_g_calc(b+10))] rounded-md h-6 w-6 p-1 relative flex justify-center items-center">
+          JA
+        </div>
+      </a>
+
+      <div class="flex-grow"></div>
+
+      <nav class="flex flex-row gap-2">
+        <a href="/posts" class="font-plex text-white text-sm hover:cursor-pointer hover:bg-white/10 rounded-md p-1">
+          posts
+        </a>
+        <a href="/photos" class="font-plex text-white text-sm hover:cursor-pointer hover:bg-white/10 rounded-md p-1">
+          photos
+        </a>
+        <a href="/blogroll" class="font-plex text-white text-sm hover:cursor-pointer hover:bg-white/10 rounded-md p-1">
+          blogroll
+        </a>
+        <a href="/about" class="font-plex text-white text-sm hover:cursor-pointer hover:bg-white/10 rounded-md p-1">
+          about
+        </a>
+        <a href="/slashpages" class="font-plex text-white text-sm hover:cursor-pointer hover:bg-white/10 rounded-md p-1">
+          /pages
+        </a>
+        <a href="/feed.xml" class="text-[#fb2c36] hover:bg-white/10 rounded-md p-1" title="RSS/Atom Feed">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-rss preview-icon"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="w-2xl h-full mx-auto dark:text-white font-plex">
+    <ol class="
+      my-12 w-full flex flex-row items-baseline font-scientifica text-gray-500 text-2xl
+      *:flex :align-center
+      *:after:inline-block *:after:px-2 *:after:text-lg *:after:text-gray-500 *:after:content-['/'] *:last:after:content-none
+    ">
+      <li class="">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-hard-drive preview-icon"><path d="M10 16h.01"/><path d="M2.212 11.577a2 2 0 0 0-.212.896V18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-5.527a2 2 0 0 0-.212-.896L18.55 5.11A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/><path d="M21.946 12.013H2.054"/><path d="M6 16h.01"/></svg>
+      </li>
+      <li class="whitespace-nowrap">Josh Ashby</li>
+      <li class="">
+        <h1 class="text-black dark:text-white">{{ page.title }}</h1>
+      </li>
+    </ol>
+
+    <div class="prose dark:prose-invert">
+      {{ content }}
+    </div>
+  </div>
+
+  <footer class="flex-grow dark:bg-[rgb(from_var(--bashby--page-bg)_r_calc(g-5)_calc(b-5))] border-t border-gray-800 mt-12 flex flex-col items-center justify-center min-h-64">
+    <div class="w-2xl flex flex-row justify-center gap-2 flex-grow">
+      <div class="flex flex-col gap-4 my-12 w-full">
+        <ul class="">
+          <li><a href="/about">About Me</a></li>
+          <li><a href="/resume">Resume</a></li>
+          <li><a href="/projects">Projects</a></li>
+          <li><a href="/blogroll">Blogroll</a></li>
+          <li><a href="/colophon">Colophon</a></li>
+        </ul>
+        <ul class="">
+          {% for social in site.socials %}
+            <li><a href="{{ social[1].url }}">{{ social[1].title }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div class="flex flex-col gap-4 my-12 w-full text-center">
+        <p class="text-sm">
+          This space is tended to by an unproxied meat popsicle. Found an error, or have an improvement?
+          <a href="{{ site.source_url }}/{{ page.path }}">Suggest a correction!</a>
+        </p>
+        <p class="text-sm">
+          Read my
+          <a href="/ai">LLM/AI Policy</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="flex flex-row justify-center my-12 border-t w-2xl">
+      <p class="text-2xl font-caveat text-[#fb2c36]">© Josh Ashby</p>
+    </div>
+  </footer>
+
+  <!-- <script src="/js/non-render-blocking-script.js"></script> -->
+  {% vite_client_tag %}
+  {% vite_javascript_tag application %}
+</body>
+</html>

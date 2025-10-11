@@ -1,0 +1,152 @@
+@import "~/css/tailwind.css";
+
+@import "~/css/annotations.css";
+@import "~/css/callouts.css";
+
+@import "~/css/syntax.css";
+@import "~/css/tag.css";
+
+@import "~/css/default-post.css";
+@import "~/css/photos.css";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --bashby--page-bg: #001923;
+
+  /* --font-warbler: WarblerDisplay; */
+  --font-scientifica: Scientifica;
+  --font-caveat: Caveat;
+  --font-plex: IBMPlex;
+}
+
+@layer base {
+  a {
+    text-decoration-line: underline;
+  }
+}
+
+/* html[data-theme=bashby] { */
+/* --bashby--page-bg: #001923; */
+/* } */
+
+
+/** ============================================================================
+ * Warbler
+ */
+/* @font-face { */
+/*   src: url('/assets/fonts/Warbler/WarblerDisplay-Regular-Testing.woff2') format("woff2"), */
+/*        url('/assets/fonts/Warbler/WarblerDisplay-Regular-Testing.woff') format("woff"); */
+/*   font-family: 'WarblerDisplay'; */
+/*   font-style: normal; */
+/*   font-weight: 400; */
+/* } */
+/**/
+/* @font-face { */
+/*   src: url('/assets/fonts/Warbler/WarblerDisplay-Italic-Testing.woff2') format("woff2"), */
+/*        url('/assets/fonts/Warbler/WarblerDisplay-Italic-Testing.woff') format("woff"); */
+/*   font-family: 'WarblerDisplay'; */
+/*   font-style: italic; */
+/*   font-weight: 400; */
+/* } */
+/**/
+/* @font-face { */
+/*   src: url('/assets/fonts/Warbler/WarblerDisplay-Bold-Testing.woff2') format("woff2"), */
+/*        url('/assets/fonts/Warbler/WarblerDisplay-Bold-Testing.woff') format("woff"); */
+/*   font-family: 'WarblerDisplay'; */
+/*   font-style: normal; */
+/*   font-weight: 700; */
+/* } */
+/**/
+/* @font-face { */
+/*   src: url('/assets/fonts/Warbler/WarblerDisplay-BoldItalic-Testing.woff2') format("woff2"), */
+/*        url('/assets/fonts/Warbler/WarblerDisplay-BoldItalic-Testing.woff') format("woff"); */
+/*   font-family: 'WarblerDisplay'; */
+/*   font-style: italic; */
+/*   font-weight: 700; */
+/* } */
+
+
+/** ============================================================================
+ * Scientifica
+ */
+
+@font-face {
+  src: url('/assets/fonts/Scientifica/scientifica.woff2') format("woff2"),
+       url('/assets/fonts/Scientifica/scientifica.woff') format("woff");
+  font-family: 'Scientifica';
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  src: url('/assets/fonts/Scientifica/scientificaBold.woff2') format("woff2"),
+       url('/assets/fonts/Scientifica/scientificaBold.woff') format("woff");
+  font-family: 'Scientifica';
+  font-style: normal;
+  font-weight: 700;
+}
+
+@font-face {
+  src: url('/assets/fonts/Scientifica/scientificaItalic.woff2') format("woff2"),
+       url('/assets/fonts/Scientifica/scientificaItalic.woff') format("woff");
+  font-family: 'Scientifica';
+  font-style: italic;
+  font-weight: 400;
+}
+
+
+/** ============================================================================
+ * Caveat
+ */
+
+@font-face {
+  src: url('/assets/fonts/Caveat/caveat-latin-wght-normal.woff2') format("woff2");
+  font-family: 'Caveat';
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  src: url('/assets/fonts/Caveat/caveat-latin-ext-wght-normal.woff2') format("woff2");
+  font-family: 'Caveat';
+  font-style: normal;
+  font-weight: 700;
+}
+
+
+/** ============================================================================
+ * IBM Plex Sans
+ */
+
+@font-face {
+  src: url('/assets/fonts/IBM_Plex_Sans/IBMPlexSans-Regular.woff2') format("woff2"),
+       url('/assets/fonts/IBM_Plex_Sans/IBMPlexSans-Regular.woff') format("woff");
+  font-family: 'IBMPlex';
+  font-style: normal;
+  font-weight: 500;
+}
+
+@font-face {
+  src: url('/assets/fonts/IBM_Plex_Sans/IBMPlexSans-Bold.woff2') format("woff2"),
+       url('/assets/fonts/IBM_Plex_Sans/IBMPlexSans-Bold.woff') format("woff");
+  font-family: 'IBMPlex';
+  font-style: normal;
+  font-weight: 700;
+}
+
+@font-face {
+  src: url('/assets/fonts/IBM_Plex_Sans/IBMPlexSans-Italic.woff2') format("woff2"),
+       url('/assets/fonts/IBM_Plex_Sans/IBMPlexSans-Italic.woff') format("woff");
+  font-family: 'IBMPlex';
+  font-style: italic;
+  font-weight: 500;
+}
+
+@font-face {
+  src: url('/assets/fonts/IBM_Plex_Sans/IBMPlexSans-BoldItalic.woff2') format("woff2"),
+       url('/assets/fonts/IBM_Plex_Sans/IBMPlexSans-BoldItalic.woff') format("woff");
+  font-family: 'IBMPlex';
+  font-style: italic;
+  font-weight: 700;
+}
