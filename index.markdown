@@ -1,25 +1,23 @@
 ---
-title: Home of Ashby
+title: Hello!
 ---
 
-# Hello!
-
-I'm Ashby, a [software dev](https://github.com/JoshAshby) but occasionally I [take photos](/photos/) or worse [write](/posts/).
-
-Interested in having me on your team? Check out [this page](/resume) for some more background
-on me, and toss an email my way!
+I'm Ashby, a [software dev](https://github.com/JoshAshby) by day. Occasionally I [take photos](/photos/) or [write posts](/posts/).
 
 Looking to get a hold of me?
- - Send me an email at: hello <span class="text-red-900 dark:text-red-500">(at)</span> joshashby <span class="text-red-900 dark:text-red-500">(dot)</span> com
+ - Send me an email at: hello<span class="text-red-900 dark:text-red-500">[at]</span>joshashby.com
  - Find me on the [libera irc network](https://libera.chat/) as `JoshAshby`
- - Ping me on <a rel="me" href="https://isin.space/@josh">Mastodon</a> as `@josh@isin.space`
- - Ping me on <a rel="me" href="https://bsky.app/profile/isin.space">BlueSky</a> as `@isin.space`
+ - Ping me on <a rel="me" href="{{ site.socials.mastodon.url }}">Mastodon</a> as `{{ site.socials.mastodon.handle }}`
+ - Ping me on <a rel="me" href="{{ site.socials.atproto.url }}">BlueSky/ATProto</a> as `{{ site.socials.atproto.handle }}`
 
-<small>Psst! Did you know that I have an [Atom](/feed.xml) feed of my blog posts available as well‽</small>
+{: .callout}
+Interested in having me on your team? Check out [this page](/resume) for some more background on me, and maybe toss an email my way!
 
 <hr />
 
 #### Recent Posts
+
+<small>Psst! Did you know that I have an [Atom](/feed.xml) feed of my blog posts available as well‽</small>
 
 <div class="flex flex-col gap-y-8">
   {% for post in site.posts limit: 5 %}
