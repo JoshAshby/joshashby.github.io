@@ -1,0 +1,18 @@
+---
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+  <head>
+    <title>{{ site.name }} Blogroll</title>
+    <dateModified>{{ site.time | date_to_rfc822 }}</dateModified>
+    <ownerName>{{ site.name }}</ownerName>
+    <ownerEmail>{{ site.email }}</ownerEmail>
+  </head>
+  <body>
+    <outline text="All">
+      {% for blog in site.data.blogroll.blogs -%}
+      <outline type="rss" text="{{ blog.title }}" title="{{ blog.title }}" xmlUrl="{{ blog.feed_url }}" htmlUrl="{{ blog.url }}"/>
+      {%- endfor %}
+    </outline>
+  </body>
+</opml>

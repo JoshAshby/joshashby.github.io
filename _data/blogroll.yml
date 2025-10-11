@@ -1,0 +1,52 @@
+blogs:
+- title: robacarp.io
+  url: https://robacarp.io/
+  feed_url: https://robacarp.io/atom.xml
+
+- title: p1k3
+  url: https://p1k3.com/
+  feed_url: https://p1k3.com/feed
+
+- title: Tyler Cipriani
+  url: https://tylercipriani.com/
+  feed_url: https://tylercipriani.com/blog/index.atom
+
+- title: SamWho
+  url: https://samwho.dev/
+  feed_url: https://samwho.dev/rss.xml
+
+- title: Julia Evans
+  url: https://jvns.ca/atom.xml
+  feed_url: https://jvns.ca/atom.xml
+
+- title: Tenderlove Making
+  url: https://tenderlovemaking.com
+  feed_url: https://tenderlovemaking.com/atom.xml
+
+- title: Thu Le
+  url: https://thu-le.com/
+  feed_url: https://thu-le.com/feed.xml
+
+- title: mtlynch.io
+  url: https://mtlynch.io/
+  feed_url: https://mtlynch.io/posts/index.xml
+
+- title: Tabletop Whale
+  url: https://tabletopwhale.com/index.html
+  feed_url:
+
+- title: mitchell hashimotto
+  url: https://mitchellh.com/
+  feed_url: https://mitchellh.com/feed.xml
+
+- title: overreacted
+  url: https://overreacted.io/
+  feed_url: https://overreacted.io/atom.xml
+
+- title: Johanna Larsson
+  url: https://jola.dev/
+  feed_url: https://jola.dev/rss.xml
+
+- title: David Bushell
+  url: https://dbushell.com/
+  feed_url: https://dbushell.com/merge/rss.xml
