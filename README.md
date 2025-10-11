@@ -5,16 +5,23 @@ This repo contains the Jekyll setup for my personal site.
 Dependencies are managed via [`mise`](https://mise.jdx.dev/) and is set up to
 use [`hivemind`](https://github.com/DarthSim/hivemind) to run everything easily:
 
+```
+# .miserc.toml
+env = ["dev"]
+```
+
+Then:
+
 ```shell
-mise set MISE_ENV=dev --file mise.local.toml
 mise install
 mise dev
 ```
 
 The site is deployed to GitHub Pages using their newer "artifact deploy" action
 [`actions/deploy-pages@v4`](github.com/actions/deploy-pages) setup which
-greatly simplified the process. TL;DR: Install all the deps, then run `rake
-all`.
+greatly simplified the process.
+
+TL;DR: Install all the deps, then run `rake all`.
 
 ### Styling / JS
 
