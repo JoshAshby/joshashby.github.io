@@ -3,8 +3,6 @@ title: Posts
 permalink: "/posts/"
 ---
 
-# Posts Archive
-
 <!-- Thanks a ton Rob, I owe you 42 bajillion dollars -->
 {% capture post_years %}
   {% for post in site.posts %}
@@ -24,6 +22,8 @@ permalink: "/posts/"
 </p>
 
 [By Tag](/tags)
+
+<small>Psst! Did you know that I have an [Atom](/feed.xml) feed of my blog posts available as well‽</small>
 
 ## All Posts
 

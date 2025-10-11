@@ -3,9 +3,7 @@ title: Photos
 permalink: "/photos/"
 ---
 
-# Shutter Clicks
-
-Some times I take photographs, and in rarer times some of the better ones might end up here. Interested in my [gear?](/photo-gear/)
+Some times I take photographs, and in rarer times some of the better ones might end up here. Interested in my [gear?](/photos/gear/)
 
 You can find more of my photos on [my flickr](https://www.flickr.com/photos/joshashby/) {% aside page. %}It's not well maintained by me at the moment, lagging behind by a few years, but it has a lot of my earlier history.{% endaside %}
 

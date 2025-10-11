@@ -2,8 +2,6 @@
 title: Posts by Tag
 ---
 
-## All Tags
-
 <div class="flex flex-row flex-wrap gap-x-1 items-center justify-center grow">
   {% capture tag_names %}
     {% for i in site.tags %}

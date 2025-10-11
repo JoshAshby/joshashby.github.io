@@ -3,8 +3,6 @@ title: Projects
 permalink: "/projects/"
 ---
 
-# Projectfolio
-
 I've got plenty of side projects that range from small experiments, helpful
 little tools, to learning aids for new languages or frameworks. Once in a
 while they grow into something of their own that I want to share, or at the
