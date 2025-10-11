@@ -8,7 +8,8 @@ yarn-error.log
 deploy-*.tar.gz
 .env
 _raw_photos
-/photos/
+assets/photos/
+assets/fonts/Warbler/
 
 # Vite Ruby
 /public/vite
