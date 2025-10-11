@@ -26,28 +26,25 @@ primaryTechnologies:
   - Elasticsearch
   - Redis
   - CSS/Tailwind
-  - Bash
+  - Shells (Bash/ZSH/FiSH)
   - Terraform
-  - Server-Side Swift
 
 primaryTools:
   - Git
   - Jujutsu
-  - Fossil-SCM
+  - systemd
   - Terraform
-  - Heroku
   - AWS
   - Digital Ocean
   - Fly.io
-  - Ansible
-  - Chef
+  - Mise
 
 notableWork:
   - "As a consultant and contractor, I've helped teams refactor and architect large TypeScript/React and Elixir/Phoenix code bases to reduce operational costs and risk of mistakes, and increase developer speed and product alignment."
   - "I architected and developed an extensive in-house ETL framework in Ruby, that transformed data from a number of sources including Elasticsearch, Postgres, Google Sheets, External APIs and Redis into a data lake stored in AWS Redshift."
 
 workExperience:
-  - role: Senior Engineer
+  - role: Senior Software Engineer
     hats:
       - Senior DevOps Engineer
     company: FinalForms
@@ -62,8 +59,14 @@ workExperience:
       - CSS
       - JavaScript/CoffeeScript
       - Stimulus
+      - Lambda
+      - systemd
     highlights:
-      - Implemented a data report driven process for identifying slow tests and under utilized test runners, leading to a reduction of CI runtimes from 1 hour, 30 minutes to 20 minutes. 
+      - Upgraded >500k lines of Rails 6.1/Sidekiq 5/Ruby 3.3 application to Rails 8.1/Sidekiq 8/Ruby 4.0
+      - Modernized deployment infrastructure to leverage modern systemd and AWS features such as SSM Parameter Store, EC2 Instance Connect, Target and Timer units.
+      - Implemented a data report driven process for identifying slow tests and under utilized test runners, leading to a reduction of CI runtimes from 1 hour, 30 minutes to under 40 minutes.
+      - Implemented a Slack bot to help manage devops tasks such as scaling ASGs and deploying metric dashboards into Slack.
+      - Mentored engineers on topics including Rails patterns, testing best practices and system architecture.
 
   - role: Staff Data Engineer
     company: Lifespark
