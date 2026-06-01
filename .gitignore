@@ -8,7 +8,7 @@ yarn-error.log
 deploy-*.tar.gz
 .env
 _raw_photos
-photos
+/photos/
 
 # Vite Ruby
 /public/vite
