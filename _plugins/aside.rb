@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+require "nokogiri"
 
 module Jekyll
   module Tags
@@ -44,6 +45,66 @@ module Jekyll
       end
     end
   end
+end
+
+# Converts a <mark> wrapped footnote from Kramdown into an aside Annotation
+module MarkedFootnotesToAsides
+  module_function def call(content)
+    doc = Nokogiri::HTML5::Document.parse(content)
+
+    doc.css("mark > sup").each do |node|
+      reference_id = node.children.attr("href").value.delete_prefix("#")
+      reference_content = doc.at_css(".footnotes [id=\"#{reference_id}\"] > p")
+
+      mark = node.parent
+      footnote_li = reference_content.parent
+
+      id = reference_id.delete_prefix("fn:")
+      classes = node.parent.attr("class") || ""
+
+      color = case classes.split(" ")
+      in [*, "red", *] then "-red"
+      in [*, "orange", *] then "-orange"
+      in [*, "yellow", *] then "-yellow"
+      in [*, "green", *] then "-green"
+      in [*, "blue", *] then "-blue"
+      in [*, "purple", *] then "-purple"
+      else "-gray"
+      end
+
+      anchor = Nokogiri::XML::Node.new("a", doc) do |node|
+        node.children = mark.children
+        node["href"] = "annotation-#{id}"
+        node["class"] = ["annotation-trigger", color, *classes].join(" ")
+      end
+      annotation = Nokogiri::XML::Node.new("span", doc) do |node|
+        node.children = reference_content.children
+        node["id"] = "annotation-#{id}"
+        node["class"] = "annotation"
+      end
+
+      mark.add_next_sibling(anchor)
+      anchor.add_next_sibling(annotation)
+
+      annotation.at_css('a[role="doc-backlink"]').remove
+      anchor.at_css('sup').remove
+      footnote_li.remove
+      mark.remove
+    end
+
+    doc.to_html
+  end
+end
+
+# Only convert the output, rather than the post contents, so that plugins like
+# jekyll-feed still get the normal Kramdown footnotes instead, which render
+# nicer in readers.
+Jekyll::Hooks.register :documents, :post_render, priority: :low do |doc|
+  doc.output = MarkedFootnotesToAsides.call(doc.output)
+end
+
+Jekyll::Hooks.register :pages, :post_render, priority: :low do |page|
+  page.output = MarkedFootnotesToAsides.call(page.output)
 end
 
 Liquid::Template.register_tag('aside', Jekyll::Tags::Aside)
