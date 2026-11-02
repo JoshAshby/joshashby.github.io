@@ -1,6 +1,3 @@
-require "jekyll/vite"
-ViteRuby.install_tasks
-
 task :all => [:resume_pdf, :build]
 
 desc "Builds the PDF version of my resume using Typst"

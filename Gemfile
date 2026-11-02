@@ -4,8 +4,6 @@ gem "jekyll", "~> 4.2.1"
 gem "rake", "~> 13.1"
 
 group :jekyll_plugins do
-  gem "jekyll-vite"
-
   gem "jekyll-feed", "~> 0.16"
   gem "jekyll-sitemap"
   # gem "jekyll-seo-tag"

@@ -69,7 +69,6 @@ defaults:
 excerpt_separator: <!--more-->
 
 plugins:
-  - jekyll/vite
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-admin
