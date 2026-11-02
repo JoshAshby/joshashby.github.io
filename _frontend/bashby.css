@@ -1,13 +1,33 @@
-@import "~/css/tailwind.css";
+@import "tailwindcss" source("../");
 
-@import "~/css/annotations.css";
-@import "~/css/callouts.css";
+@plugin "@tailwindcss/typography";
 
-@import "~/css/syntax.css";
-@import "~/css/tag.css";
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
 
-@import "~/css/default-post.css";
-@import "~/css/photos.css";
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+/* @layer base { */
+/*   *, */
+/*   ::after, */
+/*   ::before, */
+/*   ::backdrop, */
+/*   ::file-selector-button { */
+/*     border-color: var(--color-gray-200, currentcolor); */
+/*   } */
+/* } */
+
+@import "./css/annotations.css";
+@import "./css/callouts.css";
+
+@import "./css/syntax.css";
+@import "./css/tag.css";
+
+@import "./css/default-post.css";
+@import "./css/photos.css";
 
 @custom-variant dark (&:where(.dark, .dark *));
 

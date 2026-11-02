@@ -13,11 +13,12 @@
 
   {% feed_meta %}
 
-  {% vite_stylesheet_tag gallery %}
-
+  <link rel="stylesheet" href="/assets/gallery.css" media="screen">
   <style>
   {{ page.style }}
   </style>
+
+  {% importmap application %}
 </head>
 
 <body class="w-full min-h-full max-h-screen h-screen md:overflow-hidden bg-black">
@@ -84,7 +85,5 @@
     </footer>
   </div>
 
-  {% vite_client_tag %}
-  {% vite_javascript_tag application %}
 </body>
 </html>

@@ -9,7 +9,7 @@
 
   <!-- <script src="/js/render-blocking-scripts.js"></script> -->
   <script>
-    document.documentElement.classList.replace('no-js', 'js');
+    document.documentElement.classList.replace("no-js", "js");
   </script>
 
   <!-- <link rel="stylesheet" href="/css/styles.css"> -->
@@ -17,10 +17,12 @@
 
   <!-- <script src="/js/non-render-blocking-script.js" type="module"></script> -->
 
-  {% vite_stylesheet_tag bashby %}
+  <link rel="stylesheet" href="/assets/bashby.css" media="screen">
   <style>
   {{ page.style }}
   </style>
+
+  {% importmap application %}
 
   <link rel="icon" href="/favicon.ico">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -139,7 +141,5 @@
   </footer>
 
   <!-- <script src="/js/non-render-blocking-script.js"></script> -->
-  {% vite_client_tag %}
-  {% vite_javascript_tag application %}
 </body>
 </html>
