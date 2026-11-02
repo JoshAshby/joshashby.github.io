@@ -7,15 +7,10 @@ node_modules
 yarn-error.log
 deploy-*.tar.gz
 .env
-_raw_photos
-assets/photos/
-assets/fonts/Warbler/
-
-# Vite Ruby
-/public/vite
-/public/vite-dev
-/public/vite-test
-node_modules
 *.local
 .DS_Store
 
+_raw_photos
+assets/photos/
+assets/fonts/Warbler/
+assets/*.css
