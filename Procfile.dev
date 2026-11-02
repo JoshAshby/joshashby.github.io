@@ -1,2 +1,3 @@
-jekyll: bin/jekyll-vite wait && bin/jekyll serve --config _config.yml,_config.dev.yml --livereload --drafts --future --trace
-resume: mise exec watchexec@latest -- watchexec -w _data/resume.yml -w resume/_resume2023.typ bundle exec rake resume_pdf
+jekyll: mise jekyll
+tailwind: mise watch tailwind --exts markdown,md,html,css
+resume: mise watch resume -w _data/resume.yml -w resume/_resume2023.typ

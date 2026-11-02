@@ -2,5 +2,8 @@
 hivemind = "latest"
 aws-cli = "latest"
 
+[tasks.jekyll]
+run = "bin/jekyll serve --config _config.yml,_config.dev.yml --livereload --drafts --future --trace"
+
 [tasks.dev]
 run = "hivemind Procfile.dev"

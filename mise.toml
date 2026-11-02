@@ -1,4 +1,17 @@
 [tools]
-ruby = "3.1.0"
-node = "23.6.0"
+"aqua:tailwindlabs/tailwindcss" = "4.3.3"
+ruby = "4.0.9"
 typst = "0.13.1"
+
+[tasks.resume]
+run = "typst compile --root=./ --font-path=assets/fonts/ resume/_resume2023.typ resume.pdf"
+# run = "mise exec watchexec@latest -- watchexec -w _data/resume.yml -w resume/_resume2023.typ bundle exec rake resume_pdf"
+
+[tasks.tailwind]
+run = [
+  "tailwindcss -i ./_frontend/bashby.css -o ./assets/bashby.css",
+  "tailwindcss -i ./_frontend/gallery.css -o ./assets/gallery.css",
+]
+
+[tasks.build]
+run = "bundle exec jekyll build --baseurl"
