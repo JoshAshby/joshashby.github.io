@@ -29,6 +29,9 @@ url: "https://joshisa.ninja" # the base hostname & protocol for your site, e.g. 
 cdn: "https://photos.joshisa.ninja"
 source_url: "https://github.com/JoshAshby/joshashby.github.io/blob/source"
 
+kramdown:
+  input: CFM
+
 theme_color: "#005e83"
 socials:
   atproto:
