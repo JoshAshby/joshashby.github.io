@@ -63,7 +63,7 @@
     #line(length: 100%, stroke: 1pt + primary_color)
 
     #resume.aboutMe \
-    *Primary Technologies:* #resume.primaryTechnologies.join(", ")
+    *Primary Technologies:* #resume.primaryTechnologies.join(", ") \
     *Comfortable Tools & Platforms:* #resume.primaryTools.join(", ")
 
     == Notable Work

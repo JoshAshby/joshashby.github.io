@@ -30,8 +30,7 @@ primaryTechnologies:
   - Terraform
 
 primaryTools:
-  - Git
-  - Jujutsu
+  - Git/Jujutsu
   - systemd
   - Terraform
   - AWS
@@ -59,13 +58,13 @@ workExperience:
       - CSS
       - JavaScript/CoffeeScript
       - Stimulus
-      - Lambda
+      - AWS Lambda
       - systemd
     highlights:
-      - Upgraded >500k lines of Rails 6.1/Sidekiq 5/Ruby 3.3 application to Rails 8.1/Sidekiq 8/Ruby 4.0
-      - Modernized deployment infrastructure to leverage modern systemd and AWS features such as SSM Parameter Store, EC2 Instance Connect, Target and Timer units.
-      - Implemented a data report driven process for identifying slow tests and under utilized test runners, leading to a reduction of CI runtimes from 1 hour, 30 minutes to under 40 minutes.
-      - Implemented a Slack bot to help manage devops tasks such as scaling ASGs and deploying metric dashboards into Slack.
+      - Upgraded a >1M lines of code, Rails 6.1/Sidekiq 5/Ruby 3.3 application to Rails 8.1/Sidekiq 8/Ruby 4.0.
+      - Modernized deployment infrastructure to leverage modern systemd and AWS features such as SSM Parameter Store, EC2 Instance Connect, systemd Target, Service and Timer units.
+      - Implemented a data driven  process for identifying slow tests and under utilized CI runners, leading to a reduction of CI runtimes from 1 hour, 30 minutes to under 40 minutes and a clear set of tests to refactor.
+      - Implemented a Roda/Ruby 4.0 based Slack bot on top of AWS Lambda to help manage DevOps tasks such as scaling ASGs and deploying metric dashboards into Slack.
       - Mentored engineers on topics including Rails patterns, testing best practices and system architecture.
 
   - role: Staff Data Engineer
