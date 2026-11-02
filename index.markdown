@@ -2,7 +2,7 @@
 title: Hello!
 ---
 
-I'm Ashby, a [software dev](https://github.com/JoshAshby) by day. Occasionally I [take photos](/photos/) or [write posts](/posts/).
+I'm Ashby, a [software dev](https://github.com/JoshAshby) by day. Occasionally I [write posts](/posts/) and [take photos](/photos/).
 
 Looking to get a hold of me?
  - Send me an email at: hello<span class="text-red-900 dark:text-red-500">[at]</span>joshashby.com
