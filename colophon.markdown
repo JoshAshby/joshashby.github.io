@@ -8,7 +8,7 @@ permalink: "/colophon"
 - [Jekyll](https://jekyllrb.com/) - a Ruby based static site generator
 - A few custom Jekyll plugins
 - [TailwindCSS](https://tailwindcss.com/) with the Prose plugin
-- Couple lines of hand rolled JS
+- Couple lines of hand rolled JS managed by an importmap
 - Stored on [GitHub](https://github.com/JoshAshby/joshashby.github.io/tree/source)
 - Currently built and published via GitHub pages
 - [Typst](https://github.com/typst/typst) for the PDF version of my resume
@@ -31,20 +31,54 @@ included in the GitHub pages release.
 
 Previous iterations of this site used system fonts, but I've recently switched
 over to using [Scientifica](https://github.com/oppiliappan/scientifica) for page headers and small accents, [Caveat](https://fontsource.org/fonts/caveat)
-for more accents, and [IBM Plex](https://www.ibm.com/plex/) for everything else.
+for more accents, and [IBM Plex](https://www.ibm.com/plex/) for everything else. I also use IBM Plex in the
+PDF version of my resume.
 
 ### Iconography
 
 Icons around the site come from the [Lucid](https://lucide.dev/) icon project. In the PDF version
-of my resume I also use [Feather](https://feathericons.com/) icons, which Lucid is a fork of.
+of my resume I also use [Feather](https://feathericons.com/) icons (which Lucid is a fork of).
 
 ### Components
 
-My {% aside annotations/footnotes %}such as this one{% endaside %} feature is
+#### Footnotes
+
+My ==aside annotations/footnotes[^footnote-demo]== feature is
 based on an article I read a _long_ time ago and unfortunately I've lost the
 original source. I believe it was a regional radio news station's site, and was
 a long form essay on someones life. If you know the source, please email me so
 I can give proper attribution here!
+
+[^footnote-demo]: such as this one
+
+This started life as a basic Liquid tag and was one of my first forays into
+Jekyll plugins. Originally you'd define an annotation like so:
+
+```liquid
+{% raw %}
+{% aside red this would be the annotations 'title' %}and this would be the text
+that expands out when the title is clicked on%{ endaside %}
+{% endraw %}
+```
+
+Which, as you can imagine, made for a painful authoring experience. These days
+I've borrowed a combo of features from [Kramdown](https://kramdown.gettalong.org/) in the way of footnotes and
+Span IALs and Obsidian and their `==highlighted==` syntax to munge a "markdown
+native" version together that uses highlights and footnotes. I've got two
+additional Jekyll plugins to support this, one that adds the highlight syntax
+to Kramdown and one that converts marked footnotes into annotations.
+
+These days I can write like this to get the same output in HTML:
+
+```markdown
+==🔴this annotation is red[^demo-1]== and ==i can also pick a custom color[^demo-2]=={:.-orange.squared} via Kramdown span level IALs
+
+[^demo-1]: and functions nicer with having small markdown and pulling the
+    injection out into a separate block
+
+[^demo-2]: which are also pretty neat.
+```
+
 
 ### Inspirations & Credits
 
