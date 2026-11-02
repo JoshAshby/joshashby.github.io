@@ -35,8 +35,8 @@
   <meta name="description" content="{{ page.description }}">
 
   <meta property="og:url" content="{{ page.url | absolute_url | replace: "index.html", "" | escape_once }}">
-  {% if page.header_image %}
-  <meta property="og:image" content="{{ page.header_image }}">
+  {% if page.open_graph_image %}
+  <meta property="og:image" content="{{ page.open_graph_image | absolute_url | escape_once }}">
   {% endif %}
 
   <meta property="fediverse:creator" content="{{ site.socials.mastodon.handle }}" >

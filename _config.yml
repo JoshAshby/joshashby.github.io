@@ -133,6 +133,8 @@ exclude:
   - Rakefile
   - Procfile.dev
   - "*.typ"
+  - "*.rb"
+  - "*.toml"
 
 include:
   - resume.pdf
@@ -149,3 +151,9 @@ page_gen:
     template: 'default-gallery'
     name: 'slug'
     dir: 'photographs'
+
+open_graph_image_generator:
+  template: "_layouts/page_open-graph.typ"
+  output_dir: "assets/open_graph/"
+  font_paths:
+    - "assets/fonts/"

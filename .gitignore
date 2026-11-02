@@ -9,8 +9,10 @@ deploy-*.tar.gz
 .env
 *.local
 .DS_Store
+.open_graph/
 
 _raw_photos
+tmp/
 assets/photos/
 assets/fonts/Warbler/
 assets/*.css
