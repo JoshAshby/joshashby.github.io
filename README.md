@@ -1,6 +1,9 @@
 This repo contains the Jekyll setup for my personal site.
 
+
 ## Getting Started
+
+TL;DR: Install all the deps, then run `mise dev`.
 
 Dependencies are managed via [`mise`](https://mise.jdx.dev/) and is set up to
 use [`hivemind`](https://github.com/DarthSim/hivemind) to run everything easily:
@@ -14,27 +17,32 @@ Then:
 
 ```shell
 mise install
+bundle install
 mise dev
 ```
 
 The site is deployed to GitHub Pages using their newer "artifact deploy" action
-[`actions/deploy-pages@v4`](github.com/actions/deploy-pages) setup which
-greatly simplified the process.
+[`actions/deploy-pages@v4`](github.com/actions/deploy-pages) setup which greatly simplified the process.
 
-TL;DR: Install all the deps, then run `rake all`.
 
 ### Styling / JS
 
-Vite bundles everything together, see `_frontend/entrypoints/`.
+See `mise.toml`'s `tailwind` task for more information.
 
-There isn't much in the way of JS, just some light utils for show/hide.
+Tailwind is the only frontend build step, taking the entrypoints from
+`_frontend/` and dumping the generated output into `assets/`. Some older parts
+of the site use a mix of Tailwind via `@apply` and vanilla css.
 
-Tailwindcss provides styling. Some older parts of the site use a mix of
-Tailwind via `@apply` and vanilla css.
+There isn't much in the way of JS, just some light utils for show/hide, and as
+such they are managed via importmaps. There is a custom Jekyll plugin supplying
+an `{% importmap <entrypoints> %}` tag that generates the JSON and `<script>`
+tags from `./importmap.rb`.
+
 
 ### Utils
 
 jekyll-admin provides a nice web based authoring interface for new content.
+
 
 ### Resume
 
@@ -51,6 +59,7 @@ typst compile --root=./ --font-path=assets/fonts/ resume/_resume2023.typ resume.
 
 And then copied into the final site after Jekyll is ran. This allows the two
 versions to remain in sync and always up to date.
+
 
 ### Photography Page
 

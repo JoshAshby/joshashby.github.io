@@ -14,4 +14,6 @@ run = [
 ]
 
 [tasks.build]
-run = "bundle exec jekyll build --baseurl"
+depends = ["resume", "tailwind"]
+run = "bundle exec jekyll build --baseurl {{env.JEKYLL_BASE_URL}}"
+
