@@ -2,20 +2,14 @@
 <html lang="en" class="no-js dark">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="text-scale" content="scale">
 
   <title>{{ site.name }} | {{ page.title }}</title>
 
-  <!-- <script src="/js/render-blocking-scripts.js"></script> -->
   <script>
     document.documentElement.classList.replace("no-js", "js");
   </script>
-
-  <!-- <link rel="stylesheet" href="/css/styles.css"> -->
-  <!-- <link rel="stylesheet" href="/css/print.css" media="print"> -->
-
-  <!-- <script src="/js/non-render-blocking-script.js" type="module"></script> -->
 
   <link rel="stylesheet" href="/assets/bashby.css" media="screen">
   <style>
@@ -53,7 +47,7 @@
 </head>
 
 <body class="flex flex-col min-h-screen dark:bg-(--bashby--page-bg) dark:text-white">
-  <header class="sticky -top-px z-10 w-3xl mx-auto">
+  <header class="sticky -top-px z-10 w-full md:w-3xl mx-auto p-4 md:p-0">
     <div class="mt-4 mb-4 flex flex-row items-center w-full px-2 py-1 rounded-sm bg-sky-900/60 backdrop-blur-[4px] shadow-sm">
       <a href="/" class="text-md text-white hover:text-[#fb2c36] font-scientifica no-underline">
         <div class="bg-[#005e83] hover:bg-[rgb(from_#005e83_r_g_calc(b+10))] rounded-md h-6 w-6 p-1 relative flex justify-center items-center">
@@ -86,7 +80,7 @@
     </div>
   </header>
 
-  <div class="w-2xl h-full mx-auto dark:text-white font-plex">
+  <div class="w-full md:w-2xl h-full mx-auto dark:text-white font-plex p-4 md:p-0">
     <ol class="
       my-12 w-full flex flex-row items-baseline font-scientifica text-gray-500 text-2xl
       *:flex :align-center
@@ -101,13 +95,13 @@
       </li>
     </ol>
 
-    <div class="prose dark:prose-invert">
+    <div class="mx-auto prose dark:prose-invert">
       {{ content }}
     </div>
   </div>
 
   <footer class="flex-grow dark:bg-[rgb(from_var(--bashby--page-bg)_r_calc(g-5)_calc(b-5))] border-t border-gray-800 mt-12 flex flex-col items-center justify-center min-h-64">
-    <div class="w-2xl flex flex-row justify-center gap-2 flex-grow">
+    <div class="w-full md:w-2xl flex flex-col md:flex-row justify-center gap-2 flex-grow p-4 md:p-0">
       <div class="flex flex-col gap-4 my-12 w-full">
         <ul class="">
           <li><a href="/about">About Me</a></li>
@@ -135,11 +129,10 @@
       </div>
     </div>
 
-    <div class="flex flex-row justify-center my-12 border-t w-2xl">
+    <div class="flex flex-row justify-center my-12 border-t w-full md:w-2xl">
       <p class="text-2xl font-caveat text-[#fb2c36]">© Josh Ashby</p>
     </div>
   </footer>
 
-  <!-- <script src="/js/non-render-blocking-script.js"></script> -->
 </body>
 </html>
