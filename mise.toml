@@ -4,8 +4,9 @@ ruby = "4.0.9"
 typst = "0.13.1"
 
 [tasks.resume]
+sources = ["_data/resume.yml", "resume/_resume2023.typ"]
+outputs = ["resume.pdf"]
 run = "typst compile --root=./ --font-path=assets/fonts/ resume/_resume2023.typ resume.pdf"
-# run = "mise exec watchexec@latest -- watchexec -w _data/resume.yml -w resume/_resume2023.typ bundle exec rake resume_pdf"
 
 [tasks.tailwind]
 run = [
@@ -15,5 +16,5 @@ run = [
 
 [tasks.build]
 depends = ["resume", "tailwind"]
-run = "bundle exec jekyll build"
+run = "bundle exec jekyll build --baseurl {{ JEKYLL_BASE_URL | default(value=\"/\") }}"
 
