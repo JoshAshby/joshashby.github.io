@@ -18,3 +18,11 @@
     </div>
   </div>
 </header>
+
+{% if page.open_graph_image.url and site.serving %}
+<details>
+<summary>Debug Details</summary>
+
+{% include figure.html src=page.open_graph_image.url caption="Open Graph Image Preview" %}
+</details>
+{% endif %}
