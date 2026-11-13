@@ -50,3 +50,8 @@ blogs:
 - title: David Bushell
   url: https://dbushell.com/
   feed_url: https://dbushell.com/merge/rss.xml
+
+- title: Brandur
+  url: https://brandur.org/
+  feed_url: https://brandur.org/articles.atom
+
