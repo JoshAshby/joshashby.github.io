@@ -19,7 +19,7 @@
   </div>
 </header>
 
-{% if page.open_graph_image.url and site.serving %}
+{% if jekyll.environment == "development" %}
 <details>
 <summary>Debug Details</summary>
 

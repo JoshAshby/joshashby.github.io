@@ -20,7 +20,7 @@ module Jekyll
     attr_reader :config, :root
 
     safe true
-    priority :high
+    priority :lowest
 
     def initialize(site_config = {})
       @config = site_config.fetch("open_graph_image_generator", {})
