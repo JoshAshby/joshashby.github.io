@@ -1,11 +1,17 @@
 a.annotation-trigger {
-  @apply px-2 py-1 rounded-md text-black;
   text-decoration: none;
   white-space: nowrap;
+  color: black;
+
+  /* @apply px-2 py-1 rounded-md; */
+  padding-inline: calc(var(--spacing) * 2);
+  padding-block: var(--spacing);
+
+  border-radius: var(--radius-md);
 }
 
 a.annotation-trigger:visited {
-  @apply text-black;
+  color: black;
 }
 
 a.annotation-trigger::after {
@@ -20,65 +26,78 @@ a.annotation-trigger.-active::after {
 }
 
 a.annotation-trigger + span.annotation {
-  @apply hidden;
+  display: none;
 }
 
 a.annotation-trigger.-active + span.annotation {
-  @apply block my-2 px-5 py-3 rounded-md text-black;
+  display: block;
+  color: black;
+
+  /* @apply my-2 px-5 py-3 rounded-md; */
+  margin-block: calc(var(--spacing) * 2);
+  padding-inline: calc(var(--spacing) * 5);
+  padding-block: calc(var(--spacing) * 3);
+
+  border-radius: var(--radius-md);
+
+  & a {
+    color: black;
+  }
 }
 
+
 a.annotation-trigger.-gray {
-  @apply bg-gray-300;
+  background: var(--color-gray-300);
 
   & + span.annotation {
-    @apply bg-gray-200;
+    background: var(--color-gray-200);
   }
 }
 
 a.annotation-trigger.-red {
-  @apply bg-red-400;
+  background: var(--color-red-400);
 
   & + span.annotation {
-    @apply bg-red-300;
+    background: var(--color-red-300);
   }
 }
 
 a.annotation-trigger.-orange {
-  @apply bg-orange-400;
+  background: var(--color-orange-400);
 
   & + span.annotation {
-    @apply bg-orange-300;
+    background: var(--color-orange-300);
   }
 }
 
 a.annotation-trigger.-yellow {
-  @apply bg-yellow-400;
+  background: var(--color-yellow-400);
 
   & + span.annotation {
-    @apply bg-yellow-300;
+    background: var(--color-yellow-300);
   }
 }
 
 a.annotation-trigger.-blue {
-  @apply bg-blue-400;
+  background: var(--color-blue-400);
 
   & + span.annotation {
-    @apply bg-blue-300;
+    background: var(--color-blue-300);
   }
 }
 
 a.annotation-trigger.-green {
-  @apply bg-green-400;
+  background: var(--color-green-400);
 
   & + span.annotation {
-    @apply bg-green-300;
+    background: var(--color-green-300);
   }
 }
 
 a.annotation-trigger.-purple {
-  @apply bg-purple-400;
+  background: var(--color-purple-400);
 
   & + span.annotation {
-    @apply bg-purple-300;
+    background: var(--color-purple-300);
   }
 }

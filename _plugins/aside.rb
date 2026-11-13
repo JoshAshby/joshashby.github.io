@@ -47,8 +47,10 @@ module Jekyll
   end
 end
 
+Liquid::Template.register_tag("aside", Jekyll::Tags::Aside)
+
 # Converts a <mark> wrapped footnote from Kramdown into an aside Annotation
-module MarkedFootnotesToAsides
+module MarkedFootnotesToAnnotations
   module_function def call(content)
     doc = Nokogiri::HTML5::Document.parse(content)
 
@@ -100,12 +102,11 @@ end
 # jekyll-feed still get the normal Kramdown footnotes instead, which render
 # nicer in readers.
 Jekyll::Hooks.register :documents, :post_render, priority: :high do |doc|
-  doc.output = MarkedFootnotesToAsides.call(doc.output)
+  doc.output = MarkedFootnotesToAnnotations.call(doc.output)
 end
 
 Jekyll::Hooks.register :pages, :post_render, priority: :high do |page|
-next unless page.ext == ".html"
-  page.output = MarkedFootnotesToAsides.call(page.output)
+  next if page.ext == ".xml"
+  page.output = MarkedFootnotesToAnnotations.call(page.output)
 end
 
-Liquid::Template.register_tag("aside", Jekyll::Tags::Aside)
