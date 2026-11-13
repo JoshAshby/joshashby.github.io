@@ -68,6 +68,7 @@ defaults:
       type: "projects"
     values:
       layout: "default-project"
+      showcase: false
 
 excerpt_separator: <!--more-->
 
@@ -153,7 +154,11 @@ page_gen:
     dir: 'photographs'
 
 open_graph_image_generator:
-  template: "_layouts/page_open-graph.typ"
+  inputs:
+    site_name:
+      scope: site
+      path: name
+  default_template: "_layouts/page_open-graph.typ"
   output_dir: "assets/open_graph/"
   font_paths:
     - "assets/fonts/"

@@ -1,5 +1,5 @@
 #let title = sys.inputs.at("title")
-#let subtitle = sys.inputs.at("subtitle", default: "")
+#let site_name = sys.inputs.at("site_name")
 #let date = sys.inputs.at("date", default: "")
 #let tags = sys.inputs.at("tags", default: "").split(",").filter(x => x.len() != 0)
 
@@ -64,5 +64,5 @@
     ]
   ],
 
-  align(right + horizon)[====== Josh Ashby]
+  align(right + horizon)[====== #site_name]
 )

@@ -1,15 +1,16 @@
 # frozen-string-literal: true
-require "debug"
 
 module Jekyll
   class OpenGraphImageGenerator < Generator
+    class OpenGraphError < StandardError
+    end
+
     class TypstError < StandardError
     end
 
     class OpenGraphFile < StaticFile
       def initialize(site, base, dir, name, dest)
         super(site, base, dir, name)
-        @name = name
         @dest = dest
       end
 
@@ -22,10 +23,10 @@ module Jekyll
     priority :high
 
     def initialize(site_config = {})
-      @config = site_config["open_graph_image_generator"]
+      @config = site_config.fetch("open_graph_image_generator", {})
       @root = Pathname.new(site_config["source"])
 
-      @generated_files ||= {}
+      @generated_files = {}
     end
 
     def generate(site)
@@ -38,21 +39,12 @@ module Jekyll
     private
 
     def generate_image(site, document)
-      template_path = document.data.fetch(
-        "open_graph_image_template",
-        config.fetch("template")
-      )
+      template_path = document_config(document, "template", default: config.fetch("default_template"))
 
-      output_hash = Digest::MD5.hexdigest(
-        [
-          document.data["slug"],
-          template_path,
-          root.join(template_path).read
-        ].join("")
-      )
-      cache = cache_dir / "#{output_hash}.png"
+      cache_key = cache_hash(document, template_path)
+      cache = cache_dir / "#{cache_key}.png"
 
-      @generated_files[output_hash] ||= OpenGraphFile.new(
+      static_file = @generated_files[cache_key] ||= OpenGraphFile.new(
         site,
         site.source,
         cache.parent.relative_path_from(site.source).to_s,
@@ -60,22 +52,66 @@ module Jekyll
         config.fetch("output_dir")
       )
 
-      static_file = @generated_files[output_hash]
       site.static_files << static_file unless site.static_files.include?(static_file)
-      document.data["open_graph_image"] = static_file.destination("")
+      document.data["open_graph_image"] ||= {}
+      document.data["open_graph_image"]["url"] = static_file.destination("") # TODO: should this be something other than ""?
 
       return if cache.exist?
       typst(
         template_path,
         cache.to_s,
         title: document.data["title"],
-        # subtitle: document.data[""],
         date: document.data["date"]&.to_date&.to_s || "",
-        tags: document.data["tags"]&.join(",") || ""
+        tags: document.data["tags"]&.join(",") || "",
+        **template_inputs(site, document)
       )
     end
 
+    # Allows additional data to be piped into the templates from a dot-path in
+    # either "document" or "site"
+    #
+    #    open_graph_image:
+    #     inputs:
+    #       slug: "slug"
+    #       site_name:
+    #         scope: site
+    #         path: "name"
+    #
+    def template_inputs(site, document)
+      input_map = document_config(document, "inputs", default: config.fetch("inputs", {}))
+
+      input_map.to_h do |key, scope_and_path|
+        scope_and_path = { "scope" => "document", "path" => scope_and_path } unless scope_and_path.is_a?(Hash)
+
+        scope = case scope_and_path["scope"]
+        when "document" then document.data
+        when "site" then site.config
+        else raise OpenGraphError, "Invalid scope '#{scope}' in document open_graph_image metadata"
+        end
+
+        path = scope_and_path["path"].split(".")
+
+        [key, scope.dig(*path)]
+      end
+    end
+
+    def document_config(document, *keys, default: nil)
+      doc_data = document.data.fetch("open_graph_image", {}).dig(*keys)
+      doc_data || default
+    end
+
     def cache_dir = root.join(config.fetch("cache_dir", ".open_graph")).mkpath
+
+    def cache_hash(document, template_path)
+      Digest::MD5.hexdigest(
+        [
+          document.data["slug"],
+          document.data["permalink"],
+          template_path,
+          root.join(template_path).read
+        ].join("")
+      )
+    end
 
     def typst(template_path, output_path, **inputs)
       font_args = config.fetch("font_paths", []).flat_map { ["--font-path", _1] }

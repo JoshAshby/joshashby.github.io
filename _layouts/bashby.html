@@ -35,8 +35,8 @@
   <meta name="description" content="{{ page.description }}">
 
   <meta property="og:url" content="{{ page.url | absolute_url | replace: "index.html", "" | escape_once }}">
-  {% if page.open_graph_image %}
-  <meta property="og:image" content="{{ page.open_graph_image | absolute_url | escape_once }}">
+  {% if page.open_graph_image.url %}
+  <meta property="og:image" content="{{ page.open_graph_image.url | absolute_url | escape_once }}">
   {% endif %}
 
   <meta property="fediverse:creator" content="{{ site.socials.mastodon.handle }}" >
@@ -95,7 +95,7 @@
       </li>
     </ol>
 
-    <div class="mx-auto prose dark:prose-invert">
+    <div class="mx-auto prose dark:prose-invert md:w-2xl max-w-none">
       {{ content }}
     </div>
   </div>
@@ -123,8 +123,7 @@
           <a href="{{ site.source_url }}/{{ page.path }}">Suggest a correction!</a>
         </p>
         <p class="text-sm">
-          Read my
-          <a href="/ai">LLM/AI Policy</a>
+          Read my <a href="/ai">LLM/AI Policy</a>
         </p>
       </div>
     </div>
