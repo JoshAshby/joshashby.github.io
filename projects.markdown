@@ -48,7 +48,7 @@ ideas from them fulfilling.
   {% endfor %}
 </div>
 
-<div class="mt-6 grid grid-cols-1 gap-8 not-prose w-full">
+<div class="mt-6 grid grid-cols-1 gap-8 w-full">
   {% assign non_showcased = site.projects|where: 'cover.url', nil %}
   {% for project in non_showcased %}
     {% assign latest_log = site.posts|where: "dev_log_project_id", project.id|sort: date|reverse|first %}
