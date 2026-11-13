@@ -99,12 +99,13 @@ end
 # Only convert the output, rather than the post contents, so that plugins like
 # jekyll-feed still get the normal Kramdown footnotes instead, which render
 # nicer in readers.
-Jekyll::Hooks.register :documents, :post_render, priority: :low do |doc|
+Jekyll::Hooks.register :documents, :post_render, priority: :high do |doc|
   doc.output = MarkedFootnotesToAsides.call(doc.output)
 end
 
-Jekyll::Hooks.register :pages, :post_render, priority: :low do |page|
+Jekyll::Hooks.register :pages, :post_render, priority: :high do |page|
+next unless page.ext == ".html"
   page.output = MarkedFootnotesToAsides.call(page.output)
 end
 
-Liquid::Template.register_tag('aside', Jekyll::Tags::Aside)
+Liquid::Template.register_tag("aside", Jekyll::Tags::Aside)
