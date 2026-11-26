@@ -160,7 +160,7 @@ end
 Every page gets an [Open Graph Image](https://ogp.me/) for fancy unfurls within applications.
 This is powered by a small Jekyll plugin that calls out to Typst. This was
 inspired by [Erik André Jakobsen's Astro version](https://eaj.no/posts/open-graph-images-with-typst/) and turned out to be really easy to put
-together, give that I already have Typst in my build process for my resume's PDF.
+together, given that I already have Typst in my build process for my resume's PDF.
 
 {% include figure.html src=page.open_graph_image.url caption="The Open Graph Image for this page, available in the `og:image` meta tag in the document head" %}
 
@@ -181,7 +181,9 @@ And then include the tags into the layout with a small Jekyll Liquid tag that
 lists the entrypoints to import.
 
 ```liquid
+{% raw %}
 {% importmap application %}
+{% endraw %}
 ```
 
 When rendered, this ends up looking something like:
